@@ -1,24 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400');
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --text: #0b1d23;
-        --background: #f0f7fa;
-        --primary: #66caeb;
-        --secondary: #7a96d6;
-        --accent: #3950c0;
-    }
+:root {
+    --text: #0b1d23;
+    --background: #f0f7fa;
+    --primary: #66caeb;
+    --secondary: #7a96d6;
+    --accent: #3950c0;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --text: #dceef4;
-        --background: #050c0f;
-        --primary: #147899;
-        --secondary: #294485;
-        --accent: #3f55c6;
-    }
+.dark-mode {
+    --text: #dceef4;
+    --background: #050c0f;
+    --primary: #147899;
+    --secondary: #294485;
+    --accent: #3f55c6;
 }
+
 
 
 
@@ -40,7 +37,7 @@
 html,
 body {
     overflow: hidden;
-    color: var(--text);
+    
     margin: 0;
     padding: 0;
     font-family: 'Poppins';
