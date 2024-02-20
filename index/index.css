@@ -1,0 +1,122 @@
+:root {}
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 0;
+    border: 0;
+}
+
+.shadow {
+    -webkit-filter: drop-shadow(5px 5px 5px #19202b9d);
+    filter: drop-shadow(5px 5px 2px #19202b9d);
+
+}
+
+html,
+body {
+    overflow: hidden;
+    color: #445F8A;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-cima {
+    position: absolute;
+    height: 6rem;
+    margin: 5rem;
+}
+
+.bg-login {
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+}
+
+.bg-balls {
+    z-index: 10;
+    margin-left: -4rem;
+    margin-top: -2rem;
+    position: absolute;
+    height: 50rem;
+}
+
+.bg-blob1 {
+    z-index: 10;
+    margin-top: -2rem;
+    margin-left: 30rem;
+    position: absolute;
+    height: 9rem;
+}
+
+.column {
+    height: 100vh;
+    margin-left: 40%;
+    background-color: #fff;
+    border-top-left-radius: 5rem;
+}
+
+.form-login {
+    padding: 15%;
+    padding-top: 30% !important;
+    padding-bottom: 5% !important;
+
+    h1 {
+        margin: 0;
+    }
+
+    .esqueceu {
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+        margin: 0;
+        border-radius: 0.5rem;
+        height: 2rem;
+        background-color: #FDE7C7;
+        color: #AD7B40;
+        padding: 1rem;
+        height: 3rem;
+    }
+
+    p {
+        margin: 0;
+        padding-top: 0.5rem;
+    }
+
+    a {
+        display: block;
+
+        padding: 5%;
+        text-align: center;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        height: 3rem;
+        text-align: center;
+        border-radius: 0.5rem;
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #68CBEB;
+    }
+}
+
+.container-contato {
+    display: flex;
+    justify-content: center;
+}
+
+.contato {
+    height: 5rem;
+    width: 5rem;
+}
+
+.mesa-login {
+    position: absolute;
+    margin-top: 9rem;
+    margin-left: 5rem;
+    z-index: 1;
+    box-shadow: 0cm;
+}
