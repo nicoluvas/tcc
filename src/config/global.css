@@ -1,5 +1,17 @@
-:root {}
-
-body {
-    font-size: 100px;
-}
+:root {
+    --text: #26210d;
+    --background: #f7f0dc;
+    --primary: #234c67;
+    --secondary: #b1d4f6;
+    --accent: #cfa93f;
+    --shadow: #201a0851;
+  }
+  
+  .dark-mode {
+    --text: #f2edd9;
+    --background: #100e07;
+    --primary: #98c1dc;
+    --secondary: #092b4e;
+    --accent: #c09930;
+    --shadow: #201a0851;
+  }
