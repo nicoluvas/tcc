@@ -22,3 +22,26 @@
     cursor: pointer;
   }
 }
+
+@-webkit-keyframes movbg {
+  0% {
+    background-position: 0% 56%;
+  }
+  50% {
+    background-position: 100% 45%;
+  }
+  100% {
+    background-position: 0% 56%;
+  }
+}
+@keyframes movbg {
+  0% {
+    background-position: 0% 56%;
+  }
+  50% {
+    background-position: 100% 45%;
+  }
+  100% {
+    background-position: 0% 56%;
+  }
+}

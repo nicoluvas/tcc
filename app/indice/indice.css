@@ -7,9 +7,15 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  color: var(--text);
+}
+
+body {
+  background-color: var(--background);
 }
 
 header {
+  user-select: none;
   nav {
     display: flex;
     width: 100rem;
@@ -49,13 +55,10 @@ header {
   border-radius: 1rem;
   width: 10rem;
   height: 3rem;
-  
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
   a {
   }
 }
-
-
-
