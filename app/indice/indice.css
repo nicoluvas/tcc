@@ -11,7 +11,7 @@
 header {
   nav {
     display: flex;
-    width: 70rem;
+    width: 80rem;
     margin: 0 auto;
     padding: 0 2rem;
     background-color: aqua;
@@ -29,11 +29,26 @@ header {
       text-transform: uppercase;
     }
   }
+  div {
+    height: 2.75rem;
+    svg {
+      position: absolute;
+    }
+    .btn-lua {
+      margin: 0.6rem 0.65rem;
+    }
+  }
 }
 
 .btn-restrito {
   background-color: aquamarine;
   border-radius: 1rem;
-  width: 8rem;
-  height: 1.5rem;
+  width: 10rem;
+  height: 3rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+  }
 }
