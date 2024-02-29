@@ -15,3 +15,10 @@
     --accent: #c09930;
     --shadow: #201a0851;
   }
+
+.point {
+  &:hover {
+    filter: brightness(1.1);
+    cursor: pointer;
+  }
+}
