@@ -2,7 +2,27 @@
 @import "/src/config/global.css";
 
 .hidden {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+.highlight {
+  color: var(--primary);
+}
+
+.weight {
+  font-weight: 800;
+  word-spacing: 1rem;
+  color: var(--accent);
+}
+
+.marked {
+  background-color: var(--accent);
+  color: var(--background);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 * {
@@ -54,7 +74,7 @@ header {
     }
     .svg-lua {
       margin: 0.6rem 0.65rem;
-      fill: var(--primary);
+      fill: var(--text-inv);
     }
     .svg-lua-bola {
       fill: var(--accent);
@@ -78,8 +98,22 @@ header {
 .bg-banner {
   z-index: -1;
   position: absolute;
-  height: 100vh;
-  margin-left: 80vh;
+  margin-left: 50%;
   user-select: none;
   pointer-events: none;
+
+  transition: opacity 0.7s ease-in-out;
+
+}
+
+.resolva {
+  margin-left: 15vh;
+
+  h1 {
+    font-size: 5rem;
+  }
+  h3 {
+    font-size: 2rem;
+    color: var(--accent);
+  }
 }

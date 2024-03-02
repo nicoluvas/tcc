@@ -1,5 +1,6 @@
 :root {
   --text: #26210d;
+  --text-inv: #f2edd9;
   --background: #f7f0dc;
   --primary: #234c67;
   --secondary: #b1d4f6;
@@ -9,6 +10,7 @@
 
 .dark-mode {
   --text: #f2edd9;
+  --text-inv: #26210d;
   --background: #100e07;
   --primary: #98c1dc;
   --secondary: #092b4e;
