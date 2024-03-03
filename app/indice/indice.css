@@ -16,16 +16,16 @@ body {
   overflow: -moz-scrollbars-none;
   overflow-x: hidden;
   background-color: var(--background);
+  height: 500vh;
 }
 
 .logo {
   width: 18rem;
 }
 
-.hidden, .shown {
+.hidden {
   opacity: 0;
   display: none;
-  transition: opacity 2.3s ease; 
 }
 
 .shown {
@@ -39,15 +39,15 @@ body {
 
 .weight {
   font-weight: 800;
-  word-spacing: 1rem;
+  word-spacing: 2rem;
   color: var(--accent);
 }
 
 .marked {
   background-color: var(--accent);
   color: var(--background);
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding: 0 0.5rem 0 1rem;
+  font-weight: 500;
 }
 
 body::-webkit-scrollbar {
@@ -100,6 +100,8 @@ header {
   align-items: center;
   user-select: none;
   a {
+    color: var(--background);
+    font-weight: 600;
   }
 }
 
@@ -114,7 +116,7 @@ header {
 }
 
 .resolva {
-  margin-left: 15vh;
+  margin-left: 20vh;
 
   h1 {
     font-size: 5rem;
@@ -122,5 +124,43 @@ header {
   h3 {
     font-size: 2rem;
     color: var(--accent);
+    margin-left: -2vh;
   }
+}
+
+.boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 45rem;
+  margin: 7rem 0 0 10rem;
+  position: relative;
+
+  .box0,
+  .box1,
+  .box2 {
+    display: flex;
+    height: 12rem;
+    width: 10rem;
+    background-color: var(--secondary);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    position: relative;
+    text-align: center;
+  }
+  .boxb {
+    position: absolute;
+    background-color: var(--primary);
+    width: 100%;
+    height: 2rem;
+    z-index: -1;
+    bottom: 4rem;
+  }
+}
+.desc {
+  padding: 2.5rem 1rem 1rem 1rem;
+  bottom: 4rem;
 }
