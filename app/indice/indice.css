@@ -14,7 +14,7 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow: -moz-scrollbars-none;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   background-color: var(--background);
   height: 500vh;
 }
@@ -38,25 +38,22 @@ body {
 }
 
 .weight {
-  font-weight: 800;
+  font-weight: 1000;
   word-spacing: 2rem;
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .marked {
-  background-color: var(--accent);
+  background-color: var(--primary);
   color: var(--background);
-  padding: 0 0.5rem 0 1rem;
+  padding: 0 0.5rem;
   font-weight: 500;
-}
-
-body::-webkit-scrollbar {
-  display: none;
 }
 
 header {
   user-select: none;
   nav {
+    font-weight: 700;
     display: flex;
     width: 100rem;
     margin: 0 auto;
@@ -82,16 +79,16 @@ header {
     }
     .svg-lua {
       margin: 0.6rem 0.65rem;
-      fill: var(--text-inv);
+      fill: var(--secondary);
     }
     .svg-lua-bola {
-      fill: var(--accent);
+      fill: var(--text);
     }
   }
 }
 
 .btn-restrito {
-  background-color: var(--accent);
+  background-color: var(--secondary);
   border-radius: 1rem;
   width: 10rem;
   height: 3rem;
@@ -100,7 +97,7 @@ header {
   align-items: center;
   user-select: none;
   a {
-    color: var(--background);
+    color: var(--text);
     font-weight: 600;
   }
 }
@@ -112,7 +109,7 @@ header {
   user-select: none;
   pointer-events: none;
 
-  transition: opacity 0.7s ease-in-out;
+  /* transition: opacity 0.7s ease-in-out; */
 }
 
 .resolva {
@@ -123,7 +120,7 @@ header {
   }
   h3 {
     font-size: 2rem;
-    color: var(--accent);
+    color: var(--primary);
     margin-left: -2vh;
   }
 }

@@ -25,12 +25,12 @@
   }
 }
 
-* {
+/* * {
   -webkit-transition: background-color 0.1s ease-out;
   -moz-transition: background-color 0.1s ease-out;
   -o-transition: background-color 0.1s ease-out;
   transition: background-color 0.1s ease-out;
-}
+} */
 
 @-webkit-keyframes movbg {
   0% {
@@ -53,4 +53,20 @@
   100% {
     background-position: 0% 56%;
   }
+}
+
+/* For WebKit browsers */
+::-webkit-scrollbar {
+  width: 5px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #333; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+::-webkit-scrollbar.some-selector {
+  scrollbar-color: #888 #333;
 }
