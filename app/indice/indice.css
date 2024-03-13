@@ -8,6 +8,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   color: var(--text);
+  transition: opacity 2.3s ease-out;
 }
 
 body {
@@ -20,7 +21,7 @@ body {
 }
 
 .logo {
-  width: 18rem;
+  margin: 1rem 0 0 1rem;
 }
 
 .hidden {
