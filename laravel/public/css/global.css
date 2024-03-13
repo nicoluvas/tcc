@@ -1,0 +1,57 @@
+:root {
+    --text: #26210d;
+    --text-inv: #f2edd9;
+    --background: #f7f0dc;
+    --primary: #234c67;
+    --secondary: #b1d4f6;
+    --accent: #cfa93f;
+    --shadow: #201a0851;
+  }
+  
+  .dark-mode {
+    --text: #f2edd9;
+    --text-inv: #26210d;
+    --background: #100e07;
+    --primary: #98c1dc;
+    --secondary: #092b4e;
+    --accent: #c09930;
+    --shadow: #201a0851;
+  }
+  
+  .point {
+    &:hover {
+      filter: brightness(1.1);
+      cursor: pointer;
+    }
+  }
+  
+  * {
+    -webkit-transition: background-color 0.1s ease-out;
+    -moz-transition: background-color 0.1s ease-out;
+    -o-transition: background-color 0.1s ease-out;
+    transition: background-color 0.1s ease-out;
+  }
+  
+  @-webkit-keyframes movbg {
+    0% {
+      background-position: 0% 56%;
+    }
+    50% {
+      background-position: 100% 45%;
+    }
+    100% {
+      background-position: 0% 56%;
+    }
+  }
+  @keyframes movbg {
+    0% {
+      background-position: 0% 56%;
+    }
+    50% {
+      background-position: 100% 45%;
+    }
+    100% {
+      background-position: 0% 56%;
+    }
+  }
+  
