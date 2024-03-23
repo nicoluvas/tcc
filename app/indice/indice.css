@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import "/src/config/global.css";
+@import "../../src/config/global.css";
+html {
+  font-size: 16px;
+}
 
 * {
   text-decoration: dashed;
@@ -53,39 +56,39 @@ body {
 
 header {
   user-select: none;
-  nav {
-    font-weight: 700;
-    display: flex;
-    width: 100rem;
-    margin: 0 auto;
-    padding: 0 2rem;
-    justify-content: space-between;
-    align-items: center;
-    img {
-      height: 10rem;
-    }
-  }
-  ul {
-    display: flex;
-    list-style: none;
-    a {
-      padding: 0 1.5rem;
-      text-transform: uppercase;
-    }
-  }
-  div {
-    height: 2.75rem;
-    svg {
-      position: absolute;
-    }
-    .svg-lua {
-      margin: 0.6rem 0.65rem;
-      fill: var(--secondary);
-    }
-    .svg-lua-bola {
-      fill: var(--text);
-    }
-  }
+}
+header nav {
+  font-weight: 700;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  justify-content: space-around;
+  align-items: center;
+}
+header nav img {
+  height: 10rem;
+}
+header ul {
+  display: flex;
+  list-style: none;
+}
+header ul a {
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+}
+header div {
+  height: 2.75rem;
+}
+header div svg {
+  position: absolute;
+}
+header div .svg-lua {
+  margin: 0.6rem 0.65rem;
+  fill: var(--secondary);
+}
+header div .svg-lua-bola {
+  fill: var(--text);
 }
 
 .btn-restrito {
@@ -97,33 +100,32 @@ header {
   justify-content: center;
   align-items: center;
   user-select: none;
-  a {
-    color: var(--text);
-    font-weight: 600;
-  }
+}
+.btn-restrito a {
+  color: var(--text);
+  font-weight: 600;
 }
 
 .bg-banner {
   z-index: -1;
   position: absolute;
-  margin-left: 50%;
+  left: 100%;
+  transform: translateX(-100%);
   user-select: none;
   pointer-events: none;
-
   /* transition: opacity 0.7s ease-in-out; */
 }
 
 .resolva {
   margin-left: 20vh;
-
-  h1 {
-    font-size: 5rem;
-  }
-  h3 {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-left: -2vh;
-  }
+}
+.resolva h1 {
+  font-size: 5rem;
+}
+.resolva h3 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-left: -2vh;
 }
 
 .boxes {
@@ -134,31 +136,44 @@ header {
   width: 45rem;
   margin: 7rem 0 0 10rem;
   position: relative;
-
-  .box0,
-  .box1,
-  .box2 {
-    display: flex;
-    height: 12rem;
-    width: 10rem;
-    background-color: var(--secondary);
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1rem;
-    position: relative;
-    text-align: center;
-  }
-  .boxb {
-    position: absolute;
-    background-color: var(--primary);
-    width: 100%;
-    height: 2rem;
-    z-index: -1;
-    bottom: 4rem;
-  }
 }
+.boxes .box0,
+.boxes .box1,
+.boxes .box2 {
+  display: flex;
+  height: 12rem;
+  width: 10rem;
+  background-color: var(--secondary);
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  position: relative;
+  text-align: center;
+}
+.boxes .boxb {
+  position: absolute;
+  background-color: var(--primary);
+  width: 100%;
+  height: 2rem;
+  z-index: -1;
+  bottom: 4rem;
+}
+
 .desc {
   padding: 2.5rem 1rem 1rem 1rem;
   bottom: 4rem;
 }
+
+@media screen and (min-width: 763px) and (max-width: 1200px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 763px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+/*# sourceMappingURL=indice.css.map */
