@@ -5,6 +5,11 @@ html {
   font-size: 16px;
 }
 
+.bgs {
+  user-select: none;
+  pointer-events: none;
+}
+
 * {
   text-decoration: dashed;
   padding: 0;
@@ -49,10 +54,14 @@ body {
 }
 
 .marked {
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: var(--background);
   padding: 0 0.5rem;
   font-weight: 500;
+}
+
+.pagina1 {
+  height: 100vh;
 }
 
 header {
@@ -114,15 +123,14 @@ header {
   transform: translateX(-100%);
   user-select: none;
   pointer-events: none;
-
-  /* transition: opacity 0.7s ease-in-out; */
 }
 
 .resolva {
   margin-left: 20vh;
-
+  
   h1 {
     font-size: 5rem;
+    z-index: 20;
   }
   h3 {
     font-size: 2rem;
@@ -166,19 +174,48 @@ header {
 .desc {
   padding: 2.5rem 1rem 1rem 1rem;
   bottom: 4rem;
+  z-index: 10;
+}
+.wein {
+  position: absolute;
+  right: 0;
+  height: 90vh;
+  z-index: 1;
+  user-select: none;
+}
+
+.lampada{
+  position: absolute;
+  margin: -10rem 0 0 14rem;
+}
+.shadow {
+  -webkit-filter: drop-shadow(-2px 2px 2px var(--shadow));
+  filter: drop-shadow(-2px 2px 2px var(--shadow));
 }
 
 // tablet
-@media screen and (min-width: 763px) and (max-width: 1200px){
+@media screen and (min-width: 763px) and (max-width: 1200px) {
   html {
     font-size: 12px;
   }
 }
 
 //celular
-@media screen and (max-width: 763px){
+@media screen and (max-width: 763px) {
   html {
     font-size: 9px;
   }
 }
 
+.pagina2 {
+  height: 100vh;
+  width: 100vw;
+}
+
+.retangulo {
+  position: inherit;
+  width: 47rem;
+  height: 100vh;
+  background: var(--primary);
+  left: 100%;
+}
