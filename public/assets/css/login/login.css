@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400");
 @import url("https://fonts.googleapis.com/css2?family=Anta&display=swap");
-@import "/src/config/global.css";
+@import "../global.css";
 
 .hyperlink {
   cursor: pointer;

@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bhaskara</title>
   <script src="indice.js" defer></script>
-  <link rel="stylesheet" href="indice.css" />
+  <link rel="stylesheet" href="<?= CSS . 'home/home.css' ?>" />
 </head>
 
 <body>
   <div class="pagina1">
   <header>
     <nav>
-      <img id="logo" src="..\..\public\images\logo.png" class="shown logo">
-      <img id="logo-dark" src="..\..\public\images\logo-dark.png" class="hidden logo">
+      <img id="logo" src="<?= IMAGES . 'home/logo.png' ?>" class="shown logo">
+      <img id="logo-dark" src="<?= IMAGES . 'home/logo-dark.png' ?>" class="hidden logo">
       <ul>
         <li>
           <a href="#">Quem Somos</a>
@@ -37,17 +37,17 @@
         </btn>
       </div>
       <btn class="btn-restrito point">
-        <a href="#">Área Restrita</a>
+        <a href="/login">Área Restrita</a>
       </btn>
     </nav>
   </header>
   
   <div>
-    <img id="bg-banner" class="shown bg-banner" src="..\..\public\images\mesh-gradient.png">
-    <img id="bg-banner-dark" class="hidden bg-banner" src="..\..\public\images\mesh-gradient-dark.png">
+    <img id="bg-banner" class="shown bg-banner" src="<?= IMAGES . 'home/mesh-gradient.png' ?>">
+    <img id="bg-banner-dark" class="hidden bg-banner" src="<?= IMAGES . 'home/mesh-gradient-dark.png' ?>">
   </div>
-  <img class="shadow wein" src="..\..\public\images\wein.png">
-  <img class="lampada" src="..\..\public\images\lampoada.png">
+  <img class="shadow wein" src="<?= IMAGES . 'home/wein.png' ?>">
+  <img class="lampada" src="<?= IMAGES . 'home/lampada.png' ?>">
 
   <div class="resolva">
     <h1>Resolva o seu <br> <span class="marked">futuro</span> com <br> <span class="highlight">Bhaskara</span>!</h1>
@@ -72,7 +72,7 @@
 </div>
 <div class="pagina2">
   <div class="retangulo"></div>
-  <img class="estrelhinhas bgs" src="public\images\estrelhinhas.png">
+  <img class="estrelhinhas bgs" src="<?= IMAGES . 'home/estrelinhas.png' ?>">
 </div>
 
 </body>

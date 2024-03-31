@@ -1,0 +1,21 @@
+{
+    "name": "tcc/bhaskara",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app"
+        },
+        "files": [
+            "app/helpers/constants.php",
+            "app/router/router.php",
+            "app/core/controller.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Lucas Leme, Nicolas Penhalver e Theodore Galeano"
+        }
+    ],
+    "require": {}
+}

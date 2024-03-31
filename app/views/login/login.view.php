@@ -2,24 +2,24 @@
 <html id="main" lang="pt-br">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="login.css" />
-    <script type="text/javascript" src="login.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="<?= CSS . 'login/login.css' ?>" />
+    <script type="text/javascript" src="<?= JS . 'login/login.js' ?>" defer></script>
 
     <meta charset="UTF-8" />
     <meta name="color-scheme" content="dark light" />
 
     <title>Login - eBhaskara</title>
-    <link rel="icon" href="..\src\images\light.png" />
+    <link rel="icon" href="<?= IMAGES . 'login/light.png' ?>" />
   </head>
 
   <body class="">
     <!-- <img class="bg-login" src="..\src\images\blurry-gradient-haikei.svg"> -->
     <button class="theme">
-      <img class="theme" src="..\..\src\images\dark.png" />
+      <img class="theme" src="<?= IMAGES . 'login/dark.png' ?>" />
     </button>
 
     <p class="logo-cima anta-regular">eBhaskara</p>
-    <img class="mesa-login shadow" src="..\..\src\images\mesa.svg" />
+    <img class="mesa-login shadow" src="<?= IMAGES . 'login/mesa.svg' ?>" />
 
     <div class="column shadow">
       <form class="form-login">
@@ -39,7 +39,7 @@
       </form>
       <div class="container-contato hyperlink">
         <a href="suporte.html">
-          <img class="contato" src="..\src\images\contato.PNG" alt="contato" />
+          <img class="contato" src="<?= IMAGES . 'login/contato.png' ?>" alt="contato" />
         </a>
       </div>
     </div>
