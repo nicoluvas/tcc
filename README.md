@@ -34,5 +34,7 @@ Com o projeto devidamente baixado, primeira coisa que se deve fazer é adicionar
 
 Obs: `localhost:5000` indica que o projeto estára no servidor local na porta `5000`, fique a seu critério quanto a porta.
 
+Caso de tudo certo o terminal apresentará uma mensagem que o servidor iniciou. Agora basta ir até o endereço `localhost:5000` no seu navegador.
+
 ## 🧾 Licença
 Esse projeto possui a Licença MIT. Veja o arquivo LICENSE para mais detalhes
