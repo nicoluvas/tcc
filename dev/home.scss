@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "../public/assets/css/global.css";
+
+html {
+  font-size: 16px;
+}
+
+.bgs {
+  user-select: none;
+  pointer-events: none;
+  z-index: -1;
+}
+
+* {
+  text-decoration: dashed;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  transition: opacity 2.3s ease-out;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: -moz-scrollbars-none;
+  overflow-x: hidden;
+  background-color: var(--background);
+  height: 500vh;
+}
+
+.logo {
+  margin: 1rem 0 0 1rem;
+}
+
+.hidden {
+  opacity: 0;
+  display: none;
+}
+
+.shown {
+  display: block;
+  opacity: 1;
+}
+
+.highlight {
+  color: var(--primary);
+}
+
+.weight {
+  font-weight: 1000;
+  word-spacing: 2rem;
+  color: var(--primary);
+}
+
+.marked {
+  background-color: var(--primary);
+  color: var(--background);
+  padding: 0rem 0.6rem 0rem 0.6rem;
+  margin: 0 0 0 -0.5rem;
+  font-weight: 500;
+}
+
+.pagina1 {
+  height: 100vh;
+}
+
+header {
+  user-select: none;
+  nav {
+    font-weight: 700;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    justify-content: space-around;
+    align-items: center;
+    img {
+      height: 10rem;
+    }
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    a {
+      padding: 0 1.5rem;
+      text-transform: uppercase;
+    }
+  }
+  div {
+    height: 2.75rem;
+    svg {
+      position: absolute;
+    }
+    .svg-lua {
+      margin: 0.6rem 0.65rem;
+      fill: var(--secondary);
+    }
+    .svg-lua-bola {
+      fill: var(--text);
+    }
+  }
+}
+
+.btn-restrito {
+  background-color: var(--secondary);
+  border-radius: 1rem;
+  width: 10rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  a {
+    color: var(--text);
+    font-weight: 600;
+  }
+}
+
+.bg-banner {
+  z-index: -1;
+  position: absolute;
+  left: 100%;
+  transform: translateX(-100%);
+  user-select: none;
+  pointer-events: none;
+}
+
+.resolva {
+  margin-left: 20vh;
+  margin-top: 10vh;
+
+  h1 {
+    font-size: 5rem;
+    z-index: 20;
+  }
+  h3 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-left: -2vh;
+  }
+}
+
+.boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 45rem;
+  margin: 7rem 0 0 10rem;
+  position: relative;
+
+  .box0,
+  .box1,
+  .box2 {
+    display: flex;
+    height: 12rem;
+    width: 10rem;
+    background-color: var(--secondary);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    position: relative;
+    text-align: center;
+  }
+  .boxb {
+    position: absolute;
+    background-color: var(--primary);
+    width: 100%;
+    height: 2rem;
+    z-index: -1;
+    bottom: 4rem;
+  }
+}
+.desc {
+  padding: 2.5rem 1rem 1rem 1rem;
+  bottom: 4rem;
+  z-index: 10;
+}
+.wein {
+  position: absolute;
+  right: 0;
+  transform: translateY(-3rem);
+  height: 90vh;
+  z-index: -1;
+  user-select: none;
+}
+
+.lampada {
+  position: absolute;
+  margin: -4rem 0 0 14rem;
+  user-select: none;
+  z-index: -1;
+}
+.shadow {
+  -webkit-filter: drop-shadow(-2px 2px 2px var(--shadow));
+  filter: drop-shadow(-2px 2px 2px var(--shadow));
+}
+
+.fixa {
+  position: absolute;
+
+  width: 30rem;
+  height: 3rem;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  margin: 4.5rem 0rem 0rem 11rem;
+  .fixa1 {
+    background: var(--primary);
+    width: 75%;
+
+    height: 0.65rem;
+    border-radius: 0.21875rem;
+  }
+  .fixa2 {
+    background: var(--accent);
+    border-radius: 0.21875rem;
+    width: 100%;
+    height: 0.65rem;
+    margin-left: 0.5rem;
+  }
+}
+
+// tablet
+@media screen and (min-width: 763px) and (max-width: 1200px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+//celular
+@media screen and (max-width: 763px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+.pagina2 {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.retangulo {
+  position: inherit;
+  width: 47rem;
+  height: 100vh;
+  background: var(--primary);
+  right: 0;
+}
