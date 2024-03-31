@@ -14,7 +14,14 @@
     },
     "authors": [
         {
-            "name": "Lucas Leme, Nicolas Penhalver e Theodore Galeano"
+            "name": "Lucas Leme",
+            "email" : "l.leme3008@gmail.com"
+        },
+        {
+            "name": "Nícolas Penhalver"
+        },
+        {
+            "name": "Theodore Galeano"
         }
     ],
     "require": {}

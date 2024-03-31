@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bhaskara</title>
-  <script src="indice.js" defer></script>
+  <script src="<?= JS . 'home/home.js' ?>" defer></script>
   <link rel="stylesheet" href="<?= CSS . 'home/home.css' ?>" />
 </head>
 
