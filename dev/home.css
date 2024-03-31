@@ -236,14 +236,31 @@ header div .svg-lua-bola {
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: row;
 }
 
 .retangulo {
   position: inherit;
-  width: 47rem;
+  width: 100%;
+  z-index: -1;
   height: 100vh;
   background: var(--primary);
-  right: 0;
+  margin-left: auto;
+}
+
+.indiano {
+  position: inherit;
+  height: 100%;
+}
+
+.taylorswift {
+  position: absolute;
+  height: 100%;
+}
+
+.estrelhinhas {
+  position: absolute;
+  margin: 10rem 10rem 10rem 50rem;
 }
 
 /*# sourceMappingURL=home.css.map */
