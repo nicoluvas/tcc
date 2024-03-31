@@ -1,15 +1,10 @@
-<h1 align="center">
-    <img src="public/assets/images/home/logo-dark.png">
-    <p style="margin-bottom: 45px">Sistema Escolar Experimental</p>
-    <p style="font-size: 20px; font-weight: normal">
-        Desenvolvido Por: <br>
-        <span style="font-weight: bold">Lucas Leme</span> <br>
-        <span style="font-weight: bold">Nícolas Penhalver</span> <br>
-        <span style="font-weight: bold">Theodore Galeano</span> <br>
-    </p>
-</h1>
+<img src="public/assets/images/home/logo-dark.png" style="margin-left: 50%; transform: translateX(-50%)">
 
-<hr>
+# Sistema Escolar Experimental
+Desenvolvido Por: <br>
+<span style="font-weight: bold">Lucas Leme</span> <br>
+<span style="font-weight: bold">Nícolas Penhalver</span> <br>
+<span style="font-weight: bold">Theodore Galeano</span> <br>
 
 <img src="https://i.imgur.com/JRkKHcL.png">
 
