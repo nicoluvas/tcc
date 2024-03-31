@@ -1,10 +1,12 @@
-<img src="public/assets/images/home/logo-dark.png" style="margin-left: 50%; transform: translateX(-50%)">
+<h1 align="center" style="border: none"><img src="public/assets/images/home/logo-dark.png">
 
 # Sistema Escolar Experimental
 Desenvolvido Por: <br>
 <span style="font-weight: bold">Lucas Leme</span> <br>
 <span style="font-weight: bold">Nícolas Penhalver</span> <br>
 <span style="font-weight: bold">Theodore Galeano</span> <br>
+
+<hr>
 
 <img src="https://i.imgur.com/JRkKHcL.png">
 
