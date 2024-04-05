@@ -76,10 +76,16 @@
   </div> -->
     </div>
     <div class="pagina2">
-        <img src="<?= IMAGES . 'home/indiano.png' ?>" class="bgs indiano">
-        <div class="retangulo"></div>
-        <img src="<?= IMAGES . 'home/taylorswift.png' ?>" class="bgs taylorswift">
+        <img src="<?= IMAGES . 'home/indiano.png' ?>" class="bgs shadow indiano">
+        <div class="retangulo shadow">
+            <div class="abrace">
+                <h2>Abrace a <br><span class="marked">modernidade</span></h2>
+                <p>Uma sala de aula onde os conceitos abstratos ganham vida diante dos olhos dos alunos. Com a realidade virtual (VR), isso é possível. Os estudantes podem mergulhar em moléculas, explorar reações químicas em escala atômica e até mesmo viajar para dentro de células vivas. Aulas interativas e imersivas tornam o aprendizado mais envolvente e compreensível.</p>
+            </div>
+        </div>
+        <img src="<?= IMAGES . 'home/taylorswift.png' ?>" class="bgs shadow taylorswift">
         <img class="estrelhinhas bgs" src="<?= IMAGES . 'home/estrelinhas.png' ?>">
+        <p class="text-border bgs">BHASKARA</p>
     </div>
 
 </body>

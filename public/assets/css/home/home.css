@@ -240,27 +240,71 @@ header div .svg-lua-bola {
 }
 
 .retangulo {
-  position: inherit;
+  position: relative;
   width: 100%;
-  z-index: -1;
+  z-index: 8;
   height: 100vh;
   background: var(--primary);
   margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.retangulo .abrace {
+  margin-left: 10%;
+  justify-content: center;
+  height: 80%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  z-index: 10 !important;
+  background-color: var(--secondary);
+  border: 1px solid var(--primary);
+  border-radius: 1rem;
+}
+.retangulo .abrace h2 {
+  font-size: 2.5rem;
+  height: 20%;
+  text-align: center;
+  z-index: 10;
+}
+.retangulo .abrace p {
+  height: 80%;
+  padding: 1%;
+  z-index: 10;
+}
+
+.text-border {
+  width: 60vw;
+  font-size: 9rem;
+  margin-left: 40vw;
+  font-weight: 500;
+  z-index: 9;
+  position: absolute;
+  letter-spacing: auto;
+  text-align: center;
+  justify-content: space-around;
+  color: var(--primary); /* Set the inner color of the text */
+  -webkit-text-stroke: 1px var(--text); /* Set the width and color of the border */
 }
 
 .indiano {
   position: inherit;
   height: 100%;
+  z-index: 10;
 }
 
 .taylorswift {
   position: absolute;
   height: 100%;
+  z-index: 10;
 }
 
 .estrelhinhas {
   position: absolute;
   margin: 10rem 10rem 10rem 50rem;
+  z-index: 10;
 }
 
 /*# sourceMappingURL=home.css.map */
