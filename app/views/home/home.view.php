@@ -94,9 +94,11 @@
             <img src="<?= IMAGES . 'home/papelzada.png' ?>" class="bgs shadow">
         </div> -->
         <img src="<?= IMAGES . 'home/estrelada.png' ?>" class="estrelada bgs shadow">
-        <svg width="335" height="479" viewBox="0 0 335 479" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="335" height="479" rx="73" fill="var(--primary)" />
-        </svg>
+        <div class="redondadoz shadow bgs"></div>
+        <div class="bolado shadow bgs"></div>
+        <div class="ensino-bloco">
+            <h2>Ensino de <span class="marked">Vestibular</span></h2>
+        </div>
     </div>
 </body>
 

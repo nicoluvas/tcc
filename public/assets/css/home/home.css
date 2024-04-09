@@ -319,6 +319,24 @@ header div .svg-lua-bola {
   right: 0;
   transform: translateY(60vh);
 }
+.pagina3 .redondadoz {
+  background: var(--primary);
+  position: relative;
+  translate: 20vw 17vh;
+  z-index: -1;
+  height: 62%;
+  width: 25%;
+  border-radius: 5rem;
+}
+.pagina3 .bolado {
+  background: var(--primary);
+  position: relative;
+  translate: -14vw 70vh;
+  z-index: 1;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 100%;
+}
 
 .familia {
   z-index: inherit;

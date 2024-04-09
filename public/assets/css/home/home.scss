@@ -8,7 +8,6 @@ html {
 .bgs {
   user-select: none;
   pointer-events: none;
-
 }
 
 * {
@@ -321,9 +320,29 @@ header {
     height: auto;
     width: auto;
     position: absolute;
-    
+
     right: 0;
     transform: translateY(60vh);
+  }
+  .redondadoz {
+    background: var(--primary);
+
+    position: relative;
+    translate: 20vw 17vh;
+    z-index: -1;
+    height: 62%;
+    width: 25%;
+    border-radius: 5rem;
+  }
+  .bolado {
+    background: var(--primary);
+
+    position: relative;
+    translate: -14vw 70vh;
+    z-index: 1;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
   }
 }
 
