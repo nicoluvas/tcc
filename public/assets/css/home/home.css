@@ -311,20 +311,20 @@ header div .svg-lua-bola {
   width: 100vw;
   display: flex;
   flex-direction: row;
-  background-color: aquamarine;
+}
+.pagina3 .estrelada {
+  height: auto;
+  width: auto;
+  position: absolute;
+  right: 0;
+  transform: translateY(60vh);
 }
 
 .familia {
   z-index: inherit;
   width: auto;
   height: 100%;
-}
-
-.papelzada {
-  width: 100%;
-  position: inherit;
-  display: flex;
-  flex-direction: row;
+  position: absolute;
 }
 
 /*# sourceMappingURL=home.css.map */

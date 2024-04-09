@@ -88,13 +88,15 @@
     </div>
     <div class="pagina3">
         <img src="<?= IMAGES . 'home/sdjfsdf-2.png' ?>" class="bgs shadow familia">
-        <div class="papelzada">
+        <!-- <div class="papelzada">
             <img src="<?= IMAGES . 'home/papel.png' ?>" class="bgs shadow">
             <img src="<?= IMAGES . 'home/papel.png' ?>" class="bgs shadow">
             <img src="<?= IMAGES . 'home/papelzada.png' ?>" class="bgs shadow">
-        </div>
-        <img src="<?= IMAGES . 'home/estrelada.png' ?>" class="bgs shadow">
-
+        </div> -->
+        <img src="<?= IMAGES . 'home/estrelada.png' ?>" class="estrelada bgs shadow">
+        <svg width="335" height="479" viewBox="0 0 335 479" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="335" height="479" rx="73" fill="var(--primary)" />
+        </svg>
     </div>
 </body>
 

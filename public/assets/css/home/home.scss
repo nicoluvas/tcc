@@ -317,18 +317,28 @@ header {
   width: 100vw;
   display: flex;
   flex-direction: row;
-  background-color: aquamarine;
+  .estrelada {
+    height: auto;
+    width: auto;
+    position: absolute;
+    
+    right: 0;
+    transform: translateY(60vh);
+  }
 }
 
 .familia {
   z-index: inherit;
   width: auto;
   height: 100%;
+  position: absolute;
 }
 
-.papelzada {
-  width: 100%;
-  position: inherit;
-  display: flex;
-  flex-direction: row;
-}
+// .papelzada {
+//   z-index: -1;
+//   width: 100%;
+//   position: relative;
+//   display: flex;
+//   flex-direction: row;
+//   translate: 0 0;
+// }
