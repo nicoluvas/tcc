@@ -263,6 +263,7 @@ header div .svg-lua-bola {
   border-radius: 1rem;
 }
 .retangulo .abrace h2 {
+  margin: 0 0 5vh 0;
   font-size: 3.5rem;
   height: 20%;
   text-align: center;
@@ -275,6 +276,9 @@ header div .svg-lua-bola {
   height: 80%;
   padding: 1%;
   z-index: 10;
+  font-size: 2rem;
+  color: var(--secondary);
+  font-weight: 300;
 }
 
 .text-border {

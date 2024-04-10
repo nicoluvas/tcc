@@ -42,17 +42,17 @@
         </header>
 
         <div>
-            <img id="bg-banner" class="shown bg-banner" src="<?= IMAGES . 'home/mesh-gradient.png' ?>">
-            <img id="bg-banner-dark" class="hidden bg-banner" src="<?= IMAGES . 'home/mesh-gradient-dark.png' ?>">
+            <img id="bg-banner" class="fade shown bg-banner" src="<?= IMAGES . 'home/mesh-gradient.png' ?>">
+            <img id="bg-banner-dark" class="fade hidden bg-banner" src="<?= IMAGES . 'home/mesh-gradient-dark.png' ?>">
         </div>
         <img class="fade shadow wein bgs" src="<?= IMAGES . 'home/wein.png' ?>">
-        <img class="lampada shadow bgs" src="<?= IMAGES . 'home/lampada.png' ?>">
+        <img class="fade lampada shadow bgs" src="<?= IMAGES . 'home/lampada.png' ?>">
         <div class="fixa">
-            <div class="fixa1 shadow"></div>
-            <div class="fixa2 shadow"></div>
+            <div class="fade fixa1 shadow"></div>
+            <div class="fade fixa2 shadow"></div>
         </div>
 
-        <div class="resolva shadow">
+        <div class="fade resolva shadow">
             <h1>Resolva o seu <br> <span class="marked">futuro</span> com <br> <span class="highlight">Bhaskara</span>!
             </h1>
             <h3>Conheça a melhor <span class="weight">escola</span> do país</h3>
