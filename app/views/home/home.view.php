@@ -45,7 +45,7 @@
             <img id="bg-banner" class="shown bg-banner" src="<?= IMAGES . 'home/mesh-gradient.png' ?>">
             <img id="bg-banner-dark" class="hidden bg-banner" src="<?= IMAGES . 'home/mesh-gradient-dark.png' ?>">
         </div>
-        <img class="shadow wein bgs" src="<?= IMAGES . 'home/wein.png' ?>">
+        <img class="fade shadow wein bgs" src="<?= IMAGES . 'home/wein.png' ?>">
         <img class="lampada shadow bgs" src="<?= IMAGES . 'home/lampada.png' ?>">
         <div class="fixa">
             <div class="fixa1 shadow"></div>
