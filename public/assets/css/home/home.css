@@ -241,7 +241,7 @@ header div .svg-lua-bola {
 .retangulo {
   position: relative;
   width: 100%;
-  z-index: 8;
+  z-index: -1;
   height: 100vh;
   background: var(--primary);
   margin-left: auto;
@@ -257,16 +257,19 @@ header div .svg-lua-bola {
   display: flex;
   flex-direction: column;
   padding: 1%;
-  z-index: 10 !important;
-  background-color: var(--secondary);
+  z-index: 15 !important;
+  background-color: var(--primary);
   border: 1px solid var(--primary);
   border-radius: 1rem;
 }
 .retangulo .abrace h2 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   height: 20%;
   text-align: center;
   z-index: 10;
+}
+.retangulo .abrace h2 .marked {
+  background-color: var(--accent);
 }
 .retangulo .abrace p {
   height: 80%;
@@ -275,12 +278,13 @@ header div .svg-lua-bola {
 }
 
 .text-border {
+  display: none;
   width: 60vw;
-  font-size: 9rem;
+  font-size: 14rem;
   margin-left: 40vw;
   font-weight: 500;
-  z-index: 9;
   position: absolute;
+  z-index: -1 !important;
   letter-spacing: auto;
   text-align: center;
   justify-content: space-around;
