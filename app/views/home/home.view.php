@@ -97,8 +97,10 @@
         <div class="redondadoz shadow bgs"></div>
         <div class="bolado shadow bgs"></div>
         <div class="ensino-bloco">
-            <h2>Ensino de <span class="marked">Vestibular</span></h2>
+            <h2>Ensino voltado a...<br> <span class="marked">VESTIBULARES</span></h2>
+            <p>Contando com uma abordagem intensiva e estratégica, focada na preparação dos estudantes para os exames de ingresso ao ensino superior, Bhaskara propõe: Currículo Estratégico, Simulados e Treinamento Intensivo, Estratégias de Estudo, Apoio Psicológico, Parcerias com Cursinhos e Universidades.</p>
         </div>
+
     </div>
 </body>
 

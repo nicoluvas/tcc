@@ -311,6 +311,9 @@ header div .svg-lua-bola {
   width: 100vw;
   display: flex;
   flex-direction: row;
+  background-image: url("../../images/home/papelzada.png");
+  background-repeat: repeat;
+  background-position: center;
 }
 .pagina3 .estrelada {
   height: auto;
@@ -343,6 +346,31 @@ header div .svg-lua-bola {
   width: auto;
   height: 100%;
   position: absolute;
+}
+
+.ensino-bloco {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aqua;
+  height: 70vh;
+  margin: 15vh 0 0 25vw;
+  width: 40vw;
+}
+.ensino-bloco h2 {
+  text-align: center;
+  background-color: black;
+  width: 100%;
+  font-size: 4rem;
+}
+.ensino-bloco h2 .marked {
+  font-size: 4.1rem;
+}
+.ensino-bloco p {
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+  background-color: whitesmoke;
 }
 
 /*# sourceMappingURL=home.css.map */
