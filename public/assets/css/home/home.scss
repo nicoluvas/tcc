@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import "../../src/config/global.css";
+@import "../global.css";
+@import "../fade.css";
 
 html {
   font-size: 16px;
@@ -17,14 +18,13 @@ html {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   color: var(--text);
-  transition: opacity 2.3s ease-out;
 }
 
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow: -moz-scrollbars-none;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   background-color: var(--background);
   height: 500vh;
 }
@@ -54,9 +54,10 @@ body {
 }
 
 .marked {
-  background-color: var(--secondary);
+  background-color: var(--primary);
   color: var(--background);
-  padding: 0 0.5rem;
+  padding: 0rem 0.6rem 0rem 0.6rem;
+  margin: 0 0 0 -0.5rem;
   font-weight: 500;
 }
 
@@ -127,7 +128,8 @@ header {
 
 .resolva {
   margin-left: 20vh;
-  
+  margin-top: 10vh;
+
   h1 {
     font-size: 5rem;
     z-index: 20;
@@ -179,18 +181,46 @@ header {
 .wein {
   position: absolute;
   right: 0;
+  transform: translateY(-3rem);
   height: 90vh;
-  z-index: 1;
+  z-index: -1;
   user-select: none;
 }
 
-.lampada{
+.lampada {
   position: absolute;
-  margin: -10rem 0 0 14rem;
+  margin: -4rem 0 0 14rem;
+  user-select: none;
+  z-index: -1;
 }
 .shadow {
   -webkit-filter: drop-shadow(-2px 2px 2px var(--shadow));
   filter: drop-shadow(-2px 2px 2px var(--shadow));
+}
+
+.fixa {
+  position: absolute;
+
+  width: 30rem;
+  height: 3rem;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  margin: 4.5rem 0rem 0rem 11rem;
+  .fixa1 {
+    background: var(--primary);
+    width: 75%;
+
+    height: 0.65rem;
+    border-radius: 0.21875rem;
+  }
+  .fixa2 {
+    background: var(--accent);
+    border-radius: 0.21875rem;
+    width: 100%;
+    height: 0.65rem;
+    margin-left: 0.5rem;
+  }
 }
 
 // tablet
@@ -210,12 +240,161 @@ header {
 .pagina2 {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: row;
 }
 
 .retangulo {
-  position: inherit;
-  width: 47rem;
+  position: relative;
+  width: 100%;
+  z-index: -1;
   height: 100vh;
   background: var(--primary);
-  left: 100%;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .abrace {
+    margin-left: 10%;
+    justify-content: center;
+    height: 80%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    z-index: 15 !important;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 1rem;
+    h2 {
+      margin: 0 0 5vh 0;
+      font-size: 3.5rem;
+      height: 20%;
+      text-align: center;
+      z-index: 10;
+      .marked {
+        background-color: var(--accent);
+      }
+    }
+    p {
+      height: 80%;
+      padding: 1%;
+      z-index: 10;
+      font-size: 2rem;
+      color: var(--secondary);
+      font-weight: 300;
+    }
+  }
+}
+.text-border {
+  display: none;
+  width: 60vw;
+  font-size: 14rem;
+  margin-left: 40vw;
+  font-weight: 500;
+  position: absolute;
+  z-index: -1 !important;
+  letter-spacing: auto;
+  text-align: center;
+  justify-content: space-around;
+  color: var(--primary); /* Set the inner color of the text */
+  -webkit-text-stroke: 1px var(--text); /* Set the width and color of the border */
+}
+
+.indiano {
+  position: inherit;
+  height: 100%;
+  z-index: 10;
+}
+
+.taylorswift {
+  position: absolute;
+  height: 100%;
+  z-index: 10;
+}
+
+.estrelhinhas {
+  position: absolute;
+  margin: 10rem 10rem 10rem 50rem;
+  z-index: 10;
+}
+
+.pagina3 {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  background-image: url('../../images/home/papelzada.png');
+  background-repeat: repeat;
+  background-position: center;
+  .estrelada {
+    height: auto;
+    width: auto;
+    position: absolute;
+
+    right: 0;
+    transform: translateY(60vh);
+  }
+  .redondadoz {
+    background: var(--primary);
+
+    position: relative;
+    translate: 20vw 17vh;
+    z-index: -1;
+    height: 62%;
+    width: 25%;
+    border-radius: 5rem;
+  }
+  .bolado {
+    background: var(--primary);
+
+    position: relative;
+    translate: -14vw 70vh;
+    z-index: 1;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+  }
+}
+
+.familia {
+  z-index: inherit;
+  width: auto;
+  height: 100%;
+  position: absolute;
+}
+
+// .papelzada {
+//   z-index: -1;
+//   width: 100%;
+//   position: relative;
+//   display: flex;
+//   flex-direction: row;
+//   translate: 0 0;
+// }
+
+.ensino-bloco {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aqua;
+  height: 70vh;
+  margin: 15vh 0 0 25vw;
+  width: 40vw;
+  h2 {
+    text-align: center;
+    background-color: black;
+    width: 100%;
+    font-size: 4rem;
+
+    .marked {
+      font-size: 4.1rem;
+    }
+  }
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+    background-color: whitesmoke;
+  }
 }
