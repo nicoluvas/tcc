@@ -4,13 +4,9 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "app\\": "app"
-        },
-        "files": [
-            "app/helpers/constants.php",
-            "app/router/router.php",
-            "app/core/controller.php"
-        ]
+            "App\\": "App/",
+            "Needs\\": "vendor/Needs/"
+        }
     },
     "authors": [
         {

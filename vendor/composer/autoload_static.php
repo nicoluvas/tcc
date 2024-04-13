@@ -6,29 +6,32 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitbf59f872e09a5cc9d05d4ea950a9101d
 {
-    public static $files = array (
-        'afe71bbf04beba7733851518939ee4b4' => __DIR__ . '/../..' . '/app/helpers/constants.php',
-        '0e6c60efde8a83f1f2e0bce4bfbb1741' => __DIR__ . '/../..' . '/app/router/router.php',
-        'b2b8e9a9878ec3dc41f1f9a475b39009' => __DIR__ . '/../..' . '/app/core/controller.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
-        'a' => 
+        'N' => 
         array (
-            'app\\' => 4,
+            'Needs\\' => 6,
+        ),
+        'A' => 
+        array (
+            'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'app\\' => 
+        'Needs\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app',
+            0 => __DIR__ . '/..' . '/Needs',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/App',
         ),
     );
 
     public static $classMap = array (
+        'App\\Route' => __DIR__ . '/../..' . '/App/Route.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'app\\controllers\\Home' => __DIR__ . '/../..' . '/app/controllers/Home.php',
+        'Needs\\Init\\Bootstrap' => __DIR__ . '/..' . '/Needs/Init/Bootstrap.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

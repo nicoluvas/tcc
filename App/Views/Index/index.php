@@ -5,16 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bhaskara</title>
-  <script src="<?= JS . 'home/home.js' ?>" defer></script>
-  <link rel="stylesheet" href="<?= CSS . 'home/home.css' ?>" />
+  <script src="/assets/js/index/index.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 
-<body>
+<body id="home">
   <div class="pagina1">
   <header>
     <nav>
-      <img id="logo" src="<?= IMAGES . 'home/logo.png' ?>" class="shown logo">
-      <img id="logo-dark" src="<?= IMAGES . 'home/logo-dark.png' ?>" class="hidden logo">
+      <img id="logo" src="/assets/images/index/logo.png" class="shown logo">
+      <img id="logo-dark" src="/assets/images/index/logo-dark.png" class="hidden logo">
       <ul>
         <li>
           <a href="#">Quem Somos</a>
@@ -43,11 +43,11 @@
   </header>
   
   <div>
-    <img id="bg-banner" class="shown bg-banner" src="<?= IMAGES . 'home/mesh-gradient.png' ?>">
-    <img id="bg-banner-dark" class="hidden bg-banner" src="<?= IMAGES . 'home/mesh-gradient-dark.png' ?>">
+    <img id="bg-banner" class="shown bg-banner" src="/assets/images/index/mesh-gradient.png">
+    <img id="bg-banner-dark" class="hidden bg-banner" src="/assets/images/index/mesh-gradient-dark.png">
   </div>
-  <img class="shadow wein" src="<?= IMAGES . 'home/wein.png' ?>">
-  <img class="lampada" src="<?= IMAGES . 'home/lampada.png' ?>">
+  <img class="shadow wein" src="/assets/images/index/wein.png">
+  <img class="lampada" src="/assets/images/index/lampada.png">
 
   <div class="resolva">
     <h1>Resolva o seu <br> <span class="marked">futuro</span> com <br> <span class="highlight">Bhaskara</span>!</h1>
@@ -69,11 +69,11 @@
 
     </div>
   </div> -->
-</div>
-<div class="pagina2">
-  <div class="retangulo"></div>
-  <img class="estrelhinhas bgs" src="<?= IMAGES . 'home/estrelinhas.png' ?>">
-</div>
+  </div>
+  <div class="pagina2">
+    <div class="retangulo"></div>
+    <img class="estrelhinhas bgs" src="/assets/images/index/estrelinhas.png">
+  </div>
 
 </body>
 

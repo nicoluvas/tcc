@@ -1,0 +1,390 @@
+@import "global.css";
+
+html {
+  font-size: 16px;
+}
+
+body#home{
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: -moz-scrollbars-none;
+  /* overflow-x: hidden; */
+  background-color: var(--background);
+  height: 500vh;
+
+  .bgs {
+    user-select: none;
+    pointer-events: none;
+  }
+
+  * {
+    text-decoration: dashed;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: var(--text);
+    transition: opacity 2.3s ease-out;
+  }
+
+  .logo {
+    margin: 1rem 0 0 1rem;
+  }
+
+  .hidden {
+    opacity: 0;
+    display: none;
+  }
+
+  .shown {
+    display: block;
+    opacity: 1;
+  }
+
+  .highlight {
+    color: var(--primary);
+  }
+
+  .weight {
+    font-weight: 1000;
+    word-spacing: 2rem;
+    color: var(--primary);
+  }
+
+  .marked {
+    background-color: var(--secondary);
+    color: var(--background);
+    padding: 0 0.5rem;
+    font-weight: 500;
+  }
+
+  .pagina1 {
+    height: 100vh;
+  }
+
+  header {
+    user-select: none;
+    nav {
+      font-weight: 700;
+      display: flex;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 2rem;
+      justify-content: space-around;
+      align-items: center;
+      img {
+        height: 10rem;
+      }
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      a {
+        padding: 0 1.5rem;
+        text-transform: uppercase;
+      }
+    }
+    div {
+      height: 2.75rem;
+      svg {
+        position: absolute;
+      }
+      .svg-lua {
+        margin: 0.6rem 0.65rem;
+        fill: var(--secondary);
+      }
+      .svg-lua-bola {
+        fill: var(--text);
+      }
+    }
+  }
+
+  .btn-restrito {
+    background-color: var(--secondary);
+    border-radius: 1rem;
+    width: 10rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    a {
+      color: var(--text);
+      font-weight: 600;
+    }
+  }
+
+  .bg-banner {
+    z-index: -1;
+    position: absolute;
+    left: 100%;
+    transform: translateX(-100%);
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .resolva {
+    margin-left: 20vh;
+    
+    h1 {
+      font-size: 5rem;
+      z-index: 20;
+    }
+    h3 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-left: -2vh;
+    }
+  }
+
+  .boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 45rem;
+    margin: 7rem 0 0 10rem;
+    position: relative;
+
+    .box0,
+    .box1,
+    .box2 {
+      display: flex;
+      height: 12rem;
+      width: 10rem;
+      background-color: var(--secondary);
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1rem;
+      position: relative;
+      text-align: center;
+    }
+    .boxb {
+      position: absolute;
+      background-color: var(--primary);
+      width: 100%;
+      height: 2rem;
+      z-index: -1;
+      bottom: 4rem;
+    }
+  }
+  .desc {
+    padding: 2.5rem 1rem 1rem 1rem;
+    bottom: 4rem;
+    z-index: 10;
+  }
+  .wein {
+    position: absolute;
+    right: 0;
+    height: 90vh;
+    z-index: 1;
+    user-select: none;
+  }
+
+  .lampada{
+    position: absolute;
+    margin: -10rem 0 0 14rem;
+  }
+  .shadow {
+    -webkit-filter: drop-shadow(-2px 2px 2px var(--shadow));
+    filter: drop-shadow(-2px 2px 2px var(--shadow));
+  }
+
+  // tablet
+  @media screen and (min-width: 763px) and (max-width: 1200px) {
+    html {
+      font-size: 12px;
+    }
+  }
+
+  //celular
+  @media screen and (max-width: 763px) {
+    html {
+      font-size: 9px;
+    }
+  }
+
+  .pagina2 {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .retangulo {
+    position: inherit;
+    width: 47rem;
+    height: 100vh;
+    background: var(--primary);
+    left: 100%;
+  }
+}
+
+body#login {
+  background: linear-gradient(
+    26deg,
+    var(--primary),
+    var(--secondary),
+    var(--accent)
+  );
+  background-size: 400% 400%;
+  
+  -webkit-animation: movbg 27s ease infinite;
+  animation: movbg 27s ease infinite;
+  overflow: hidden;
+  
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  font-weight: 400;
+
+  .hyperlink {
+    cursor: pointer;
+  }
+  
+  .anta-regular {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--background);
+  }
+  
+  * {
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 0;
+    border: 0;
+  }
+  
+  .shadow {
+    -webkit-filter: drop-shadow(-5px 2px 3px var(--shadow));
+    filter: drop-shadow(-5px 2px 3px var(--shadow));
+  }
+  
+  .logo-cima {
+    color: var(--text);
+    position: absolute;
+    font-size: 5rem;
+    margin: 3rem;
+  }
+  
+  .bg-login {
+    position: absolute;
+    height: 100vh;
+  }
+  
+  .bg-balls {
+    z-index: 10;
+    margin-left: -20rem;
+    margin-top: -2rem;
+    position: absolute;
+    height: 50rem;
+    fill: var(--background);
+  }
+  
+  .bg-blob1 {
+    z-index: 10;
+    margin-top: -2rem;
+    margin-left: 22rem;
+    position: absolute;
+    width: 10rem;
+    height: 9rem;
+    fill: var(--primary);
+  }
+  
+  .column {
+    height: 100vh;
+    margin-left: 40%;
+    background-color: var(--background);
+    border-top-left-radius: 5rem;
+  }
+  
+  .form-login {
+    padding: 15%;
+    padding-top: 20% !important;
+    padding-bottom: 5% !important;
+  
+    h1 {
+      font-size: 5rem;
+      margin: 0;
+      background: -webkit-radial-gradient(var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  
+    .esqueceu {
+      width: 100%;
+      background: -webkit-linear-gradient(var(--accent), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  
+    input {
+      width: 100%;
+      margin: 0;
+      border-radius: 0.5rem;
+      height: 2rem;
+      background-color: var(--accent);
+      color: var(--text);
+      padding: 1rem;
+      height: 3rem;
+    }
+  
+    p {
+      margin: 0;
+      padding-top: 0.5rem;
+      color: var(--text);
+    }
+  
+    a {
+      display: block;
+  
+      padding: 5%;
+      text-align: center;
+    }
+  
+    button {
+      display: block;
+      width: 100%;
+      height: 3rem;
+      text-align: center;
+      border-radius: 0.5rem;
+      font-family: "Courier New", Courier, monospace;
+      background: linear-gradient(218deg, var(--secondary), var(--primary));
+    }
+  }
+  
+  .container-contato {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .contato {
+    border-radius: 5rem;
+    height: 5rem;
+    width: 5rem;
+    background-color: var(--secondary);
+  }
+  
+  .mesa-login {
+    position: absolute;
+    margin-top: 9rem;
+    margin-left: 5rem;
+    z-index: 1;
+  }
+  
+  .theme {
+    background-color: var(--text);
+    position: absolute;
+    height: 4rem;
+    margin-left: 42.5%;
+    border-radius: 100%;
+  
+    z-index: 999;
+  
+    &:hover {
+      cursor: pointer;
+      scale: 1.02;
+    }
+  }  
+}
