@@ -1,333 +1,301 @@
 @import "global.css";
- html {
-	 font-size: 16px;
+html {
+  font-size: 16px;
 }
- body#home {
-	 -ms-overflow-style: none;
-	 scrollbar-width: none;
-	 overflow: -moz-scrollbars-none;
-	/* overflow-x: hidden;
-	 */
-	 background-color: var(--background);
-	 height: 500vh;
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
 }
- body#home .bgs {
-	 user-select: none;
-	 pointer-events: none;
+
+body#home {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: -moz-scrollbars-none;
+  /* overflow-x: hidden; */
+  background-color: var(--background);
+  height: 500vh;
 }
- body#home * {
-	 text-decoration: dashed;
-	 padding: 0;
-	 margin: 0;
-	 box-sizing: border-box;
-	 font-family: "Poppins", sans-serif;
-	 color: var(--text);
-	 transition: opacity 2.3s ease-out;
+body#home .bgs {
+  user-select: none;
+  pointer-events: none;
 }
- body#home .logo {
-	 margin: 1rem 0 0 1rem;
+body#home * {
+  text-decoration: dashed;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  transition: opacity 2.3s ease-out;
 }
- body#home .hidden {
-	 opacity: 0;
-	 display: none;
+body#home .logo {
+  margin: 1rem 0 0 1rem;
 }
- body#home .shown {
-	 display: block;
-	 opacity: 1;
+body#home .hidden {
+  opacity: 0;
+  display: none;
 }
- body#home .highlight {
-	 color: var(--primary);
+body#home .shown {
+  display: block;
+  opacity: 1;
 }
- body#home .weight {
-	 font-weight: 1000;
-	 word-spacing: 2rem;
-	 color: var(--primary);
+body#home .highlight {
+  color: var(--primary);
 }
- body#home .marked {
-	 background-color: var(--secondary);
-	 color: var(--background);
-	 padding: 0 0.5rem;
-	 font-weight: 500;
+body#home .weight {
+  font-weight: 1000;
+  word-spacing: 2rem;
+  color: var(--primary);
 }
- body#home .pagina1 {
-	 height: 100vh;
+body#home .marked {
+  background-color: var(--secondary);
+  color: var(--background);
+  padding: 0 0.5rem;
+  font-weight: 500;
 }
- body#home header {
-	 user-select: none;
+body#home .pagina1 {
+  height: 100vh;
 }
- body#home header nav {
-	 font-weight: 700;
-	 display: flex;
-	 width: 100%;
-	 margin: 0 auto;
-	 padding: 0 2rem;
-	 justify-content: space-around;
-	 align-items: center;
+body#home header {
+  user-select: none;
 }
- body#home header nav img {
-	 height: 10rem;
+body#home header nav {
+  font-weight: 700;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  justify-content: space-around;
+  align-items: center;
 }
- body#home header ul {
-	 display: flex;
-	 list-style: none;
+body#home header nav img {
+  height: 10rem;
 }
- body#home header ul a {
-	 padding: 0 1.5rem;
-	 text-transform: uppercase;
+body#home header ul {
+  display: flex;
+  list-style: none;
 }
- body#home header div {
-	 height: 2.75rem;
+body#home header ul a {
+  padding: 0 1.5rem;
+  text-transform: uppercase;
 }
- body#home header div svg {
-	 position: absolute;
+body#home header div {
+  height: 2.75rem;
 }
- body#home header div .svg-lua {
-	 margin: 0.6rem 0.65rem;
-	 fill: var(--secondary);
+body#home header div svg {
+  position: absolute;
 }
- body#home header div .svg-lua-bola {
-	 fill: var(--text);
+body#home header div .svg-lua {
+  margin: 0.6rem 0.65rem;
+  fill: var(--secondary);
 }
- body#home .btn-restrito {
-	 background-color: var(--secondary);
-	 border-radius: 1rem;
-	 width: 10rem;
-	 height: 3rem;
-	 display: flex;
-	 justify-content: center;
-	 align-items: center;
-	 user-select: none;
+body#home header div .svg-lua-bola {
+  fill: var(--text);
 }
- body#home .btn-restrito a {
-	 color: var(--text);
-	 font-weight: 600;
+body#home .btn-restrito {
+  background-color: var(--secondary);
+  border-radius: 1rem;
+  width: 10rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
 }
- body#home .bg-banner {
-	 z-index: -1;
-	 position: absolute;
-	 left: 100%;
-	 transform: translateX(-100%);
-	 user-select: none;
-	 pointer-events: none;
+body#home .btn-restrito a {
+  color: var(--text);
+  font-weight: 600;
 }
- body#home .resolva {
-	 margin-left: 20vh;
+body#home .bg-banner {
+  z-index: -1;
+  position: absolute;
+  left: 100%;
+  transform: translateX(-100%);
+  user-select: none;
+  pointer-events: none;
 }
- body#home .resolva h1 {
-	 font-size: 5rem;
-	 z-index: 20;
+body#home .resolva {
+  margin-left: 20vh;
 }
- body#home .resolva h3 {
-	 font-size: 2rem;
-	 color: var(--primary);
-	 margin-left: -2vh;
+body#home .resolva h1 {
+  font-size: 5rem;
+  z-index: 20;
 }
- body#home .boxes {
-	 display: flex;
-	 flex-direction: row;
-	 justify-content: space-between;
-	 align-items: center;
-	 width: 45rem;
-	 margin: 7rem 0 0 10rem;
-	 position: relative;
+body#home .resolva h3 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-left: -2vh;
 }
- body#home .boxes .box0, body#home .boxes .box1, body#home .boxes .box2 {
-	 display: flex;
-	 height: 12rem;
-	 width: 10rem;
-	 background-color: var(--secondary);
-	 flex-direction: row;
-	 align-items: center;
-	 justify-content: center;
-	 border-radius: 1rem;
-	 position: relative;
-	 text-align: center;
+body#home .boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 45rem;
+  margin: 7rem 0 0 10rem;
+  position: relative;
 }
- body#home .boxes .boxb {
-	 position: absolute;
-	 background-color: var(--primary);
-	 width: 100%;
-	 height: 2rem;
-	 z-index: -1;
-	 bottom: 4rem;
+body#home .boxes .box0,
+body#home .boxes .box1,
+body#home .boxes .box2 {
+  display: flex;
+  height: 12rem;
+  width: 10rem;
+  background-color: var(--secondary);
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  position: relative;
+  text-align: center;
 }
- body#home .desc {
-	 padding: 2.5rem 1rem 1rem 1rem;
-	 bottom: 4rem;
-	 z-index: 10;
+body#home .boxes .boxb {
+  position: absolute;
+  background-color: var(--primary);
+  width: 100%;
+  height: 2rem;
+  z-index: -1;
+  bottom: 4rem;
 }
- body#home .wein {
-	 position: absolute;
-	 right: 0;
-	 height: 90vh;
-	 z-index: 1;
-	 user-select: none;
+body#home .desc {
+  padding: 2.5rem 1rem 1rem 1rem;
+  bottom: 4rem;
+  z-index: 10;
 }
- body#home .lampada {
-	 position: absolute;
-	 margin: -10rem 0 0 14rem;
+body#home .wein {
+  position: absolute;
+  right: 0;
+  height: 90vh;
+  z-index: 1;
+  user-select: none;
 }
- body#home .shadow {
-	 -webkit-filter: drop-shadow(-2px 2px 2px var(--shadow));
-	 filter: drop-shadow(-2px 2px 2px var(--shadow));
+body#home .lampada {
+  position: absolute;
+  margin: -10rem 0 0 14rem;
 }
- @media screen and (min-width: 763px) and (max-width: 1200px) {
-	 body#home html {
-		 font-size: 12px;
-	}
+body#home .shadow {
+  -webkit-filter: drop-shadow(-2px 2px 2px var(--shadow));
+  filter: drop-shadow(-2px 2px 2px var(--shadow));
 }
- @media screen and (max-width: 763px) {
-	 body#home html {
-		 font-size: 9px;
-	}
+@media screen and (min-width: 763px) and (max-width: 1200px) {
+  body#home html {
+    font-size: 12px;
+  }
 }
- body#home .pagina2 {
-	 height: 100vh;
-	 width: 100vw;
+@media screen and (max-width: 763px) {
+  body#home html {
+    font-size: 9px;
+  }
 }
- body#home .retangulo {
-	 position: inherit;
-	 width: 47rem;
-	 height: 100vh;
-	 background: var(--primary);
-	 left: 100%;
+body#home .pagina2 {
+  height: 100vh;
+  width: 100vw;
 }
- body#login {
-	 background: linear-gradient(26deg, var(--primary), var(--secondary), var(--accent));
-	 background-size: 400% 400%;
-	 -webkit-animation: movbg 27s ease infinite;
-	 animation: movbg 27s ease infinite;
-	 overflow: hidden;
-	 margin: 0;
-	 padding: 0;
-	 font-family: "Poppins";
-	 font-weight: 400;
+body#home .retangulo {
+  position: inherit;
+  width: 47rem;
+  height: 100vh;
+  background: var(--primary);
+  left: 100%;
 }
- body#login .hyperlink {
-	 cursor: pointer;
+
+body#login {
+  background-image: linear-gradient(26deg, var(--primary), var(--secondary), var(--accent));
+  min-height: 100vh;
+  background-size: 400% 400%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  -webkit-animation: movbg 27s ease infinite;
+  animation: movbg 27s ease infinite;
+  overflow: hidden;
+  transition: background-color 200ms ease;
 }
- body#login .anta-regular {
-	 font-family: "Anta", sans-serif;
-	 font-weight: 400;
-	 font-style: normal;
-	 color: var(--background);
+body#login h1 {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-size: 48px;
 }
- body#login * {
-	 box-sizing: border-box;
-	 text-decoration: none;
-	 padding: 0;
-	 border: 0;
+body#login > img {
+  z-index: 1;
+  width: calc(40vw + 120px);
+  margin-top: 100px;
 }
- body#login .shadow {
-	 -webkit-filter: drop-shadow(-5px 2px 3px var(--shadow));
-	 filter: drop-shadow(-5px 2px 3px var(--shadow));
+body#login button {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  height: 35px;
+  width: 35px;
+  background-color: var(--text);
+  border-radius: 50%;
+  cursor: pointer;
 }
- body#login .logo-cima {
-	 color: var(--text);
-	 position: absolute;
-	 font-size: 5rem;
-	 margin: 3rem;
+body#login button i {
+  color: var(--background);
 }
- body#login .bg-login {
-	 position: absolute;
-	 height: 100vh;
+body#login .form-container {
+  position: absolute;
+  left: calc(40% + 100px);
+  top: 0;
+  background-color: var(--background);
+  min-height: 100vh;
+  width: calc(60vw - 100px);
+  border-top-left-radius: 70px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
 }
- body#login .bg-balls {
-	 z-index: 10;
-	 margin-left: -20rem;
-	 margin-top: -2rem;
-	 position: absolute;
-	 height: 50rem;
-	 fill: var(--background);
+body#login .form-container form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 }
- body#login .bg-blob1 {
-	 z-index: 10;
-	 margin-top: -2rem;
-	 margin-left: 22rem;
-	 position: absolute;
-	 width: 10rem;
-	 height: 9rem;
-	 fill: var(--primary);
+body#login .form-container form h2 {
+  margin-bottom: 40px;
+  font-size: 2.6em;
+  text-align: center;
 }
- body#login .column {
-	 height: 100vh;
-	 margin-left: 40%;
-	 background-color: var(--background);
-	 border-top-left-radius: 5rem;
+body#login .form-container form input {
+  background-color: #fff;
+  color: var(--text);
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 4px;
 }
- body#login .form-login {
-	 padding: 15%;
-	 padding-top: 20% !important;
-	 padding-bottom: 5% !important;
+body#login .form-container form input:hover, body#login .form-container form input:focus {
+  background-color: #ddd;
+  transition: 200ms;
 }
- body#login .form-login h1 {
-	 font-size: 5rem;
-	 margin: 0;
-	 background: -webkit-radial-gradient(var(--primary), var(--secondary));
-	 -webkit-background-clip: text;
-	 -webkit-text-fill-color: transparent;
+body#login .form-container form input[type=submit] {
+  background-color: #68CBEB;
+  padding: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 24px;
 }
- body#login .form-login .esqueceu {
-	 width: 100%;
-	 background: -webkit-linear-gradient(var(--accent), var(--secondary));
-	 -webkit-background-clip: text;
-	 -webkit-text-fill-color: transparent;
+body#login .form-container form input[type=submit]:hover, body#login .form-container form input[type=submit]:focus {
+  background-color: #58aeca;
 }
- body#login .form-login input {
-	 width: 100%;
-	 margin: 0;
-	 border-radius: 0.5rem;
-	 height: 2rem;
-	 background-color: var(--accent);
-	 color: var(--text);
-	 padding: 1rem;
-	 height: 3rem;
+body#login div#bola-em-baixo {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: rgba(88, 174, 202, 0.3333333333);
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-50%, -50%);
 }
- body#login .form-login p {
-	 margin: 0;
-	 padding-top: 0.5rem;
-	 color: var(--text);
-}
- body#login .form-login a {
-	 display: block;
-	 padding: 5%;
-	 text-align: center;
-}
- body#login .form-login button {
-	 display: block;
-	 width: 100%;
-	 height: 3rem;
-	 text-align: center;
-	 border-radius: 0.5rem;
-	 font-family: "Courier New", Courier, monospace;
-	 background: linear-gradient(218deg, var(--secondary), var(--primary));
-}
- body#login .container-contato {
-	 display: flex;
-	 justify-content: center;
-}
- body#login .contato {
-	 border-radius: 5rem;
-	 height: 5rem;
-	 width: 5rem;
-	 background-color: var(--secondary);
-}
- body#login .mesa-login {
-	 position: absolute;
-	 margin-top: 9rem;
-	 margin-left: 5rem;
-	 z-index: 1;
-}
- body#login .theme {
-	 background-color: var(--text);
-	 position: absolute;
-	 height: 4rem;
-	 margin-left: 42.5%;
-	 border-radius: 100%;
-	 z-index: 999;
-}
- body#login .theme:hover {
-	 cursor: pointer;
-	 scale: 1.02;
-}
- 
+
+/*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="main" lang="pt-br">
+<html lang="pt-br">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
@@ -9,39 +9,24 @@
     <meta name="color-scheme" content="dark light" />
 
     <title>Login - eBhaskara</title>
-    <link rel="icon" href="assets/images/login/light.png" />
+    <link rel="icon" href="assets/images/icon.svg" />
   </head>
 
   <body class="" id="login">
-    <!-- <img class="bg-login" src="..\src\images\blurry-gradient-haikei.svg"> -->
-    <button class="theme">
-      <img class="theme" src="assets/images/login/dark.png" />
-    </button>
-
-    <p class="logo-cima anta-regular">eBhaskara</p>
-    <img class="mesa-login shadow" src="assets/images/login/mesa.svg" />
-
-    <div class="column shadow">
-      <form class="form-login">
-        <h1>Boas-vindas!</h1>
-        <p>E-mail / Usuário / CGM</p>
-        <input type="text" placeholder="exemplo@aluno.g12.br" />
-        <br />
-        <br />
-        <p>Senha</p>
-        <input type="password" placeholder="Digite sua senha" />
-        <br />
-        <a href="recuperacao.html">
-          <p class="esqueceu">Esqueceu a senha?</p>
-        </a>
-        <br />
-        <button class="shadow hyperlink" type="submit">Entrar</button>
+    <h1 class="anta-regualr">eBhasraka</h1>
+    <img src="assets/images/login/mesa.svg" alt="mesa">
+    <section class="form-container">
+      <button><i class="fa-solid fa-moon fa-2xl"></i></button>
+      <form action="/login/auth" method="post">
+        <h2>Seja bem-vindo(a)!</h2>
+        <label for="usuario">Nome de Usuário:</label>
+        <input type="text" name="usuario" id="usuario" required>
+        <label for="codigo-acesso">Código de acesso:</label>
+        <input type="password" name="codigo-acesso" id="codigo-acesso" required>
+        <p>Caso tenha esquecido seu código de acesso, contate a coordenação!</p>
+        <input type="submit" value="Entrar" name="entrar">
       </form>
-      <div class="container-contato hyperlink">
-        <a href="suporte.html">
-          <img class="contato" src="assets/images/login/contato.png" alt="contato" />
-        </a>
-      </div>
-    </div>
+    </section>
+    <div id="bola-em-baixo"></div>
   </body>
 </html>
