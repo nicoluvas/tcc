@@ -226,10 +226,23 @@ body#login h1 {
 }
 body#login > img {
   z-index: 1;
-  width: calc(40vw + 120px);
+  flex: 4;
+  width: 100px;
   margin-top: 100px;
 }
-body#login button {
+body#login .form-container {
+  flex: 6;
+  position: relative;
+  background-color: var(--background);
+  min-height: 100vh;
+  border-top-left-radius: 70px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+}
+body#login .form-container button {
   position: absolute;
   top: 50px;
   left: 50px;
@@ -239,22 +252,8 @@ body#login button {
   border-radius: 50%;
   cursor: pointer;
 }
-body#login button i {
+body#login .form-container button i {
   color: var(--background);
-}
-body#login .form-container {
-  position: absolute;
-  left: calc(40% + 100px);
-  top: 0;
-  background-color: var(--background);
-  min-height: 100vh;
-  width: calc(60vw - 100px);
-  border-top-left-radius: 70px;
-  padding: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text);
 }
 body#login .form-container form {
   display: flex;
