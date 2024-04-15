@@ -17,6 +17,12 @@ class Route extends Bootstrap {
             'action' => 'index'
         ];
 
+        $routes['loginAuth'] = [
+            'route' => '/login/auth',
+            'controller' => 'Login\\LoginController',
+            'action' => 'auth'
+        ];
+
         $this->setRoutes($routes);
     }
 }
