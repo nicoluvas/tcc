@@ -262,16 +262,16 @@ body#login {
 
   & > img {
     z-index: 1;
-    flex: 4;
-    width: 100px;
+    transform: translateX(1vw);
+    width: calc(40vw + 100px);
     margin-top: 100px;
   }
 
   .form-container {
-    flex: 6;
     position: relative;
 
     background-color: var(--background);
+    width: 60vw;
     min-height: 100vh;
     border-top-left-radius: 70px;
 
@@ -303,6 +303,8 @@ body#login {
       display: flex;
       flex-direction: column;
       row-gap: 10px;
+
+      width: 60%;
 
       h2 {
         margin-bottom: 40px;
@@ -338,18 +340,54 @@ body#login {
           background-color: #58aeca;
         }
       }
+      
+      p {
+        font-size: 14px;
+        text-align: center;
+      }
     }
   }
 
   div#bola-em-baixo {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border-top-left-radius: 100%;
     background-color: #58aeca55;
 
     position: absolute;
     top: 100%;
     left: 100%;
-    transform: translate(-50%, -50%);
+    transform: translate(-100%, -100%);
+  }
+  // tablet
+  @media screen and (max-width: 1200px) {
+      overflow: hidden;
+      
+      &>img {
+        display: none;
+      }
+      
+      & > h1 {
+        z-index: 1;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--text);
+      }
+      
+      .form-container {
+        font-size: clamp(14px, 2vw, 22px);
+        width: 100vw;
+        border-radius: 0;
+
+        button {
+          top: 10px;
+          left: 10px;
+        }
+      }
+
+      div#bola-em-baixo {
+        display: none;
+      }
   }
 }

@@ -23,7 +23,7 @@
         <input type="text" name="usuario" id="usuario" required>
         <label for="codigo-acesso">Código de acesso:</label>
         <input type="password" name="codigo-acesso" id="codigo-acesso" required>
-        <p>Caso tenha esquecido seu código de acesso, contate a coordenação!</p>
+        <p>Perdeu o código de acesso? Contate a coordenação!</p>
         <input type="submit" value="Entrar" name="entrar">
       </form>
     </section>
