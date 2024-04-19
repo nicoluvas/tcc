@@ -272,7 +272,7 @@ body#login {
 
     background-color: var(--background);
     width: 60vw;
-    min-height: 100vh;
+    height: 100vh;
     border-top-left-radius: 70px;
 
     padding: 40px;
@@ -369,16 +369,24 @@ body#login {
       
       & > h1 {
         z-index: 1;
-        top: 50px;
+        top: 10px;
         left: 50%;
         transform: translateX(-50%);
         color: var(--text);
       }
       
       .form-container {
-        font-size: clamp(14px, 2vw, 22px);
+        font-size: clamp(14px, 2vw, 20px);
         width: 100vw;
         border-radius: 0;
+
+        form {
+          row-gap: 3px;
+          
+          h2 {
+            margin-bottom: 10px;
+          }
+        }
 
         button {
           top: 10px;
@@ -389,5 +397,11 @@ body#login {
       div#bola-em-baixo {
         display: none;
       }
+  }
+
+  @media screen and (max-height: 420px) {
+    & > h1{
+      display: none;
+    }
   }
 }

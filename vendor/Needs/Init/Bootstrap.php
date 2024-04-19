@@ -9,7 +9,13 @@ abstract class Bootstrap{
 
     public function __construct(){
         $this->Routes();
-        $this->run($this->getUri());
+        $uri = $this->getUri();
+        if(str_ends_with($uri, '/')) {
+            $uri = rtrim($uri, '/');
+            header("Location: $uri");
+            die();
+        }
+        $this->run($uri);
     }
 
     protected function setRoutes($routes){
