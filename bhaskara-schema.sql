@@ -53,11 +53,11 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_aluno` (
   `dt_matricula_inicial` DATETIME NOT NULL DEFAULT current_timestamp,
   `dt_atualizacao` DATETIME NOT NULL DEFAULT current_timestamp on update current_timestamp,
   PRIMARY KEY (`cd_aluno`),
-  INDEX `fk_tb_aluno_tb_tipo_sanguineo_idx` (`id_tipo_sanguineo` ASC) VISIBLE,
-  INDEX `fk_tb_aluno_tb_sexo1_idx` (`id_sexo` ASC) VISIBLE,
-  INDEX `fk_tb_aluno_tb_pcd1_idx` (`id_pcd` ASC) VISIBLE,
-  INDEX `fk_tb_aluno_tb_endereco1_idx` (`id_endereco` ASC) VISIBLE,
-  INDEX `fk_tb_aluno_tb_telefone1_idx` (`id_telefone` ASC) VISIBLE,
+  INDEX `fk_tb_aluno_tb_tipo_sanguineo_idx` (`id_tipo_sanguineo` ASC) ,
+  INDEX `fk_tb_aluno_tb_sexo1_idx` (`id_sexo` ASC) ,
+  INDEX `fk_tb_aluno_tb_pcd1_idx` (`id_pcd` ASC) ,
+  INDEX `fk_tb_aluno_tb_endereco1_idx` (`id_endereco` ASC) ,
+  INDEX `fk_tb_aluno_tb_telefone1_idx` (`id_telefone` ASC) ,
   CONSTRAINT `fk_tb_aluno_tb_tipo_sanguineo`
     FOREIGN KEY (`id_tipo_sanguineo`)
     REFERENCES `db_bhaskara`.`tb_tipo_sanguineo` (`cd_tipo_sanguineo`)
@@ -95,8 +95,8 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_aluno_responsavel` (
   `id_aluno` INT NOT NULL,
   `id_responsavel` INT NOT NULL,
   PRIMARY KEY (`id_aluno`, `id_responsavel`),
-  INDEX `fk_tb_aluno_has_tb_responsavel_tb_responsavel1_idx` (`id_responsavel` ASC) VISIBLE,
-  INDEX `fk_tb_aluno_has_tb_responsavel_tb_aluno1_idx` (`id_aluno` ASC) VISIBLE,
+  INDEX `fk_tb_aluno_has_tb_responsavel_tb_responsavel1_idx` (`id_responsavel` ASC) ,
+  INDEX `fk_tb_aluno_has_tb_responsavel_tb_aluno1_idx` (`id_aluno` ASC) ,
   CONSTRAINT `fk_tb_aluno_has_tb_responsavel_tb_aluno1`
     FOREIGN KEY (`id_aluno`)
     REFERENCES `db_bhaskara`.`tb_aluno` (`cd_aluno`)
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_aula` (
   `id_professor` INT NOT NULL,
   `dt_aula` DATETIME DEFAULT (current_timestamp),
   PRIMARY KEY (`cd_aula`),
-  INDEX `fk_tb_aula_tb_turma_materia_professor1_idx` (`id_turma` ASC, `id_materia` ASC, `id_professor` ASC) VISIBLE,
+  INDEX `fk_tb_aula_tb_turma_materia_professor1_idx` (`id_turma` ASC, `id_materia` ASC, `id_professor` ASC) ,
   CONSTRAINT `fk_tb_aula_tb_turma_materia_professor1`
     FOREIGN KEY (`id_turma` , `id_materia` , `id_professor`)
     REFERENCES `db_bhaskara`.`tb_turma_materia_professor` (`id_turma` , `id_materia` , `id_professor`)
@@ -159,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_avaliacao` (
   `id_materia` INT NOT NULL,
   `id_professor` INT NOT NULL,
   PRIMARY KEY (`cd_avaliacacao`),
-  INDEX `fk_tb_avaliacao_tb_turma_materia_professor1_idx` (`id_turma` ASC, `id_materia` ASC, `id_professor` ASC) VISIBLE,
+  INDEX `fk_tb_avaliacao_tb_turma_materia_professor1_idx` (`id_turma` ASC, `id_materia` ASC, `id_professor` ASC) ,
   CONSTRAINT `fk_tb_avaliacao_tb_turma_materia_professor1`
     FOREIGN KEY (`id_turma` , `id_materia` , `id_professor`)
     REFERENCES `db_bhaskara`.`tb_turma_materia_professor` (`id_turma` , `id_materia` , `id_professor`)
@@ -195,8 +195,8 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_falta` (
   `id_aula` INT NOT NULL,
   `dt_falta` DATETIME NOT NULL DEFAULT current_timestamp,
   PRIMARY KEY (`cd_falta`),
-  INDEX `fk_tb_falta_tb_aula1_idx` (`id_aula` ASC) VISIBLE,
-  INDEX `fk_tb_falta_tb_matricula1_idx` (`id_matricula` ASC) VISIBLE,
+  INDEX `fk_tb_falta_tb_aula1_idx` (`id_aula` ASC) ,
+  INDEX `fk_tb_falta_tb_matricula1_idx` (`id_matricula` ASC) ,
   CONSTRAINT `fk_tb_falta_tb_aula1`
     FOREIGN KEY (`id_aula`)
     REFERENCES `db_bhaskara`.`tb_aula` (`cd_aula`)
@@ -234,9 +234,9 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_matricula` (
   `dt_matricula` DATETIME NOT NULL DEFAULT current_timestamp,
   `id_ano_letivo` INT NOT NULL,
   PRIMARY KEY (`cd_matricula`),
-  INDEX `fk_tb_matricula_tb_aluno1_idx` (`id_aluno` ASC) VISIBLE,
-  INDEX `fk_tb_matricula_tb_serie1_idx` (`id_serie` ASC) VISIBLE,
-  INDEX `fk_tb_matricula_tb_ano_letivo1_idx` (`id_ano_letivo` ASC) VISIBLE,
+  INDEX `fk_tb_matricula_tb_aluno1_idx` (`id_aluno` ASC) ,
+  INDEX `fk_tb_matricula_tb_serie1_idx` (`id_serie` ASC) ,
+  INDEX `fk_tb_matricula_tb_ano_letivo1_idx` (`id_ano_letivo` ASC) ,
   CONSTRAINT `fk_tb_matricula_tb_aluno1`
     FOREIGN KEY (`id_aluno`)
     REFERENCES `db_bhaskara`.`tb_aluno` (`cd_aluno`)
@@ -266,8 +266,8 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_nota` (
   `id_avaliacacao` INT NOT NULL,
   `id_matricula` INT NOT NULL,
   PRIMARY KEY (`cd_nota`),
-  INDEX `fk_tb_nota_tb_avaliacao1_idx` (`id_avaliacacao` ASC) VISIBLE,
-  INDEX `fk_tb_nota_tb_matricula1_idx` (`id_matricula` ASC) VISIBLE,
+  INDEX `fk_tb_nota_tb_avaliacao1_idx` (`id_avaliacacao` ASC) ,
+  INDEX `fk_tb_nota_tb_matricula1_idx` (`id_matricula` ASC) ,
   CONSTRAINT `fk_tb_nota_tb_avaliacao1`
     FOREIGN KEY (`id_avaliacacao`)
     REFERENCES `db_bhaskara`.`tb_avaliacao` (`cd_avaliacacao`)
@@ -307,7 +307,7 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_professor` (
   `nm_foto_perfil` VARCHAR(255) NULL DEFAULT 'null',
   `id_tipo_sanguineo` INT NOT NULL,
   `id_sexo` INT NOT NULL,
-  `tb_pcd_cd_pcd` INT NOT NULL,
+  `id_pcd` INT NOT NULL,
   `id_endereco` INT NOT NULL,
   `id_telefone` INT NOT NULL,
   `nm_usuario` VARCHAR(30) NOT NULL,
@@ -315,11 +315,11 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_professor` (
   `dt_cadastro` DATETIME NOT NULL DEFAULT current_timestamp,
   `dt_atualizacao` DATETIME NOT NULL DEFAULT current_timestamp on update current_timestamp,
   PRIMARY KEY (`cd_professor`),
-  INDEX `fk_tb_professor_tb_endereco1_idx` (`id_endereco` ASC) VISIBLE,
-  INDEX `fk_tb_professor_tb_tipo_sanguineo1_idx` (`id_tipo_sanguineo` ASC) VISIBLE,
-  INDEX `fk_tb_professor_tb_sexo1_idx` (`id_sexo` ASC) VISIBLE,
-  INDEX `fk_tb_professor_tb_pcd1_idx` (`tb_pcd_cd_pcd` ASC) VISIBLE,
-  INDEX `fk_tb_professor_tb_telefone1_idx` (`id_telefone` ASC) VISIBLE,
+  INDEX `fk_tb_professor_tb_endereco1_idx` (`id_endereco` ASC) ,
+  INDEX `fk_tb_professor_tb_tipo_sanguineo1_idx` (`id_tipo_sanguineo` ASC) ,
+  INDEX `fk_tb_professor_tb_sexo1_idx` (`id_sexo` ASC) ,
+  INDEX `fk_tb_professor_tb_pcd1_idx` (`id_pcd` ASC) ,
+  INDEX `fk_tb_professor_tb_telefone1_idx` (`id_telefone` ASC) ,
   CONSTRAINT `fk_tb_professor_tb_endereco1`
     FOREIGN KEY (`id_endereco`)
     REFERENCES `db_bhaskara`.`tb_endereco` (`cd_endereco`)
@@ -336,7 +336,7 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_professor` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_professor_tb_pcd1`
-    FOREIGN KEY (`tb_pcd_cd_pcd`)
+    FOREIGN KEY (`id_pcd`)
     REFERENCES `db_bhaskara`.`tb_pcd` (`cd_pcd`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
@@ -421,7 +421,7 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_trimeste` (
   `nm_trimeste` VARCHAR(50) NOT NULL,
   `id_ano_letivo` INT NOT NULL,
   PRIMARY KEY (`cd_trimeste`),
-  INDEX `fk_tb_trimeste_tb_ano_letivo1_idx` (`id_ano_letivo` ASC) VISIBLE,
+  INDEX `fk_tb_trimeste_tb_ano_letivo1_idx` (`id_ano_letivo` ASC) ,
   CONSTRAINT `fk_tb_trimeste_tb_ano_letivo1`
     FOREIGN KEY (`id_ano_letivo`)
     REFERENCES `db_bhaskara`.`tb_ano_letivo` (`cd_ano_letivo`)
@@ -440,7 +440,7 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_turma` (
   `nm_turma` VARCHAR(45) NOT NULL,
   `id_serie` INT NOT NULL,
   PRIMARY KEY (`cd_turma`),
-  INDEX `fk_tb_turma_tb_serie1_idx` (`id_serie` ASC) VISIBLE,
+  INDEX `fk_tb_turma_tb_serie1_idx` (`id_serie` ASC) ,
   CONSTRAINT `fk_tb_turma_tb_serie1`
     FOREIGN KEY (`id_serie`)
     REFERENCES `db_bhaskara`.`tb_serie` (`cd_serie`)
@@ -459,9 +459,9 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_turma_materia_professor` (
   `id_materia` INT NOT NULL,
   `id_professor` INT NOT NULL,
   PRIMARY KEY (`id_turma`, `id_materia`, `id_professor`),
-  INDEX `fk_tb_turma_has_tb_materia_tb_materia1_idx` (`id_materia` ASC) VISIBLE,
-  INDEX `fk_tb_turma_has_tb_materia_tb_turma1_idx` (`id_turma` ASC) VISIBLE,
-  INDEX `fk_tb_turma_has_tb_materia_tb_professor1_idx` (`id_professor` ASC) VISIBLE,
+  INDEX `fk_tb_turma_has_tb_materia_tb_materia1_idx` (`id_materia` ASC) ,
+  INDEX `fk_tb_turma_has_tb_materia_tb_turma1_idx` (`id_turma` ASC) ,
+  INDEX `fk_tb_turma_has_tb_materia_tb_professor1_idx` (`id_professor` ASC) ,
   CONSTRAINT `fk_tb_turma_has_tb_materia_tb_turma1`
     FOREIGN KEY (`id_turma`)
     REFERENCES `db_bhaskara`.`tb_turma` (`cd_turma`)
