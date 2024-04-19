@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use PDO;
 
 abstract class Connection {   
     public static function connect(){

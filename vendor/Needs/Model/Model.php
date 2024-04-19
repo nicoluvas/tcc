@@ -1,11 +1,13 @@
 <?php
 
 namespace Needs\Model;
+use App\Connection;
 
 abstract class Model {
-    private $db;
+    protected $db;
 
-    public function __contruct($db){
+    public function __construct(){
+        $db = Connection::connect();
         $this->db = $db;
     }
 
