@@ -24,6 +24,14 @@
         <label for="codigo-acesso">Código de acesso:</label>
         <input type="password" name="codigo-acesso" id="codigo-acesso" required>
         <p>Perdeu o código de acesso? Contate a coordenação!</p>
+        <p style="color: #e45">
+          <?php
+            if(isset($_SESSION['msg'])){
+              echo $_SESSION['msg'];
+              unset($_SESSION['msg']);
+            }
+          ?>
+        </p>
         <input type="submit" value="Entrar" name="entrar">
       </form>
     </section>
