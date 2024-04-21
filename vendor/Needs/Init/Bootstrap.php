@@ -10,7 +10,7 @@ abstract class Bootstrap{
     public function __construct(){
         $this->Routes();
         $uri = $this->getUri();
-        if(str_ends_with($uri, '/')) {
+        if(str_ends_with($uri, '/') && $uri != '/') {
             $uri = rtrim($uri, '/');
             header("Location: $uri");
             die();
