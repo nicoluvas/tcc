@@ -1,38 +1,38 @@
 <?php
 
 namespace App;
-use Needs\Init\Bootstrap;
 
-class Route extends Bootstrap {
-    protected function Routes(){
+abstract class Router {
+    protected function declareRoutes(){
 
         // Página principal
         $routes['index'] = [
             'route' => '/',
             'controller' => 'Index\\IndexController',
-            'action' => 'index'
+            'method' => 'index'
         ];
 
-        // Páginas de login
+        // Página de login
         $routes['login'] = [
             'route' => '/login',
             'controller' => 'Login\\LoginController',
-            'action' => 'index'
+            'method' => 'index'
         ];
 
+        // Autentificar login
         $routes['loginAuth'] = [
             'route' => '/login/auth',
             'controller' => 'Login\\LoginController',
-            'action' => 'auth'
+            'method' => 'auth'
         ];
 
         // Páginas de administração
         $routes['AdminHome'] = [
             'route' => '/admin/home',
             'controller' => 'Admin\\AdminController',
-            'action' => 'index'
+            'method' => 'home'
         ];
 
-        $this->setRoutes($routes);
+        $this->routes = $routes;
     }
 }

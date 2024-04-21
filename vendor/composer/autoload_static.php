@@ -29,9 +29,16 @@ class ComposerStaticInitbf59f872e09a5cc9d05d4ea950a9101d
     );
 
     public static $classMap = array (
-        'App\\Route' => __DIR__ . '/../..' . '/App/Route.php',
+        'App\\Bootstrap' => __DIR__ . '/../..' . '/App/Bootstrap.php',
+        'App\\Connection' => __DIR__ . '/../..' . '/App/Connection.php',
+        'App\\Controllers\\Admin\\AdminController' => __DIR__ . '/../..' . '/App/Controllers/Admin/AdminController.php',
+        'App\\Controllers\\Index\\IndexController' => __DIR__ . '/../..' . '/App/Controllers/Index/IndexController.php',
+        'App\\Controllers\\Login\\LoginController' => __DIR__ . '/../..' . '/App/Controllers/Login/LoginController.php',
+        'App\\Models\\Login' => __DIR__ . '/../..' . '/App/Models/Login.php',
+        'App\\Router' => __DIR__ . '/../..' . '/App/Router.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'Needs\\Init\\Bootstrap' => __DIR__ . '/..' . '/Needs/Init/Bootstrap.php',
+        'Needs\\Controller\\Controller' => __DIR__ . '/..' . '/Needs/Controller/Controller.php',
+        'Needs\\Model\\Model' => __DIR__ . '/..' . '/Needs/Model/Model.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -25,11 +25,7 @@ abstract class Controller {
         $this->loadView();
     }
     
-    protected function loadView(){
-        $class = explode('\\', get_class($this));
-        $control =  preg_split('/(?=[A-Z])/', $class[2]);
-        $directory = $this->view->directory != '' ? $this->view->directory : ucfirst($control[1]);
-    
-        require_once '../App/Views/' . $directory . '/' . $this->view->page . '.php';
+    protected function loadView(){  
+        require_once '../App/Views/' . $this->view->directory . '/' . $this->view->page . '.php';
     }
 }
