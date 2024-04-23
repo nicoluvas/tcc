@@ -21,8 +21,6 @@ body#home {
     flex-direction: column;
   }
 
-
-
   header {
     height: 100px;
     display: flex;
@@ -112,6 +110,16 @@ body#home {
 
   .pagina2 {
     height: calc(100vh - 100px);
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: row;
+    #esquerda {
+      background-color: var(--accent);
+      width: 40%; // quando tiver as imagens certas, venho arrumar (essa é parte visível da imagem de fundo)
+    }
+    #direita {
+      width: 60%; // quando tiver as imagens certas, venho arrumar
+    }
   }
 }
 

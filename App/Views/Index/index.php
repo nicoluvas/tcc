@@ -9,19 +9,19 @@
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 
-<body class="" id="home">
+<body class="lexend" id="home">
   <header class="cabecalho">
     <img class="logo" src="assets\images\index\logob.png">
     <nav>
-      <a class="quem">Quem somos</a>
-      <a class="metodo">Método de Ensino</a>
-      <a class="contato">Fale Conosco</a>
+      <a class="quem point">Quem somos</a>
+      <a class="metodo point">Método de Ensino</a>
+      <a class="contato point">Fale Conosco</a>
     </nav>
     <div>
-      <button class="tema" onclick="toggleMode()">
-        <i class="fa-solid fa-moon fa-2xl"></i>
+      <button class="tema point" onclick="toggleMode()">
+        <i class="fa-solid fa-moon fa-2xl "></i>
       </button>
-      <button class="restrito">Área Restrita</button>
+      <button class="restrito point">Área Restrita</button>
     </div>
   </header>
   <main class="">
@@ -43,7 +43,12 @@
       </div>
     </section>
     <section class="pagina2">
-      
+      <div id="esquerda">
+        a
+      </div>
+      <div id="direita">
+        direita
+      </div>
     </section>
   </main>
 </body>

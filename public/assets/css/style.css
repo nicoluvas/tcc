@@ -89,6 +89,16 @@ body#home .pagina1 .letreiro p {
 }
 body#home .pagina2 {
   height: calc(100vh - 100px);
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: row;
+}
+body#home .pagina2 #esquerda {
+  background-color: var(--accent);
+  width: 40%;
+}
+body#home .pagina2 #direita {
+  width: 60%;
 }
 
 body#login {

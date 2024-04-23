@@ -9,6 +9,8 @@ button.addEventListener("click", () => {
   toggleMode();
 });
 function toggleMode() {
+  document.body.classList.toggle("dark-mode");
+
   banner.classList.toggle("hidden");
   banner.classList.toggle("shown");
   bannerDark.classList.toggle("hidden");
