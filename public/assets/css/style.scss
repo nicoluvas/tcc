@@ -14,18 +14,27 @@ body {
 
 body#home {
   background-color: var(--background);
-  max-width: 1200px;
+  // max-width: 1200px;
+  max-width: 98vw;
   margin: auto;
+  #meshbg {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    height: 100vh;
+  }
   main {
     display: flex;
     flex-direction: column;
   }
 
   header {
+    padding: 0 30px 0 30px;
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+
+    border-bottom: 1px solid var(--shadow);
 
     .logo {
     }
@@ -37,6 +46,7 @@ body#home {
 
     nav {
       font-size: 16px;
+      font-weight: 600;
       width: 100%;
       display: flex;
       justify-content: center;
@@ -49,7 +59,8 @@ body#home {
       width: 50px;
       border: none;
       border-radius: 50%;
-      background-color: var(--secondary);
+      background-color: var(--accent);
+      color: var(--background);
     }
 
     button + button {
@@ -61,15 +72,16 @@ body#home {
       font-size: 14px;
       border-radius: 7px;
       width: 150px;
+      letter-spacing: 1px;
     }
   }
 
   .pagina1 {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 150px);
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .esquerdo {
       display: flex;
@@ -103,16 +115,21 @@ body#home {
 
     .letreiro {
       p {
+        font-weight: 700;
         font-size: 64px;
       }
     }
   }
 
   .pagina2 {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 150px);
     background-color: var(--primary);
     display: flex;
     flex-direction: row;
+    #pessoa2 {
+      display: none;
+    }
+
     #esquerda {
       background-color: var(--accent);
       width: 40%; // quando tiver as imagens certas, venho arrumar (essa é parte visível da imagem de fundo)
@@ -120,6 +137,11 @@ body#home {
     #direita {
       width: 60%; // quando tiver as imagens certas, venho arrumar
     }
+  }
+
+  .pagina3 {
+    height: calc(100vh - 150px);
+    background-color: var(--secondary);
   }
 }
 

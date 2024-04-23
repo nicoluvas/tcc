@@ -13,18 +13,25 @@ body {
 
 body#home {
   background-color: var(--background);
-  max-width: 1200px;
+  max-width: 98vw;
   margin: auto;
+}
+body#home #meshbg {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  height: 100vh;
 }
 body#home main {
   display: flex;
   flex-direction: column;
 }
 body#home header {
+  padding: 0 30px 0 30px;
   height: 100px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  border-bottom: 1px solid var(--shadow);
 }
 body#home header div {
   display: flex;
@@ -32,6 +39,7 @@ body#home header div {
 }
 body#home header nav {
   font-size: 16px;
+  font-weight: 600;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -43,7 +51,8 @@ body#home header button {
   width: 50px;
   border: none;
   border-radius: 50%;
-  background-color: var(--secondary);
+  background-color: var(--accent);
+  color: var(--background);
 }
 body#home header button + button {
   margin-left: 20px;
@@ -53,12 +62,13 @@ body#home header .restrito {
   font-size: 14px;
   border-radius: 7px;
   width: 150px;
+  letter-spacing: 1px;
 }
 body#home .pagina1 {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 150px);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 body#home .pagina1 .esquerdo {
   display: flex;
@@ -85,13 +95,17 @@ body#home .pagina1 .linha#linha2 {
   width: 270px;
 }
 body#home .pagina1 .letreiro p {
+  font-weight: 700;
   font-size: 64px;
 }
 body#home .pagina2 {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 150px);
   background-color: var(--primary);
   display: flex;
   flex-direction: row;
+}
+body#home .pagina2 #pessoa2 {
+  display: none;
 }
 body#home .pagina2 #esquerda {
   background-color: var(--accent);
@@ -99,6 +113,10 @@ body#home .pagina2 #esquerda {
 }
 body#home .pagina2 #direita {
   width: 60%;
+}
+body#home .pagina3 {
+  height: calc(100vh - 150px);
+  background-color: var(--secondary);
 }
 
 body#login {

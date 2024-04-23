@@ -1,7 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+  <!-- Gsap -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+      gsap.from(".pessoa#a", {
+        delay: 0.3,
+        opacity: 0,
+        y: 10,
+        duration: .5,
+        ease: "power1.inOut",
+      });
+      gsap.from(".letreiro", {
+        opacity: 0,
+        y: 10,
+        duration: .5,
+        ease: "power1.inOut",
+      });
+    });
+  </script>
+  
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bhaskara</title>
@@ -10,6 +31,7 @@
 </head>
 
 <body class="lexend" id="home">
+  <img id="meshbg" src="assets\images\index\mesh-gradient.png">
   <header class="cabecalho">
     <img class="logo" src="assets\images\index\logob.png">
     <nav>
@@ -25,6 +47,7 @@
     </div>
   </header>
   <main class="">
+    <!-- SEÇÃO 1 -->
     <section class="pagina1">
       <div class="esquerdo">
         <div class="letreiro">
@@ -42,13 +65,21 @@
         <img src="" alt="">
       </div>
     </section>
+    <!-- SEÇÃO 2 -->
     <section class="pagina2">
+      <div id="pessoa2">
+        <img src="assets\images\index\taylorswift.png" alt="wein">
+      </div>
       <div id="esquerda">
         a
       </div>
       <div id="direita">
         direita
       </div>
+    </section>
+    <!-- SEÇÃO 3 -->
+    <section class="pagina3">
+
     </section>
   </main>
 </body>
