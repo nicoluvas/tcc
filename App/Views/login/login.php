@@ -24,6 +24,7 @@
 
     <title>Login - eBhaskara</title>
     <link rel="icon" href="assets/images/icon.svg" />
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
 
   <body class="" id="login">

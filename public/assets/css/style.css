@@ -1,7 +1,10 @@
 @import url("global.css");
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
+  border: none;
+  outline: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -80,6 +83,141 @@ body#home .pagina1 .letreiro {
 }
 body#home .pagina1 .letreiro p {
   font-size: 64px;
+}
+body#login {
+  background-image: linear-gradient(26deg, var(--primary), var(--secondary), var(--accent));
+  min-height: 100vh;
+  background-size: 400% 400%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  font-weight: 400;
+  display: flex;
+  -webkit-animation: movbg 27s ease infinite;
+  animation: movbg 27s ease infinite;
+  overflow: hidden;
+  transition: background-color 200ms ease;
+}
+body#login h1 {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-size: 48px;
+}
+body#login > img {
+  z-index: 1;
+  transform: translateX(1vw);
+  width: calc(40vw + 100px);
+  margin-top: 100px;
+}
+body#login .form-container {
+  position: relative;
+  background-color: var(--background);
+  width: 60vw;
+  height: 100vh;
+  border-top-left-radius: 70px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+}
+body#login .form-container button {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  height: 35px;
+  width: 35px;
+  background-color: var(--text);
+  border-radius: 50%;
+  cursor: pointer;
+}
+body#login .form-container button i {
+  color: var(--background);
+}
+body#login .form-container form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 60%;
+}
+body#login .form-container form h2 {
+  margin-bottom: 40px;
+  font-size: 2.6em;
+  text-align: center;
+}
+body#login .form-container form input {
+  background-color: #fff;
+  color: var(--text);
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+body#login .form-container form input:hover, body#login .form-container form input:focus {
+  background-color: #ddd;
+  transition: 200ms;
+}
+body#login .form-container form input[type=submit] {
+  background-color: #68CBEB;
+  padding: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 24px;
+}
+body#login .form-container form input[type=submit]:hover, body#login .form-container form input[type=submit]:focus {
+  background-color: #58aeca;
+}
+body#login .form-container form p {
+  font-size: 14px;
+  text-align: center;
+}
+body#login div#bola-em-baixo {
+  width: 200px;
+  height: 200px;
+  border-top-left-radius: 100%;
+  background-color: rgba(88, 174, 202, 0.3333333333);
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-100%, -100%);
+}
+@media screen and (max-width: 1200px) {
+  body#login {
+    overflow: hidden;
+  }
+  body#login > img {
+    display: none;
+  }
+  body#login > h1 {
+    z-index: 1;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text);
+  }
+  body#login .form-container {
+    font-size: clamp(14px, 2vw, 20px);
+    width: 100vw;
+    border-radius: 0;
+  }
+  body#login .form-container form {
+    row-gap: 3px;
+  }
+  body#login .form-container form h2 {
+    margin-bottom: 10px;
+  }
+  body#login .form-container button {
+    top: 10px;
+    left: 10px;
+  }
+  body#login div#bola-em-baixo {
+    display: none;
+  }
+}
+@media screen and (max-height: 420px) {
+  body#login > h1 {
+    display: none;
+  }
 }
 
 body#adminLayout {
