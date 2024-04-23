@@ -6,7 +6,7 @@ use Needs\Init\Bootstrap;
 class Route extends Bootstrap {
     protected function Routes(){
         $routes['index'] = [
-            'route' => '/',
+            'route' => '/index', // gambiarra pro leme arrumar hihihi
             'controller' => 'Index\\IndexController',
             'action' => 'index'
         ];
