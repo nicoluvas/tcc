@@ -24,7 +24,7 @@
       <button class="restrito">Área Restrita</button>
     </div>
   </header>
-  <main>
+  <main class="">
     <section class="pagina1">
       <div class="esquerdo">
         <div class="letreiro">
@@ -41,6 +41,9 @@
         <img src="assets\images\index\fddddtgryredr.png" class="pessoa" id="a" alt="wein">
         <img src="" alt="">
       </div>
+    </section>
+    <section class="pagina2">
+      
     </section>
   </main>
 </body>

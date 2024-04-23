@@ -16,6 +16,10 @@ body#home {
   max-width: 1200px;
   margin: auto;
 }
+body#home main {
+  display: flex;
+  flex-direction: column;
+}
 body#home header {
   height: 100px;
   display: flex;
@@ -52,15 +56,17 @@ body#home header .restrito {
 }
 body#home .pagina1 {
   height: calc(100vh - 100px);
-  width: 100%;
   display: flex;
-  justify-content: stretch;
-  height: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 body#home .pagina1 .esquerdo {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+}
+body#home .pagina1 .imgs {
+  right: 0;
+  display: flex;
   flex-direction: column;
 }
 body#home .pagina1 .linha {
@@ -78,12 +84,13 @@ body#home .pagina1 .linha#linha2 {
   background-color: var(--secondary);
   width: 270px;
 }
-body#home .pagina1 .letreiro {
-  background-color: red;
-}
 body#home .pagina1 .letreiro p {
   font-size: 64px;
 }
+body#home .pagina2 {
+  height: calc(100vh - 100px);
+}
+
 body#login {
   background-image: linear-gradient(26deg, var(--primary), var(--secondary), var(--accent));
   min-height: 100vh;
@@ -158,7 +165,7 @@ body#login .form-container form input:hover, body#login .form-container form inp
   transition: 200ms;
 }
 body#login .form-container form input[type=submit] {
-  background-color: #68CBEB;
+  background-color: #68cbeb;
   padding: 15px;
   cursor: pointer;
   margin-top: 10px;

@@ -16,6 +16,12 @@ body#home {
   background-color: var(--background);
   max-width: 1200px;
   margin: auto;
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+
 
   header {
     height: 100px;
@@ -52,9 +58,6 @@ body#home {
       margin-left: 20px;
     }
 
-    .tema {
-    }
-
     .restrito {
       font-weight: 700;
       font-size: 14px;
@@ -65,16 +68,19 @@ body#home {
 
   .pagina1 {
     height: calc(100vh - 100px);
-    width: 100%;
 
     display: flex;
-    justify-content: stretch;
-    height: 100%;
+    align-items: center;
+    justify-content: space-between;
 
     .esquerdo {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: row;
+    }
+
+    .imgs {
+      right: 0;
+      display: flex;
       flex-direction: column;
     }
 
@@ -98,16 +104,14 @@ body#home {
     }
 
     .letreiro {
-      background-color: red;
       p {
         font-size: 64px;
       }
     }
-    .esquerdo {
-    }
+  }
 
-    .pessoa#a {
-    }
+  .pagina2 {
+    height: calc(100vh - 100px);
   }
 }
 
@@ -120,14 +124,14 @@ body#login {
   );
   min-height: 100vh;
   background-size: 400% 400%;
-  
+
   margin: 0;
   padding: 0;
   font-family: "Poppins";
   font-weight: 400;
 
   display: flex;
-  
+
   -webkit-animation: movbg 27s ease infinite;
   animation: movbg 27s ease infinite;
   overflow: hidden;
@@ -171,11 +175,11 @@ body#login {
       left: 50px;
       height: 35px;
       width: 35px;
-  
+
       background-color: var(--text);
       border-radius: 50%;
       cursor: pointer;
-      
+
       i {
         color: var(--background);
       }
@@ -209,12 +213,12 @@ body#login {
         }
       }
 
-      input[type="submit"]{
-        background-color: #68CBEB;
+      input[type="submit"] {
+        background-color: #68cbeb;
         padding: 15px;
         cursor: pointer;
         margin-top: 10px;
-        
+
         font-size: 24px;
 
         &:hover,
@@ -222,7 +226,7 @@ body#login {
           background-color: #58aeca;
         }
       }
-      
+
       p {
         font-size: 14px;
         text-align: center;
@@ -243,46 +247,46 @@ body#login {
   }
   // tablet
   @media screen and (max-width: 1200px) {
-      overflow: hidden;
-      
-      &>img {
-        display: none;
+    overflow: hidden;
+
+    & > img {
+      display: none;
+    }
+
+    & > h1 {
+      z-index: 1;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--text);
+    }
+
+    .form-container {
+      font-size: clamp(14px, 2vw, 20px);
+      width: 100vw;
+      border-radius: 0;
+
+      form {
+        row-gap: 3px;
+
+        h2 {
+          margin-bottom: 10px;
+        }
       }
-      
-      & > h1 {
-        z-index: 1;
+
+      button {
         top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: var(--text);
+        left: 10px;
       }
-      
-      .form-container {
-        font-size: clamp(14px, 2vw, 20px);
-        width: 100vw;
-        border-radius: 0;
+    }
 
-        form {
-          row-gap: 3px;
-          
-          h2 {
-            margin-bottom: 10px;
-          }
-        }
-
-        button {
-          top: 10px;
-          left: 10px;
-        }
-      }
-
-      div#bola-em-baixo {
-        display: none;
-      }
+    div#bola-em-baixo {
+      display: none;
+    }
   }
 
   @media screen and (max-height: 420px) {
-    & > h1{
+    & > h1 {
       display: none;
     }
   }
@@ -295,16 +299,16 @@ body#adminLayout {
   grid-auto-rows: 50px;
   height: 100vh;
   margin: 0;
-  grid-template-areas: 
-    'sidebar header'
-    'sidebar main'
-    'sidebar footer';
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
 
   header {
     grid-area: header;
     background-color: #f7d9c4;
   }
-  
+
   nav {
     grid-area: sidebar;
     background-color: #f8a488;
@@ -322,15 +326,15 @@ body#adminLayout {
     background-color: #f7d9c4;
   }
 
-  @media screen and (max-width: 763px){
+  @media screen and (max-width: 763px) {
     & {
       grid-template-columns: 1fr;
       grid-template-rows: 120px 80px 1fr 50px;
-      grid-template-areas: 
-        'sidebar'
-        'header'
-        'main'
-        'footer';
+      grid-template-areas:
+        "sidebar"
+        "header"
+        "main"
+        "footer";
     }
   }
 }
