@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-  <!-- Gsap -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", (event) => {
-      gsap.from(".pessoa#a", {
-        delay: 0.3,
-        opacity: 0,
-        y: 10,
-        duration: .5,
-        ease: "power1.inOut",
-      });
-      gsap.from(".letreiro", {
-        opacity: 0,
-        y: 10,
-        duration: .5,
-        ease: "power1.inOut",
-      });
+<!-- Gsap -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.from("#meshbg", {
+      delay: 0.5,
+      opacity: 0,
+      y: 100,
+      duration: 2.5,
+      ease: "power1.inOut",
     });
-  </script>
-  
+    gsap.from(".pessoa#a", {
+      delay: 0.3,
+      opacity: 0,
+      y: 10,
+      duration: .5,
+      ease: "power1.inOut",
+    });
+    gsap.from(".letreiro", {
+      opacity: 0,
+      y: 10,
+      duration: .5,
+      ease: "power1.inOut",
+    });
+  });
+</script>
+
 <head>
 
   <meta charset="UTF-8" />
@@ -32,6 +39,7 @@
 
 <body class="lexend" id="home">
   <img id="meshbg" src="assets\images\index\mesh-gradient.png">
+  <img class="meshbgdark" id="meshbg" src="assets\images\index\mesh-gradient-dark.png">
   <header class="cabecalho">
     <img class="logo" src="assets\images\index\logob.png">
     <nav>
@@ -55,10 +63,23 @@
           <div class="linha" id="linha2"></div>
           <p>Resolva o seu <br>
             <span>futuro</span> com <br>
-            <span>Bhaskara</span>
+            <span>Bhaskara!</span>
           </p>
         </div>
-        <div class="caixas-inf"></div>
+        <div class="caixas-inf">
+          <div class="caixa" id="cx1">
+            <div class="bola"></div>
+            <p>Método de ensino dinamarques</p>
+          </div>
+          <div class="caixa" id="cx2">
+            <div class="bola"></div>
+            <p>Aulas práticas e intuitivas</p>
+          </div>
+          <div class="caixa" id="cx3">
+            <div class="bola"></div>
+            <p>Ensino que visa vestibulares</p>
+          </div>
+        </div>
       </div>
       <div class="imgs">
         <img src="assets\images\index\fddddtgryredr.png" class="pessoa" id="a" alt="wein">
@@ -71,10 +92,16 @@
         <img src="assets\images\index\taylorswift.png" alt="wein">
       </div>
       <div id="esquerda">
-        a
+
       </div>
       <div id="direita">
-        direita
+        <div class="caixadir">
+          <h3>Abrace a <span class="mark">modernidade</span></h3>
+          <p>
+            Uma sala de aula onde os conceitos abstratos ganham vida diante dos olhos dos alunos. Com a realidade virtual (VR), isso é possível. Os estudantes podem mergulhar em moléculas, explorar reações químicas em escala atômica e até mesmo viajar para dentro de células vivas. Aulas interativas e imersivas tornam o aprendizado mais envolvente e compreensível.
+          </p>
+        </div>
+        <!-- <p class="bgtext">BHASKARA</p> -->
       </div>
     </section>
     <!-- SEÇÃO 3 -->

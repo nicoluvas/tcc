@@ -16,6 +16,9 @@ body#home {
   max-width: 98vw;
   margin: auto;
 }
+body#home .meshbgdark {
+  display: none;
+}
 body#home #meshbg {
   position: absolute;
   z-index: -1;
@@ -71,13 +74,45 @@ body#home .pagina1 {
   justify-content: space-around;
 }
 body#home .pagina1 .esquerdo {
+  height: 60vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+body#home .pagina1 .esquerdo .caixas-inf {
+  height: 20vh;
   display: flex;
   flex-direction: row;
+  column-gap: 1rem;
+}
+body#home .pagina1 .esquerdo .caixas-inf .caixa {
+  background-color: var(--secondary);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 10vw;
+}
+body#home .pagina1 .esquerdo .caixas-inf .caixa p {
+  text-align: center;
+  translate: 0 -100%;
+  font-size: large;
+}
+body#home .pagina1 .esquerdo .caixas-inf .caixa .bola {
+  background-color: var(--secondary);
+  translate: 0 -40%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
 body#home .pagina1 .imgs {
   right: 0;
   display: flex;
   flex-direction: column;
+}
+body#home .pagina1 .imgs .pessoa#a {
+  height: 40vw;
 }
 body#home .pagina1 .linha {
   height: 6px;
@@ -106,6 +141,7 @@ body#home .pagina2 {
 }
 body#home .pagina2 #pessoa2 {
   display: none;
+  position: absolute;
 }
 body#home .pagina2 #esquerda {
   background-color: var(--accent);
@@ -113,6 +149,25 @@ body#home .pagina2 #esquerda {
 }
 body#home .pagina2 #direita {
   width: 60%;
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body#home .pagina2 .caixadir {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  border: 1px solid var(--shadow);
+  border-radius: 1rem;
+  height: 100%;
+}
+body#home .pagina2 .caixadir h3 {
+  font-size: 64px;
+}
+body#home .pagina2 .caixadir p {
+  font-size: 24px;
 }
 body#home .pagina3 {
   height: calc(100vh - 150px);

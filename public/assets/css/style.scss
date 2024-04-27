@@ -14,9 +14,12 @@ body {
 
 body#home {
   background-color: var(--background);
-  // max-width: 1200px;
+
   max-width: 98vw;
   margin: auto;
+  .meshbgdark {
+    display: none;
+  }
   #meshbg {
     position: absolute;
     z-index: -1;
@@ -35,9 +38,6 @@ body#home {
     align-items: center;
 
     border-bottom: 1px solid var(--shadow);
-
-    .logo {
-    }
 
     div {
       display: flex;
@@ -83,15 +83,51 @@ body#home {
     align-items: center;
     justify-content: space-around;
 
+    .direito {
+    }
+
     .esquerdo {
+      height: 60vh;
+      width: 40vw;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+      justify-content: space-around;
+      .caixas-inf {
+        height: 20vh;
+        display: flex;
+        flex-direction: row;
+        column-gap: 1rem;
+
+        .caixa {
+          background-color: var(--secondary);
+          border-radius: 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-width: 10vw;
+          p {
+            text-align: center;
+            translate: 0 -100%;
+            font-size: large;
+          }
+          .bola {
+            background-color: var(--secondary);
+            translate: 0 -40%;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+          }
+        }
+      }
     }
 
     .imgs {
       right: 0;
       display: flex;
       flex-direction: column;
+      .pessoa#a {
+        height: 40vw;
+      }
     }
 
     .linha {
@@ -128,6 +164,7 @@ body#home {
     flex-direction: row;
     #pessoa2 {
       display: none;
+      position: absolute;
     }
 
     #esquerda {
@@ -136,6 +173,26 @@ body#home {
     }
     #direita {
       width: 60%; // quando tiver as imagens certas, venho arrumar
+      padding: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .caixadir {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      border: 1px solid var(--shadow);
+      border-radius: 1rem;
+      height: 100%;
+      h3 {
+        font-size: 64px;
+      }
+      p {
+        font-size: 24px;
+      }
     }
   }
 
