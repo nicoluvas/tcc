@@ -3,8 +3,7 @@
 namespace Needs\Controller;
 
 abstract class Controller {
-    protected $view;
-    
+
     protected function render($view, $directory, $layout=''){
         $this->page = $view;
         $this->directory = $directory;
