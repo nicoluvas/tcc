@@ -1,9 +1,12 @@
 <?php
 
 namespace App;
+use Dotenv\Dotenv;
 
 class Bootstrap extends Router{
     public function __construct(){
+        $this->loadEnvironmentVariables();
+
         $this->declareRoutes();
         $uri = $this->getUri();
         $this->run($uri);
@@ -31,5 +34,10 @@ class Bootstrap extends Router{
         }
 
         return $uri;
+    }
+
+    private function loadEnvironmentVariables(){
+        $dotenv = Dotenv::createImmutable(dirname(__FILE__, 2));
+        $dotenv->load();
     }
 }

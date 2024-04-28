@@ -5,7 +5,8 @@
     "autoload": {
         "psr-4": {
             "App\\": "App/",
-            "Needs\\": "vendor/Needs/"
+            "Needs\\": "vendor/Needs/",
+            "Dotenv\\": "vendor/vlucas/phpdotenv/src/"
         }
     },
     "authors": [
@@ -20,5 +21,7 @@
             "name": "Theodore Galeano"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
 }
