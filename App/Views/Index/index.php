@@ -96,12 +96,12 @@
       </div>
       <div id="direita">
         <div class="caixadir">
-          <h3>Abrace a <span class="mark">modernidade</span></h3>
+          <h3>...Abrace a <br><span class="mark">modernidade</span></h3>
           <p>
             Uma sala de aula onde os conceitos abstratos ganham vida diante dos olhos dos alunos. Com a realidade virtual (VR), isso é possível. Os estudantes podem mergulhar em moléculas, explorar reações químicas em escala atômica e até mesmo viajar para dentro de células vivas. Aulas interativas e imersivas tornam o aprendizado mais envolvente e compreensível.
           </p>
         </div>
-        <!-- <p class="bgtext">BHASKARA</p> -->
+        <p class="bgtext">BHASKARA</p>
       </div>
     </section>
     <!-- SEÇÃO 3 -->
