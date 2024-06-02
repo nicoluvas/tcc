@@ -36,6 +36,9 @@ body#home header {
   align-items: center;
   border-bottom: 1px solid var(--shadow);
 }
+body#home header .logo {
+  max-height: 100px;
+}
 body#home header div {
   display: flex;
   flex-direction: row;

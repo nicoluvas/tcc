@@ -41,7 +41,7 @@
   <img id="meshbg" src="assets\images\index\mesh-gradient.png">
   <img class="meshbgdark" id="meshbg" src="assets\images\index\mesh-gradient-dark.png">
   <header class="cabecalho">
-    <img class="logo" src="assets\images\index\logob.png">
+    <img class="logo" src="assets\images\index\logobhas.png">
     <nav>
       <a class="quem point">Quem somos</a>
       <a class="metodo point">Método de Ensino</a>
