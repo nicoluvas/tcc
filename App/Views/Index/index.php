@@ -101,12 +101,15 @@
             Uma sala de aula onde os conceitos abstratos ganham vida diante dos olhos dos alunos. Com a realidade virtual (VR), isso é possível. Os estudantes podem mergulhar em moléculas, explorar reações químicas em escala atômica e até mesmo viajar para dentro de células vivas. Aulas interativas e imersivas tornam o aprendizado mais envolvente e compreensível.
           </p>
         </div>
-        <p class="bgtext">BHASKARA</p>
+
       </div>
     </section>
     <!-- SEÇÃO 3 -->
     <section class="pagina3">
-
+      <img src="assets\images\index\ze.svg" alt="">
+      <img class="muies" src="assets\images\index\muies.svg" alt="venha ser bhaskara!!">
+      <p class="shadow">Contando com uma abordagem intensiva e estratégica, focada na preparação dos estudantes para os exames de ingresso ao ensino superior, Bhaskara propõe: <span class="shadow"> Currículo Estratégico, Simulados e Treinamento Intensivo, Estratégias de Estudo, Apoio Psicológico, Parcerias com Cursinhos e Universidades.</span></p>
+      <img src="assets\images\index\fundo3.png" alt="">
     </section>
   </main>
 </body>

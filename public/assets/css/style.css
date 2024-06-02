@@ -140,10 +140,13 @@ body#home .pagina2 {
   flex-direction: row;
 }
 body#home .pagina2 #pessoa2 {
-  display: none;
   position: absolute;
 }
 body#home .pagina2 #esquerda {
+  background-image: url("../images/index/biblico.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
   background-color: var(--accent);
   width: 40%;
 }
@@ -177,15 +180,24 @@ body#home .pagina2 .caixadir p {
   margin-top: 2rem;
   font-size: 24px;
 }
-body#home .pagina2 .bgtext {
-  color: transparent;
-  -webkit-text-stroke: 3px var(--secondary);
-  position: absolute;
-  font-size: 320px;
-}
 body#home .pagina3 {
   height: calc(100vh - 150px);
   background-color: var(--secondary);
+  display: flex;
+  flex-direction: row;
+}
+body#home .pagina3 img {
+  position: absolute;
+  z-index: 0;
+}
+body#home .pagina3 p {
+  font-size: large;
+  margin: 30vh 0 0 50vw;
+  width: 500px;
+  height: 100px;
+}
+body#home .pagina3 p span {
+  color: var(--primary);
 }
 
 body#login {

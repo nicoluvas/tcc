@@ -163,11 +163,15 @@ body#home {
     display: flex;
     flex-direction: row;
     #pessoa2 {
-      display: none;
       position: absolute;
     }
 
     #esquerda {
+      background-image: url("../images/index/biblico.jpeg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+
       background-color: var(--accent);
       width: 40%; // quando tiver as imagens certas, venho arrumar (essa é parte visível da imagem de fundo)
     }
@@ -209,17 +213,29 @@ body#home {
         font-size: 24px;
       }
     }
-    .bgtext {
-      color: transparent;
-      -webkit-text-stroke: 3px var(--secondary);
-      position: absolute;
-      font-size: 320px;
-    }
   }
 
   .pagina3 {
     height: calc(100vh - 150px);
     background-color: var(--secondary);
+
+    display: flex;
+    flex-direction: row;
+
+    img {
+      position: absolute;
+      z-index: 0;
+    }
+
+    p {
+      font-size: large;
+      margin: 30vh 0 0 50vw;
+      width: 500px;
+      height: 100px;
+      span {
+        color: var(--primary);
+      }
+    }
   }
 }
 
@@ -353,6 +369,7 @@ body#login {
     left: 100%;
     transform: translate(-100%, -100%);
   }
+
   // tablet
   @media screen and (max-width: 1200px) {
     overflow: hidden;
