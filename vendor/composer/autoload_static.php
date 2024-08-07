@@ -23,10 +23,6 @@ class ComposerStaticInitbf59f872e09a5cc9d05d4ea950a9101d
         array (
             'PhpOption\\' => 10,
         ),
-        'N' => 
-        array (
-            'Needs\\' => 6,
-        ),
         'G' => 
         array (
             'GrahamCampbell\\ResultType\\' => 26,
@@ -34,6 +30,10 @@ class ComposerStaticInitbf59f872e09a5cc9d05d4ea950a9101d
         'D' => 
         array (
             'Dotenv\\' => 7,
+        ),
+        'C' => 
+        array (
+            'Core\\' => 5,
         ),
         'A' => 
         array (
@@ -58,10 +58,6 @@ class ComposerStaticInitbf59f872e09a5cc9d05d4ea950a9101d
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
-        'Needs\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/Needs',
-        ),
         'GrahamCampbell\\ResultType\\' => 
         array (
             0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
@@ -70,6 +66,10 @@ class ComposerStaticInitbf59f872e09a5cc9d05d4ea950a9101d
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
             1 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
+        ),
+        'Core\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/App/Core',
         ),
         'App\\' => 
         array (
@@ -87,6 +87,8 @@ class ComposerStaticInitbf59f872e09a5cc9d05d4ea950a9101d
         'App\\Router' => __DIR__ . '/../..' . '/App/Router.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Core\\Controller\\Controller' => __DIR__ . '/../..' . '/App/Core/Controller/Controller.php',
+        'Core\\Model\\Model' => __DIR__ . '/../..' . '/App/Core/Model/Model.php',
         'Dotenv\\Dotenv' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Dotenv.php',
         'Dotenv\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/ExceptionInterface.php',
         'Dotenv\\Exception\\InvalidEncodingException' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/InvalidEncodingException.php',
@@ -131,8 +133,6 @@ class ComposerStaticInitbf59f872e09a5cc9d05d4ea950a9101d
         'GrahamCampbell\\ResultType\\Error' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Error.php',
         'GrahamCampbell\\ResultType\\Result' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Result.php',
         'GrahamCampbell\\ResultType\\Success' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Success.php',
-        'Needs\\Controller\\Controller' => __DIR__ . '/..' . '/Needs/Controller/Controller.php',
-        'Needs\\Model\\Model' => __DIR__ . '/..' . '/Needs/Model/Model.php',
         'PhpOption\\LazyOption' => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption/LazyOption.php',
         'PhpOption\\None' => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption/None.php',
         'PhpOption\\Option' => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption/Option.php',

@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Controllers\Index;
-use Needs\Controller\Controller;
+use Core\Controller\Controller;
 
 class IndexController extends Controller {
     public function index(){
-        return $this->render('index', 'Index');
+        return $this->renderView('index', 'Index');
     }
 }

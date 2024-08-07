@@ -5,7 +5,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "App/",
-            "Needs\\": "vendor/Needs/",
+            "Core\\": "App/Core/",
             "Dotenv\\": "vendor/vlucas/phpdotenv/src/"
         }
     },

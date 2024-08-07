@@ -3,34 +3,39 @@
 namespace App;
 
 abstract class Router {
+    protected $routes = [];
     protected function declareRoutes(){
 
         // Página principal
         $routes['index'] = [
             'route' => '/',
             'controller' => 'Index\\IndexController',
-            'method' => 'index'
+            'action' => 'index',
+            'method' => 'GET'
         ];
 
         // Página de login
         $routes['login'] = [
             'route' => '/login',
             'controller' => 'Login\\LoginController',
-            'method' => 'index'
+            'action' => 'index',
+            'method' => 'GET'
         ];
 
         // Autentificar login
         $routes['loginAuth'] = [
             'route' => '/login/auth',
             'controller' => 'Login\\LoginController',
-            'method' => 'auth'
+            'action' => 'auth',
+            'method' => 'GET'
         ];
 
         // Páginas de administração
         $routes['AdminHome'] = [
             'route' => '/admin/home',
             'controller' => 'Admin\\AdminController',
-            'method' => 'home'
+            'action' => 'home',
+            'method' => 'GET'
         ];
 
         $this->routes = $routes;

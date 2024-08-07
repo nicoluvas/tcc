@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers\Admin;
-use Needs\Controller\Controller;
+use Core\Controller\Controller;
 
 class AdminController extends Controller {
     public function __construct(){
@@ -12,7 +12,7 @@ class AdminController extends Controller {
     }
 
     public function home(){
-        $this->page_title  = 'Admin Home';
+        $this->pageTitle  = 'Admin Home';
         $this->render('AdminHome', 'Admin', 'AdminLayout');
     }
 }
