@@ -8,7 +8,7 @@ abstract class Router {
 
         // Página principal
         $routes['index'] = [
-            'route' => '/',
+            'router' => '/',
             'controller' => 'Index\\IndexController',
             'action' => 'index',
             'method' => 'GET'
@@ -16,7 +16,7 @@ abstract class Router {
 
         // Página de login
         $routes['login'] = [
-            'route' => '/login',
+            'router' => '/login',
             'controller' => 'Login\\LoginController',
             'action' => 'index',
             'method' => 'GET'
@@ -24,7 +24,7 @@ abstract class Router {
 
         // Autentificar login
         $routes['loginAuth'] = [
-            'route' => '/login/auth',
+            'router' => '/login/auth',
             'controller' => 'Login\\LoginController',
             'action' => 'auth',
             'method' => 'GET'
@@ -32,7 +32,7 @@ abstract class Router {
 
         // Páginas de administração
         $routes['AdminHome'] = [
-            'route' => '/admin/home',
+            'router' => '/admin/home',
             'controller' => 'Admin\\AdminController',
             'action' => 'home',
             'method' => 'GET'

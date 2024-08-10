@@ -13,6 +13,6 @@ class AdminController extends Controller {
 
     public function home(){
         $this->pageTitle  = 'Admin Home';
-        $this->render('AdminHome', 'Admin', 'AdminLayout');
+        $this->renderView('AdminHome', 'Admin');//,// 'AdminLayout');
     }
 }

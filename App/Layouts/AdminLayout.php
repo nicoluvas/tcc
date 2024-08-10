@@ -15,7 +15,7 @@
     <nav>
 
     </nav>
-    <?php $this->loadView() ?>
+    <?php $this->renderView($this->page->view, $this->page->viewDirectory); ?>
     <footer>
 
     </footer>

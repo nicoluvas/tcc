@@ -6,7 +6,7 @@ use App\Models\Login;
 
 class LoginController extends Controller {
     public function index(){
-        return $this->render('login', 'login');
+        return $this->renderView('login', 'login');
     }
 
     public function auth(){

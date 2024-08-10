@@ -46,6 +46,9 @@ class Bootstrap extends Router{
                 die();
             }
         }
+
+        require 'Erro404.php';
+        die();
     }
     
     private function getUri(){
