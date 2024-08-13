@@ -10,34 +10,47 @@ abstract class Router {
         $routes['index'] = [
             'router' => '/',
             'controller' => 'Index\\IndexController',
-            'action' => 'index',
+            'action' => 'Index',
             'method' => 'GET'
         ];
 
         // Página de login
         $routes['login'] = [
             'router' => '/login',
-            'controller' => 'Login\\LoginController',
-            'action' => 'index',
+            'controller' => 'Index\\IndexController',
+            'action' => 'LoginPage',
             'method' => 'GET'
         ];
 
         // Autentificar login
         $routes['loginAuth'] = [
             'router' => '/login/auth',
-            'controller' => 'Login\\LoginController',
-            'action' => 'auth',
-            'method' => 'GET'
+            'controller' => 'Index\\IndexController',
+            'action' => 'LoginAuth',
+            'method' => 'POST'
         ];
 
+        $routes['logout'] = [
+            'router' => '/login/auth',
+            'controller' => 'Index\\IndexController',
+            'action' => 'Logout',
+            'method' => 'POST'
+        ];
+
+        $this->AdminRoutes();
+        
+        $this->routes = array_merge($this->routes, $routes);
+    }
+
+    private function AdminRoutes() {
         // Páginas de administração
         $routes['AdminHome'] = [
             'router' => '/admin/home',
             'controller' => 'Admin\\AdminController',
-            'action' => 'home',
+            'action' => 'Dashboard',
             'method' => 'GET'
         ];
 
-        $this->routes = $routes;
+        $this->routes = array_merge($this->routes, $routes);
     }
 }

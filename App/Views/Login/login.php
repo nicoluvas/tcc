@@ -1,14 +1,6 @@
 <?php
-  if(isset($_SESSION['aluno'])){
-    header('Location: /aluno/home');
-    die();
-  }
-  if(isset($_SESSION['professor'])){
-    header('Location: /professor/home');
-    die();
-  }
-  if(isset($_SESSION['admin']) && $_SESSION['admin']){
-    header('Location: /admin/home');
+  if(isset($_SESSION['logged'])){
+    header("Location: /{$_SERVER['logged']['type']}/home");
     die();
   }
 ?>
