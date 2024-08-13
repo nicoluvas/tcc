@@ -1,6 +1,6 @@
 <?php
   if(isset($_SESSION['logged'])){
-    header("Location: /{$_SERVER['logged']['type']}/home");
+    header("Location: /{$_SERVER['logged']['tipo']}/home");
     die();
   }
 ?>
