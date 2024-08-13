@@ -25,7 +25,14 @@ class Login extends Model {
 
     private function LoginAuthAluno($codigo_acesso, $senha) {
         $sql = "SELECT
-                        *
+                        cd_aluno as id,
+                        nome_aluno as nome,
+                        telefone_aluno as telefone,
+                        cpf_aluno as cpf,
+                        rg_aluno as rg,
+                        email_aluno as email,
+                        nascimento_aluno as nascimento,
+                        id_cargo
                    FROM
                         tb_aluno
                     WHERE
@@ -43,7 +50,13 @@ class Login extends Model {
 
     private function LoginAuthDocente($email_docente, $senha) {
         $sql = "SELECT
-                        *
+                        cd_docente as id,
+                        nome_docente as nome,
+                        telefone_docente as telefone,
+                        cpf_docente as cpf,
+                        rg_docente as rg,
+                        email_docente as email,
+                        id_cargo
                    FROM
                         tb_docente
                     WHERE
@@ -62,6 +75,7 @@ class Login extends Model {
     private function SaveUserInfo($user, $type) {
         $_SESSION['logged'] = [
             'tipo' => $type,
+            'id' => $user->id,
             'cargo' => $user->id_cargo,
             'nome' => ucwords($user->nome),
             'telefone' => $user->telefone,
