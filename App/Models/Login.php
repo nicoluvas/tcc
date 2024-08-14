@@ -25,18 +25,19 @@ class Login extends Model {
 
     private function LoginAuthAluno($codigo_acesso, $senha) {
         $sql = "SELECT
-                        cd_aluno as id,
-                        nome_aluno as nome,
-                        telefone_aluno as telefone,
-                        cpf_aluno as cpf,
-                        rg_aluno as rg,
-                        email_aluno as email,
-                        nascimento_aluno as nascimento,
-                        id_cargo
-                   FROM
-                        tb_aluno
-                    WHERE
-                        cd_aluno = :codigo_acesso
+                    cd_aluno as id,
+                    nome_aluno as nome,
+                    telefone_aluno as telefone,
+                    cpf_aluno as cpf,
+                    rg_aluno as rg,
+                    email_aluno as email,
+                    nascimento_aluno as nascimento,
+                    senha_aluno
+                    id_cargo
+                FROM
+                    tb_aluno
+                WHERE
+                    cd_aluno = :codigo_acesso
                 ";
 
         $query = $this->executeStatement($sql, ['codigo_acesso' => $codigo_acesso]);
@@ -50,17 +51,18 @@ class Login extends Model {
 
     private function LoginAuthDocente($email_docente, $senha) {
         $sql = "SELECT
-                        cd_docente as id,
-                        nome_docente as nome,
-                        telefone_docente as telefone,
-                        cpf_docente as cpf,
-                        rg_docente as rg,
-                        email_docente as email,
-                        id_cargo
-                   FROM
-                        tb_docente
-                    WHERE
-                        email_docente = :email_docente
+                    cd_docente as id,
+                    nome_docente as nome,
+                    telefone_docente as telefone,
+                    cpf_docente as cpf,
+                    rg_docente as rg,
+                    email_docente as email,
+                    senha_docente,
+                    id_cargo
+                FROM
+                    tb_docente
+                WHERE
+                    email_docente = :email_docente
                 ";
 
         $query = $this->executeStatement($sql, ['email_docente' => $email_docente]);
