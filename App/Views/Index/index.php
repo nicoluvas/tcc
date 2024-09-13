@@ -48,9 +48,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             <a class="contato point">Fale Conosco</a>
         </nav>
         <div>
-            <button class="tema point" onclick="toggleMode()">
-                <i class="fa-solid fa-moon fa-2xl "></i>
-            </button>
             <button class="restrito point">Área Restrita</button>
         </div>
     </header>
