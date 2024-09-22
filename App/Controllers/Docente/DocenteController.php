@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controllers\Admin;
+namespace App\Controllers\Docente;
 use Core\Controller\Controller;
 
-class AdminController extends Controller {
+class DocenteController extends Controller {
     public function __construct(){
         // if(!isset($_SESSION['admin'])){
         //     header('Location: /login');

@@ -11,7 +11,7 @@ abstract class Router {
             'router' => '/',
             'controller' => 'Index\\IndexController',
             'action' => 'Index',
-            'method' => 'GET'
+            'method' => ['GET']
         ];
 
         // Página de login
@@ -19,7 +19,7 @@ abstract class Router {
             'router' => '/login',
             'controller' => 'Index\\IndexController',
             'action' => 'LoginPage',
-            'method' => 'GET'
+            'method' => ['GET']
         ];
 
         // Autentificar login
@@ -27,28 +27,28 @@ abstract class Router {
             'router' => '/login/auth',
             'controller' => 'Index\\IndexController',
             'action' => 'LoginAuth',
-            'method' => 'POST'
+            'method' => ['POST']
         ];
 
         $routes['logout'] = [
-            'router' => '/login/auth',
+            'router' => '/logout',
             'controller' => 'Index\\IndexController',
             'action' => 'Logout',
-            'method' => 'POST'
+            'method' => ['POST']
         ];
 
-        $this->AdminRoutes();
+        $this->DocenteRoutes();
         
         $this->routes = array_merge($this->routes, $routes);
     }
 
-    private function AdminRoutes() {
+    private function DocenteRoutes() {
         // Páginas de administração
-        $routes['AdminHome'] = [
-            'router' => '/admin/home',
-            'controller' => 'Admin\\AdminController',
+        $routes['DocenteHome'] = [
+            'router' => '/docente/home',
+            'controller' => 'Docente\\DocenteController',
             'action' => 'Dashboard',
-            'method' => 'GET'
+            'method' => ['GET']
         ];
 
         $this->routes = array_merge($this->routes, $routes);

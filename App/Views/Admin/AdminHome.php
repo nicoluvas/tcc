@@ -48,7 +48,7 @@
                   class="icon-sidebar-inactive-4"
                   loading="lazy"
                   alt=""
-                  src="../../../public/assets/images/admin/icon--sidebar--inactive--4-contacts.svg"
+                  src="/assets/images/admin/icon--sidebar--inactive--4-contacts.svg"
                 />
               </div>
               <div class="icon-sidebar-inactive-2"></div>
@@ -60,7 +60,7 @@
                   class="icon-sidebar-inactive-3"
                   loading="lazy"
                   alt=""
-                  src="../../../public/assets/images/admin/icon--sidebar--inactive--3-ideas.svg"
+                  src="/assets/images/admin/icon--sidebar--inactive--3-ideas.svg"
                 />
               </div>
               <div class="title2">Alunos</div>
@@ -71,7 +71,7 @@
                   class="iconlylight-outlineactivity"
                   loading="lazy"
                   alt=""
-                  src="../../../public/assets/images/admin/iconlylightoutlineactivity@2x.png"
+                  src="/assets/images/admin/iconlylightoutlineactivity@2x.png"
                 />
               </div>
               <div class="title3">Professores</div>
@@ -91,7 +91,7 @@
               class="image-11-icon"
               loading="lazy"
               alt=""
-              src="../../../public/assets/images/admin/image-11@2x.png"
+              src="/assets/images/admin/image-11@2x.png"
             />
           </div>
           <img class="instance-child" alt="" src="./public/group-37876.svg" />

@@ -15,12 +15,12 @@ class Bootstrap extends Router{
     
     private function run($uri){
         foreach($this->routes as $router){
-            if ($_SERVER['REQUEST_METHOD'] != $router['method']) {
-                require 'Erro405.php';
-                die();
-            }
-
             if ($uri == $router['router']){
+                if (!in_array($_SERVER['REQUEST_METHOD'], $router['method'])) {
+                    http_response_code(405);
+                    // require 'Erro405.php';
+                    die();
+                }
                 $controllerClass = 'App\\Controllers\\' . $router['controller'];
                 $action = $router['action'];
 
@@ -31,6 +31,11 @@ class Bootstrap extends Router{
             
             $regex = str_replace("/", "\/", ltrim($router['router'], "/"));
             if (preg_match("/^$regex$/", ltrim($uri, "/"))) {
+                if (!in_array($_SERVER['REQUEST_METHOD'], $router['method'])) {
+                    http_response_code(405);
+                    // require 'Erro405.php';
+                    die();
+                }
                 $controllerClass = 'App\\Controllers\\' . $router['controller'];
                 $action = $router['action'];
                 
@@ -46,8 +51,8 @@ class Bootstrap extends Router{
                 die();
             }
         }
-
-        require 'Erro404.php';
+        http_response_code(404);
+        // require 'Erro404.php';
         die();
     }
     
