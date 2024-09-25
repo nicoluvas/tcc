@@ -15,6 +15,19 @@ class IndexController extends Controller {
         $this->renderView('login', 'Login');
     }
 
+    // o trio estático
+    public function Info() {
+        $this->renderView('info', 'Info');
+    }
+    public function Contato() {
+        $this->renderView('contato', 'Contato');
+    }
+    public function Metodo() {
+        $this->renderView('metodo', 'Metodo');
+    }
+
+    /////
+
     public function LoginAuth() {
         if (empty($_POST) || !(isset($_POST['codigo']) && isset($_POST['senha']))) {
             $_SESSION['msg'] = 'Algo deu errado';

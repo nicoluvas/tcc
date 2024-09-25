@@ -37,6 +37,26 @@ abstract class Router {
             'method' => ['POST']
         ];
 
+        // trio estatico
+        $routes['info'] = [
+            'router' => '/info',
+            'controller' => 'Index\\IndexController',
+            'action' => 'Info',
+            'method' => ['GET']
+        ];
+        $routes['contato'] = [
+            'router' => '/contato',
+            'controller' => 'Index\\IndexController',
+            'action' => 'Contato',
+            'method' => ['GET']
+        ];
+        $routes['metodo'] = [
+            'router' => '/metodo',
+            'controller' => 'Index\\IndexController',
+            'action' => 'Metodo',
+            'method' => ['GET']
+        ];
+
         $this->DocenteRoutes();
         
         $this->routes = array_merge($this->routes, $routes);
