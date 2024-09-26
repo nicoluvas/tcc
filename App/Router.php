@@ -51,6 +51,36 @@ abstract class Router {
             'method' => ['GET']
         ];
 
+        $routes['Cadastrar Aluno'] = [
+            'router' => '/docente/aluno/cadastrar',
+            'controller' => 'Docente\\DocenteAlunoController',
+            'action' => 'CadastrarAluno',
+            'method' => ['GET', 'POST']
+        ];
+
+        $routes['Alunos'] = [
+            'router' => '/docente/alunos',
+            'controller' => 'Docente\\DocenteAlunoController',
+            'action' => 'AlunosGeral',
+            'method' => ['GET']
+        ];
+
+        $routes['Alunos Por Serie'] = [
+            'router' => '/docente/alunos/turma/[0-9]+',
+            'controller' => 'Docente\\DocenteAlunoController',
+            'action' => 'AlunosPorTurma',
+            'method' => ['GET'],
+            'params' => ['turma']
+        ];
+
+        $routes['Aluno info'] = [
+            'router' => '/docente/aluno/[0-9]+/info',
+            'controller' => 'Docente\\DocenteAlunoController',
+            'action' => 'AlunoInfo',
+            'method' => ['GET', 'POST'],
+            'params' => ['idaluno']
+        ];
+
         $this->routes = array_merge($this->routes, $routes);
     }
 }

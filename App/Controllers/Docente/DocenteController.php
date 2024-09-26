@@ -4,16 +4,28 @@ namespace App\Controllers\Docente;
 use Core\Controller\Controller;
 
 class DocenteController extends Controller {
-    public function __construct(){
-        // if(!isset($_SESSION['admin'])){
-        //     header('Location: /login');
-        //     die();
-        // }
-    }
+    protected $cargo;
 
+    public function __construct() {
+        if(!isset($_SESSION['logged']) || $_SESSION['logged']['tipo'] != 'docente'){
+            header('Location: /login');
+            die();
+        }
+        $this->cargo = $_SESSION['logged']['cargo'];
+    }
+    
     public function Dashboard(){
-        $this->pageTitle  = 'Admin Home';
-        $this->renderView('AdminHome', 'Admin');//,// 'AdminLayout');
+        if ($this->cargo < 3) {
+            header('Location: /login');
+            die();
+        }
+        $this->pageTitle  = 'Docente Home';
+        if (empty($_GET)) {
+            $this->render('Index', 'DocenteLayout', 'Docente');
+            die();
+        }
+
+        $this->render($_GET['tab'], 'DocenteLayout', 'Docente');
     }
 }
 ?>
