@@ -69,6 +69,10 @@ body#home header .restrito {
   border-radius: 7px;
   width: 150px;
   letter-spacing: 1px;
+  background-color: var(--accent);
+  padding: 1rem;
+  text-align: center;
+  color: var(--primary);
 }
 body#home .pagina1 {
   height: calc(100vh - 150px);

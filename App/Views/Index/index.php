@@ -43,12 +43,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     <header class="cabecalho">
         <img class="logo" src="assets\images\index\logobhas.png">
         <nav>
-            <a class="quem point">Quem somos</a>
-            <a class="metodo point">Método de Ensino</a>
-            <a class="contato point">Fale Conosco</a>
+            <a href="/info" class="quem point" style="color: var(--text)">Quem somos</a>
+            <a href="/metodo" class="metodo point" style="color: var(--text)">Método de Ensino</a>
+            <a href="/contato" class="contato point" style="color: var(--text)">Fale Conosco</a>
         </nav>
         <div>
-            <button class="restrito point">Área Restrita</button>
+            <a href="/login" class="restrito point">Área Restrita</a>
         </div>
     </header>
     <main class="">
@@ -63,20 +63,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         <span>Bhaskara!</span>
                     </p>
                 </div>
-                <div class="caixas-inf">
-                    <div class="caixa" id="cx1">
-                        <div class="bola"></div>
-                        <p>Método de ensino dinamarques</p>
-                    </div>
-                    <div class="caixa" id="cx2">
-                        <div class="bola"></div>
-                        <p>Aulas práticas e intuitivas</p>
-                    </div>
-                    <div class="caixa" id="cx3">
-                        <div class="bola"></div>
-                        <p>Ensino que visa vestibulares</p>
-                    </div>
-                </div>
+            </div>
             </div>
             <div class="imgs">
                 <img src="assets\images\index\fddddtgryredr.png" class="pessoa" id="a" alt="wein">
