@@ -16,23 +16,18 @@ class IndexController extends Controller {
     }
 
     public function LoginAuth() {
-        if (empty($_POST) || !(isset($_POST['codigo']) && isset($_POST['senha']))) {
-            $_SESSION['msg'] = 'Algo deu errado';
-            header('Location: /login');
-            die();
-        }
+        if (empty($_POST) || !(isset($_POST['codigo']) && isset($_POST['senha']))) die();
         $codigo_acesso = $_POST['codigo']??'';
         $senha = $_POST['senha']??'';
         $LoginModel = new Login();
 
         if ($LoginModel->LoginAuth($codigo_acesso, $senha)) {
-            header("Location: /{$_SESSION['logged']['tipo']}/home");
+            header("Location: /{$_SERVER['logged']['tipo']}/home");
             die();
         }
 
-        echo $_SESSION['msg'];
-        die();
         header('Location: /login');
+        die();
     }
 
     public function Logout() {

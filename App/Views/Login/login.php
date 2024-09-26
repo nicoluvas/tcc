@@ -1,6 +1,6 @@
 <?php
   if(isset($_SESSION['logged'])){
-    header("Location: /". $_SESSION['logged']['tipo'] . "/home");
+    header("Location: /{$_SERVER['logged']['tipo']}/home");
     die();
   }
 ?>
@@ -26,10 +26,10 @@
       <button><i class="fa-solid fa-moon fa-2xl"></i></button>
       <form action="/login/auth" method="post">
         <h2>Seja bem-vindo(a)!</h2>
-        <label for="codigo">Nome de Usuário:</label>
-        <input type="text" name="codigo" id="codigo" required>
-        <label for="senha">Código de acesso:</label>
-        <input type="password" name="senha" id="senha" required>
+        <label for="usuario">Nome de Usuário:</label>
+        <input type="text" name="usuario" id="usuario" required>
+        <label for="codigo-acesso">Código de acesso:</label>
+        <input type="password" name="codigo-acesso" id="codigo-acesso" required>
         <p>Perdeu o código de acesso? Contate a coordenação!</p>
         <p style="color: #e45">
           <?php

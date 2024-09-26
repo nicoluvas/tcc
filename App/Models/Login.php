@@ -23,7 +23,7 @@ class Login extends Model {
         }
     }
 
-    private function LoginAuthAluno($rg, $senha) {
+    private function LoginAuthAluno($codigo_acesso, $senha) {
         $sql = "SELECT
                     cd_aluno as id,
                     nome_aluno as nome,
@@ -32,21 +32,21 @@ class Login extends Model {
                     rg_aluno as rg,
                     email_aluno as email,
                     nascimento_aluno as nascimento,
-                    senha_aluno,
+                    senha_aluno
                     id_cargo
                 FROM
                     tb_aluno
                 WHERE
-                    rg_aluno = :rg
+                    cd_aluno = :codigo_acesso
                 ";
 
-        $query = $this->executeStatement($sql, [':rg' => $rg]);
+        $query = $this->executeStatement($sql, ['codigo_acesso' => $codigo_acesso]);
         if  ($query->rowCount() != 1) return False;
 
-        $result = $query->fetchAll()[0];
-        if (!password_verify($senha, $result->senha_aluno)) return False;
+        $query->fetchAll()[0];
+        if (!password_verify($senha, $query->senha_aluno)) return False;
 
-        return [$result, 'aluno'];
+        return [$query, 'aluno'];
     }
 
     private function LoginAuthDocente($email_docente, $senha) {
@@ -68,10 +68,10 @@ class Login extends Model {
         $query = $this->executeStatement($sql, ['email_docente' => $email_docente]);
         if  ($query->rowCount() != 1) return False;
 
-        $result = $query->fetchAll()[0];
-        if (!password_verify($senha, $result->senha_docente)) return False;
+        $query->fetchAll()[0];
+        if (!password_verify($senha, $query->senha_docente)) return False;
 
-        return [$result, $result->id_cargo==2?'professor':'docente'];
+        return [$query, 'docente'];
     }
 
     private function SaveUserInfo($user, $type) {

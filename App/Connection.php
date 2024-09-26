@@ -5,7 +5,7 @@ use PDO;
 
 abstract class Connection {   
     public static function connect(){
-        $host = $_ENV['HOST'];
+        $host = $_ENV['LOCALHOST'];
         $dbname = $_ENV['DB_NAME'];
         $user = $_ENV['DB_USER'];
         $pwd = $_ENV['DB_PASSWORD'];
