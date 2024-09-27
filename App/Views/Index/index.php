@@ -99,85 +99,134 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 para os exames de ingresso ao ensino superior, Bhaskara propõe: <span class="shadow"> Currículo
                     Estratégico, Simulados e Treinamento Intensivo, Estratégias de Estudo, Apoio Psicológico, Parcerias
                     com Cursinhos e Universidades.</span></p>
-            <img src="assets\images\index\fundo3.png" alt="">
+
         </section>
         <!-- SEÇÃO 4 -->
         <section class="pagina4">
+            <style>
+            .pagina4 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100vw;
+            }
 
-            <body>
-                <div class="desktop-4">
-                    <img class="img4-icon" alt="" src="assets\images\index\img4@2x.png" />
+            .contact-form {
+                border-radius: 0;
+                box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
+                max-width: 508px;
+                color: #234c67;
+                text-align: center;
+                font: 200 20px Inter, sans-serif;
+            }
 
-                    <div class="rectangle-parent">
-                        <div class="frame-child"></div>
-                        <div class="message">
-                            <div class="message-info">
-                                <div class="informaes-do-responsvel-parent">
-                                    <b class="informaes-do-responsvel">Informações do responsável</b>
-                                    <div class="aps-a-solicitao">
-                                        Após a solicitação, entraremos em contato...
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="divider"></div>
-                        </div>
-                        <div class="name-field">
-                            <div class="name-input">
-                                <div class="nome-do-responsvel">Nome do responsável</div>
-                                <div class="contact-details">
-                                    <div class="contact-details-child"></div>
-                                    <div class="insira-o-nome">Insira o nome completo</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="name-field1">
-                            <div class="nmero-de-telefone-parent">
-                                <div class="nmero-de-telefone">Número de Telefone</div>
-                                <div class="rectangle-group">
-                                    <div class="frame-item"></div>
-                                    <div class="xx-9-9999-9999">(XX) 9 9999-9999</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="name-field2">
-                            <div class="e-mail-parent">
-                                <div class="e-mail">E-mail</div>
-                                <div class="rectangle-container">
-                                    <div class="frame-inner"></div>
-                                    <div class="informe-um-email">Informe um email válido</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <main class="content">
-                        <img class="prancheta-1-1" alt="" src="assets\images\index\prancheta-1-1@2x.png" />
+            .form-container {
+                border-radius: 14px 10px 2px 10px;
+                background-color: #f7f0dc;
+                width: 100%;
+                padding: 68px 40px 172px;
+            }
 
-                        <div class="background"></div>
-                        <section class="logo-area">
-                            <div class="logo-background"></div>
-                            <div class="frame-div">
-                                <div class="rectangle-div"></div>
-                                <h1 class="bhaskara">BHASKARA</h1>
-                                <h1 class="bhaskara1">BHASKARA</h1>
-                                <h1 class="bhaskara2">BHASKARA</h1>
-                            </div>
-                            <img class="design-sem-nome-2024-03-22t1" loading="lazy" alt=""
-                                src="assets\images\index\design-sem-nome--20240322t135815-1@2x.png" />
-                        </section>
-                    </main>
+            .form-title {
+                font: 600 48px Lexend, sans-serif;
+            }
+
+            .form-description {
+                align-self: start;
+                margin: 34px 0 0 10px;
+                font: 300 24px Lexend, sans-serif;
+                height: 60px;
+                margin-bottom: 1rem;
+            }
+
+            .input-wrapper {
+                border-radius: 8px;
+                display: flex;
+                gap: 27px;
+                padding: 15px 20px;
+                border: 2px solid #234c67;
+                margin-bottom: 1rem;
+            }
+
+            .input-icon {
+                aspect-ratio: 0.89;
+                object-fit: contain;
+                object-position: center;
+                width: 17px;
+                align-self: start;
+            }
+
+            .input-field {
+                flex-grow: 1;
+            }
+
+            .submit-button {
+                border-radius: 5px;
+                background-color: #cfa93f;
+                font-size: 24px;
+                color: #f7f0dc;
+                font-weight: 700;
+                margin: 50px 0 -34px;
+                padding: 11px 70px 22px;
+            }
+
+            @media (max-width: 991px) {
+                .form-container {
+                    max-width: 100%;
+                    padding: 0 20px 100px;
+                }
+
+                .form-title {
+                    font-size: 40px;
+                }
+
+                .input-wrapper {
+                    white-space: initial;
+                }
+
+                .submit-button {
+                    max-width: 100%;
+                    white-space: initial;
+                    margin: 40px 0 10px;
+                    padding: 0 20px;
+                }
+
+            }
+            </style>
+
+            <section class="contact-form">
+                <div class="form-container">
+                    <h2 class="form-title">CONTATO</h2>
+                    <p class="form-description">Após a solicitação, entraremos em contato.</p>
+                    <form>
+                        <div class="input-wrapper">
+                            <img loading="lazy"
+                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/2dc9a7c166024e648611b6ae2ce99c2880c38fa0ce4fd3ba8e3cee6270e105fd?placeholderIfAbsent=true&apiKey=1331a5b9398d431d8729ff0655b12545"
+                                class="input-icon" alt="" />
+                            <label for="name" class="visually-hidden">Nome</label>
+                            <input type="text" id="name" class="input-field" placeholder="Nome" aria-label="Nome" />
+                        </div>
+                        <div class="input-wrapper">
+                            <img loading="lazy"
+                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d45b587f6808684f9602f9234e93dbba6c9a559aafb0ae983616039ff4895217?placeholderIfAbsent=true&apiKey=1331a5b9398d431d8729ff0655b12545"
+                                class="input-icon" alt="" />
+                            <label for="email" class="visually-hidden">E-mail</label>
+                            <input type="email" id="email" class="input-field" placeholder="E-mail"
+                                aria-label="E-mail" />
+                        </div>
+                        <div class="input-wrapper">
+                            <img loading="lazy"
+                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/b60738d151cd85f10091f5bc23ff22ad58276f5c05409026efcb92bac113bd68?placeholderIfAbsent=true&apiKey=1331a5b9398d431d8729ff0655b12545"
+                                class="input-icon" alt="" />
+                            <label for="whatsapp" class="visually-hidden">WhatsApp</label>
+                            <input type="tel" id="whatsapp" class="input-field" placeholder="WhatsApp"
+                                aria-label="WhatsApp" />
+                        </div>
+                        <button type="submit" class="submit-button">ENVIAR</button>
+                    </form>
                 </div>
-            </body>
-        </section>
-        <!-- SEÇÃO 5 -->
-        <section class="pagina5">
-
-            <body>
-                <div class="desktop-7">
-                    <img class="img4-icon1" alt="" src="assets\images\index\img4@2x.png" />
-                    <div class="desktop-7-child"></div>
-                    <footer class="content1"></footer>
-                    <img class="metdo-para-o-seu-1-1" alt="" src="assets\images\index\metdo-para-o-seu-1-1@2x.png" />
-                </div>
+            </section>
+            <img class="fundo777" src="assets\images\index\fundo777.svg" alt="">
         </section>
     </main>
 </body>
