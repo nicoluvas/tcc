@@ -24,6 +24,8 @@
         <p>Somos uma empresa especializada em <span>soluções para educação</span>, com foco no ensino de
             <span>física</span> e <span>matemática</span>.
         </p>
+        
+    <img src="https://www.prydwen.gg/static/ab8fdf1564fffa985e2c493ad0e58f97/c9885/7_card.png" alt=""
     </main>
 
 </body>
