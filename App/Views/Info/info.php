@@ -7,10 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quem somos? - Bhaskara</title>
 </head>
-
 <body>
     <header>
-        <img src="" alt="bhaskara">
+    <img class="logo" src="assets\images\index\logobhas.png">
         <a href="/">
             <i href="" class="bi bi-house-fill"></i>
         </a>
@@ -74,6 +73,9 @@
         margin-bottom: 2rem;
     }
 
+    .logo {
+        width: 15%;
+    }
 
     .imagemdotheo {
         float: right;

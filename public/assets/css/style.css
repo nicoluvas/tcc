@@ -140,7 +140,6 @@ body#home .pagina1 .letreiro p {
   font-weight: 700;
   font-size: 64px;
 }
-
 body#home .pagina2 {
   height: calc(100vh - 50px);
   background-color: var(--primary);
