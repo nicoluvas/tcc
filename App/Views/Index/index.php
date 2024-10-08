@@ -64,11 +64,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         </section>
         <!-- SEÇÃO 2 -->
         <section class="pagina2">
-            <div id="pessoa2">
-                <img src="assets\images\index\taylorswift.png" alt="wein">
-            </div>
             <div id="esquerda">
-
+            <div id="pessoa2">
+                <img src="assets\images\index\taylor.svg" alt="wein">
+            </div>
             </div>
             <div id="direita">
                 <div class="caixadir">

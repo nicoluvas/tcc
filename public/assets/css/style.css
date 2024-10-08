@@ -141,13 +141,15 @@ body#home .pagina1 .letreiro p {
   font-size: 64px;
 }
 body#home .pagina2 {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 50px);
   background-color: var(--primary);
   display: flex;
   flex-direction: row;
 }
 body#home .pagina2 #pessoa2 {
-  position: absolute;
+  display: flex;
+  height: 100%;
+  margin-left: 40%;
 }
 body#home .pagina2 #esquerda {
   background-image: url("../images/index/biblico.jpeg");
@@ -169,10 +171,12 @@ body#home .pagina2 .caixadir {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
   border-radius: 1rem;
-  height: 80%;
-  background: linear-gradient(var(--primary), var(--primary), var(--primary), var(--primary), var(--secondary));
+
+  margin: -5% 0% 5% 5%;
+  flex: 1;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 body#home .pagina2 .caixadir h3 {
   font-size: 64px;
@@ -181,11 +185,12 @@ body#home .pagina2 .caixadir h3 {
 body#home .pagina2 .caixadir h3 .mark {
   color: var(--primary);
   background-color: var(--secondary);
-  padding: 0 10px 0 10px;
+  
 }
 body#home .pagina2 .caixadir p {
+  max-width: 60%;
   margin-top: 2rem;
-  font-size: 24px;
+  font-size: 16px;
 }
 body#home .pagina3 {
   height: calc(100vh - 150px);
