@@ -55,19 +55,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
         <!-- SEÇÃO 1 -->
         <section class="pagina1">
             <div class="esquerdo">
-                <div class="letreiro">
-                    <div class="linha" id="linha1"></div>
-                    <div class="linha" id="linha2"></div>
-                    <p>Resolva o seu <br>
-                        <span>futuro</span> com <br>
-                        <span>Bhaskara!</span>
-                    </p>
-                </div>
-            </div>
+                <img src="assets\images\index\moda.png" alt="aa">
+
             </div>
             <div class="imgs">
-                <img src="assets\images\index\fddddtgryredr.png" class="pessoa" id="a" alt="wein">
-                <img src="" alt="">
+                <img src="assets\images\index\vetor.svg" class="pessoa" style="height:500px" id="a" alt="wein">
             </div>
         </section>
         <!-- SEÇÃO 2 -->
