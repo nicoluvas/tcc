@@ -23,7 +23,6 @@
     <h1 class="anta-regualr">Bhaskara</h1>
     <img src="assets/images/login/mesa.svg" class="girar" alt="mesa">
     <section class="form-container">
-      
       <form action="/login/auth" method="post">
         <h2>Seja bem-vindo(a)!</h2>
         <label for="codigo">Nome de Usuário:</label>
@@ -54,4 +53,5 @@
   }
 @import url("global.css");
 @import url("style.css");
+
 </style>

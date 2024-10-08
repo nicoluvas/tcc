@@ -47,9 +47,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             <a href="/metodo" class="metodo point" style="color: var(--text)">Método de Ensino</a>
             <a href="/contato" class="contato point" style="color: var(--text)">Fale Conosco</a>
         </nav>
-        <div>
-            <a href="/login" class="restrito point">Área Restrita</a>
-        </div>
+            <a href="/login" class="point restrita lexend" style="">
+                Área Restrita
+            </a>
     </header>
     <main class="">
         <!-- SEÇÃO 1 -->
