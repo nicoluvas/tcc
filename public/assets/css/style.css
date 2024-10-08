@@ -140,6 +140,7 @@ body#home .pagina1 .letreiro p {
   font-weight: 700;
   font-size: 64px;
 }
+
 body#home .pagina2 {
   height: calc(100vh - 50px);
   background-color: var(--primary);
@@ -180,6 +181,8 @@ body#home .pagina2 .caixadir {
 }
 body#home .pagina2 .caixadir h3 {
   font-size: 64px;
+  display:flex;
+  flex-direction: column;
   text-align: center;
 }
 body#home .pagina2 .caixadir h3 .mark {
@@ -188,6 +191,7 @@ body#home .pagina2 .caixadir h3 .mark {
   
 }
 body#home .pagina2 .caixadir p {
+  flex: 1;
   max-width: 60%;
   margin-top: 2rem;
   font-size: 16px;

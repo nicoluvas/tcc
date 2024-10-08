@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             </div>
             <div class="imgs">
-                <img src="assets\images\index\vetor.svg" class="pessoa" style="height:500px" id="a" alt="wein">
+                <img class="wein" src="assets\images\index\vetor.svg" class="pessoa" style="height:500px" id="a" alt="wein">
             </div>
         </section>
         <!-- SEÇÃO 2 -->
