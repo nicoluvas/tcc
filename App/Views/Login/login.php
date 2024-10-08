@@ -14,16 +14,16 @@
     <meta charset="UTF-8" />
     <meta name="color-scheme" content="dark light" />
 
-    <title>Login - eBhaskara</title>
+    <title>Login - Bhaskara</title>
     <link rel="icon" href="assets/images/icon.svg" />
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
 
-  <body class="" id="login">
-    <h1 class="anta-regualr">eBhasraka</h1>
-    <img src="assets/images/login/mesa.svg" alt="mesa">
+  <body class="lexend" id="login">
+    <h1 class="anta-regualr">Bhaskara</h1>
+    <img src="assets/images/login/mesa.svg" class="girar" alt="mesa">
     <section class="form-container">
-      <button><i class="fa-solid fa-moon fa-2xl"></i></button>
+      
       <form action="/login/auth" method="post">
         <h2>Seja bem-vindo(a)!</h2>
         <label for="codigo">Nome de Usuário:</label>
@@ -45,3 +45,13 @@
     <div id="bola-em-baixo"></div>
   </body>
 </html>
+<style>
+  h1 {
+    color: white
+  }
+  * {
+    font-family: "lexend"
+  }
+@import url("global.css");
+@import url("style.css");
+</style>

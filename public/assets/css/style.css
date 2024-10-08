@@ -214,9 +214,19 @@ body#home .pagina3 p {
 body#home .pagina3 p span {
   color: var(--primary);
 }
-
+@keyframes gira {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+.girar {
+  animation: gira 200s linear infinite;
+}
 body#login {
-  background-image: linear-gradient(26deg, var(--primary), var(--secondary), var(--accent));
+  background-image: linear-gradient(26deg, var(--primary), var(--secondary));
   min-height: 100vh;
   background-size: 400% 400%;
   margin: 0;
