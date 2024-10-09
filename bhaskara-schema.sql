@@ -245,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_responsavel` (
   `cd_responsavel` INT NOT NULL AUTO_INCREMENT,
   `nome_responsavel` VARCHAR(120) NOT NULL,
   `telefone_responsavel` VARCHAR(20) NOT NULL,
-  `cpf_responsavel` BIGINT UNSIGNED NOT NULL,
+  `cpf_responsavel` VARCHAR(13)  NOT NULL,
   `rg_responsavel` VARCHAR(12) NOT NULL,
   PRIMARY KEY (`cd_responsavel`))
 ENGINE = InnoDB;
