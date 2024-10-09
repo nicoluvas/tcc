@@ -1,11 +1,11 @@
 <form>
     <h2>Cadastrar Aluno</h2>
-    <input type="text" name="nome" placeholder="Nome" />
-    <input type="tel" name="telefone" placeholder="Telefone" />
-    <input type="number" name="cpf" placeholder="CPF" />
-    <input type="number" name="rg" placeholder="RG" />
-    <input type="email" name="email" placeholder="Email" />
-    <input type="date" name="nascimento" placeholder="Nascimento" />
+    <input type="text" name="nome" placeholder="Nome" required />
+    <input type="tel" name="telefone" placeholder="Telefone" required pattern="[0-9]{11}"/>
+    <input type="text" name="cpf" placeholder="CPF" required pattern="[0-9]{11}"/>
+    <input type="text" name="rg" placeholder="RG" required pattern="[0-9]{9}"/>
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="date" name="nascimento" placeholder="Nascimento" required />
     <!-- Endereço -->
     <fieldset style="width: 100%;">
         <legend>Endereço</legend>
@@ -45,10 +45,10 @@
     </fieldset>
     <fieldset>
         <legend>Responsavel</legend>
-        <input type="text" name="nome_responsavel" placeholder="Nome do Responsável" />
-        <input type="tel" name="telefone_responsavel" placeholder="Telefone do Responsável" />
-        <input type="number" name="cpf_responsavel" placeholder="CPF do Responsável" />
-        <input type="number" name="rg_responsavel" placeholder="RG do Responsável" />
+        <input type="text" name="nome_responsavel" placeholder="Nome do Responsável" required pattern="[0-9]{11}"/>
+        <input type="tel" name="telefone_responsavel" placeholder="Telefone do Responsável" required pattern="[0-9]{11}"/>
+        <input type="text" name="cpf_responsavel" placeholder="CPF do Responsável" required pattern="[0-9]{9}"/>
+        <input type="text" name="rg_responsavel" placeholder="RG do Responsável" required />
     </fieldset>
     <input type="submit" value="Cadastrar" />
     <p id="formretorno"></p>

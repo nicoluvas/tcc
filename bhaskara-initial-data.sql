@@ -9,25 +9,15 @@ insert into tb_cargo values
 (null, 'Secretário'),
 (null, 'Coordenador'),
 (null, 'Diretor');
+    
 
-insert into tb_endereco values 
-(null, 'SP', 'São José dos Campos', 'Jardim América', 'Rua Koichi Matsumura', '103', 'perto do pabilhao', '12235180');
+INSERT INTO `db_bhaskara`.`tb_docente` 
+    (`nome_docente`, `telefone_docente`, `cpf_docente`, `rg_docente`, `email_docente`, `senha_docente`, `dt_entrada`, `id_endereco`, `id_cargo`) 
+VALUES 
+    ('Maria Silva', '11912345678', '12345678901', '123456789', 'maria.silva@email.com', 'senhaMaria123', NOW(), 1, 2),
+    ('João Pereira', '11923456789', '10987654321', '987654321', 'joao.pereira@email.com', 'senhaJoao123', NOW(), 2, 2),
+    ('Ana Costa', '11934567890', '12312312312', '112223334', 'ana.costa@email.com', 'senhaAna123', NOW(), 3, 2);
 
-insert into tb_responsavel values
-(null, 'Done Susana', '12999999999', '12131212121', '121112218'),
-(null, 'Done Liliane', '12888888888', '121241212121', '121212218'),
-(null, 'Done PEPEs', '12777777777', '12121212121', '121212812');
-
-insert into tb_aluno values
-(null, 'DR THELMO', '12999999999', '12121152121', '182121217', 'drthelmo@gmail.com', '2006-07-06', '$2y$12$MsULJIj/O9NCQzPq0QLsDeWBRAwIUL/6Yb3wVV9yXaz1iz8a4eAZK', DEFAULT, 1, 1, 1, DEFAULT),
-(null, 'LEMELINHA', '12999999999', '12126512121', '128212121', 'leme@gmail.com', '2006-08-30', '$2y$12$C2JIgkVdnHedy8pIVA8Sz.OaX5mQNC3fOQQ.Tez9LWvMWLUcYhPU2', DEFAULT, 1, 1, 2, DEFAULT),
-(null, 'PEPE', '12999999999', '12121232121', '121212821', 'pepe@gmail.com', '2006-11-25', '$2y$12$o1h9gYqN0mTJEMijGrC3B.Fdm3aAh8OAQYyba8ElflacIQBHLp3b2', DEFAULT, 1, 1, 3, DEFAULT);
-
-insert into tb_docente values
-(null, 'Ricardo', '12999999999', '12121222121', '121212221', 'ricardo@gmail.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', DEFAULT, NULL, DEFAULT, 1, 2),
-(null, 'Lilian', '12999999999', '12121212221', '122212221', 'lilian@gmail.com', '$2y$12$F/3F7SgiBroBIGYUyuU0GOIJjlhqC6i1R.JvHi78BrgYCDUuVAuoK', DEFAULT, NULL, DEFAULT, 1, 2),
-(null, 'Helder', '12999999999', '12121212122', '122212121', 'herdel@gmail.com', '$2y$12$NGxYjewoGQBHx/br8AEIdeBONAF4n1xsaetsez.UongNdpfRu9TZe', DEFAULT, NULL, DEFAULT, 1, 2),
-(null, 'Aroldo', '12999999999', '11121212122', '122212111', 'aroldo@gmail.com', '$2y$12$uqbLj6nIKUXL.KD.cTV4Le1d/2kVblgXE9BSFu66uSDdJeoQs1S/6', DEFAULT, NULL, DEFAULT, 1, 3);
 
 insert into tb_turma values
 (null, '6º A'),
