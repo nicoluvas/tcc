@@ -36,6 +36,46 @@ body#home header {
   align-items: center;
   border-bottom: 1px solid var(--shadow);
 }
+.restrita {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 15%;
+  color: var(--primary);
+  --c:  var(--accent) !important;
+  border-radius: 1rem;
+  
+  box-shadow: 0 0 0 .1em inset var(--c); 
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background: 
+    var(--_g) calc(var(--_p,0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p,0%)) 0%,
+    var(--_g) calc(var(--_p,0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p,0%)) 100%;
+  background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+  outline-offset: .1em;
+  transition: background-size .4s, background-position 0s .4s;
+}
+.restrita:hover {
+  --_p: 100%;
+  transition: background-position .4s, background-size 0s;
+}
+.restrita:active {
+  box-shadow: 0 0 9e9q inset #0009; 
+  background-color: var(--c);
+  color: #fff;
+}
+.restrita {
+ font-family: "lexend" ;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: .1em .6em;
+  font-weight: bold;  
+  border: none;
+}
+
 body#home header .logo {
   max-height: 100px;
 }
@@ -141,13 +181,15 @@ body#home .pagina1 .letreiro p {
   font-size: 64px;
 }
 body#home .pagina2 {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 50px);
   background-color: var(--primary);
   display: flex;
   flex-direction: row;
 }
 body#home .pagina2 #pessoa2 {
-  position: absolute;
+  display: flex;
+  height: 100%;
+  margin-left: 40%;
 }
 body#home .pagina2 #esquerda {
   background-image: url("../images/index/biblico.jpeg");
@@ -169,23 +211,29 @@ body#home .pagina2 .caixadir {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
   border-radius: 1rem;
-  height: 80%;
-  background: linear-gradient(var(--primary), var(--primary), var(--primary), var(--primary), var(--secondary));
+
+  margin: -5% 0% 5% 5%;
+  flex: 1;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 body#home .pagina2 .caixadir h3 {
   font-size: 64px;
+  display:flex;
+  flex-direction: column;
   text-align: center;
 }
 body#home .pagina2 .caixadir h3 .mark {
   color: var(--primary);
   background-color: var(--secondary);
-  padding: 0 10px 0 10px;
+  
 }
 body#home .pagina2 .caixadir p {
+  flex: 1;
+  max-width: 60%;
   margin-top: 2rem;
-  font-size: 24px;
+  font-size: 16px;
 }
 body#home .pagina3 {
   height: calc(100vh - 150px);
@@ -206,9 +254,19 @@ body#home .pagina3 p {
 body#home .pagina3 p span {
   color: var(--primary);
 }
-
+@keyframes gira {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+.girar {
+  animation: gira 200s linear infinite;
+}
 body#login {
-  background-image: linear-gradient(26deg, var(--primary), var(--secondary), var(--accent));
+  background-image: linear-gradient(26deg, var(--primary), var(--secondary));
   min-height: 100vh;
   background-size: 400% 400%;
   margin: 0;

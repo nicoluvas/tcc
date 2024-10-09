@@ -10,16 +10,6 @@
   --shadow: #201a0851;
 }
 
-.dark-mode {
-  --text: #f2edd9;
-  --text-inv: #26210d;
-  --background: #100e07;
-  --primary: #98c1dc;
-  --secondary: #092b4e;
-  --accent: #c09930;
-  --shadow: #201a0851;
-}
-
 .lexend {
   font-family: "Lexend", sans-serif;
   color: var(--text);
