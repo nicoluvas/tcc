@@ -8,12 +8,7 @@
 </main>
 
 <style>
-    main {
-        display: flex;
-        width: 50%;
-        margin-left: 15%;
-        justify-content: space-between;
-    }
+    
 </style>
 
 
