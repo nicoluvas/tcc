@@ -3,7 +3,7 @@
     <input type="text" name="nome" placeholder="Nome" value="<?= $this->aluno->nome_aluno ?>" disabled required />
     <input type="tel" name="telefone" placeholder="Telefone" value="<?= $this->aluno->telefone_aluno ?>" disabled required pattern="[0-9]{11}"/>
     <input type="text" name="cpf" placeholder="CPF" value="<?= $this->aluno->cpf_aluno ?>" disabled required pattern="^[0-9].{11}$"/>
-    <input type="text" name="rg" placeholder="RG" value="<?= $this->aluno->rg_aluno ?>" disabled required pattern="[0-9]{9}"/>
+    <input type="text" name="rg" placeholder="RG" value="<?= $this->aluno->rg_aluno ?>" disabled required pattern="[0-9x]{9}"/>
     <input type="email" name="email" placeholder="Email" value="<?= $this->aluno->email_aluno ?>" disabled required />
     <input type="date" name="nascimento" placeholder="Nascimento" value="<?= $this->aluno->nascimento_aluno ?>" disabled required />
     <!-- Endereço -->
@@ -48,7 +48,7 @@
         <input type="text" name="nome_responsavel" placeholder="Nome do Responsável" value="<?= $this->aluno->nome_responsavel ?>" disabled required />
         <input type="tel" name="telefone_responsavel" placeholder="Telefone do Responsável" value="<?= $this->aluno->telefone_responsavel ?>" disabled required pattern="[0-9]{11}"/>
         <input type="text" name="cpf_responsavel" placeholder="CPF do Responsável" value="<?= $this->aluno->cpf_responsavel ?>" disabled required pattern="[0-9]{11}"/>
-        <input type="text" name="rg_responsavel" placeholder="RG do Responsável" value="<?= $this->aluno->rg_responsavel ?>" disabled required pattern="[0-9]{9}"/>
+        <input type="text" name="rg_responsavel" placeholder="RG do Responsável" value="<?= $this->aluno->rg_responsavel ?>" disabled required pattern="[0-9x]{9}"/>
     </fieldset>
     <button type="button" id="editar">Editar</button>
     <button type="button" id="cancelar" style="display: none">Cancelar</button>
