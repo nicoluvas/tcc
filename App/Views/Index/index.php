@@ -84,8 +84,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         </section>
         <!-- SEÇÃO 3 -->
         <section class="pagina3">
-            <img src="assets\images\index\ze.svg" alt="">
-            <img class="muies" src="assets\images\index\muies.svg" alt="venha ser bhaskara!!">
             <p class="shadow">Contando com uma abordagem intensiva e estratégica, focada na preparação dos estudantes
                 para os exames de ingresso ao ensino superior, Bhaskara propõe: <span class="shadow"> Currículo
                     Estratégico, Simulados e Treinamento Intensivo, Estratégias de Estudo, Apoio Psicológico, Parcerias
@@ -93,132 +91,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         </section>
         <!-- SEÇÃO 4 -->
-        <section class="pagina4">
-            <style>
-            .pagina4 {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 100vw;
-            }
 
-            .contact-form {
-                border-radius: 0;
-                box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
-                max-width: 508px;
-                color: #234c67;
-                text-align: center;
-                font: 200 20px Inter, sans-serif;
-            }
-
-            .form-container {
-                border-radius: 14px 10px 2px 10px;
-                background-color: #f7f0dc;
-                width: 100%;
-                padding: 68px 40px 172px;
-            }
-
-            .form-title {
-                font: 600 48px Lexend, sans-serif;
-            }
-
-            .form-description {
-                align-self: start;
-                margin: 34px 0 0 10px;
-                font: 300 24px Lexend, sans-serif;
-                height: 60px;
-                margin-bottom: 1rem;
-            }
-
-            .input-wrapper {
-                border-radius: 8px;
-                display: flex;
-                gap: 27px;
-                padding: 15px 20px;
-                border: 2px solid #234c67;
-                margin-bottom: 1rem;
-            }
-
-            .input-icon {
-                aspect-ratio: 0.89;
-                object-fit: contain;
-                object-position: center;
-                width: 17px;
-                align-self: start;
-            }
-
-            .input-field {
-                flex-grow: 1;
-            }
-
-            .submit-button {
-                border-radius: 5px;
-                background-color: #cfa93f;
-                font-size: 24px;
-                color: #f7f0dc;
-                font-weight: 700;
-                margin: 50px 0 -34px;
-                padding: 11px 70px 22px;
-            }
-
-            @media (max-width: 991px) {
-                .form-container {
-                    max-width: 100%;
-                    padding: 0 20px 100px;
-                }
-
-                .form-title {
-                    font-size: 40px;
-                }
-
-                .input-wrapper {
-                    white-space: initial;
-                }
-
-                .submit-button {
-                    max-width: 100%;
-                    white-space: initial;
-                    margin: 40px 0 10px;
-                    padding: 0 20px;
-                }
-
-            }
-            </style>
-
-            <section class="contact-form">
-                <div class="form-container">
-                    <h2 class="form-title">CONTATO</h2>
-                    <p class="form-description">Após a solicitação, entraremos em contato.</p>
-                    <form>
-                        <div class="input-wrapper">
-                            <img loading="lazy"
-                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/2dc9a7c166024e648611b6ae2ce99c2880c38fa0ce4fd3ba8e3cee6270e105fd?placeholderIfAbsent=true&apiKey=1331a5b9398d431d8729ff0655b12545"
-                                class="input-icon" alt="" />
-                            <label for="name" class="visually-hidden">Nome</label>
-                            <input type="text" id="name" class="input-field" placeholder="Nome" aria-label="Nome" />
-                        </div>
-                        <div class="input-wrapper">
-                            <img loading="lazy"
-                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d45b587f6808684f9602f9234e93dbba6c9a559aafb0ae983616039ff4895217?placeholderIfAbsent=true&apiKey=1331a5b9398d431d8729ff0655b12545"
-                                class="input-icon" alt="" />
-                            <label for="email" class="visually-hidden">E-mail</label>
-                            <input type="email" id="email" class="input-field" placeholder="E-mail"
-                                aria-label="E-mail" />
-                        </div>
-                        <div class="input-wrapper">
-                            <img loading="lazy"
-                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/b60738d151cd85f10091f5bc23ff22ad58276f5c05409026efcb92bac113bd68?placeholderIfAbsent=true&apiKey=1331a5b9398d431d8729ff0655b12545"
-                                class="input-icon" alt="" />
-                            <label for="whatsapp" class="visually-hidden">WhatsApp</label>
-                            <input type="tel" id="whatsapp" class="input-field" placeholder="WhatsApp"
-                                aria-label="WhatsApp" />
-                        </div>
-                        <button type="submit" class="submit-button">ENVIAR</button>
-                    </form>
-                </div>
-            </section>
-            <img class="fundo777" src="assets\images\index\fundo777.svg" alt="">
-        </section>
     </main>
 </body>
 
