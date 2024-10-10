@@ -3,7 +3,7 @@
     <input type="text" name="nome" placeholder="Nome" required />
     <input type="tel" name="telefone" placeholder="Telefone" required pattern="[0-9]{11}"/>
     <input type="text" name="cpf" placeholder="CPF" required pattern="[0-9]{11}"/>
-    <input type="text" name="rg" placeholder="RG" required pattern="[0-9]{9}"/>
+    <input type="text" name="rg" placeholder="RG" required pattern="[0-9x]{9}"/>
     <input type="email" name="email" placeholder="Email" required />
     <input type="date" name="nascimento" placeholder="Nascimento" required />
     <!-- Endereço -->
@@ -48,7 +48,7 @@
         <input type="text" name="nome_responsavel" placeholder="Nome do Responsável" required pattern="[0-9]{11}"/>
         <input type="tel" name="telefone_responsavel" placeholder="Telefone do Responsável" required pattern="[0-9]{11}"/>
         <input type="text" name="cpf_responsavel" placeholder="CPF do Responsável" required pattern="[0-9]{9}"/>
-        <input type="text" name="rg_responsavel" placeholder="RG do Responsável" required />
+        <input type="text" name="rg_responsavel" placeholder="RG do Responsável" required pattern="[0-9x]{9}"/>
     </fieldset>
     <input type="submit" value="Cadastrar" />
     <p id="formretorno"></p>
@@ -169,3 +169,6 @@
         });
     </script>
 </form>
+<style>
+    
+</style>
