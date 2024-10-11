@@ -34,7 +34,7 @@ abstract class Router {
             'router' => '/logout',
             'controller' => 'Index\\IndexController',
             'action' => 'Logout',
-            'method' => ['POST']
+            'method' => ['GET']
         ];
 
         // trio estatico

@@ -14,6 +14,11 @@
     <a href="/docente/home?tab=gerenciamento">Gerenciar</a>
     <a href="/docente/home?tab=alunos">Alunos</a>
     <a href="/docente/home?tab=professores">Professores</a>
+    <footer>
+      <a href="/logout">
+        Sair
+      </a>
+    </footer>
 </div>
   <header>
     <h1>Olá,
@@ -79,6 +84,11 @@ header > hr {
     grid-area: header;
     display:flex;
     justify-content: center;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
   }
 
   .esquerda {
