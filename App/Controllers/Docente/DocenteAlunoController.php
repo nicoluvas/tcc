@@ -7,7 +7,9 @@ use App\Models\Docente\DocenteGerenciamento;
 
 class DocenteAlunoController extends Controller {
     protected $cargo;
-
+    protected $turmas;
+    protected $alunos;
+    protected $aluno;
     public function __construct() {
         if(!isset($_SESSION['logged']) || $_SESSION['logged']['tipo'] != 'docente'){
             header('Location: /login');

@@ -37,12 +37,12 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_aluno` (
   `id_cargo` TINYINT UNSIGNED NOT NULL,
   `id_responsavel` INT NOT NULL,
   PRIMARY KEY (`cd_aluno`),
-  INDEX `fk_tb_aluno_tb_endereco2_idx` (`id_endereco` ASC) VISIBLE,
-  INDEX `fk_tb_aluno_tb_cargo1_idx` (`id_cargo` ASC) VISIBLE,
-  INDEX `fk_tb_aluno_tb_responsavel1_idx` (`id_responsavel` ASC) VISIBLE,
-  UNIQUE INDEX `cpf_aluno_UNIQUE` (`cpf_aluno` ASC) VISIBLE,
-  UNIQUE INDEX `rg_aluno_UNIQUE` (`rg_aluno` ASC) VISIBLE,
-  UNIQUE INDEX `email_aluno_UNIQUE` (`email_aluno` ASC) VISIBLE,
+  INDEX `fk_tb_aluno_tb_endereco2_idx` (`id_endereco` ASC) ,
+  INDEX `fk_tb_aluno_tb_cargo1_idx` (`id_cargo` ASC) ,
+  INDEX `fk_tb_aluno_tb_responsavel1_idx` (`id_responsavel` ASC) ,
+  UNIQUE INDEX `cpf_aluno_UNIQUE` (`cpf_aluno` ASC) ,
+  UNIQUE INDEX `rg_aluno_UNIQUE` (`rg_aluno` ASC) ,
+  UNIQUE INDEX `email_aluno_UNIQUE` (`email_aluno` ASC) ,
   CONSTRAINT `fk_tb_aluno_tb_endereco2`
     FOREIGN KEY (`id_endereco`)
     REFERENCES `db_bhaskara`.`tb_endereco` (`cd_endereco`)
@@ -71,8 +71,8 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_aluno_turma` (
   `id_aluno` INT(6) NOT NULL,
   `id_periodo_letivo` INT NOT NULL,
   PRIMARY KEY (`id_turma`),
-  INDEX `fk_tb_aluno_has_tb_turma_tb_turma1_idx` (`id_turma` ASC) VISIBLE,
-  INDEX `fk_tb_aluno_turma_tb_matricula1_idx` (`id_aluno` ASC, `id_periodo_letivo` ASC) VISIBLE,
+  INDEX `fk_tb_aluno_has_tb_turma_tb_turma1_idx` (`id_turma` ASC) ,
+  INDEX `fk_tb_aluno_turma_tb_matricula1_idx` (`id_aluno` ASC, `id_periodo_letivo` ASC) ,
   CONSTRAINT `fk_tb_aluno_has_tb_turma_tb_turma1`
     FOREIGN KEY (`id_turma`)
     REFERENCES `db_bhaskara`.`tb_turma` (`cd_turma`)
@@ -97,8 +97,8 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_aula` (
   `id_materia` INT NOT NULL,
   `id_turma` INT NOT NULL,
   PRIMARY KEY (`cd_aula`),
-  INDEX `fk_tb_aula_tb_materia1_idx` (`id_materia` ASC) VISIBLE,
-  INDEX `fk_tb_aula_tb_turma1_idx` (`id_turma` ASC) VISIBLE,
+  INDEX `fk_tb_aula_tb_materia1_idx` (`id_materia` ASC) ,
+  INDEX `fk_tb_aula_tb_turma1_idx` (`id_turma` ASC) ,
   CONSTRAINT `fk_tb_aula_tb_materia1`
     FOREIGN KEY (`id_materia`)
     REFERENCES `db_bhaskara`.`tb_materia` (`cd_materia`)
@@ -143,11 +143,11 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_docente` (
   `id_endereco` INT NOT NULL,
   `id_cargo` TINYINT UNSIGNED NOT NULL,
   PRIMARY KEY (`cd_docente`),
-  INDEX `fk_tb_funcionario_tb_endereco1_idx` (`id_endereco` ASC) VISIBLE,
-  INDEX `fk_tb_docente_tb_cargo1_idx` (`id_cargo` ASC) VISIBLE,
-  UNIQUE INDEX `email_docente_UNIQUE` (`email_docente` ASC) VISIBLE,
-  UNIQUE INDEX `rg_docente_UNIQUE` (`rg_docente` ASC) VISIBLE,
-  UNIQUE INDEX `cpf_docente_UNIQUE` (`cpf_docente` ASC) VISIBLE,
+  INDEX `fk_tb_funcionario_tb_endereco1_idx` (`id_endereco` ASC) ,
+  INDEX `fk_tb_docente_tb_cargo1_idx` (`id_cargo` ASC) ,
+  UNIQUE INDEX `email_docente_UNIQUE` (`email_docente` ASC) ,
+  UNIQUE INDEX `rg_docente_UNIQUE` (`rg_docente` ASC) ,
+  UNIQUE INDEX `cpf_docente_UNIQUE` (`cpf_docente` ASC) ,
   CONSTRAINT `fk_tb_funcionario_tb_endereco1`
     FOREIGN KEY (`id_endereco`)
     REFERENCES `db_bhaskara`.`tb_endereco` (`cd_endereco`)
@@ -188,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_falta` (
   `cd_falta` INT NOT NULL AUTO_INCREMENT,
   `id_aula` INT NOT NULL,
   PRIMARY KEY (`cd_falta`),
-  INDEX `fk_tb_falta_tb_aula2_idx` (`id_aula` ASC) VISIBLE,
+  INDEX `fk_tb_falta_tb_aula2_idx` (`id_aula` ASC) ,
   CONSTRAINT `fk_tb_falta_tb_aula2`
     FOREIGN KEY (`id_aula`)
     REFERENCES `db_bhaskara`.`tb_aula` (`cd_aula`)
@@ -219,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_matricula` (
   `id_periodo_letivo` INT NOT NULL,
   `st_matricula` CHAR(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (`id_aluno`, `id_periodo_letivo`),
-  INDEX `fk_tb_matricula_tb_periodo_letivo1_idx` (`id_periodo_letivo` ASC) VISIBLE,
+  INDEX `fk_tb_matricula_tb_periodo_letivo1_idx` (`id_periodo_letivo` ASC) ,
   CONSTRAINT `fk_tb_matricula_tb_aluno1`
     FOREIGN KEY (`id_aluno`)
     REFERENCES `db_bhaskara`.`tb_aluno` (`cd_aluno`)
@@ -283,9 +283,9 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_turma_materia` (
   `id_materia` INT NOT NULL,
   `id_docente` INT NOT NULL,
   PRIMARY KEY (`id_turma`, `id_materia`),
-  INDEX `fk_tb_turma_has_tb_materia_tb_materia2_idx` (`id_materia` ASC) VISIBLE,
-  INDEX `fk_tb_turma_has_tb_materia_tb_turma2_idx` (`id_turma` ASC) VISIBLE,
-  INDEX `fk_tb_turma_materia_tb_docente1_idx` (`id_docente` ASC) VISIBLE,
+  INDEX `fk_tb_turma_has_tb_materia_tb_materia2_idx` (`id_materia` ASC) ,
+  INDEX `fk_tb_turma_has_tb_materia_tb_turma2_idx` (`id_turma` ASC) ,
+  INDEX `fk_tb_turma_materia_tb_docente1_idx` (`id_docente` ASC) ,
   CONSTRAINT `fk_tb_turma_has_tb_materia_tb_turma2`
     FOREIGN KEY (`id_turma`)
     REFERENCES `db_bhaskara`.`tb_turma` (`cd_turma`)
