@@ -5,18 +5,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ADMIN DASHBOARD</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
   <div class="esquerda">
     <h1>eBhaskara</h1>
-    <a href="/docente/home?tab=gerenciamento">Gerenciar</a>
-    <a href="/docente/home?tab=alunos">Alunos</a>
-    <a href="/docente/home?tab=professores">Professores</a>
+    <a href="/docente/home?tab=gerenciamento" style="position: relative;"><i class="bi bi-gear-wide-connected"></i>Gerenciar</a>
+    <a href="/docente/home?tab=alunos"><i class="bi bi-backpack3-fill"></i>Alunos</a>
+    <a href="/docente/home?tab=professores"><i class="bi bi-briefcase-fill"></i>Professores</a>
     <footer>
       <a href="/logout">
-        Sair
+      <i class="bi bi-box-arrow-left"></i>  
+      Sair
       </a>
     </footer>
 </div>
@@ -44,6 +46,7 @@
     font-size: 100%;
   }
 
+
   body {
     background-color: var(--background);
     margin: 0;
@@ -66,7 +69,13 @@ header > hr {
   .esquerda > a {
     text-decoration: none;
     color: var(--text);
+    
   }
+
+ i::before {
+  margin: 0;
+  padding: 0 0 3px 0;
+ }
 
   main {
     grid-area: main;
@@ -92,6 +101,8 @@ header > hr {
   }
 
   .esquerda {
+    display: flex;
+    flex-direction: column;
     grid-area: aside;
     font-size: large;
     max-width: fit-content;
