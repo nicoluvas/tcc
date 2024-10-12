@@ -101,6 +101,13 @@ abstract class Router {
             'params' => ['idaluno']
         ];
 
+        $routes['Gerenciar periodo letivo'] = [
+            'router' => '/docente/gerenciamento/periodo-letivo',
+            'controller' => 'Docente\\DocenteGerenciamentoController',
+            'action' => 'PeriodoLetivo',
+            'method' => ['GET']
+        ];
+
         $this->routes = array_merge($this->routes, $routes);
     }
 }

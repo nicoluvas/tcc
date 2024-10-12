@@ -2,6 +2,7 @@
 
 namespace App;
 use Dotenv\Dotenv;
+use App\Tools\Tools;
 
 class Bootstrap extends Router{
     public function __construct(){
@@ -9,6 +10,7 @@ class Bootstrap extends Router{
 
         $this->declareRoutes();
 
+        Tools::emPeriodoLetivo();
         $uri = $this->getUri();
         $this->run($uri);
     }

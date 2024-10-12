@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Tools;
+use App\Connection;
 
 abstract class Tools {
     public static function random_strings($length_of_string) {
@@ -8,5 +9,17 @@ abstract class Tools {
 
         return substr(str_shuffle($str_result), 
                            0, $length_of_string);
+    }
+
+    public static function emPeriodoLetivo() {
+        $sql = "SELECT * FROM tb_periodo_letivo ORDER BY cd_periodo_letivo DESC LIMIT 1";
+        $smt = Connection::connect()->query($sql)->fetch();
+        if (strtotime($smt->inicio) < time() && time() < strtotime($smt->fim)) {
+            define('EM_PERIODO_LETIVO', 1);
+            define('INICIO_PERIODO_LETIVO', $smt->inicio);
+            define('FIM_PERIODO_LETIVO', $smt->fim);
+        } else {
+            define('EM_PERIODO_LETIVO', 0);
+        }
     }
 }
