@@ -1,10 +1,10 @@
 <form>
-    <h2>Cadastrar Aluno</h2>
+    <h2><?= $this->aluno->nome_aluno ?></h2>
+    <h3>Engressou em <?= date_format(date_create($this->aluno->dt_cadastro), 'd/m/Y') ?></h3>
     <input type="text" name="nome" placeholder="Nome" value="<?= $this->aluno->nome_aluno ?>" disabled required />
-    <input type="tel" name="telefone" placeholder="Telefone" value="<?= $this->aluno->telefone_aluno ?>" disabled required pattern="[0-9]{11}"/>
-    <input type="text" name="cpf" placeholder="CPF" value="<?= $this->aluno->cpf_aluno ?>" disabled required pattern="^[0-9].{11}$"/>
-    <input type="text" name="rg" placeholder="RG" value="<?= $this->aluno->rg_aluno ?>" disabled required pattern="[0-9x]{9}"/>
-    <input type="email" name="email" placeholder="Email" value="<?= $this->aluno->email_aluno ?>" disabled required />
+    <input type="tel" name="telefone" placeholder="Telefone" value="<?= $this->aluno->telefone_aluno ?>" disabled required/>
+    <input type="text" name="cpf" placeholder="CPF" value="<?= $this->aluno->cpf_aluno ?>" disabled required/>
+    <input type="text" name="rg" placeholder="RG" value="<?= $this->aluno->rg_aluno ?>" disabled required/>
     <input type="date" name="nascimento" placeholder="Nascimento" value="<?= $this->aluno->nascimento_aluno ?>" disabled required />
     <!-- Endereço -->
     <fieldset style="width: 100%;">
@@ -46,10 +46,15 @@
     <fieldset>
         <legend>Responsavel</legend>
         <input type="text" name="nome_responsavel" placeholder="Nome do Responsável" value="<?= $this->aluno->nome_responsavel ?>" disabled required />
-        <input type="tel" name="telefone_responsavel" placeholder="Telefone do Responsável" value="<?= $this->aluno->telefone_responsavel ?>" disabled required pattern="[0-9]{11}"/>
-        <input type="text" name="cpf_responsavel" placeholder="CPF do Responsável" value="<?= $this->aluno->cpf_responsavel ?>" disabled required pattern="[0-9]{11}"/>
-        <input type="text" name="rg_responsavel" placeholder="RG do Responsável" value="<?= $this->aluno->rg_responsavel ?>" disabled required pattern="[0-9x]{9}"/>
+        <input type="tel" name="telefone_responsavel" placeholder="Telefone do Responsável" value="<?= $this->aluno->telefone_responsavel ?>" disabled required/>
+        <input type="text" name="cpf_responsavel" placeholder="CPF do Responsável" value="<?= $this->aluno->cpf_responsavel ?>" disabled required/>
+        <input type="email" name="email_responsavel" placeholder="Email" value="<?= $this->aluno->email_responsavel ?>" disabled required />
     </fieldset>
+    <label for="turma">Turma</label>
+    <select name="turma" id="turma">
+        <option value="<?= $this->aluno->cd_turma%2==0?$this->aluno->cd_turma-1:$this->aluno->cd_turma ?>"><?= $this->aluno->nm_turma[0] . 'º A' ?></option>
+        <option value="<?= $this->aluno->cd_turma%2!=0?$this->aluno->cd_turma+1:$this->aluno->cd_turma ?>"><?= $this->aluno->nm_turma[0] . 'º B' ?></option>
+    </select>
     <button type="button" id="editar">Editar</button>
     <button type="button" id="cancelar" style="display: none">Cancelar</button>
     <input type="submit" value="Atualizar" style="display: none" disabled/>
@@ -116,6 +121,8 @@
                         $("form select#localidade").prop("disabled", true)
                     })
                 });
+                $('select#turma').val('<?= $this->aluno->cd_turma ?>')
+                $("form select#turma").prop("disabled", true)
         });
 
         // colocar as cidades no select
@@ -160,6 +167,7 @@
             })
             $('form select#uf').prop('disabled', false)
             $('form select#localidade').prop('disabled', false)
+            $('form select#turma').prop('disabled', false)
             $(this).css('display', 'none')
             $('form button#cancelar').css('display', 'block')
             $('form input[type="submit"]').css('display', 'block')
@@ -188,6 +196,7 @@
                         $('form button#editar').css('display', 'block')
                         $("form select#uf").prop("disabled", true);
                         $("form select#localidade").prop("disabled", true);
+                        $("form select#turma").prop("disabled", true);
                         return;
                     }
                     $('p#formretorno').text(data.msg)

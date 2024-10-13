@@ -1,10 +1,9 @@
 <form>
     <h2>Cadastrar Aluno</h2>
     <input type="text" name="nome" placeholder="Nome" required />
-    <input type="tel" name="telefone" placeholder="Telefone" required pattern="[0-9]{11}"/>
-    <input type="text" name="cpf" placeholder="CPF" required pattern="[0-9]{11}"/>
-    <input type="text" name="rg" placeholder="RG" required pattern="[0-9x]{9}"/>
-    <input type="email" name="email" placeholder="Email" required />
+    <input type="tel" name="telefone" placeholder="Telefone" required/>
+    <input type="text" name="cpf" placeholder="CPF" required/>
+    <input type="text" name="rg" placeholder="RG" required/>
     <input type="date" name="nascimento" placeholder="Nascimento" required />
     <!-- Endereço -->
     <fieldset style="width: 100%;">
@@ -45,11 +44,18 @@
     </fieldset>
     <fieldset>
         <legend>Responsavel</legend>
-        <input type="text" name="nome_responsavel" placeholder="Nome do Responsável" required pattern="[0-9]{11}"/>
-        <input type="tel" name="telefone_responsavel" placeholder="Telefone do Responsável" required pattern="[0-9]{11}"/>
-        <input type="text" name="cpf_responsavel" placeholder="CPF do Responsável" required pattern="[0-9]{9}"/>
-        <input type="text" name="rg_responsavel" placeholder="RG do Responsável" required pattern="[0-9x]{9}"/>
+        <input type="text" name="nome_responsavel" placeholder="Nome do Responsável" required/>
+        <input type="tel" name="telefone_responsavel" placeholder="Telefone do Responsável" required/>
+        <input type="text" name="cpf_responsavel" placeholder="CPF do Responsável" required/>
+        <input type="email" name="email_responsavel" placeholder="Email" required />
     </fieldset>
+    <select name="turma" id="turma" required>
+        <option value="">Selecione uma turma</option>
+        <option value="6">6º ano</option>
+        <option value="7">7º ano</option>
+        <option value="8">8º ano</option>
+        <option value="9">9º ano</option>
+    </select>
     <input type="submit" value="Cadastrar" />
     <p id="formretorno"></p>
     <script>

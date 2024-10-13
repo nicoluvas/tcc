@@ -27,12 +27,12 @@ class DocenteAluno extends Model {
             $sql = "INSERT INTO
                         tb_responsavel
                     VALUES
-                        (null, :nome, :tel, :cpf, :rg)";
+                        (null, :nome, :tel, :cpf, :email)";
             $params = [
                 'nome' => $_POST['nome_responsavel'],
                 'tel' => $_POST['telefone_responsavel'],
                 'cpf' => $_POST['cpf_responsavel'],
-                'rg' => $_POST['rg_responsavel']
+                'email' => $_POST['email_responsavel']
             ];
             $this->executeStatement($sql, $params);
             $id_responsavel = $this->db->lastInsertId();
@@ -41,29 +41,49 @@ class DocenteAluno extends Model {
             $sql = "INSERT INTO
                         tb_aluno
                     VALUES
-                        (null, :nome, :tel, :cpf, :rg, :email, :nasc, :senha, default, :ende, 1, :resp, default)";
+                        (null, :nome, :tel, :cpf, :rg, :nasc, :senha, default, :ende, 1, :resp, default)";
             $params = [
                 'nome' => $_POST['nome'],
                 'tel' => $_POST['telefone'],
                 'cpf' => $_POST['cpf'],
                 'rg' => $_POST['rg'],
-                'email' => $_POST['email'],
                 'nasc' => $_POST['nascimento'],
                 'senha' => $senha_inicial,
                 'ende' => $id_endereco,
                 'resp' => $id_responsavel
             ];
             $this->executeStatement($sql, $params);
+            if (EM_PERIODO_LETIVO) {
+                $id_aluno = $this->db->lastInsertId();
+                $sql = "INSERT INTO tb_matricula VALUES (:aluno, :periodo, default)";
+                $params = [
+                    'aluno' => $id_aluno,
+                    'periodo' => ID_PERIODO_LETIVO
+                ];
+                $this->executeStatement($sql, $params);
+
+
+                $turma = $this->executeStatement('SELECT id_turma, count(*) from tb_matricula_turma inner join tb_turma on id_turma = cd_turma where nm_turma like :t group by id_periodo_letivo, id_turma order by count(*)', ['t' => $_POST['turma'] . '%'])->fetch()->id_turma;
+
+                $sql = "INSERT INTO tb_matricula_turma VALUES (:aluno, :periodo, :turma)";
+                $params = [
+                    'aluno' => $id_aluno,
+                    'periodo' => ID_PERIODO_LETIVO,
+                    'turma' => $turma
+                ];
+                $this->executeStatement($sql, $params);
+            }
+
             $this->db->commit();
             echo json_encode(['ok' => true]);
         } catch (\Throwable $th) {
             $this->db->rollBack();
-            echo json_encode(['ok' => false, 'msg' => 'Verifique as informações inseridas']);
+            echo json_encode(['ok' => false, 'msg' => 'Verifique as informações inseridas' . $th->getMessage()]);
         }
     }
 
     public function GetAluno($idaluno) {
-        $sql = "SELECT 
+        $sql = "SELECT
                     *
                 FROM
                     tb_aluno
@@ -75,9 +95,22 @@ class DocenteAluno extends Model {
                     tb_endereco
                     ON 
                         cd_endereco = id_endereco
+                INNER JOIN
+                    tb_matricula
+                    ON
+                        cd_aluno = id_aluno
+                INNER JOIN
+                    tb_matricula_turma
+                    ON
+                        id_aluno = id_matricula
+                INNER JOIN
+                    tb_turma
+                    ON
+                        id_turma = cd_turma
                 WHERE
-                    cd_aluno = :id";
-        $aluno = $this->executeStatement($sql, [':id' => $idaluno]);
+                    cd_aluno = :id AND
+                    tb_matricula.id_periodo_letivo = :periodo";
+        $aluno = $this->executeStatement($sql, [':id' => $idaluno, 'periodo' => ID_PERIODO_LETIVO]);
         return $aluno->fetch();
     }
     
@@ -87,14 +120,20 @@ class DocenteAluno extends Model {
                 FROM
                     tb_aluno
                 INNER JOIN
-                    tb_responsavel
+                    tb_matricula
                     ON
-                        cd_responsavel = id_responsavel
+                        cd_aluno = id_aluno
                 INNER JOIN
-                    tb_endereco
-                    ON 
-                        cd_endereco = id_endereco";
-        $aluno = $this->executeStatement($sql);
+                    tb_matricula_turma
+                    ON
+                        id_aluno = id_matricula
+                INNER JOIN
+                    tb_turma
+                    ON
+                        id_turma = cd_turma
+                WHERE
+                    tb_matricula.id_periodo_letivo = :periodo";
+        $aluno = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO]);
         return $aluno->fetchAll();
     }
 
@@ -135,14 +174,14 @@ class DocenteAluno extends Model {
                         nome_responsavel = :nome,
                         telefone_responsavel = :tel,
                         cpf_responsavel = :cpf,
-                        rg_responsavel = :rg
+                        email_responsavel = :email
                     WHERE
                         cd_responsavel = :resp";
             $params = [
                 'nome' => $_POST['nome_responsavel'],
                 'tel' => $_POST['telefone_responsavel'],
                 'cpf' => $_POST['cpf_responsavel'],
-                'rg' => $_POST['rg_responsavel'],
+                'email' => $_POST['email_responsavel'],
                 'resp' => $id_responsavel
             ];
             $this->executeStatement($sql, $params);
@@ -154,7 +193,6 @@ class DocenteAluno extends Model {
                         telefone_aluno = :tel,
                         cpf_aluno = :cpf,
                         rg_aluno = :rg,
-                        email_aluno = :email,
                         nascimento_aluno = :nasc
                     WHERE
                         cd_aluno = :aluno";
@@ -163,16 +201,28 @@ class DocenteAluno extends Model {
                 'tel' => $_POST['telefone'],
                 'cpf' => $_POST['cpf'],
                 'rg' => $_POST['rg'],
-                'email' => $_POST['email'],
                 'nasc' => $_POST['nascimento'],
                 'aluno' => $idaluno
             ];
+            $this->executeStatement($sql, $params);
+            
+            $sql = "UPDATE
+                        tb_matricula_turma
+                    SET
+                        id_turma = :turma
+                    WHERE
+                        id_matricula = :aluno";
+            $params = [
+                'turma' => $_POST['turma'],
+                'aluno' => $idaluno
+            ];
+
             $this->executeStatement($sql, $params);
             $this->db->commit();
             echo json_encode(['ok' => true]);
         } catch (\Throwable $th) {
             $this->db->rollBack();
-            echo json_encode(['ok' => false, 'msg' => 'Verifique as informações inseridas'. $th->getMessage()]);
+            echo json_encode(['ok' => false, 'msg' => 'Verifique as informações inseridas']);
         }
     }
 }

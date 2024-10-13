@@ -21,6 +21,7 @@
             <hr>
             <div class="aluno">
                 <p><?= $aluno->nome_aluno ?></p>
+                <p>Turma <?= $aluno->nm_turma ?></p>
                 <a href="/docente/aluno/<?= $aluno->cd_aluno ?>/info">Informações</a>
                 <a class="cancelarMatricula" id="<?= $aluno->nome_aluno ?>" href="/docente/aluno/<?= $aluno->cd_aluno ?>/cancelar-matricula">Cancelar Matrícula</a>
             </div> 

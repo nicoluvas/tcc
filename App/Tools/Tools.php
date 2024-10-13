@@ -18,6 +18,7 @@ abstract class Tools {
             define('EM_PERIODO_LETIVO', 1);
             define('INICIO_PERIODO_LETIVO', $smt->inicio);
             define('FIM_PERIODO_LETIVO', $smt->fim);
+            define('ID_PERIODO_LETIVO', $smt->cd_periodo_letivo);
         } else {
             define('EM_PERIODO_LETIVO', 0);
         }
