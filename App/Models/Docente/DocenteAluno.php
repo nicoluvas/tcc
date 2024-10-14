@@ -7,6 +7,10 @@ use App\Tools\Tools;
 class DocenteAluno extends Model {
     public function CadastrarAluno() {
         try {
+            if ($this->executeStatement('SELECT nome_aluno from tb_aluno where cpf_aluno = :cpf', ['cpf' => $_POST['cpf']])->fetch()) {
+                echo json_encode(['ok' => false, 'msg' => 'CPF já cadastrado']);
+                die();
+            }
             $this->db->beginTransaction();
             $sql = "INSERT INTO
                         tb_endereco
@@ -166,6 +170,10 @@ class DocenteAluno extends Model {
 
     public function AtualizarAluno($idaluno) {
         try {
+            if ($this->executeStatement('SELECT nome_aluno from tb_aluno where cpf_aluno = :cpf', ['cpf' => $_POST['cpf']])->fetch()) {
+                echo json_encode(['ok' => false, 'msg' => 'CPF já cadastrado']);
+                die();
+            }
             $this->db->beginTransaction();
             $smt = $this->executeStatement('SELECT id_endereco, id_responsavel FROM tb_aluno WHERE cd_aluno = :aluno', ['aluno' => $idaluno])->fetch();
             $id_endereco = $smt->id_endereco;
