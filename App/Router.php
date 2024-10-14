@@ -101,6 +101,14 @@ abstract class Router {
             'params' => ['idaluno']
         ];
 
+        $routes['Aluno Cancelar Matricula'] = [
+            'router' => '/docente/aluno/[0-9]+/cancelar-matricula',
+            'controller' => 'Docente\\DocenteAlunoController',
+            'action' => 'CancelarMatricula',
+            'method' => ['POST'],
+            'params' => ['aluno']
+        ];
+
         $routes['Gerenciar periodo letivo'] = [
             'router' => '/docente/gerenciamento/periodo-letivo',
             'controller' => 'Docente\\DocenteGerenciamentoController',

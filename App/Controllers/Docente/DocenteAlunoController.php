@@ -8,6 +8,7 @@ use App\Models\Docente\DocenteGerenciamento;
 class DocenteAlunoController extends Controller {
     protected $cargo;
     protected $turmas;
+    protected $turma;
     protected $alunos;
     protected $aluno;
     public function __construct() {
@@ -16,13 +17,13 @@ class DocenteAlunoController extends Controller {
             die();
         }
         $this->cargo = $_SESSION['logged']['cargo'];
-    }
-    
-    public function CadastrarAluno() {
         if ($this->cargo < 3) {
             header('Location: /login');
             die();
         }
+    }
+    
+    public function CadastrarAluno() {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $this->render('CadastrarAluno', 'DocenteLayout', 'Docente/Alunos');
             die();
@@ -33,10 +34,6 @@ class DocenteAlunoController extends Controller {
     }
 
     public function AlunosGeral() {
-        if ($this->cargo < 3) {
-            header('Location: /login');
-            die();
-        }
         $DocenteGerenciamento = new DocenteGerenciamento();
         $this->turmas = $DocenteGerenciamento->GetTurmas();
         $DocenteAluno = new DocenteAluno();
@@ -46,17 +43,14 @@ class DocenteAlunoController extends Controller {
     }
 
     public function AlunosPorTurma($turma) {
-        if ($this->cargo < 3) {
-            header('Location: /login');
-            die();
-        }
+        $DocenteGerenciamento = new DocenteGerenciamento();
+        $this->turma = $DocenteGerenciamento->GetTurmas()[$turma-1]->nm_turma;
+        $DocenteAluno = new DocenteAluno();
+        $this->alunos = $DocenteAluno->GetAlunosTurma($turma);
+        $this->render('AlunosTurma', 'DocenteLayout', 'Docente/Alunos');
     }
 
     public function AlunoInfo($idaluno) {
-        if ($this->cargo < 3) {
-            header('Location: /login');
-            die();
-        }
         $DocenteAluno = new DocenteAluno();
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $this->aluno = $DocenteAluno->GetAluno($idaluno);
@@ -65,5 +59,11 @@ class DocenteAlunoController extends Controller {
         }
 
         $DocenteAluno->AtualizarAluno($idaluno);
+    }
+
+    public function CancelarMatricula($aluno) {
+        $DocenteAluno = new DocenteAluno();
+        $DocenteAluno->CancelarMatricula($aluno);
+        die();
     }
 }

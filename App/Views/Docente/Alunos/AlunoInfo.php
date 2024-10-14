@@ -1,3 +1,9 @@
+<?php
+    if (empty($this->aluno)) {
+        echo "<h1>Aluno não encontrado</h1>";
+        die();
+    }
+?>
 <form>
     <h2><?= $this->aluno->nome_aluno ?></h2>
     <h3>Engressou em <?= date_format(date_create($this->aluno->dt_cadastro), 'd/m/Y') ?></h3>

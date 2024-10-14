@@ -1,4 +1,4 @@
-<h2>Alunos</h2>
+<h2>Alunos Turma <?= $this->turma ?></h2>
 <style>
       @import url('/assets/css/global.css');
     main  div > a {
@@ -16,19 +16,12 @@
         border-top: 1px solid #c2c2c2;
     }
 </style>
-<?php
-    foreach($this->turmas as $turma) :
-        ?>
-            <a href="/docente/alunos/turma/<?= $turma->cd_turma ?>"><?= $turma->nm_turma ?></a>
-        <?php
-    endforeach;
-?>
 
 <div class="alunos">
     <?php
     foreach($this->alunos as $aluno):
         ?>
-            <div class="aluno">
+            <div class="aluno" id="<?= $aluno->cd_aluno ?>">
                 <p><?= $aluno->nome_aluno ?></p>
                 <p>Turma <?= $aluno->nm_turma ?></p>
                 <a href="/docente/aluno/<?= $aluno->cd_aluno ?>/info">Informações</a>
@@ -43,7 +36,7 @@
     $('.aluno button.cancelarMatricula').click(function() {
         if (confirm('Deseja cancelar a matrícula de ' + $(this).attr('aluno') + '?')) {
             $.ajax({
-                url: '/docente/aluno/<?= $aluno->cd_aluno ?>/cancelar-matricula',
+                url: `/docente/aluno/${$(this).attr('id')}/cancelar-matricula`,
                 type: 'POST',
                 dataType: 'json'
             })

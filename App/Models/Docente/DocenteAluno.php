@@ -63,7 +63,7 @@ class DocenteAluno extends Model {
                 $this->executeStatement($sql, $params);
 
 
-                $turma = $this->executeStatement('SELECT id_turma, count(*) from tb_matricula_turma inner join tb_turma on id_turma = cd_turma where nm_turma like :t group by id_periodo_letivo, id_turma order by count(*)', ['t' => $_POST['turma'] . '%'])->fetch()->id_turma;
+                $turma = $this->executeStatement('SELECT id_turma, count(*) from tb_matricula_turma inner join tb_turma on id_turma = cd_turma inner join tb_matricula on id_matricula = id_aluno where nm_turma like :t and st_matricula like "A" group by tb_matricula.id_periodo_letivo, id_turma order by count(*)', ['t' => $_POST['turma'] . '%'])->fetch()->id_turma; // turma com menor numero de alunos com matriculas ativas
 
                 $sql = "INSERT INTO tb_matricula_turma VALUES (:aluno, :periodo, :turma)";
                 $params = [
@@ -109,7 +109,8 @@ class DocenteAluno extends Model {
                         id_turma = cd_turma
                 WHERE
                     cd_aluno = :id AND
-                    tb_matricula.id_periodo_letivo = :periodo";
+                    tb_matricula.id_periodo_letivo = :periodo AND
+                    st_matricula = 'A'";
         $aluno = $this->executeStatement($sql, [':id' => $idaluno, 'periodo' => ID_PERIODO_LETIVO]);
         return $aluno->fetch();
     }
@@ -132,8 +133,34 @@ class DocenteAluno extends Model {
                     ON
                         id_turma = cd_turma
                 WHERE
-                    tb_matricula.id_periodo_letivo = :periodo";
+                    tb_matricula.id_periodo_letivo = :periodo AND
+                    st_matricula = 'A'";
         $aluno = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO]);
+        return $aluno->fetchAll();
+    }
+
+    public function GetAlunosTurma($turma) {
+        $sql = "SELECT 
+                    *
+                FROM
+                    tb_aluno
+                INNER JOIN
+                    tb_matricula
+                    ON
+                        cd_aluno = id_aluno
+                INNER JOIN
+                    tb_matricula_turma
+                    ON
+                        id_aluno = id_matricula
+                INNER JOIN
+                    tb_turma
+                    ON
+                        id_turma = cd_turma
+                WHERE
+                    tb_matricula.id_periodo_letivo = :periodo AND
+                    cd_turma = :turma AND
+                    st_matricula = 'A'";
+        $aluno = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO, 'turma' => $turma]);
         return $aluno->fetchAll();
     }
 
@@ -223,6 +250,39 @@ class DocenteAluno extends Model {
         } catch (\Throwable $th) {
             $this->db->rollBack();
             echo json_encode(['ok' => false, 'msg' => 'Verifique as informações inseridas']);
+        }
+    }
+
+    public function CancelarMatricula($aluno) {
+        try {
+            $this->db->beginTransaction();
+
+            $sql = "UPDATE
+                        tb_matricula
+                    SET
+                        st_matricula = 'C'
+                    WHERE
+                        id_aluno = :aluno";
+            $pamas = [
+                'aluno' => $aluno
+            ];
+            $this->executeStatement($sql, $pamas);
+            
+            $sql = "UPDATE
+                        tb_aluno
+                    SET
+                        st_aluno = 'C'
+                    WHERE
+                        cd_aluno = :aluno";
+            $pamas = [
+                'aluno' => $aluno
+            ];
+            $this->executeStatement($sql, $pamas);
+
+            echo json_encode(['ok' => true]);
+            $this->db->commit();
+        } catch (\PDOException $th) {
+            echo json_encode(['ok' => false]);
         }
     }
 }
