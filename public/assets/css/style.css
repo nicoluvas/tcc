@@ -1,4 +1,5 @@
 @import url("global.css");
+
 * {
   padding: 0;
   margin: 0;
@@ -16,19 +17,23 @@ body#home {
   max-width: 98vw;
   margin: auto;
 }
+
 body#home .meshbgdark {
   display: none;
 }
+
 body#home #meshbg {
   position: absolute;
   z-index: -1;
   right: 0;
   height: 100vh;
 }
+
 body#home main {
   display: flex;
   flex-direction: column;
 }
+
 body#home header {
   padding: 0 30px 0 30px;
   height: 100px;
@@ -36,6 +41,7 @@ body#home header {
   align-items: center;
   border-bottom: 1px solid var(--shadow);
 }
+
 .restrita {
   text-align: center;
   display: flex;
@@ -44,45 +50,50 @@ body#home header {
   height: 50%;
   width: 15%;
   color: var(--primary);
-  --c:  var(--accent) !important;
+  --c: var(--accent) !important;
   border-radius: 1rem;
-  
-  box-shadow: 0 0 0 .1em inset var(--c); 
+
+  box-shadow: 0 0 0 .1em inset var(--c);
   --_g: linear-gradient(var(--c) 0 0) no-repeat;
-  background: 
-    var(--_g) calc(var(--_p,0%) - 100%) 0%,
-    var(--_g) calc(200% - var(--_p,0%)) 0%,
-    var(--_g) calc(var(--_p,0%) - 100%) 100%,
-    var(--_g) calc(200% - var(--_p,0%)) 100%;
-  background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+  background:
+    var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p, 0%)) 0%,
+    var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p, 0%)) 100%;
+  background-size: 50.5% calc(var(--_p, 0%)/2 + .5%);
   outline-offset: .1em;
   transition: background-size .4s, background-position 0s .4s;
 }
+
 .restrita:hover {
   --_p: 100%;
   transition: background-position .4s, background-size 0s;
 }
+
 .restrita:active {
-  box-shadow: 0 0 9e9q inset #0009; 
+  box-shadow: 0 0 9e9q inset #0009;
   background-color: var(--c);
   color: #fff;
 }
+
 .restrita {
- font-family: "lexend" ;
+  font-family: "lexend";
   font-size: 1rem;
   cursor: pointer;
   padding: .1em .6em;
-  font-weight: bold;  
+  font-weight: bold;
   border: none;
 }
 
 body#home header .logo {
   max-height: 100px;
 }
+
 body#home header div {
   display: flex;
   flex-direction: row;
 }
+
 body#home header nav {
   font-size: 16px;
   font-weight: 600;
@@ -92,6 +103,7 @@ body#home header nav {
   column-gap: 50px;
   align-items: center;
 }
+
 body#home header button {
   height: 50px;
   width: 50px;
@@ -100,9 +112,11 @@ body#home header button {
   background-color: var(--accent);
   color: var(--background);
 }
-body#home header button + button {
+
+body#home header button+button {
   margin-left: 20px;
 }
+
 body#home header .restrito {
   font-weight: 700;
   font-size: 14px;
@@ -114,12 +128,14 @@ body#home header .restrito {
   text-align: center;
   color: var(--primary);
 }
+
 body#home .pagina1 {
   height: calc(100vh - 150px);
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
+
 body#home .pagina1 .esquerdo {
   height: 60vh;
   width: 40vw;
@@ -127,12 +143,14 @@ body#home .pagina1 .esquerdo {
   flex-direction: column;
   justify-content: space-around;
 }
+
 body#home .pagina1 .esquerdo .caixas-inf {
   height: 20vh;
   display: flex;
   flex-direction: row;
   column-gap: 1rem;
 }
+
 body#home .pagina1 .esquerdo .caixas-inf .caixa {
   background-color: var(--secondary);
   border-radius: 1rem;
@@ -141,11 +159,13 @@ body#home .pagina1 .esquerdo .caixas-inf .caixa {
   align-items: center;
   max-width: 10vw;
 }
+
 body#home .pagina1 .esquerdo .caixas-inf .caixa p {
   text-align: center;
   translate: 0 -100%;
   font-size: large;
 }
+
 body#home .pagina1 .esquerdo .caixas-inf .caixa .bola {
   background-color: var(--secondary);
   translate: 0 -40%;
@@ -153,44 +173,54 @@ body#home .pagina1 .esquerdo .caixas-inf .caixa .bola {
   height: 150px;
   border-radius: 50%;
 }
+
 body#home .pagina1 .imgs {
   right: 0;
   display: flex;
   flex-direction: column;
 }
+
 body#home .pagina1 .imgs .pessoa#a {
   height: 40vw;
 }
+
 body#home .pagina1 .linha {
   height: 6px;
   border-radius: 5px;
 }
-body#home .pagina1 .linha + .linha {
+
+body#home .pagina1 .linha+.linha {
   margin-top: 5px;
 }
+
 body#home .pagina1 .linha#linha1 {
   background-color: var(--accent);
   width: 200px;
 }
+
 body#home .pagina1 .linha#linha2 {
   background-color: var(--secondary);
   width: 270px;
 }
+
 body#home .pagina1 .letreiro p {
   font-weight: 700;
   font-size: 64px;
 }
+
 body#home .pagina2 {
   height: calc(100vh - 50px);
   background-color: var(--primary);
   display: flex;
   flex-direction: row;
 }
+
 body#home .pagina2 #pessoa2 {
   display: flex;
   height: 100%;
   margin-left: 40%;
 }
+
 body#home .pagina2 #esquerda {
   background-image: url("../images/index/biblico.jpeg");
   background-size: cover;
@@ -199,6 +229,7 @@ body#home .pagina2 #esquerda {
   background-color: var(--accent);
   width: 40%;
 }
+
 body#home .pagina2 #direita {
   width: 60%;
   padding: 5rem;
@@ -206,6 +237,7 @@ body#home .pagina2 #direita {
   align-items: center;
   justify-content: center;
 }
+
 body#home .pagina2 .caixadir {
   color: var(--secondary);
   display: flex;
@@ -218,53 +250,158 @@ body#home .pagina2 .caixadir {
   max-width: 100%;
   box-sizing: border-box;
 }
+
 body#home .pagina2 .caixadir h3 {
   font-size: 64px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
 }
+
 body#home .pagina2 .caixadir h3 .mark {
   color: var(--primary);
   background-color: var(--secondary);
-  
+
 }
+
 body#home .pagina2 .caixadir p {
   flex: 1;
   max-width: 60%;
   margin-top: 2rem;
   font-size: 16px;
 }
+
 body#home .pagina3 {
   height: calc(100vh - 150px);
-  background-color: var(--secondary);
+
+  background-image: url("/assets/images/index/paper.jpg");
+  background-size: cover;
+  background-position: center;
+
   display: flex;
-  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
-body#home .pagina3 img {
-  position: absolute;
+
+body#home .direita3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+html#body .container {
+  color: #e5e5e5;
+  font-size: 5rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animation {
+  height: 50px;
+  overflow: hidden;
+  margin-left: 1rem;
+}
+
+.animation>div>div {
+  text-align: center;
+  padding: 0 10rem 0 0;
+  height: 2.81rem;
+  margin-bottom: 2.81rem;
+  display: inline-block;
+}
+
+.animation div:first-child {
+  animation: text-animation 18s infinite;
+}
+
+.first div {
+  background-color: var(--primary);
+}
+
+.second div {
+  background-color: var(--secondary);
+}
+
+.third div {
+  background-color: var(--accent);
+}
+
+@keyframes text-animation {
+  0% {
+    margin-top: 0;
+  }
+
+  10% {
+    margin-top: 0;
+  }
+
+  20% {
+    margin-top: -5.62rem;
+  }
+
+  30% {
+    margin-top: -5.62rem;
+  }
+
+  40% {
+    margin-top: -11.24rem;
+  }
+
+  60% {
+    margin-top: -11.24rem;
+  }
+
+  70% {
+    margin-top: -5.62rem;
+  }
+
+  80% {
+    margin-top: -5.62rem;
+  }
+
+  90% {
+    margin-top: 0;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+
+body#home .pessoa3 {
+  position: flex;
   z-index: 0;
 }
+
 body#home .pagina3 p {
   font-size: large;
-  margin: 30vh 0 0 50vw;
+  margin: 0 0 0 0;
   width: 500px;
   height: 100px;
 }
+
 body#home .pagina3 p span {
   color: var(--primary);
 }
+
 @keyframes gira {
   from {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
+
   to {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
+
 .girar {
   animation: gira 200s linear infinite;
 }
+
 body#login {
   background-image: linear-gradient(26deg, var(--primary), var(--secondary));
   min-height: 100vh;
@@ -279,18 +416,21 @@ body#login {
   overflow: hidden;
   transition: background-color 200ms ease;
 }
+
 body#login h1 {
   position: absolute;
   left: 20px;
   top: 20px;
   font-size: 48px;
 }
-body#login > img {
+
+body#login>img {
   z-index: 1;
   transform: translateX(1vw);
   width: calc(40vw + 100px);
   margin-top: 100px;
 }
+
 body#login .form-container {
   position: relative;
   background-color: var(--background);
@@ -303,6 +443,7 @@ body#login .form-container {
   justify-content: center;
   color: var(--text);
 }
+
 body#login .form-container button {
   position: absolute;
   top: 50px;
@@ -313,20 +454,24 @@ body#login .form-container button {
   border-radius: 50%;
   cursor: pointer;
 }
+
 body#login .form-container button i {
   color: var(--background);
 }
+
 body#login .form-container form {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   width: 60%;
 }
+
 body#login .form-container form h2 {
   margin-bottom: 40px;
   font-size: 2.6em;
   text-align: center;
 }
+
 body#login .form-container form input {
   background-color: #fff;
   color: var(--text);
@@ -334,10 +479,13 @@ body#login .form-container form input {
   font-size: 16px;
   border-radius: 4px;
 }
-body#login .form-container form input:hover, body#login .form-container form input:focus {
+
+body#login .form-container form input:hover,
+body#login .form-container form input:focus {
   background-color: #ddd;
   transition: 200ms;
 }
+
 body#login .form-container form input[type=submit] {
   background-color: #68cbeb;
   padding: 15px;
@@ -345,13 +493,17 @@ body#login .form-container form input[type=submit] {
   margin-top: 10px;
   font-size: 24px;
 }
-body#login .form-container form input[type=submit]:hover, body#login .form-container form input[type=submit]:focus {
+
+body#login .form-container form input[type=submit]:hover,
+body#login .form-container form input[type=submit]:focus {
   background-color: #58aeca;
 }
+
 body#login .form-container form p {
   font-size: 14px;
   text-align: center;
 }
+
 body#login div#bola-em-baixo {
   width: 200px;
   height: 200px;
@@ -362,41 +514,50 @@ body#login div#bola-em-baixo {
   left: 100%;
   transform: translate(-100%, -100%);
 }
+
 @media screen and (max-width: 1200px) {
   body#login {
     overflow: hidden;
   }
-  body#login > img {
+
+  body#login>img {
     display: none;
   }
-  body#login > h1 {
+
+  body#login>h1 {
     z-index: 1;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
     color: var(--text);
   }
+
   body#login .form-container {
     font-size: clamp(14px, 2vw, 20px);
     width: 100vw;
     border-radius: 0;
   }
+
   body#login .form-container form {
     row-gap: 3px;
   }
+
   body#login .form-container form h2 {
     margin-bottom: 10px;
   }
+
   body#login .form-container button {
     top: 10px;
     left: 10px;
   }
+
   body#login div#bola-em-baixo {
     display: none;
   }
 }
+
 @media screen and (max-height: 420px) {
-  body#login > h1 {
+  body#login>h1 {
     display: none;
   }
 }
@@ -410,24 +571,29 @@ body#adminLayout {
   margin: 0;
   grid-template-areas: "sidebar header" "sidebar main" "sidebar footer";
 }
+
 body#adminLayout header {
   grid-area: header;
   background-color: #f7d9c4;
 }
+
 body#adminLayout nav {
   grid-area: sidebar;
   background-color: #f8a488;
 }
+
 body#adminLayout main {
   grid-area: main;
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: #eaedf0;
 }
+
 body#adminLayout footer {
   grid-area: footer;
   background-color: #f7d9c4;
 }
+
 @media screen and (max-width: 763px) {
   body#adminLayout {
     grid-template-columns: 1fr;
@@ -850,6 +1016,7 @@ body#adminLayout footer {
 }
 
 @media screen and (max-width: 767px) {
+
   .bhaskara,
   .bhaskara1,
   .bhaskara2 {
@@ -857,11 +1024,13 @@ body#adminLayout footer {
     line-height: 12px;
   }
 }
+
 @media screen and (max-width: 450px) {
   .informaes-do-responsvel {
     font-size: 19px;
     line-height: 28px;
   }
+
   .bhaskara,
   .bhaskara1,
   .bhaskara2 {
@@ -869,6 +1038,7 @@ body#adminLayout footer {
     line-height: 8px;
   }
 }
+
 .pagina5 {
   width: 100%;
   height: 100%;

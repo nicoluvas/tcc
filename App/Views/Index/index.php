@@ -83,11 +83,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
             </div>
         </section>
         <!-- SEÇÃO 3 -->
-        <section class="pagina3">
-            <p class="shadow">Contando com uma abordagem intensiva e estratégica, focada na preparação dos estudantes
-                para os exames de ingresso ao ensino superior, Bhaskara propõe: <span class="shadow"> Currículo
-                    Estratégico, Simulados e Treinamento Intensivo, Estratégias de Estudo, Apoio Psicológico, Parcerias
-                    com Cursinhos e Universidades.</span></p>
+        <section class="pagina3" style="">
+                <img src="assets\images\index\pessoa3.svg" class="pessoa3" alt="" style="width: 450px;">
+
+                <div class="direita3">
+                <section class="animation">
+    <div class="first"><div>MÉTODO</div></div>
+    <div class="second"><div>ENSINO</div></div>
+    <div class="third"><div>FUTURO</div></div>
+  </section>
+                    <p class="shadow">Contando com uma abordagem intensiva e estratégica, focada na preparação dos estudantes
+                        para os exames de ingresso ao ensino superior, Bhaskara propõe: <span class="shadow"> Currículo
+                            Estratégico, Simulados e Treinamento Intensivo, Estratégias de Estudo, Apoio Psicológico, Parcerias
+                            com Cursinhos e Universidades.</span></p>
+                </div>
 
         </section>
         <!-- SEÇÃO 4 -->
