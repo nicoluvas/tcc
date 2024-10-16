@@ -138,7 +138,9 @@ class DocenteAluno extends Model {
                         id_turma = cd_turma
                 WHERE
                     tb_matricula.id_periodo_letivo = :periodo AND
-                    st_matricula = 'A'";
+                    st_matricula = 'A'
+                ORDER BY
+                    id_turma, nome_aluno";
         $aluno = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO]);
         return $aluno->fetchAll();
     }
@@ -163,7 +165,9 @@ class DocenteAluno extends Model {
                 WHERE
                     tb_matricula.id_periodo_letivo = :periodo AND
                     cd_turma = :turma AND
-                    st_matricula = 'A'";
+                    st_matricula = 'A'
+                ORDER BY
+                    nome_aluno";
         $aluno = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO, 'turma' => $turma]);
         return $aluno->fetchAll();
     }

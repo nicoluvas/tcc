@@ -30,7 +30,6 @@ class Login extends Model {
                     telefone_aluno as telefone,
                     cpf_aluno as cpf,
                     rg_aluno as rg,
-                    email_aluno as email,
                     nascimento_aluno as nascimento,
                     senha_aluno,
                     id_cargo
@@ -83,7 +82,7 @@ class Login extends Model {
             'telefone' => $user->telefone,
             'cpf' => $user->cpf,
             'rg' => $user->rg,
-            'email' => $user->email,
+            'email' => $user->email??null,
             'nascimento' => $user->nascimento??null
         ];
     }

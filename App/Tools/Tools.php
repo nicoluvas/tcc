@@ -14,13 +14,13 @@ abstract class Tools {
     public static function emPeriodoLetivo() {
         $sql = "SELECT * FROM tb_periodo_letivo ORDER BY cd_periodo_letivo DESC LIMIT 1";
         $smt = Connection::connect()->query($sql)->fetch();
-        if (strtotime($smt->inicio) < time() && time() < strtotime($smt->fim)) {
-            define('EM_PERIODO_LETIVO', 1);
-            define('INICIO_PERIODO_LETIVO', $smt->inicio);
-            define('FIM_PERIODO_LETIVO', $smt->fim);
+        if ($smt->inicio == null) {
             define('ID_PERIODO_LETIVO', $smt->cd_periodo_letivo);
-        } else {
             define('EM_PERIODO_LETIVO', 0);
-        }
+            return;
+        } 
+        define('EM_PERIODO_LETIVO', 1);
+        define('INICIO_PERIODO_LETIVO', $smt->inicio);
+        define('FIM_PERIODO_LETIVO', $smt->fim);
     }
 }
