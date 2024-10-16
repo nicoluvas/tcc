@@ -116,6 +116,20 @@ abstract class Router {
             'method' => ['GET']
         ];
 
+        $routes['Cadastrar Docente'] = [
+            'router' => '/docente/docente/cadastrar',
+            'controller' => 'Docente\\DocenteDocenteController',
+            'action' => 'CadastrarDocente',
+            'method' => ['GET', 'POST']
+        ];
+
+        $routes['Listar Docente'] = [
+            'router' => '/docente/docente/listar',
+            'controller' => 'Docente\\DocenteDocenteController',
+            'action' => 'ListarDocente',
+            'method' => ['GET']
+        ];
+
         $this->routes = array_merge($this->routes, $routes);
     }
 }

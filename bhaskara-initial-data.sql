@@ -402,12 +402,12 @@ insert into tb_matricula values
     (94, 2, DEFAULT);
 
 insert into tb_docente values
-    ('Ana Paula Silva', '11987654321', '12345678901', '123456789', 'ana.silva@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 1, 2),
-    ('Bruno Alves Costa', '11976543210', '23456789012', '234567890', 'bruno.costa@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 2, 2),
-    ('Carla Fernanda Lima', '11965432109', '34567890123', '345678901', 'carla.lima@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 3, 2),
-    ('Diego Pereira Santos', '11954321098', '45678901234', '456789012', 'diego.santos@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 4, 3),
-    ('Eliana Rodrigues Martins', '11943210987', '56789012345', '567890123', 'eliana.martins@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 5, 4),
-    ('Fabio Henrique Oliveira', '11932109876', '67890123456', '678901234', 'fabio.oliveira@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 6, 5);
+    (null, 'Ana Paula Silva', '11987654321', '12345678901', '123456789', 'ana.silva@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 1, 2),
+    (null, 'Bruno Alves Costa', '11976543210', '23456789012', '234567890', 'bruno.costa@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 2, 2),
+    (null, 'Carla Fernanda Lima', '11965432109', '34567890123', '345678901', 'carla.lima@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 3, 2),
+    (null, 'Diego Pereira Santos', '11954321098', '45678901234', '456789012', 'diego.santos@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 4, 3),
+    (null, 'Eliana Rodrigues Martins', '11943210987', '56789012345', '567890123', 'eliana.martins@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 5, 4),
+    (null, 'Fabio Henrique Oliveira', '11932109876', '67890123456', '678901234', 'fabio.oliveira@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 6, 5);
 
 insert into tb_turma values
 (null, '6º A'),

@@ -52,7 +52,7 @@ class DocenteAluno extends Model {
                 'cpf' => $_POST['cpf'],
                 'rg' => $_POST['rg'],
                 'nasc' => $_POST['nascimento'],
-                'senha' => $senha_inicial,
+                'senha' => password_hash($senha_inicial, PASSWORD_BCRYPT),
                 'ende' => $id_endereco,
                 'resp' => $id_responsavel
             ];
@@ -79,10 +79,10 @@ class DocenteAluno extends Model {
             }
 
             $this->db->commit();
-            echo json_encode(['ok' => true]);
+            echo json_encode(['ok' => true, 'senha' => $senha_inicial]);
         } catch (\Throwable $th) {
             $this->db->rollBack();
-            echo json_encode(['ok' => false, 'msg' => 'Verifique as informações inseridas' . $th->getMessage()]);
+            echo json_encode(['ok' => false, 'msg' => 'Verifique as informações inseridas']);
         }
     }
 

@@ -11,10 +11,10 @@
 
 <body>
   <div class="esquerda">
-    <h1>eBhaskara</h1>
+    <h1><a href="/">eBhaskara</a></h1>
     <a href="/docente/home?tab=gerenciamento" style="position: relative;"><i class="bi bi-gear-wide-connected"></i>Gerenciar</a>
-    <a href="/docente/home?tab=alunos"><i class="bi bi-backpack3-fill"></i>Alunos</a>
-    <a href="/docente/home?tab=professores"><i class="bi bi-briefcase-fill"></i>Professores</a>
+    <a href="/docente/home?tab=dicentes"><i class="bi bi-backpack3-fill"></i>Dicentes</a>
+    <a href="/docente/home?tab=docentes"><i class="bi bi-briefcase-fill"></i>Docentes</a>
     <footer>
       <a href="/logout">
       <i class="bi bi-box-arrow-left"></i>  

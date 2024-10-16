@@ -119,7 +119,6 @@ CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_docente` (
   INDEX `fk_tb_funcionario_tb_endereco1_idx` (`id_endereco` ASC) ,
   INDEX `fk_tb_docente_tb_cargo1_idx` (`id_cargo` ASC) ,
   UNIQUE INDEX `email_docente_UNIQUE` (`email_docente` ASC) ,
-  UNIQUE INDEX `rg_docente_UNIQUE` (`rg_docente` ASC) ,
   UNIQUE INDEX `cpf_docente_UNIQUE` (`cpf_docente` ASC) ,
   CONSTRAINT `fk_tb_funcionario_tb_endereco1`
     FOREIGN KEY (`id_endereco`)
