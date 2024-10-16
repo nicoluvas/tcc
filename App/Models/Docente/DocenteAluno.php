@@ -7,7 +7,7 @@ use App\Tools\Tools;
 class DocenteAluno extends Model {
     public function CadastrarAluno() {
         try {
-            if ($this->executeStatement('SELECT nome_aluno from tb_aluno where cpf_aluno = :cpf', ['cpf' => $_POST['cpf']])->fetch()) {
+            if ($this->executeStatement('SELECT cpf_aluno from tb_aluno where cpf_aluno = :cpf', ['cpf' => $_POST['cpf']])->fetch()) {
                 echo json_encode(['ok' => false, 'msg' => 'CPF já cadastrado']);
                 die();
             }
@@ -52,7 +52,7 @@ class DocenteAluno extends Model {
                 'cpf' => $_POST['cpf'],
                 'rg' => $_POST['rg'],
                 'nasc' => $_POST['nascimento'],
-                'senha' => $senha_inicial,
+                'senha' => password_hash($senha_inicial, PASSWORD_BCRYPT),
                 'ende' => $id_endereco,
                 'resp' => $id_responsavel
             ];
@@ -79,10 +79,10 @@ class DocenteAluno extends Model {
             }
 
             $this->db->commit();
-            echo json_encode(['ok' => true]);
+            echo json_encode(['ok' => true, 'senha' => $senha_inicial]);
         } catch (\Throwable $th) {
             $this->db->rollBack();
-            echo json_encode(['ok' => false, 'msg' => 'Verifique as informações inseridas' . $th->getMessage()]);
+            echo json_encode(['ok' => false, 'msg' => 'Verifique as informações inseridas']);
         }
     }
 
@@ -174,9 +174,11 @@ class DocenteAluno extends Model {
 
     public function AtualizarAluno($idaluno) {
         try {
-            if ($this->executeStatement('SELECT nome_aluno from tb_aluno where cpf_aluno = :cpf', ['cpf' => $_POST['cpf']])->fetch()) {
-                echo json_encode(['ok' => false, 'msg' => 'CPF já cadastrado']);
-                die();
+            if ($this->executeStatement('SELECT cpf_aluno from tb_aluno where cd_aluno = :aluno', ['aluno' => $idaluno])->fetch()->cpf_aluno != $_POST['cpf']) {
+                if ($this->executeStatement('SELECT cpf_aluno from tb_aluno where cpf_aluno = :cpf', ['cpf' => $_POST['cpf']])) {
+                    echo json_encode(['ok' => false, 'msg' => 'CPF já cadastrado']);
+                    die();
+                }
             }
             $this->db->beginTransaction();
             $smt = $this->executeStatement('SELECT id_endereco, id_responsavel FROM tb_aluno WHERE cd_aluno = :aluno', ['aluno' => $idaluno])->fetch();

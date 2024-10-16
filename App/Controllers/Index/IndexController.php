@@ -42,10 +42,9 @@ class IndexController extends Controller {
             header("Location: /{$_SESSION['logged']['tipo']}/home");
             die();
         }
-
-        echo $_SESSION['msg'];
-        die();
+        
         header('Location: /login');
+        die();
     }
 
     public function Logout() {

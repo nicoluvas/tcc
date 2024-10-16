@@ -1,10 +1,10 @@
 <form>
-    <h2>Cadastrar Aluno</h2>
+    <h2>Cadastrar Docente</h2>
     <input type="text" name="nome" placeholder="Nome" required />
     <input type="tel" name="telefone" placeholder="Telefone" required/>
     <input type="text" name="cpf" placeholder="CPF" required/>
     <input type="text" name="rg" placeholder="RG" required/>
-    <input type="date" name="nascimento" placeholder="Nascimento" required />
+    <input type="email" name="email" placeholder="Email" required />
     <!-- Endereço -->
     <fieldset style="width: 100%;">
         <legend>Endereço</legend>
@@ -42,19 +42,16 @@
         <label for="complemento">Complemeto</label>
         <input type="text" name="complemento" id="complemento" placeholder="Complemento" />
     </fieldset>
-    <fieldset>
-        <legend>Responsavel</legend>
-        <input type="text" name="nome_responsavel" placeholder="Nome do Responsável" required/>
-        <input type="tel" name="telefone_responsavel" placeholder="Telefone do Responsável" required/>
-        <input type="text" name="cpf_responsavel" placeholder="CPF do Responsável" required/>
-        <input type="email" name="email_responsavel" placeholder="Email" required />
-    </fieldset>
-    <select name="turma" id="turma" required>
-        <option value="">Selecione uma turma</option>
-        <option value="6">6º ano</option>
-        <option value="7">7º ano</option>
-        <option value="8">8º ano</option>
-        <option value="9">9º ano</option>
+    <select name="cargo" id="cargo" required>
+        <option value="">Selecione um cargo</option>
+        <?php
+            $cargos = ['2' => 'Professor', '3' => 'Secretário', '4' => 'Coordenador', '5' => 'Diretor'];
+            for ($i = 2; $i <= $_SESSION['logged']['cargo']; $i++):
+                ?>
+                    <option value="<?= $i ?>"><?= $cargos[$i] ?></option>
+                <?php
+            endfor;
+        ?>
     </select>
     <input type="submit" value="Cadastrar" />
     <p id="formretorno"></p>
@@ -157,13 +154,13 @@
             event.preventDefault(); // impede que a pagina seja recarregada
 
             $.ajax({
-                url: "/docente/aluno/cadastrar",
+                url: "/docente/docente/cadastrar",
                 type: "post",
                 dataType: "json",
                 data: $("form").serialize(),
                 success: function (data) {
                     if (data.ok) {
-                        $('p#formretorno').text('Aluno Cadastrado; senha inicial: ' + data.senha)
+                        $('p#formretorno').text('Docente Cadastrado; senha inicial: '+data.senha)
                         $("form")[0].reset();
                         $("form select#localidade").empty();
                         $("form select#localidade").prop("disabled", true);
