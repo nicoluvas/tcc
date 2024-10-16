@@ -108,26 +108,42 @@ abstract class Router {
             'method' => ['POST'],
             'params' => ['aluno']
         ];
-
+        
         $routes['Gerenciar periodo letivo'] = [
             'router' => '/docente/gerenciamento/periodo-letivo',
             'controller' => 'Docente\\DocenteGerenciamentoController',
             'action' => 'PeriodoLetivo',
             'method' => ['GET']
         ];
-
+        
         $routes['Cadastrar Docente'] = [
             'router' => '/docente/docente/cadastrar',
             'controller' => 'Docente\\DocenteDocenteController',
             'action' => 'CadastrarDocente',
             'method' => ['GET', 'POST']
         ];
-
+        
         $routes['Listar Docente'] = [
             'router' => '/docente/docente/listar',
             'controller' => 'Docente\\DocenteDocenteController',
             'action' => 'ListarDocente',
             'method' => ['GET']
+        ];
+        
+        $routes['Docente info'] = [
+            'router' => '/docente/docente/[0-9]+/info',
+            'controller' => 'Docente\\DocenteDocenteController',
+            'action' => 'DocenteInfo',
+            'method' => ['GET', 'POST'],
+            'params' => ['iddocente']
+        ];
+        
+        $routes['Docente Desligar'] = [
+            'router' => '/docente/docente/[0-9]+/desligar',
+            'controller' => 'Docente\\DocenteDocenteController',
+            'action' => 'DesligarDocente',
+            'method' => ['POST'],
+            'params' => ['iddocente']
         ];
 
         $this->routes = array_merge($this->routes, $routes);
