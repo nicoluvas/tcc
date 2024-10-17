@@ -55,6 +55,9 @@
         <option value="7">7º ano</option>
         <option value="8">8º ano</option>
         <option value="9">9º ano</option>
+        <option value="1">1º ano EM</option>
+        <option value="2">2º ano EM</option>
+        <option value="3">3º ano EM</option>
     </select>
     <input type="submit" value="Cadastrar" />
     <p id="formretorno"></p>

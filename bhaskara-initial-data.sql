@@ -1,8 +1,8 @@
 use db_bhaskara;
 
 insert into tb_periodo_letivo values
-(null, '2023-01-29', '2023-12-06'),
-(null, null, null);
+(null, '2023-01-29', '2023-12-06', '2023-07-01'),
+(null, null, null, null);
 
 insert into tb_cargo values 
 (null, 'Aluno'),
@@ -417,7 +417,13 @@ insert into tb_turma values
 (null, '8º A'),
 (null, '8º B'),
 (null, '9º A'),
-(null, '9º B');
+(null, '9º B'),
+(null, '1ºEM A'),
+(null, '1ºEM B'),
+(null, '2ºEM A'),
+(null, '2ºEM B'),
+(null, '3ºEM A'),
+(null, '3ºEM B');
 
 insert tb_matricula_turma values 
     (1, 2, 1),

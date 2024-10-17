@@ -109,13 +109,6 @@ abstract class Router {
             'params' => ['aluno']
         ];
         
-        $routes['Gerenciar periodo letivo'] = [
-            'router' => '/docente/gerenciamento/periodo-letivo',
-            'controller' => 'Docente\\DocenteGerenciamentoController',
-            'action' => 'PeriodoLetivo',
-            'method' => ['GET']
-        ];
-        
         $routes['Cadastrar Docente'] = [
             'router' => '/docente/docente/cadastrar',
             'controller' => 'Docente\\DocenteDocenteController',
@@ -146,6 +139,20 @@ abstract class Router {
             'params' => ['iddocente']
         ];
 
+        $routes['Gerenciar periodo letivo'] = [
+            'router' => '/docente/gerenciamento/periodo-letivo',
+            'controller' => 'Docente\\DocenteGerenciamentoController',
+            'action' => 'PeriodoLetivo',
+            'method' => ['GET', 'POST']
+        ];
+
+        $routes['Gerenciar relacao materia professor'] = [
+            'router' => '/docente/gerenciamento/materias',
+            'controller' => 'Docente\\DocenteGerenciamentoController',
+            'action' => 'Materias',
+            'method' => ['GET', 'POST']
+        ];
+        
         $this->routes = array_merge($this->routes, $routes);
     }
 }

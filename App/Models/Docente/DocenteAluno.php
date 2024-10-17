@@ -57,26 +57,22 @@ class DocenteAluno extends Model {
                 'resp' => $id_responsavel
             ];
             $this->executeStatement($sql, $params);
-            if (EM_PERIODO_LETIVO) {
-                $id_aluno = $this->db->lastInsertId();
-                $sql = "INSERT INTO tb_matricula VALUES (:aluno, :periodo, default)";
-                $params = [
-                    'aluno' => $id_aluno,
-                    'periodo' => ID_PERIODO_LETIVO
-                ];
-                $this->executeStatement($sql, $params);
+            $id_aluno = $this->db->lastInsertId();
+            $sql = "INSERT INTO tb_matricula VALUES (:aluno, :periodo, default)";
+            $params = [
+                'aluno' => $id_aluno,
+                'periodo' => ID_PERIODO_LETIVO
+            ];
+            $this->executeStatement($sql, $params);
+            $turma = $this->executeStatement('SELECT id_turma, count(*) from tb_matricula_turma inner join tb_turma on id_turma = cd_turma inner join tb_matricula on id_matricula = id_aluno where nm_turma like :t and st_matricula like "A" group by tb_matricula.id_periodo_letivo, id_turma order by count(*)', ['t' => $_POST['turma'] . '%'])->fetch()->id_turma??$this->executeStatement('select cd_turma from tb_turma where nm_turma like :t', ['t' => $_POST['turma'] . '%'])->fetch()->cd_turma; // turma com menor numero de alunos com matriculas ativas
 
-
-                $turma = $this->executeStatement('SELECT id_turma, count(*) from tb_matricula_turma inner join tb_turma on id_turma = cd_turma inner join tb_matricula on id_matricula = id_aluno where nm_turma like :t and st_matricula like "A" group by tb_matricula.id_periodo_letivo, id_turma order by count(*)', ['t' => $_POST['turma'] . '%'])->fetch()->id_turma; // turma com menor numero de alunos com matriculas ativas
-
-                $sql = "INSERT INTO tb_matricula_turma VALUES (:aluno, :periodo, :turma)";
-                $params = [
-                    'aluno' => $id_aluno,
-                    'periodo' => ID_PERIODO_LETIVO,
-                    'turma' => $turma
-                ];
-                $this->executeStatement($sql, $params);
-            }
+            $sql = "INSERT INTO tb_matricula_turma VALUES (:aluno, :periodo, :turma)";
+            $params = [
+                'aluno' => $id_aluno,
+                'periodo' => ID_PERIODO_LETIVO,
+                'turma' => $turma
+            ];
+            $this->executeStatement($sql, $params);
 
             $this->db->commit();
             echo json_encode(['ok' => true, 'senha' => $senha_inicial]);
