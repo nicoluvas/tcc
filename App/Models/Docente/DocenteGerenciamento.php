@@ -12,4 +12,12 @@ class DocenteGerenciamento extends Model {
         $turmas = $this->executeStatement($sql);
         return $turmas->fetchAll();
     }
+
+    public function GetMaterias() {
+        $sql = "SELECT
+                    *
+                FROM
+                    tb_materia";
+        return $this->executeStatement($sql)->fetchAll();
+    }
 }

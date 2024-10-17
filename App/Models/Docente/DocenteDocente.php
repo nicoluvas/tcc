@@ -165,4 +165,14 @@ class DocenteDocente extends Model {
         $this->executeStatement($sql, ['docente' => $iddocente]);
         echo json_encode(['ok' => true]);
     }
+
+    public function GetProfessores() {
+        $sql = "SELECT
+                    *
+                FROM
+                    tb_docente
+                WHERE
+                    id_cargo = 2";
+        return $this->executeStatement($sql)->fetchAll();
+    }
 }
