@@ -1,3 +1,10 @@
+<style>
+    select[readonly='readonly'] {
+        background: #eee; /*Simular campo inativo - Sugestão @GabrielRodrigues*/
+        pointer-events: none;
+        touch-action: none;
+    }
+</style>
 <form>
     <select name="turma" id="turma">
         <option value="" selected id='init'>Selecione uma turma</option>
@@ -10,7 +17,7 @@
         ?>
     </select>
     
-    <select name="materia" id="materia" disabled>
+    <select name="materia" id="materia" disabled required>
         <option value="" id='init'>Selecione uma matéria</option>
         <?php
             foreach ($this->materias as $materia):
@@ -41,8 +48,10 @@
         $(this).css('display', 'none')
         $('form button#cancelar').css('display', 'block')
         $('form button#salvar').css('display', 'block')
-        $('form select#professor option#init').remove()
         $('form select#professor').prop('disabled', false)
+
+        $('form select#turma').attr('readonly', 'readonly')
+        $('form select#materia').attr('readonly', 'readonly')
     })
     
     $('form button#cancelar').on('click', function () {
@@ -51,6 +60,9 @@
         $('form button#editar').css('display', 'block')
         $('form select#professor').prop('disabled', true)
         $('form select#professor').val(professor_materia[$('#turma').val()][$('#materia').val()])
+
+        $('form select#turma').removeAttr('readonly', 'readonly')
+        $('form select#materia').removeAttr('readonly', 'readonly')
     })
 
     $('form').on('submit', function (e) {
@@ -70,11 +82,15 @@
                 $('.formretorno').text(data.msg)
                 professor_materia[$('#turma').val()][$('#materia').val()] = $('#professor').val()                
                 $('select#professor').prop('disabled', true)
+                $('form select#turma').removeAttr('readonly', 'readonly')
+                $('form select#materia').removeAttr('readonly', 'readonly')
                 return
             }
             $('select#professor').prop('disabled', true)
             $('form select#professor').val(professor_materia[$('#turma').val()][$('#materia').val()])
             $('.formretorno').text(data.msg)
+            $('form select#turma').removeAttr('readonly', 'readonly')
+            $('form select#materia').removeAttr('readonly', 'readonly')
         })
         .catch(function (a) {
             console.log(a)
@@ -93,6 +109,10 @@
                 $(this).css('display', 'none')
             }
         })
+        if (!($('form select#materia').val() in professor_materia[turma])) {
+            $('form select#materia').val('')
+            $('form button#editar').prop('disabled', true)
+        }
     })
 
     $('form select#materia').on('change', function () {
