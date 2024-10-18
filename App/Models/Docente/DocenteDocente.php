@@ -141,13 +141,22 @@ class DocenteDocente extends Model {
             ];
             $this->executeStatement($sql, $params);
 
+            $materiasAlteradas = 0;
             if ($id_cargo == 2) {
-                // TODO
-                // retirar a relacao entre as materias
+                $sql = "UPDATE
+                            tb_turma_materia
+                        SET
+                            id_docente = null
+                        WHERE
+                            id_docente = :docente";
+                $params = [
+                    'docente' => $iddocente
+                ];
+                $materiasAlteradas = $this->executeStatement($sql, $params)->rowCount();               
             }
 
             $this->db->commit();
-            echo json_encode(['ok' => true]);
+            echo json_encode(['ok' => true, 'msg' => $materiasAlteradas>0?'Atenção! Esse docente era professor, verifique as matérias que ele lecionava':null, 'linhas' => $materiasAlteradas]);
         } catch (\Throwable $th) {
             $this->db->rollBack();
             echo json_encode(['ok' => false, 'msg' => 'Verifique as informações inseridas']);
@@ -155,6 +164,7 @@ class DocenteDocente extends Model {
     }
 
     public function DesligarDocente($iddocente) {
+        $id_cargo = $this->executeStatement('SELECT id_cargo FROM tb_docente WHERE cd_docente = :docente', ['docente' => $iddocente])->fetch()->id_cargo;
         $sql = "UPDATE
                     tb_docente
                 SET
@@ -163,7 +173,20 @@ class DocenteDocente extends Model {
                 WHERE
                     cd_docente = :docente";
         $this->executeStatement($sql, ['docente' => $iddocente]);
-        echo json_encode(['ok' => true]);
+        $materiasAlteradas = 0;
+        if ($id_cargo == 2) {
+            $sql = "UPDATE
+                        tb_turma_materia
+                    SET
+                        id_docente = null
+                    WHERE
+                        id_docente = :docente";
+            $params = [
+                'docente' => $iddocente
+            ];
+            $materiasAlteradas = $this->executeStatement($sql, $params)->rowCount();               
+        }
+        echo json_encode(['ok' => true, 'msg' => $materiasAlteradas>0?'Atenção! Esse docente era professor, verifique as matérias que ele lecionava':null, 'linhas' => $materiasAlteradas]);
     }
 
     public function GetProfessores() {

@@ -43,10 +43,16 @@
             .done(data => {
                 if (data.ok) {
                     alert('Docente Desligado!')
+                    if (data.msg) {
+                        alert(data.msg + '\nMatérias que lecionava: ' + data.linhas)
+                    }
                     $(`.docente#${$(this).attr('id')}`).remove()
                     return
                 }
                 alert(data.msg)
+            })
+            .catch(a => {
+                console.log(a)
             })
         }
         return false; // cancel the event

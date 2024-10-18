@@ -192,6 +192,9 @@
                 success: function (data) {
                     if (data.ok) {
                         $('p#formretorno').text('Docente Atualizado')
+                        if (data.msg) {
+                            alert(data.msg +'\nMatérias que lecionava: ' + data.linhas)
+                        }
                         $('form input').each(function () {
                             $(this).prop('disabled', true)
                         })

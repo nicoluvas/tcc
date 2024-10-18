@@ -9,6 +9,7 @@ class DocenteGerenciamentoController extends Controller {
     protected $professores;
     protected $turmas;
     protected $materias;
+    protected $professor_materia;
 
     public function PeriodoLetivo() {
         $this->render('periodoLetivo', 'DocenteLayout', 'Docente/Gerenciamento');
@@ -22,8 +23,23 @@ class DocenteGerenciamentoController extends Controller {
             $this->professores = $DocenteDocente->GetProfessores();
             $this->turmas = $DocenteGerenciamento->GetTurmas();
             $this->materias = $DocenteGerenciamento->GetMaterias();
+            $professor_materia = [];
+            foreach ($this->turmas as $turma){
+                $professor_materia[$turma->cd_turma] = [];
+            }
+            $aux = $DocenteGerenciamento->GetProfessorMateria();
+            foreach ($professor_materia as $t => $m) {
+                foreach ($aux as $pm) {
+                    if ($pm->id_turma != $t) continue;
+                    $professor_materia[$t][$pm->id_materia] = $pm->id_docente;
+                }
+            }
 
+            $this->professor_materia = $professor_materia;
             $this->render('materias', 'DocenteLayout', 'Docente/Gerenciamento');
+            die();
         }
+
+        $DocenteGerenciamento->AlterarProfessorMateria();
     }
 }
