@@ -152,6 +152,20 @@ abstract class Router {
             'action' => 'Materias',
             'method' => ['GET', 'POST']
         ];
+
+        $routes['Professor home'] = [
+            'router' => '/professor/home',
+            'controller' => 'Professor\\ProfessorController',
+            'action' => 'Home',
+            'method' => ['GET']
+        ];
+
+        $routes['Professor chamada'] = [
+            'router' => '/professor/chamada',
+            'controller' => 'Professor\\ProfessorController',
+            'action' => 'Chamada',
+            'method' => ['GET']
+        ];
         
         $this->routes = array_merge($this->routes, $routes);
     }
