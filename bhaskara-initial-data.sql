@@ -108,7 +108,26 @@ INSERT INTO `db_bhaskara`.`tb_endereco` (`uf`, `cidade`, `bairro`, `logradouro`,
     ('SP', 'São José dos Campos', 'Jardim do Mar', 'Rua das Águas', 12, '', '12228200'),
     ('SP', 'São José dos Campos', 'Vila Adyana', 'Rua das Orquídeas', 55, '', '12240400'),
     ('SP', 'Santa Branca', 'Vila Nova', 'Rua do Sol', 35, '', '12365100'),
-    ('SP', 'Santa Branca', 'Jardim Campo Verde', 'Rua dos Sabiás', 20, '', '12368100');
+    ('SP', 'Santa Branca', 'Jardim Campo Verde', 'Rua dos Sabiás', 20, '', '12368100'),
+    ('SP', 'São José dos Campos', 'Jardim Aquarius', 'Avenida Cassiopeia', 1000, 'Apto 101', '12244-000'),
+    ('SP', 'Jacareí', 'Jardim Paraíso', 'Rua das Flores', 200, 'Casa 3', '12345-000'),
+    ('SP', 'Santa Branca', 'Centro', 'Rua José Bonifácio', 150, 'Apto 2', '12346-000'),
+    ('SP', 'São José dos Campos', 'Jardim Satélite', "Avenida Nelson D'Ávila", 1200, 'Casa 5', '12231-000'),
+    ('SP', 'Jacareí', 'Jardim Pindorama', 'Rua São Paulo', 75, 'Apto 4', '12347-000'),
+    ('SP', 'Santa Branca', 'Bairro do Campo', 'Estrada da Bica', 300, 'Casa 6', '12348-000'),
+    ('SP', 'São José dos Campos', 'Jardim Bergamo', 'Rua dos Rios', 400, 'Apto 10', '12234-000'),
+    ('SP', 'Jacareí', 'Vila Branca', 'Avenida da Liberdade', 600, 'Casa 8', '12349-000'),
+    ('SP', 'São José dos Campos', 'Jardim Aquarius', 'Avenida Cassiopeia', 1000, 'Apto 101', '12244000'),
+    ('SP', 'São José dos Campos', 'Vila Adyana', 'Rua José de Alencar', 200, 'Casa 2', '12242000'),
+    ('SP', 'São José dos Campos', 'Jardim Satélite', 'Avenida São João', 1500, 'Apto 305', '12226000'),
+    ('SP', 'Jacareí', 'Centro', 'Rua 15 de Novembro', 50, 'Apto 202', '12340000'),
+    ('SP', 'Jacareí', 'Jardim do Mar', 'Rua São João', 300, 'Casa 3', '12345000'),
+    ('SP', 'Santa Branca', 'Centro', 'Avenida Dom Pedro II', 400, 'Sala 1', '12350000'),
+    ('SP', 'São José dos Campos', 'Parque da Cidade', 'Avenida José Longo', 800, 'Apto 204', '12227000'),
+    ('SP', 'Jacareí', 'Jardim Paraíso', 'Rua das Orquídeas', 600, 'Casa 7', '12347000'),
+    ('SP', 'Santa Branca', 'Vila Santa Branca', 'Rua José Gomes', 250, 'Apto 102', '12351000'),
+    ('SP', 'São José dos Campos', 'Jardim Esplanada', 'Rua dos Lírios', 900, 'Casa 5', '12223000');
+
 
 INSERT INTO `db_bhaskara`.`tb_responsavel` (nome_responsavel, telefone_responsavel, cpf_responsavel, email_responsavel) VALUES
     ('Ana Oliveira', '31912345678', '12345678901', 'ana.oliveira@example.com'),
@@ -207,7 +226,26 @@ INSERT INTO `db_bhaskara`.`tb_responsavel` (nome_responsavel, telefone_responsav
     ('Rafael Mendes', '11987654427', '12345678012', 'rafael.mendes@email.com'),
     ('Sofia Rocha', '11987654428', '12345678013', 'sofia.rocha@email.com'),
     ('Thiago Costa', '11987654429', '12345678014', 'thiago.costa@email.com'),
-    ('Vinícius Alves', '11987654430', '12345678015', 'vinicius.alves@email.com');
+    ('Vinícius Alves', '11987654430', '12345678015', 'vinicius.alves@email.com'),
+    ('Carlos Silva', '31998765432', '98765432100', 'carlos.silva@example.com'),
+    ('Mariana Costa', '31976543210', '12345678902', 'mariana.costa@example.com'),
+    ('Lucas Pereira', '31912345679', '23456789012', 'lucas.pereira@example.com'),
+    ('Fernanda Santos', '31987654321', '34567890123', 'fernanda.santos@example.com'),
+    ('Roberto Lima', '31923456789', '45678901234', 'roberto.lima@example.com'),
+    ('Juliana Rocha', '31934567890', '56789012345', 'juliana.rocha@example.com'),
+    ('Thiago Almeida', '31945678901', '67890123456', 'thiago.almeida@example.com'),
+    ('Priscila Martins', '31956789012', '78901234567', 'priscila.martins@example.com'),
+    ('João Silva', '31987654321', '23456789012', 'joao.silva@example.com'),
+    ('Maria Santos', '31923456789', '34567890123', 'maria.santos@example.com'),
+    ('Carlos Lima', '31934567890', '45678901234', 'carlos.lima@example.com'),
+    ('Fernanda Costa', '31945678901', '56789012345', 'fernanda.costa@example.com'),
+    ('Ricardo Almeida', '31956789012', '67890123456', 'ricardo.almeida@example.com'),
+    ('Juliana Rocha', '31967890123', '78901234567', 'juliana.rocha@example.com'),
+    ('Tatiane Ferreira', '31978901234', '89012345678', 'tatiane.ferreira@example.com'),
+    ('Lucas Martins', '31989012345', '90123456789', 'lucas.martins@example.com'),
+    ('Ana Paula', '31990123456', '01234567890', 'ana.paula@example.com'),
+    ('Pedro Santos', '31901234567', '12345678901', 'pedro.santos@example.com');
+
 
 INSERT INTO db_bhaskara.tb_aluno (nome_aluno, telefone_aluno, cpf_aluno, rg_aluno, nascimento_aluno, senha_aluno, id_endereco, id_cargo, id_responsavel) VALUES 
     ('Alice Silva', '11987654321', '12345678901', '123456789', '2000-05-10', '$2y$10$Wz2GzZXD8p6GfQ9gJ0vl4.tLCOrY9OG.MA0NdjLzQclA26Ed35pSu', 1, 1, 1),
@@ -303,7 +341,26 @@ INSERT INTO db_bhaskara.tb_aluno (nome_aluno, telefone_aluno, cpf_aluno, rg_alun
     ('Nathalia Pires', '11987654406', '12345678991', '234567891', '1910-11-12', '$2y$10$G5dFb4nZkndvZP.7WW.I6e2JbvnGPIy6nPaUwrw6hM7Z8h5p1OW.q', 91, 1, 91),
     ('Otávio Santos', '11987654407', '12345678992', '345678902', '1909-12-01', '$2y$10$2FZcB0A8s5cZQhW4F8VY2OSNHAcFe5RZcr9aytPh4YKu8ddK5Uif2', 92, 1, 92),
     ('Priscila Nunes', '11987654408', '12345678993', '456789013', '1908-01-14', '$2y$10$H9kfr2PfSMztOWP3Fzi.IudF7Wk0jMSqXkL/9zUbI0vpcNU0cZ6ku', 93, 1, 93),
-    ('Quintino Ribeiro', '11987654409', '12345678994', '567890124', '1907-02-21', '$2y$10$AZE4y3.sFsH8BAlwFF/6W.zfF4vUbED2FD3QbsYAAawGH22.cpbQK', 94, 1, 94);
+    ('Quintino Ribeiro', '11987654409', '12345678994', '567890124', '1907-02-21', '$2y$10$AZE4y3.sFsH8BAlwFF/6W.zfF4vUbED2FD3QbsYAAawGH22.cpbQK', 94, 1, 94),
+    ('Alice Silva', '1234567890', '12345678431', '1234567890', '2000-01-15', '$2y$10$KIXeKoDlv5K2tR1U42e6QO3FrC3PAX6fnTL7zYkx0l5.kA.qQwNE.', 95, 1, 95),
+    ('Bruno Santos', '0987654321', '23456789012', '2345678901', '2001-02-20', '$2y$10$KIXeKoDlv5K2tR1U42e6QO3FrC3PAX6fnTL7zYkx0l5.kA.qQwNE.', 96, 1, 96),
+    ('Carla Oliveira', '1122334455', '34567890123', '3456789012', '1999-03-25', '$2y$10$KIXeKoDlv5K2tR1U42e6QO3FrC3PAX6fnTL7zYkx0l5.kA.qQwNE.', 97, 1, 97),
+    ('Daniela Pereira', '2233445566', '45678901234', '4567890123', '1998-04-30', '$2y$10$KIXeKoDlv5K2tR1U42e6QO3FrC3PAX6fnTL7zYkx0l5.kA.qQwNE.', 98, 1, 98),
+    ('Eduardo Lima', '3344556677', '56789012345', '5678901234', '1997-05-05', '$2y$10$KIXeKoDlv5K2tR1U42e6QO3FrC3PAX6fnTL7zYkx0l5.kA.qQwNE.', 99, 1, 99),
+    ('Fernanda Costa', '4455667788', '67890123456', '6789012345', '2002-06-10', '$2y$10$KIXeKoDlv5K2tR1U42e6QO3FrC3PAX6fnTL7zYkx0l5.kA.qQwNE.', 100, 1, 100),
+    ('Gabriel Rocha', '5566778899', '78901234567', '7890123456', '1996-07-15', '$2y$10$KIXeKoDlv5K2tR1U42e6QO3FrC3PAX6fnTL7zYkx0l5.kA.qQwNE.', 101, 1, 101),
+    ('Helena Almeida', '6677889900', '89012345678', '8901234567', '1995-08-20', '$2y$10$KIXeKoDlv5K2tR1U42e6QO3FrC3PAX6fnTL7zYkx0l5.kA.qQwNE.', 102, 1, 102),
+    ('Maria Oliveira', '6677889911', '89012345691', '8901234576', '1996-07-20', '$2y$10$abcde1234567890abcdef1234567890abcdef1234567890abcdef.', 103, 1, 103),
+    ('Pedro Santos', '6677889912', '89012345692', '8901234577', '1992-02-28', '$2y$10$abcde1234567890abcdef1234567890abcdef1234567890abcdef.', 104, 1, 104),
+    ('Ana Costa', '6677889913', '89012345693', '8901234578', '1993-11-30', '$2y$10$abcde1234567890abcdef1234567890abcdef1234567890abcdef.', 105, 1, 105),
+    ('Carlos Almeida', '6677889914', '89012345694', '8901234579', '1989-04-12', '$2y$10$abcde1234567890abcdef1234567890abcdef1234567890abcdef.', 106, 1, 106),
+    ('Fernanda Lima', '6677889915', '89012345695', '8901234580', '1990-09-14', '$2y$10$abcde1234567890abcdef1234567890abcdef1234567890abcdef.', 107, 1, 107),
+    ('Ricardo Pereira', '6677889916', '89012345696', '8901234581', '1988-12-25', '$2y$10$abcde1234567890abcdef1234567890abcdef1234567890abcdef.', 108, 1, 108),
+    ('Juliana Rocha', '6677889917', '89012345697', '8901234582', '1991-01-01', '$2y$10$abcde1234567890abcdef1234567890abcdef1234567890abcdef.', 109, 1, 109),
+    ('Lucas Martins', '6677889918', '89012345698', '8901234583', '1994-06-06', '$2y$10$abcde1234567890abcdef1234567890abcdef1234567890abcdef.', 110, 1, 110),
+    ('Tatiane Ferreira', '6677889919', '89012345699', '8901234584', '1997-03-03', '$2y$10$abcde1234567890abcdef1234567890abcdef1234567890abcdef.', 111, 1, 111),
+    ('João Silva', '6677889910', '89012345690', '8901234575', '1995-05-15', '$2y$10$abcde1234567890abcdef1234567890abcdef1234567890abcdef.', 112, 1, 112);
+
 
 insert into tb_matricula values
     (1, 2, DEFAULT),
@@ -399,7 +456,25 @@ insert into tb_matricula values
     (91, 2, DEFAULT),
     (92, 2, DEFAULT),
     (93, 2, DEFAULT),
-    (94, 2, DEFAULT);
+    (94, 2, DEFAULT),
+    (95, 2, DEFAULT),
+    (96, 2, DEFAULT),
+    (97, 2, DEFAULT),
+    (98, 2, DEFAULT),
+    (99, 2, DEFAULT),
+    (100, 2, DEFAULT),
+    (101, 2, DEFAULT),
+    (102, 2, DEFAULT),
+    (103, 2, DEFAULT),
+    (104, 2, DEFAULT),
+    (105, 2, DEFAULT),
+    (106, 2, DEFAULT),
+    (107, 2, DEFAULT),
+    (108, 2, DEFAULT),
+    (109, 2, DEFAULT),
+    (110, 2, DEFAULT),
+    (111, 2, DEFAULT),
+    (112, 2, DEFAULT);
 
 insert into tb_docente values
     (null, 'Ana Paula Silva', '11987654321', '12345678901', '123456789', 'ana.silva@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 1, 2),
@@ -434,92 +509,111 @@ insert tb_matricula_turma values
     (6, 2, 1),
     (7, 2, 1),
     (8, 2, 1),
-    (9, 2, 1),
-    (10, 2, 1),
-    (11, 2, 1),
-    (12, 2, 1),
+    (9, 2, 2),
+    (10, 2, 2),
+    (11, 2, 2),
+    (12, 2, 2),
     (13, 2, 2),
     (14, 2, 2),
     (15, 2, 2),
     (16, 2, 2),
-    (17, 2, 2),
-    (18, 2, 2),
-    (19, 2, 2),
-    (20, 2, 2),
-    (21, 2, 2),
-    (22, 2, 2),
-    (23, 2, 2),
-    (24, 2, 2),
-    (25, 2, 3),
-    (26, 2, 3),
-    (27, 2, 3),
-    (28, 2, 3),
-    (29, 2, 3),
-    (30, 2, 3),
-    (31, 2, 3),
-    (32, 2, 3),
-    (33, 2, 3),
-    (34, 2, 3),
-    (35, 2, 3),
-    (36, 2, 3),
-    (37, 2, 4),
-    (38, 2, 4),
-    (39, 2, 4),
-    (40, 2, 4),
-    (41, 2, 4),
-    (42, 2, 4),
-    (43, 2, 4),
-    (44, 2, 4),
-    (45, 2, 4),
-    (46, 2, 4),
-    (47, 2, 4),
-    (48, 2, 4),
-    (49, 2, 5),
-    (50, 2, 5),
-    (51, 2, 5),
-    (52, 2, 5),
-    (53, 2, 5),
-    (54, 2, 5),
-    (55, 2, 5),
-    (56, 2, 5),
-    (57, 2, 5),
-    (58, 2, 5),
-    (59, 2, 5),
-    (60, 2, 5),
-    (61, 2, 6),
-    (62, 2, 6),
-    (63, 2, 6),
-    (64, 2, 6),
-    (65, 2, 6),
-    (66, 2, 6),
-    (67, 2, 6),
-    (68, 2, 6),
-    (69, 2, 6),
-    (70, 2, 6),
-    (71, 2, 6),
-    (72, 2, 6),
-    (73, 2, 7),
-    (74, 2, 7),
-    (75, 2, 7),
-    (76, 2, 7),
-    (77, 2, 7),
-    (78, 2, 7),
-    (79, 2, 7),
-    (80, 2, 7),
-    (81, 2, 7),
-    (82, 2, 7),
-    (83, 2, 7),
-    (84, 2, 7),
-    (85, 2, 8),
-    (86, 2, 8),
-    (87, 2, 8),
-    (88, 2, 8),
-    (89, 2, 8),
-    (90, 2, 8),
-    (91, 2, 8),
-    (92, 2, 8),
-    (93, 2, 8),
-    (94, 2, 8);
+    (17, 2, 3),
+    (18, 2, 3),
+    (19, 2, 3),
+    (20, 2, 3),
+    (21, 2, 3),
+    (22, 2, 3),
+    (23, 2, 3),
+    (24, 2, 3),
+    (25, 2, 4),
+    (26, 2, 4),
+    (27, 2, 4),
+    (28, 2, 4),
+    (29, 2, 4),
+    (30, 2, 4),
+    (31, 2, 4),
+    (32, 2, 4),
+    (33, 2, 5),
+    (34, 2, 5),
+    (35, 2, 5),
+    (36, 2, 5),
+    (37, 2, 5),
+    (38, 2, 5),
+    (39, 2, 5),
+    (40, 2, 5),
+    (41, 2, 6),
+    (42, 2, 6),
+    (43, 2, 6),
+    (44, 2, 6),
+    (45, 2, 6),
+    (46, 2, 6),
+    (47, 2, 6),
+    (48, 2, 6),
+    (49, 2, 7),
+    (50, 2, 7),
+    (51, 2, 7),
+    (52, 2, 7),
+    (53, 2, 7),
+    (54, 2, 7),
+    (55, 2, 7),
+    (56, 2, 7),
+    (57, 2, 8),
+    (58, 2, 8),
+    (59, 2, 8),
+    (60, 2, 8),
+    (61, 2, 8),
+    (62, 2, 8),
+    (63, 2, 8),
+    (64, 2, 8),
+    (65, 2, 9),
+    (66, 2, 9),
+    (67, 2, 9),
+    (68, 2, 9),
+    (69, 2, 9),
+    (70, 2, 9),
+    (71, 2, 9),
+    (72, 2, 9),
+    (73, 2, 10),
+    (74, 2, 10),
+    (75, 2, 10),
+    (76, 2, 10),
+    (77, 2, 10),
+    (78, 2, 10),
+    (79, 2, 10),
+    (80, 2, 10),
+    (81, 2, 11),
+    (82, 2, 11),
+    (83, 2, 11),
+    (84, 2, 11),
+    (85, 2, 11),
+    (86, 2, 11),
+    (87, 2, 11),
+    (88, 2, 11),
+    (89, 2, 12),
+    (90, 2, 12),
+    (91, 2, 12),
+    (92, 2, 12),
+    (93, 2, 12),
+    (94, 2, 12),
+    (95, 2, 12),
+    (96, 2, 12),
+    (97, 2, 13),
+    (98, 2, 13),
+    (99, 2, 13),
+    (100, 2, 13),
+    (101, 2, 13),
+    (102, 2, 13),
+    (103, 2, 13),
+    (104, 2, 13),
+    (105, 2, 14),
+    (106, 2, 14),
+    (107, 2, 14),
+    (108, 2, 14),
+    (109, 2, 14),
+    (110, 2, 14),
+    (111, 2, 14),
+    (112, 2, 14);
+
 
 
 insert into tb_materia values
@@ -645,3 +739,95 @@ insert into tb_turma_materia values
 (8, 13, 2), -- 9º B
 (8, 14, 3), -- 9º B
 (8, 15, 1); -- 9º B
+
+-- Adicionar mais materias para ensino medio
+
+(8, 2, 1), -- 1º A
+(8, 3, 2), -- 1º A
+(8, 4, 3), -- 1º A
+(8, 5, 1), -- 1º A
+(8, 6, 2), -- 1º A
+(8, 7, 3), -- 1º A
+(8, 8, 1), -- 1º A
+(8, 9, 1), -- 1º A
+(8, 10, 1), -- 1º A
+(8, 11, 3), -- 1º A
+(8, 12, 2), -- 1º A
+(8, 13, 2), -- 1º A
+(8, 14, 3), -- 1º A
+(8, 15, 1); -- 1º A
+
+(8, 2, 1), -- 1º B
+(8, 3, 2), -- 1º B
+(8, 4, 3), -- 1º B
+(8, 5, 1), -- 1º B
+(8, 6, 2), -- 1º B
+(8, 7, 3), -- 1º B
+(8, 8, 1), -- 1º B
+(8, 9, 1), -- 1º B
+(8, 10, 1), -- 1º B
+(8, 11, 3), -- 1º B
+(8, 12, 2), -- 1º B
+(8, 13, 2), -- 1º B
+(8, 14, 3), -- 1º B
+(8, 15, 1); -- 1º B
+
+(8, 2, 1), -- 2º A
+(8, 3, 2), -- 2º A
+(8, 4, 3), -- 2º A
+(8, 5, 1), -- 2º A
+(8, 6, 2), -- 2º A
+(8, 7, 3), -- 2º A
+(8, 8, 1), -- 2º A
+(8, 9, 1), -- 2º A
+(8, 10, 1), -- 2º A
+(8, 11, 3), -- 2º A
+(8, 12, 2), -- 2º A
+(8, 13, 2), -- 2º A
+(8, 14, 3), -- 2º A
+(8, 15, 1); -- 2º A
+
+(8, 2, 1), -- 2º B
+(8, 3, 2), -- 2º B
+(8, 4, 3), -- 2º B
+(8, 5, 1), -- 2º B
+(8, 6, 2), -- 2º B
+(8, 7, 3), -- 2º B
+(8, 8, 1), -- 2º B
+(8, 9, 1), -- 2º B
+(8, 10, 1), -- 2º B
+(8, 11, 3), -- 2º B
+(8, 12, 2), -- 2º B
+(8, 13, 2), -- 2º B
+(8, 14, 3), -- 2º B
+(8, 15, 1); -- 2º B
+
+(8, 2, 1), -- 3º A
+(8, 3, 2), -- 3º A
+(8, 4, 3), -- 3º A
+(8, 5, 1), -- 3º A
+(8, 6, 2), -- 3º A
+(8, 7, 3), -- 3º A
+(8, 8, 1), -- 3º A
+(8, 9, 1), -- 3º A
+(8, 10, 1), -- 3º A
+(8, 11, 3), -- 3º A
+(8, 12, 2), -- 3º A
+(8, 13, 2), -- 3º A
+(8, 14, 3), -- 3º A
+(8, 15, 1); -- 3º A
+
+(8, 2, 1), -- 3º B
+(8, 3, 2), -- 3º B
+(8, 4, 3), -- 3º B
+(8, 5, 1), -- 3º B
+(8, 6, 2), -- 3º B
+(8, 7, 3), -- 3º B
+(8, 8, 1), -- 3º B
+(8, 9, 1), -- 3º B
+(8, 10, 1), -- 3º B
+(8, 11, 3), -- 3º B
+(8, 12, 2), -- 3º B
+(8, 13, 2), -- 3º B
+(8, 14, 3), -- 3º B
+(8, 15, 1); -- 3º B
