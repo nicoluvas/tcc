@@ -210,9 +210,10 @@ body#home .pagina1 .letreiro p {
 
 body#home .pagina2 {
   height: calc(100vh - 50px);
-  background-color: var(--primary);
   display: flex;
   flex-direction: row;
+  background-color: var(--primary);
+  border-radius: 1rem;
 }
 
 body#home .pagina2 #pessoa2 {
@@ -236,6 +237,7 @@ body#home .pagina2 #direita {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 body#home .pagina2 .caixadir {
