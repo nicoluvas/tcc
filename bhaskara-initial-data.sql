@@ -1,10 +1,10 @@
 use db_bhaskara;
 
-insert into tb_periodo_letivo values
+insert into `tb_periodo_letivo` values
 (null, '2023-01-29', '2023-12-06', '2023-07-01'),
 (null, null, null, null);
 
-insert into tb_cargo values 
+insert into `tb_cargo` values 
 (null, 'Aluno'),
 (null, 'Professor'),
 (null, 'Secretário'),
@@ -129,7 +129,7 @@ INSERT INTO `db_bhaskara`.`tb_endereco` (`uf`, `cidade`, `bairro`, `logradouro`,
     ('SP', 'São José dos Campos', 'Jardim Esplanada', 'Rua dos Lírios', 900, 'Casa 5', '12223000');
 
 
-INSERT INTO `db_bhaskara`.`tb_responsavel` (nome_responsavel, telefone_responsavel, cpf_responsavel, email_responsavel) VALUES
+INSERT INTO `db_bhaskara`.`tb_responsavel` (`nome_responsavel`, `telefone_responsavel`, `cpf_responsavel`, `email_responsavel`) VALUES
     ('Ana Oliveira', '31912345678', '12345678901', 'ana.oliveira@example.com'),
     ('Bruno Silva', '31923456789', '23456789012', 'bruno.silva@example.com'),
     ('Carlos Santos', '31934567890', '34567890123', 'carlos.santos@example.com'),
@@ -247,7 +247,7 @@ INSERT INTO `db_bhaskara`.`tb_responsavel` (nome_responsavel, telefone_responsav
     ('Pedro Santos', '31901234567', '12345678901', 'pedro.santos@example.com');
 
 
-INSERT INTO db_bhaskara.tb_aluno (nome_aluno, telefone_aluno, cpf_aluno, rg_aluno, nascimento_aluno, senha_aluno, id_endereco, id_cargo, id_responsavel) VALUES 
+INSERT INTO `db_bhaskara`.`tb_aluno` (`nome_aluno`, `telefone_aluno`, `cpf_aluno`, `rg_aluno`, `nascimento_aluno`, `senha_aluno`, `id_endereco`, `id_cargo`, `id_responsavel`) VALUES
     ('Alice Silva', '11987654321', '12345678901', '123456789', '2000-05-10', '$2y$10$Wz2GzZXD8p6GfQ9gJ0vl4.tLCOrY9OG.MA0NdjLzQclA26Ed35pSu', 1, 1, 1),
     ('Bruno Costa', '11923456789', '12345678902', '234567890', '1999-06-15', '$2y$10$N.gsdB9Yblsc.gpP3I0dxeN4H7V8X/45Xs2d5F7Mj8ht89g3yOjxW', 2, 1, 2),
     ('Carla Mendes', '11976543210', '12345678903', '345678901', '1998-07-20', '$2y$10$IKGJcNTE2cM3QjKjW15hCeG3nqYeTZgl/aHSq6AuqN6XHGTPGc0wO', 3, 1, 3),
@@ -362,7 +362,7 @@ INSERT INTO db_bhaskara.tb_aluno (nome_aluno, telefone_aluno, cpf_aluno, rg_alun
     ('João Silva', '6677889910', '89012345690', '8901234575', '1995-05-15', '$2y$10$abcde1234567890abcdef1234567890abcdef1234567890abcdef.', 112, 1, 112);
 
 
-insert into tb_matricula values
+insert into `tb_matricula` values
     (1, 2, DEFAULT),
     (2, 2, DEFAULT),
     (3, 2, DEFAULT),
@@ -476,7 +476,7 @@ insert into tb_matricula values
     (111, 2, DEFAULT),
     (112, 2, DEFAULT);
 
-insert into tb_docente values
+insert into `tb_docente` values
     (null, 'Ana Paula Silva', '11987654321', '12345678901', '123456789', 'ana.silva@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 1, 2),
     (null, 'Bruno Alves Costa', '11976543210', '23456789012', '234567890', 'bruno.costa@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 2, 2),
     (null, 'Carla Fernanda Lima', '11965432109', '34567890123', '345678901', 'carla.lima@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 3, 2),
@@ -484,7 +484,7 @@ insert into tb_docente values
     (null, 'Eliana Rodrigues Martins', '11943210987', '56789012345', '567890123', 'eliana.martins@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 5, 4),
     (null, 'Fabio Henrique Oliveira', '11932109876', '67890123456', '678901234', 'fabio.oliveira@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 6, 5);
 
-insert into tb_turma values
+insert into `tb_turma` value
 (null, '6º A'),
 (null, '6º B'),
 (null, '7º A'),
@@ -500,7 +500,7 @@ insert into tb_turma values
 (null, '3ºEM A'),
 (null, '3ºEM B');
 
-insert tb_matricula_turma values 
+insert into `tb_matricula_turma` values
     (1, 2, 1),
     (2, 2, 1),
     (3, 2, 1),
@@ -616,7 +616,7 @@ insert tb_matricula_turma values
 
 
 
-insert into tb_materia values
+insert into `tb_materia` values
 (null, 'Ciências'),
 (null, 'História'),
 (null, 'Geografia'),
@@ -633,7 +633,7 @@ insert into tb_materia values
 (null, 'Filosofia'),
 (null, 'Sociologia');
 
-insert into tb_turma_materia values
+insert into `tb_turma_materia` values
 (1, 1, 2), -- 6º A
 (1, 2, 3), -- 6º A
 (1, 3, 2), -- 6º A
@@ -738,96 +738,96 @@ insert into tb_turma_materia values
 (8, 12, 2), -- 9º B
 (8, 13, 2), -- 9º B
 (8, 14, 3), -- 9º B
-(8, 15, 1); -- 9º B
+(8, 15, 1), -- 9º B
 
 -- Adicionar mais materias para ensino medio
 
-(8, 2, 1), -- 1º A
-(8, 3, 2), -- 1º A
-(8, 4, 3), -- 1º A
-(8, 5, 1), -- 1º A
-(8, 6, 2), -- 1º A
-(8, 7, 3), -- 1º A
-(8, 8, 1), -- 1º A
-(8, 9, 1), -- 1º A
-(8, 10, 1), -- 1º A
-(8, 11, 3), -- 1º A
-(8, 12, 2), -- 1º A
-(8, 13, 2), -- 1º A
-(8, 14, 3), -- 1º A
-(8, 15, 1); -- 1º A
+(9, 2, 1), -- 1º A
+(9, 3, 2), -- 1º A
+(9, 4, 3), -- 1º A
+(9, 5, 1), -- 1º A
+(9, 6, 2), -- 1º A
+(9, 7, 3), -- 1º A
+(9, 8, 1), -- 1º A
+(9, 9, 1), -- 1º A
+(9, 10, 1), -- 1º A
+(9, 11, 3), -- 1º A
+(9, 12, 2), -- 1º A
+(9, 13, 2), -- 1º A
+(9, 14, 3), -- 1º A
+(9, 15, 1), -- 1º A
 
-(8, 2, 1), -- 1º B
-(8, 3, 2), -- 1º B
-(8, 4, 3), -- 1º B
-(8, 5, 1), -- 1º B
-(8, 6, 2), -- 1º B
-(8, 7, 3), -- 1º B
-(8, 8, 1), -- 1º B
-(8, 9, 1), -- 1º B
-(8, 10, 1), -- 1º B
-(8, 11, 3), -- 1º B
-(8, 12, 2), -- 1º B
-(8, 13, 2), -- 1º B
-(8, 14, 3), -- 1º B
-(8, 15, 1); -- 1º B
+(10, 2, 1), -- 1º B
+(10, 3, 2), -- 1º B
+(10, 4, 3), -- 1º B
+(10, 5, 1), -- 1º B
+(10, 6, 2), -- 1º B
+(10, 7, 3), -- 1º B
+(10, 8, 1), -- 1º B
+(10, 9, 1), -- 1º B
+(10, 10, 1), -- 1º B
+(10, 11, 3), -- 1º B
+(10, 12, 2), -- 1º B
+(10, 13, 2), -- 1º B
+(10, 14, 3), -- 1º B
+(10, 15, 1), -- 1º B
 
-(8, 2, 1), -- 2º A
-(8, 3, 2), -- 2º A
-(8, 4, 3), -- 2º A
-(8, 5, 1), -- 2º A
-(8, 6, 2), -- 2º A
-(8, 7, 3), -- 2º A
-(8, 8, 1), -- 2º A
-(8, 9, 1), -- 2º A
-(8, 10, 1), -- 2º A
-(8, 11, 3), -- 2º A
-(8, 12, 2), -- 2º A
-(8, 13, 2), -- 2º A
-(8, 14, 3), -- 2º A
-(8, 15, 1); -- 2º A
+(11, 2, 1), -- 2º A
+(11, 3, 2), -- 2º A
+(11, 4, 3), -- 2º A
+(11, 5, 1), -- 2º A
+(11, 6, 2), -- 2º A
+(11, 7, 3), -- 2º A
+(11, 8, 1), -- 2º A
+(11, 9, 1), -- 2º A
+(11, 10, 1), -- 2º A
+(11, 11, 3), -- 2º A
+(11, 12, 2), -- 2º A
+(11, 13, 2), -- 2º A
+(11, 14, 3), -- 2º A
+(11, 15, 1), -- 2º A
 
-(8, 2, 1), -- 2º B
-(8, 3, 2), -- 2º B
-(8, 4, 3), -- 2º B
-(8, 5, 1), -- 2º B
-(8, 6, 2), -- 2º B
-(8, 7, 3), -- 2º B
-(8, 8, 1), -- 2º B
-(8, 9, 1), -- 2º B
-(8, 10, 1), -- 2º B
-(8, 11, 3), -- 2º B
-(8, 12, 2), -- 2º B
-(8, 13, 2), -- 2º B
-(8, 14, 3), -- 2º B
-(8, 15, 1); -- 2º B
+(12, 2, 1), -- 2º B
+(12, 3, 2), -- 2º B
+(12, 4, 3), -- 2º B
+(12, 5, 1), -- 2º B
+(12, 6, 2), -- 2º B
+(12, 7, 3), -- 2º B
+(12, 8, 1), -- 2º B
+(12, 9, 1), -- 2º B
+(12, 10, 1), -- 2º B
+(12, 11, 3), -- 2º B
+(12, 12, 2), -- 2º B
+(12, 13, 2), -- 2º B
+(12, 14, 3), -- 2º B
+(12, 15, 1), -- 2º B
 
-(8, 2, 1), -- 3º A
-(8, 3, 2), -- 3º A
-(8, 4, 3), -- 3º A
-(8, 5, 1), -- 3º A
-(8, 6, 2), -- 3º A
-(8, 7, 3), -- 3º A
-(8, 8, 1), -- 3º A
-(8, 9, 1), -- 3º A
-(8, 10, 1), -- 3º A
-(8, 11, 3), -- 3º A
-(8, 12, 2), -- 3º A
-(8, 13, 2), -- 3º A
-(8, 14, 3), -- 3º A
-(8, 15, 1); -- 3º A
+(13, 2, 1), -- 3º A
+(13, 3, 2), -- 3º A
+(13, 4, 3), -- 3º A
+(13, 5, 1), -- 3º A
+(13, 6, 2), -- 3º A
+(13, 7, 3), -- 3º A
+(13, 8, 1), -- 3º A
+(13, 9, 1), -- 3º A
+(13, 10, 1), -- 3º A
+(13, 11, 3), -- 3º A
+(13, 12, 2), -- 3º A
+(13, 13, 2), -- 3º A
+(13, 14, 3), -- 3º A
+(13, 15, 1), -- 3º A
 
-(8, 2, 1), -- 3º B
-(8, 3, 2), -- 3º B
-(8, 4, 3), -- 3º B
-(8, 5, 1), -- 3º B
-(8, 6, 2), -- 3º B
-(8, 7, 3), -- 3º B
-(8, 8, 1), -- 3º B
-(8, 9, 1), -- 3º B
-(8, 10, 1), -- 3º B
-(8, 11, 3), -- 3º B
-(8, 12, 2), -- 3º B
-(8, 13, 2), -- 3º B
-(8, 14, 3), -- 3º B
-(8, 15, 1); -- 3º B
+(14, 2, 1), -- 3º B
+(14, 3, 2), -- 3º B
+(14, 4, 3), -- 3º B
+(14, 5, 1), -- 3º B
+(14, 6, 2), -- 3º B
+(14, 7, 3), -- 3º B
+(14, 8, 1), -- 3º B
+(14, 9, 1), -- 3º B
+(14, 10, 1), -- 3º B
+(14, 11, 3), -- 3º B
+(14, 12, 2), -- 3º B
+(14, 13, 2), -- 3º B
+(14, 14, 3), -- 3º B
+(14, 15, 1); -- 3º B
