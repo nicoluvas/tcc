@@ -1,23 +1,24 @@
-const button = document.querySelector(".theme");
-const banner = document.querySelector("#bg-banner");
-const bannerDark = document.querySelector("#bg-banner-dark");
-const logo = document.querySelector("#logo");
-const logoDark = document.querySelector("#logo-dark");
-
-button.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  toggleMode();
+document.addEventListener("DOMContentLoaded", (event) => {
+  setTimeout(() => {
+    gsap.from("#meshbg", {
+      delay: 0.5,
+      opacity: 0,
+      y: 100,
+      duration: 2.5,
+      ease: "power1.inOut",
+    });
+    gsap.from(".pessoa#a", {
+      delay: 0.3,
+      opacity: 0,
+      y: 10,
+      duration: 0.5,
+      ease: "power1.inOut",
+    });
+    gsap.from(".letreiro", {
+      opacity: 0,
+      y: 10,
+      duration: 0.5,
+      ease: "power1.inOut",
+    });
+  }, 100); 
 });
-function toggleMode() {
-  document.body.classList.toggle("dark-mode");
-
-  banner.classList.toggle("hidden");
-  banner.classList.toggle("shown");
-  bannerDark.classList.toggle("hidden");
-  bannerDark.classList.toggle("shown");
-
-  logo.classList.toggle("hidden");
-  logo.classList.toggle("shown");
-  logoDark.classList.toggle("hidden");
-  logoDark.classList.toggle("shown");
-}

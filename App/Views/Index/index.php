@@ -1,39 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<!-- Gsap -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", (event) => {
-    gsap.from("#meshbg", {
-        delay: 0.5,
-        opacity: 0,
-        y: 100,
-        duration: 2.5,
-        ease: "power1.inOut",
-    });
-    gsap.from(".pessoa#a", {
-        delay: 0.3,
-        opacity: 0,
-        y: 10,
-        duration: .5,
-        ease: "power1.inOut",
-    });
-    gsap.from(".letreiro", {
-        opacity: 0,
-        y: 10,
-        duration: .5,
-        ease: "power1.inOut",
-    });
-});
-</script>
-
 <head>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bhaskara</title>
-    <script src="/assets/js/index/index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="/assets/js/index/index.js" type="module" defer></script>
     <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 
