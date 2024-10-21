@@ -12,14 +12,13 @@ class DocenteController extends Controller {
             die();
         }
         $this->cargo = $_SESSION['logged']['cargo'];
-    }
-    
-    public function Dashboard(){
         if ($this->cargo < 3) {
             header('Location: /login');
             die();
         }
-        $this->pageTitle  = 'Docente Home';
+    }
+    
+    public function Dashboard(){
         if (empty($_GET)) {
             $this->render('Index', 'DocenteLayout', 'Docente');
             die();

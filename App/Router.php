@@ -166,6 +166,14 @@ abstract class Router {
             'action' => 'Chamada',
             'method' => ['GET']
         ];
+
+        $routes['Professor chamada pegar alunos'] = [
+            'router' => '/professor/chamada/alunos/turma/[0-9]+/qa/[1-3]',
+            'controller' => 'Professor\\ProfessorController',
+            'action' => 'AlunosPorTurmaChamada',
+            'method' => ['GET'],
+            'params' => ['turma', 'qt_aulas']
+        ];
         
         $this->routes = array_merge($this->routes, $routes);
     }

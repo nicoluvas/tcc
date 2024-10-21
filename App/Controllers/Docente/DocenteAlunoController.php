@@ -4,6 +4,7 @@ namespace App\Controllers\Docente;
 use Core\Controller\Controller;
 use App\Models\Docente\DocenteAluno;
 use App\Models\Docente\DocenteGerenciamento;
+use App\Tools\Tools;
 
 class DocenteAlunoController extends Controller {
     protected $cargo;
@@ -11,6 +12,7 @@ class DocenteAlunoController extends Controller {
     protected $turma;
     protected $alunos;
     protected $aluno;
+    
     public function __construct() {
         if(!isset($_SESSION['logged']) || $_SESSION['logged']['tipo'] != 'docente'){
             header('Location: /login');

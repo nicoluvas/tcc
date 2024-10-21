@@ -109,8 +109,10 @@
                 $(this).css('display', 'none')
             }
         })
+        $('form select#professor').val(professor_materia[turma][$('form select#materia').val()])
         if (!($('form select#materia').val() in professor_materia[turma])) {
             $('form select#materia').val('')
+            $('form select#professor').val('')
             $('form button#editar').prop('disabled', true)
         }
     })

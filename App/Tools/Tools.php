@@ -20,7 +20,13 @@ abstract class Tools {
             return;
         } 
         define('EM_PERIODO_LETIVO', 1);
+        define('ID_PERIODO_LETIVO', $smt->cd_periodo_letivo);
         define('INICIO_PERIODO_LETIVO', $smt->inicio);
+        define('INICIO_FERIAS', $smt->inicio_ferias);
         define('FIM_PERIODO_LETIVO', $smt->fim);
+    }
+
+    public static function isAjax() {
+        return !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
     }
 }
