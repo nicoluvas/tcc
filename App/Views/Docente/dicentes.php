@@ -1,3 +1,4 @@
+<h3>Central Aluno</h3>
 <a href="/docente/aluno/cadastrar">
     <button role="button">Cadastrar</button>
 </a>

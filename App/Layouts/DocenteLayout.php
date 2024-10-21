@@ -14,7 +14,7 @@
 <body>
 
     <div class="esquerda">
-        <a class="logo" href="/"><img class="logo" src="\assets\images\index\logobhas.png"></a>
+        <!-- <a class="logo" href="/"><img class="logo" src="\assets\images\index\logobhas.png"></a> -->
 
         <a class="hrefs" href="/docente/home?tab=gerenciamento"><i
                 class="bi-gear-wide-connected"></i><span>Gerenciar</span></a>

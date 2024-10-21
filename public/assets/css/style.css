@@ -292,48 +292,46 @@ body#home .pagina3 p span {
 }
 
 .girar {
-  animation: gira 200s linear infinite;
+  position: absolute;
+  z-index: 100;
+  animation: gira 600s linear infinite;
 }
 
 body#login {
-  background-image: linear-gradient(26deg, var(--primary), var(--secondary));
-  min-height: 100vh;
-  background-size: 400% 400%;
+  display: flex;
+
   margin: 0;
   padding: 0;
-  font-family: "Poppins";
-  font-weight: 400;
-  display: flex;
+
+  background-image: linear-gradient(26deg, var(--primary), var(--primary));
   -webkit-animation: movbg 27s ease infinite;
   animation: movbg 27s ease infinite;
-  overflow: hidden;
   transition: background-color 200ms ease;
+
+  overflow: hidden;
 }
 
-body#login h1 {
+body#login .login-esquerda {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+body#login .logo {
   position: absolute;
-  left: 20px;
-  top: 20px;
-  font-size: 48px;
-}
-
-body#login>img {
-  z-index: 1;
-  transform: translateX(1vw);
-  width: calc(40vw + 100px);
-  margin-top: 100px;
+  width: 15rem;
 }
 
 body#login .form-container {
-  position: relative;
-  background-color: var(--background);
-  width: 60vw;
-  height: 100vh;
-  border-top-left-radius: 70px;
-  padding: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: var(--background);
+  width: 60vw;
+  height: 100vh;
+  border-top-left-radius: 7rem;
+  padding: 40px;
   color: var(--text);
 }
 
@@ -346,10 +344,6 @@ body#login .form-container button {
   background-color: var(--text);
   border-radius: 50%;
   cursor: pointer;
-}
-
-body#login .form-container button i {
-  color: var(--background);
 }
 
 body#login .form-container form {
