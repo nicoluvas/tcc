@@ -16,8 +16,9 @@
     <div class="esquerda">
         <a class="logo" href="/"><img class="logo" src="\assets\images\index\logobhas.png"></a>
 
-        <a class="hrefs" href="/docente/home?tab=gerenciamento"><i class="bi bi-gear-wide-connected"></i><span>Gerenciar</span></a>
-        <a class="hrefs" href="/docente/home?tab=dicentes"><i class="bi bi-backpack3-fill"></i><span>Dicentes</span></a>
+        <a class="hrefs" href="/docente/home?tab=gerenciamento"><i
+                class="bi-gear-wide-connected"></i><span>Gerenciar</span></a>
+        <a class="hrefs" href="/docente/home?tab=dicentes"><i class="bi bi-backpack2-fill"></i><span>Dicentes</span></a>
         <a class="hrefs" href="/docente/home?tab=docentes"><i class="bi bi-briefcase-fill"></i><span>Docentes</span></a>
         <footer>
             <a href="/logout">
@@ -77,8 +78,12 @@ body {
     border: var(--primary) 2px solid;
     border-radius: 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 0.5rem;
+}
+
+.hrefs>i {
+    width: 1rem;
 }
 
 main {
