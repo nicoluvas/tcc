@@ -5,21 +5,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ADMIN DASHBOARD</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="/assets/js/docente/docente.js" defer></script>
 </head>
+
 
 <body>
 
-    <div class="esquerda">
+    <div class="esquerda shadow" id="width-appear">
         <!-- <a class="logo" href="/"><img class="logo" src="\assets\images\index\logobhas.png"></a> -->
-
-        <a class="hrefs" href="/docente/home?tab=gerenciamento"><i
+        <a class="logo t-shadow" href="/">Bhaskara</a>
+        <a class="hrefs shadow" href="/docente/home?tab=gerenciamento"><i
                 class="bi-gear-wide-connected"></i><span>Gerenciar</span></a>
-        <a class="hrefs" href="/docente/home?tab=dicentes"><i class="bi bi-backpack2-fill"></i><span>Dicentes</span></a>
-        <a class="hrefs" href="/docente/home?tab=docentes"><i class="bi bi-briefcase-fill"></i><span>Docentes</span></a>
+        <a class="hrefs shadow" href="/docente/home?tab=dicentes"><i class="bi bi-backpack2-fill"></i><span>Dicentes</span></a>
+        <a class="hrefs shadow" href="/docente/home?tab=docentes"><i class="bi bi-briefcase-fill"></i><span>Docentes</span></a>
         <footer>
             <a href="/logout">
                 <i class="bi bi-box-arrow-left"></i>
@@ -28,15 +33,15 @@
         </footer>
     </div>
 
-    <header>
+    <header class="" id="oppacity-appear">
         <h1>Olá,
             <?php echo $_SESSION['logged']['nome']; ?>
             <br>
-            <hr>
+            <hr id="width-appear">
         </h1>
     </header>
 
-    <main>
+    <main id="oppacity-appear">
         <?php
       $this->renderView($this->page->view, $this->page->viewDirectory)
     ?>
@@ -79,7 +84,7 @@ body {
 }
 
 .hrefs {
-    border: var(--primary) 2px solid;
+    border: var(--shadow) 1px solid;
     border-radius: 1rem;
     display: flex;
     justify-content: space-evenly;
@@ -110,6 +115,7 @@ header {
     grid-area: header;
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid var(--shadow);
 }
 
 footer {
@@ -127,6 +133,14 @@ footer {
     background-color: var(--secondary);
     row-gap: 1rem;
     padding: 1rem;
+}
+
+.shadow {
+    box-shadow: 1px 2px 1px var(--shadow);
+}
+
+.t-shadow{
+    text-shadow: 1px 2px 1px var(--shadow);
 }
 </style>
 
