@@ -21,10 +21,10 @@
     <div class="esquerda shadow" id="width-appear">
         <!-- <a class="logo" href="/"><img class="logo" src="\assets\images\index\logobhas.png"></a> -->
         <a class="logo t-shadow" href="/">Bhaskara</a>
-        <a class="hrefs shadow" href="/docente/home?tab=gerenciamento"><i
+        <a class="hrefs shadow" id="btn1" href="/docente/home?tab=gerenciamento"><i
                 class="bi-gear-wide-connected"></i><span>Gerenciar</span></a>
-        <a class="hrefs shadow" href="/docente/home?tab=dicentes"><i class="bi bi-backpack2-fill"></i><span>Dicentes</span></a>
-        <a class="hrefs shadow" href="/docente/home?tab=docentes"><i class="bi bi-briefcase-fill"></i><span>Docentes</span></a>
+        <a class="hrefs shadow" id="btn2" href="/docente/home?tab=dicentes"><i class="bi bi-backpack2-fill"></i><span>Dicentes</span></a>
+        <a class="hrefs shadow" id="btn3" href="/docente/home?tab=docentes"><i class="bi bi-briefcase-fill"></i><span>Docentes</span></a>
         <footer>
             <a href="/logout">
                 <i class="bi bi-box-arrow-left"></i>
