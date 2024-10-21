@@ -12,6 +12,7 @@ class ProfessorController extends Controller {
     protected $turmas;
     protected $alunos;
     protected $cargo;
+    protected $qt_aulas;
 
     public function __construct() {
         if(!isset($_SESSION['logged']) || $_SESSION['logged']['tipo'] != 'professor'){

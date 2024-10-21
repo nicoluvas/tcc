@@ -28,15 +28,38 @@
             endforeach;
         ?>
     </select>
+    <select name="qt_aulas" id="qt_aulas" disabled>
+        <option value="1">1 aula</option>
+        <option value="2">2 aula</option>
+        <option value="3">3 aula</option>
+    </select>
     <div class="alunos">
 
     </div>
+    <p class="retorno"></p>
+    <input type="submit" value="Enviar" disabled>
     <script>
         let professor_materia = <?= json_encode($this->professor_materias_turmas) ?>;
 
+        $('form').on('submit', function () {
+            $.ajax({
+                'url': '/professor/chamada',
+                'type': 'POST',
+                'dataType': 'json',
+                'data': $(this).serialize()
+            })
+            .done(function (data) {
+                $('p.retorno').text(data.msg)
+                $(this).reset()
+                $('input[type="submit"]').prop('disabled', true)
+            })
+        })
+
         $('form select#turma').on('change', function () {
             $('form select#turma option#init').remove()
+            $('form select#qt_aulas').prop('disabled', false)
             $('form select#materia').prop('disabled', false)
+            $('input[type="submit"]').prop('disabled', false)
 
             let turma = $(this).val()
             $('form select#materia option').each(function () {
@@ -48,17 +71,24 @@
             })
             $('form select#materia').val('')
             $.ajax({
-                'url': `/professor/chamada/alunos/turma/${$('form select#turma').val()}/qa/2`,
+                'url': `/professor/chamada/alunos/turma/${$('form select#turma').val()}/qa/${$('form select#qt_aulas').val()}`,
                 'type': 'GET',
                 'dataType': 'html'
             })
             .done(function (data) {
                 $('.alunos').html(data)
             })
-            .catch(function (a) {
-                console.log(a)
-            })
         })
 
+        $('form select#qt_aulas').on('change', function () {
+            $.ajax({
+                'url': `/professor/chamada/alunos/turma/${$('form select#turma').val()}/qa/${$('form select#qt_aulas').val()}`,
+                'type': 'GET',
+                'dataType': 'html'
+            })
+            .done(function (data) {
+                $('.alunos').html(data)
+            })
+        })
     </script>
 </form>
