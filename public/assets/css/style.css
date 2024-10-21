@@ -5,13 +5,14 @@
   margin: 0;
   border: none;
   outline: 0;
-  box-sizing: border-box;
 }
 
+/* body geral */
 body {
   overflow-x: hidden;
 }
 
+/* body do index */
 body#home {
   background-color: var(--background);
   max-width: 98vw;
@@ -166,7 +167,6 @@ body#home .pagina2 .caixadir h3 {
 body#home .pagina2 .caixadir h3 .mark {
   color: var(--primary);
   background-color: var(--secondary);
-
 }
 
 body#home .pagina2 .caixadir p {

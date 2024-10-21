@@ -55,6 +55,10 @@ h1 {
     font-size: 100%;
 }
 
+hr {
+    width: 80%
+}
+
 body {
     background-color: var(--background);
     margin: 0;
@@ -93,8 +97,7 @@ main {
 
     justify-content: center;
     align-items: center;
-
-    padding-left: 1rem;
+    padding: 1rem;
 }
 
 .aluno {
