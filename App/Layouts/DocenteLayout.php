@@ -101,6 +101,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     padding: 0.5rem;
+    background-color: var(--secondary);
 }
 
 .hrefs>i {

@@ -294,7 +294,7 @@ body#home .wave {
   position: absolute;
   z-index: 100;
   animation: gira 100s linear infinite;
-  top: 40px;
+  top: 20%;
   max-width: 37rem;
   margin-left: 10vw;
 }
@@ -316,6 +316,7 @@ body#login {
 body#login .login-esquerda {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 50%;
 }
 
