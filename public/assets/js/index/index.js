@@ -21,13 +21,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     // GSAP animation for .wave#wave
     const t = gsap.timeline({ repeat: -1 });
-    t.fromTo(".wave#wave",
+    t.fromTo(".wave",
       { x: -50 },
-      { x: 1400, duration: 1, ease: "linear" }
+      { x: 1400, duration: 20, ease: "ease" }
     );
-
-    // Optionally control the timeline progress
-    t.progress(0.5);
   }, 100);
 });
 

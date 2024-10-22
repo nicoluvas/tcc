@@ -228,6 +228,9 @@ body#home .pagina3 p span {
   gap: 1rem;
 }
 
+/* pagina 4 */
+
+
 /* rodapé */
 body#home footer {
   position: relative;
@@ -290,7 +293,10 @@ body#home .wave {
 .girar {
   position: absolute;
   z-index: 100;
-  animation: gira 600s linear infinite;
+  animation: gira 100s linear infinite;
+  top: 40px;
+  max-width: 37rem;
+  margin-left: 10vw;
 }
 
 body#login {
@@ -299,9 +305,9 @@ body#login {
   margin: 0;
   padding: 0;
 
-  background-image: linear-gradient(26deg, var(--primary), var(--primary));
-  -webkit-animation: movbg 27s ease infinite;
-  animation: movbg 27s ease infinite;
+  background-image: linear-gradient(26deg, var(--primary), var(--secondary));
+  -webkit-animation: movbg 2s ease infinite;
+  animation: movbg 2s ease infinite;
   transition: background-color 200ms ease;
 
   overflow: hidden;
@@ -398,49 +404,3 @@ body#login div#bola-em-baixo {
   transform: translate(-100%, -100%);
 }
 
-@media screen and (max-width: 1200px) {
-  body#login {
-    overflow: hidden;
-  }
-
-  body#login>img {
-    display: none;
-  }
-
-  body#login>h1 {
-    z-index: 1;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--text);
-  }
-
-  body#login .form-container {
-    font-size: clamp(14px, 2vw, 20px);
-    width: 100vw;
-    border-radius: 0;
-  }
-
-  body#login .form-container form {
-    row-gap: 3px;
-  }
-
-  body#login .form-container form h2 {
-    margin-bottom: 10px;
-  }
-
-  body#login .form-container button {
-    top: 10px;
-    left: 10px;
-  }
-
-  body#login div#bola-em-baixo {
-    display: none;
-  }
-}
-
-@media screen and (max-height: 420px) {
-  body#login>h1 {
-    display: none;
-  }
-}
