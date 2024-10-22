@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bhaskara</title>
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="/assets/js/index/index.js" type="module" defer></script>
     <link rel="stylesheet" href="/assets/css/style.css" />
@@ -12,7 +13,7 @@
 
 <body class="lexend" id="home">
     <img id="meshbg" src="assets\images\index\mesh-gradient.png">
-    
+
     <header class="cabecalho">
         <img class="logo" src="assets\images\index\logobhas.png">
         <nav>
@@ -61,17 +62,9 @@
             <img src="assets\images\index\pessoa3.svg" class="pessoa3" alt="" style="width: 450px;">
 
             <div class="direita3">
-                <section class="animation">
-                    <div class="first">
-                        <div>MÉTODO</div>
-                    </div>
-                    <div class="second">
-                        <div>ENSINO</div>
-                    </div>
-                    <div class="third">
-                        <div>FUTURO</div>
-                    </div>
-                </section>
+                <div class="twelve">
+                    <h1>Nosso Método...</h1>
+                </div>
                 <p class="shadow">Contando com uma abordagem intensiva e estratégica, focada na preparação dos
                     estudantes
                     para os exames de ingresso ao ensino superior, Bhaskara propõe: <span class="shadow"> Currículo
@@ -79,8 +72,21 @@
                         Parcerias
                         com Cursinhos e Universidades.</span></p>
             </div>
-
         </section>
+
+        <div class="waves">
+            <div class="wave"></div>
+        </div>
+        <footer>
+            <ul class="menu">
+                <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+                <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+                <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+                <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+                <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+            </ul>
+            <p>&copy;2024 Bhaskara Inc. | Todos Direitos Reservados.</p>
+        </footer>
     </main>
 </body>
 

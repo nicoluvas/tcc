@@ -18,5 +18,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
       duration: 0.5,
       ease: "power1.inOut",
     });
-  }, 100); 
+
+    // GSAP animation for .wave#wave
+    const t = gsap.timeline({ repeat: -1 });
+    t.fromTo(".wave#wave",
+      { x: -50 },
+      { x: 1400, duration: 1, ease: "linear" }
+    );
+
+    // Optionally control the timeline progress
+    t.progress(0.5);
+  }, 100);
 });
+

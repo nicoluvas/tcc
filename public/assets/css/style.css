@@ -192,7 +192,7 @@ body#home .pagina3 {
 body#home .direita3 {
   display: flex;
   justify-content: center;
-  align-items: center;
+
   flex-direction: column;
 }
 
@@ -207,77 +207,73 @@ body#home .pagina3 p span {
   color: var(--primary);
 }
 
-/* Animação da página 3 */
-.animation {
-  height: 50px;
-  overflow: hidden;
-  margin-left: 1rem;
+/* cabecalho pagina 3 */
+.twelve h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 160px;
+  white-space: nowrap;
+  padding-bottom: 13px;
 }
 
-.animation>div>div {
-  text-align: center;
-  padding: 0 10rem 0 0;
-  height: 2.81rem;
-  margin-bottom: 2.81rem;
-  display: inline-block;
-}
-
-.animation div:first-child {
-  animation: text-animation 18s infinite;
-}
-
-.first div {
+.twelve h1:before {
   background-color: var(--primary);
+  content: '';
+  display: block;
+  height: 5px;
+  width: 95px;
+  right: 0;
+  gap: 1rem;
 }
 
-.second div {
-  background-color: var(--secondary);
+/* rodapé */
+body#home footer {
+  position: relative;
+  width: 100%;
+  background: var(--accent);
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.third div {
+body#home .menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+body#home .menu__item {
+  opacity: 1;
+  list-style: none;
+  padding: 0.5rem;
+}
+
+body#home .menu__item:hover {
+  margin-top: -5px;
+  opacity: 0.6;
+  transition: all 0.1s ease-in-out;
+}
+
+body#home .waves {
+  display: flex;
+}
+
+body#home .wave {
+  margin-left: -10px;
+  position: absolute;
+  margin-top: -25px;
+  border-radius: 500px;
+  height: 100px;
+  width: 500px;
   background-color: var(--accent);
-}
-
-@keyframes text-animation {
-  0% {
-    margin-top: 0;
-  }
-
-  10% {
-    margin-top: 0;
-  }
-
-  20% {
-    margin-top: -5.62rem;
-  }
-
-  30% {
-    margin-top: -5.62rem;
-  }
-
-  40% {
-    margin-top: -11.24rem;
-  }
-
-  60% {
-    margin-top: -11.24rem;
-  }
-
-  70% {
-    margin-top: -5.62rem;
-  }
-
-  80% {
-    margin-top: -5.62rem;
-  }
-
-  90% {
-    margin-top: 0;
-  }
-
-  100% {
-    margin-top: 0;
-  }
 }
 
 /* Página Login */
