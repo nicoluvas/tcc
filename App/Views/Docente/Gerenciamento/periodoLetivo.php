@@ -1,5 +1,5 @@
 <?php
-    if (!EM_PERIODO_LETIVO) {
+    if (EM_PERIODO_LETIVO) {
         ?>
             <h2>Em período Letivo</h2>
             <p>
