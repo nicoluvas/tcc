@@ -26,13 +26,21 @@ abstract class Tools {
         define('FIM_PERIODO_LETIVO', $smt->fim);
 
         $inicio_periodo = date_create($smt->inicio);
-        if (date_diff($inicio_periodo, date_create())->format('d') < 90) {
+        $em_ferias = 0;
+        if (date_diff($inicio_periodo, date_create())->format('%a') < 90) {
             define('UNIDADE', 1);
-        } else if (210 > date_diff($inicio_periodo, date_create())->format('d') && date_diff($inicio_periodo, date_create())->format('d') > 90) {
+            define('FIM_UNIDADE', date('Y-m-d', strtotime($smt->inicio . ' + 90 days')));
+        } else if (210 > date_diff($inicio_periodo, date_create())->format('%a') && date_diff($inicio_periodo, date_create())->format('d') > 90) {
             define('UNIDADE', 2);
-        } else if (date_diff($inicio_periodo, date_create())->format('d') > 210) {
+            define('FIM_UNIDADE', date('Y-m-d', strtotime($smt->inicio . ' + 210 days')));
+            if (INICIO_FERIAS < date('Y-m-d') && date('Y-m-d') < date('Y-m-d', strtotime(INICIO_FERIAS . ' + 30 days'))) {
+                $em_ferias = 1;
+            }
+        } else if (date_diff($inicio_periodo, date_create())->format('%a') > 210) {
             define('UNIDADE', 3);
+            define('FIM_UNIDADE', date('Y-m-d', strtotime($smt->inicio . ' + 300 days')));
         }
+        define('EM_FERIAS', $em_ferias);
     }
 
     public static function isAjax() {
