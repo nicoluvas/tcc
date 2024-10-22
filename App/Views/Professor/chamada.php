@@ -30,18 +30,21 @@
     </select>
     <select name="qt_aulas" id="qt_aulas" disabled>
         <option value="1">1 aula</option>
-        <option value="2">2 aula</option>
-        <option value="3">3 aula</option>
+        <option value="2">2 aulas</option>
+        <option value="3">3 aulas</option>
     </select>
     <div class="alunos">
 
     </div>
+    <textarea name="ds_aula" id="ds_aula" disabled required></textarea>
     <p class="retorno"></p>
     <input type="submit" value="Enviar" disabled>
     <script>
         let professor_materia = <?= json_encode($this->professor_materias_turmas) ?>;
 
-        $('form').on('submit', function () {
+        $('form').on('submit', function (e) {
+            e.preventDefault()
+
             $.ajax({
                 'url': '/professor/chamada',
                 'type': 'POST',
@@ -50,8 +53,11 @@
             })
             .done(function (data) {
                 $('p.retorno').text(data.msg)
-                $(this).reset()
+                $('form').trigger("reset")
                 $('input[type="submit"]').prop('disabled', true)
+            })
+            .catch(function (a) {
+                console.log(a)
             })
         })
 
@@ -59,6 +65,7 @@
             $('form select#turma option#init').remove()
             $('form select#qt_aulas').prop('disabled', false)
             $('form select#materia').prop('disabled', false)
+            $('form textarea').prop('disabled', false)
             $('input[type="submit"]').prop('disabled', false)
 
             let turma = $(this).val()

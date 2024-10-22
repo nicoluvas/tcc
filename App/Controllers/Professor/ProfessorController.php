@@ -50,7 +50,12 @@ class ProfessorController extends Controller {
             $this->turmas = (new DocenteGerenciamento)->GetTurmas();
 
             $this->render('chamada', 'ProfessorLayout', 'Professor');
+            die();
         }
+
+        $idaula = $ProfessorChamada->CadastrarAula();
+        $ProfessorChamada->Chamada($idaula);
+        echo json_encode(['msg' => 'Chamada Feita!']);
     }
 
     public function AlunosPorTurmaChamada($turma, $qt_aulas) {

@@ -164,7 +164,7 @@ abstract class Router {
             'router' => '/professor/chamada',
             'controller' => 'Professor\\ProfessorController',
             'action' => 'Chamada',
-            'method' => ['GET']
+            'method' => ['GET', 'POST']
         ];
 
         $routes['Professor chamada pegar alunos'] = [
