@@ -10,6 +10,8 @@ class DocenteGerenciamentoController extends Controller {
     protected $turmas;
     protected $materias;
     protected $professor_materia;
+    protected $cargo;
+    protected $faltas;
 
     public function __construct() {
         if(!isset($_SESSION['logged']) || $_SESSION['logged']['tipo'] != 'docente'){
@@ -53,5 +55,21 @@ class DocenteGerenciamentoController extends Controller {
         }
 
         $DocenteGerenciamento->AlterarProfessorMateria();
+    }
+
+    public function Faltas() {
+        $DocenteGerenciamento = new DocenteGerenciamento();
+
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            $this->faltas = $DocenteGerenciamento->GetFaltas();
+            $this->render('faltas', 'DocenteLayout', 'Docente/Gerenciamento');
+            die();
+        }
+    }
+
+    public function JustificarFalta() {
+        $DocenteGerenciamento = new DocenteGerenciamento();
+        $DocenteGerenciamento->JustificarFalta($_POST['aluno'], $_POST['periodo'], $_POST['aula']);
+        echo json_encode(['msg' => 'Falta justificada']);
     }
 }

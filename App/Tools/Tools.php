@@ -24,6 +24,15 @@ abstract class Tools {
         define('INICIO_PERIODO_LETIVO', $smt->inicio);
         define('INICIO_FERIAS', $smt->inicio_ferias);
         define('FIM_PERIODO_LETIVO', $smt->fim);
+
+        $inicio_periodo = date_create($smt->inicio);
+        if (date_diff($inicio_periodo, date_create())->format('d') < 90) {
+            define('UNIDADE', 1);
+        } else if (210 > date_diff($inicio_periodo, date_create())->format('d') && date_diff($inicio_periodo, date_create())->format('d') > 90) {
+            define('UNIDADE', 2);
+        } else if (date_diff($inicio_periodo, date_create())->format('d') > 210) {
+            define('UNIDADE', 3);
+        }
     }
 
     public static function isAjax() {
