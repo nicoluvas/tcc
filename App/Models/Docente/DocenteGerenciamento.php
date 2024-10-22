@@ -52,4 +52,51 @@ class DocenteGerenciamento extends Model {
             echo json_encode(['ok' => true, 'msg' => 'Algo deu errado']);
         }
     }
+
+    public function GetFaltas() {
+        $sql =  "SELECT
+                    *
+                FROM
+                    tb_aluno
+                INNER JOIN
+                    tb_falta
+                    ON
+                        cd_aluno = id_matricula
+                INNER JOIN
+                    tb_aula
+                    ON
+                        cd_aula = id_aula
+                INNER JOIN
+                    tb_materia
+                    ON
+                        cd_materia = id_materia
+                WHERE
+                    id_periodo_letivo = :periodo AND
+                    st_falta = 'A'
+                GROUP BY
+                    id_matricula, id_aula
+                ORDER BY
+                    dt_aula DESC";
+        $params = [
+            'periodo' => ID_PERIODO_LETIVO
+        ];
+        return $this->executeStatement($sql, $params)->fetchAll();
+    }
+
+    public function JustificarFalta($aluno, $periodo, $aula) {
+        $sql = "UPDATE
+                    tb_falta
+                SET
+                    st_falta = 'J'
+                WHERE
+                    id_matricula = :aluno AND
+                    id_periodo_letivo = :periodo AND
+                    id_aula = :aula";
+        $params = [
+            'aluno' => $aluno,
+            'periodo' => $periodo,
+            'aula' => $aula
+        ];
+        $this->executeStatement($sql, $params);
+    }
 }

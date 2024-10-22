@@ -58,6 +58,7 @@ abstract class Router {
         ];
 
         $this->DocenteRoutes();
+        $this->ProfessorRoutes();
         
         $this->routes = array_merge($this->routes, $routes);
     }
@@ -153,6 +154,25 @@ abstract class Router {
             'method' => ['GET', 'POST']
         ];
 
+        $routes['Gerenciar faltas'] = [
+            'router' => '/docente/gerenciamento/faltas',
+            'controller' => 'Docente\\DocenteGerenciamentoController',
+            'action' => 'Faltas',
+            'method' => ['GET', 'POST']
+        ];
+
+        $routes['Gerenciar faltas justificar'] = [
+            'router' => '/docente/gerenciamento/faltas/justificar',
+            'controller' => 'Docente\\DocenteGerenciamentoController',
+            'action' => 'JustificarFalta',
+            'method' => ['POST']
+        ];
+
+        $this->routes = array_merge($this->routes, $routes);
+    }
+
+    private function ProfessorRoutes() {
+        
         $routes['Professor home'] = [
             'router' => '/professor/home',
             'controller' => 'Professor\\ProfessorController',
