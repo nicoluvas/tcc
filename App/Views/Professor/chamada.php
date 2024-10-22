@@ -1,3 +1,11 @@
+<?php
+    if (!EM_PERIODO_LETIVO) {
+        ?>
+            <p>fora de periodo letivo</p>
+        <?php
+        die();
+    }
+?>
 <form>
     <select name="turma" id="turma" required>
         <option value="" id="init">Selecione uma turma</option>

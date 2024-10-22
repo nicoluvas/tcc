@@ -2,7 +2,8 @@ use db_bhaskara;
 
 insert into `tb_periodo_letivo` values
 (null, '2023-01-29', '2023-12-06', '2023-07-01'),
-(null, null, null, null);
+-- (null, null, null, null);
+(null, '2024-01-29', '2024-12-06', '2024-07-01');
 
 insert into `tb_cargo` values 
 (null, 'Aluno'),
