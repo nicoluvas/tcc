@@ -45,6 +45,7 @@
         <?php
       $this->renderView($this->page->view, $this->page->viewDirectory)
     ?>
+    <img class="meshbg" src="/assets/images/index/mesh-gradient.png" alt="">
     </main>
 
 </body>
@@ -81,6 +82,13 @@ body {
 
 .logo {
     width: 15rem;
+}
+
+.meshbg {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  height: 100vh;
 }
 
 .hrefs {

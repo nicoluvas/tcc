@@ -12,6 +12,11 @@ gsap.from("#oppacity-appear", {
     duration: 0.5,
     ease: "power1.inOut",
 });
+gsap.from(".meshbg", {
+    delay: 0.5,
+    duration: 2.5,
+    ease: "power1.inOut",
+});
 
 // animações das ancoras
 let anim1 = gsap.timeline({ paused: true });
