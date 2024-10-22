@@ -23,8 +23,10 @@
         <a class="logo t-shadow" href="/">Bhaskara</a>
         <a class="hrefs shadow" id="btn1" href="/docente/home?tab=gerenciamento"><i
                 class="bi-gear-wide-connected"></i><span>Gerenciar</span></a>
-        <a class="hrefs shadow" id="btn2" href="/docente/home?tab=dicentes"><i class="bi bi-backpack2-fill"></i><span>Dicentes</span></a>
-        <a class="hrefs shadow" id="btn3" href="/docente/home?tab=docentes"><i class="bi bi-briefcase-fill"></i><span>Docentes</span></a>
+        <a class="hrefs shadow" id="btn2" href="/docente/home?tab=dicentes"><i
+                class="bi bi-backpack2-fill"></i><span>Dicentes</span></a>
+        <a class="hrefs shadow" id="btn3" href="/docente/home?tab=docentes"><i
+                class="bi bi-briefcase-fill"></i><span>Docentes</span></a>
         <footer>
             <a href="/logout">
                 <i class="bi bi-box-arrow-left"></i>
@@ -35,7 +37,7 @@
 
     <header class="" id="oppacity-appear">
         <h1>Olá,
-            <?php echo $_SESSION['logged']['nome']; ?>
+            <?php echo $_SESSION['logged']['nome']; ?> 👋
             <br>
             <hr id="width-appear">
         </h1>
@@ -45,7 +47,7 @@
         <?php
       $this->renderView($this->page->view, $this->page->viewDirectory)
     ?>
-    <img class="meshbg" src="/assets/images/index/mesh-gradient.png" alt="">
+        <img class="meshbg" src="/assets/images/index/mesh-gradient.png" alt="">
     </main>
 
 </body>
@@ -85,10 +87,12 @@ body {
 }
 
 .meshbg {
-  position: absolute;
-  z-index: -1;
-  right: 0;
-  height: 100vh;
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    oppacity: 0;
+    height: 100vh;
+    filter: blur(5px);
 }
 
 .hrefs {
@@ -147,7 +151,7 @@ footer {
     box-shadow: 1px 2px 1px var(--shadow);
 }
 
-.t-shadow{
+.t-shadow {
     text-shadow: 1px 2px 1px var(--shadow);
 }
 </style>
