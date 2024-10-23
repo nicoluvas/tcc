@@ -13,7 +13,7 @@
         <legend>Endereço</legend>
         <section>
             <div>
-
+                <!-- ENDEREÇO 1 -->
                 <input type="number" name="cep" id="cep" placeholder="CEP" required />
                 <p id="ceperro" style="color: #f00;"></p>
             </div>
@@ -26,40 +26,42 @@
             <div>
 
                 <select name="localidade" id="localidade" disabled required>
-                    <option value="">Selecione um Cidade</option>
+                    <option value="">Selecione uma Cidade</option>
                 </select>
             </div>
         </section>
+
+        <!-- ENDEREÇO 2 -->
         <section>
             <fieldset class="enderecofield">
-
                 <input type="text" name="bairro" id="bairro" placeholder="Bairro" required />
             </fieldset>
             <fieldset class="enderecofield">
-
                 <input type="text" name="logradouro" id="logradouro" placeholder="Rua" required />
             </fieldset>
             <fieldset class="enderecofield">
-
                 <input type="number" name="numero" id="numero" placeholder="Número" min="1" required />
             </fieldset>
             <fieldset class="enderecofield">
-
                 <input type="text" name="complemento" id="complemento" placeholder="Complemento" />
             </fieldset>
         </section>
     </fieldset>
-    <select name="cargo" id="cargo" required>
-        <option value="">Selecione um cargo</option>
-        <?php
+
+    <fieldset>
+        <legend>Cargo</legend>
+        <select name="cargo" id="cargo" required>
+            <option value="">Selecione um cargo</option>
+            <?php
             $cargos = ['2' => 'Professor', '3' => 'Secretário', '4' => 'Coordenador', '5' => 'Diretor'];
             for ($i = 2; $i <= $_SESSION['logged']['cargo']; $i++):
                 ?>
-        <option value="<?= $i ?>"><?= $cargos[$i] ?></option>
-        <?php
+            <option value="<?= $i ?>"><?= $cargos[$i] ?></option>
+            <?php
             endfor;
         ?>
-    </select>
+        </select>
+    </fieldset>
     <input type="submit" id="btn-cadastrar" value="Cadastrar" />
     <p id="formretorno"></p>
     <script>
@@ -67,7 +69,7 @@
         $("form select#localidade").prop("disabled", false);
         await fetch(
                 `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${$("form select#uf").val()}/distritos`
-                )
+            )
             .then((response) => {
                 if (!response.ok) {
                     return;
@@ -217,7 +219,17 @@ section {
 #btn-cadastrar {
     background-color: var(--accent);
     cursor: pointer;
+    font-size: 2rem;
+    transition: all 0.1s ease;
 }
+
+#btn-cadastrar:hover {
+    opacity: 0.8;
+}
+
+#btn-cadastrar:active {
+    scale: 0.99;
+} 
 
 .enderecofield {
     display: flex;

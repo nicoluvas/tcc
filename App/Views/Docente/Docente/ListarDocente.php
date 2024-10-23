@@ -16,6 +16,7 @@
         border-top: 1px solid #c2c2c2;
     }
 </style>
+
 <div class="docentes">
     <?php
         $cargos = ['2' => 'Professor', '3' => 'Secretário', '4' => 'Coordenador', '5' => 'Diretor'];

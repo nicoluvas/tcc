@@ -37,7 +37,7 @@
             <div>
 
                 <select name="localidade" id="localidade" disabled required>
-                    <option value="">Selecione um Cidade</option>
+                    <option value="">Selecione uma Cidade</option>
                 </select>
             </div>
         </section>
@@ -202,7 +202,7 @@ select {
     margin: 0.5rem;
     background-color: var(--background);
     border: none;
-    
+
 }
 
 input {
@@ -226,8 +226,19 @@ section {
 
 #btn-cadastrar {
     background-color: var(--accent);
-    cursor:pointer;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: all 0.1s ease;
 }
+
+#btn-cadastrar:hover {
+    opacity: 0.8;
+}
+
+#btn-cadastrar:active {
+    scale: 0.99;
+}
+
 
 .enderecofield {
     display: flex;
