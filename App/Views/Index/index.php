@@ -74,8 +74,30 @@
             </div>
         </section>
         <section class="pagina4">
-    
+            <div class="container">
+                <div class="cta-form">
+                    <h2>• Entre em contato!</h2>
+                </div>
+                <form action="" class="form">
+                    <div class="contato-info">
+                        <label for="name" class="form__label">Nome</label>
+                        <input type="text" placeholder="nome" class="form__input" id="name" />
+                    </div>
 
+                    <div class="contato-info">
+                        <label for="name" class="form__label">Telefone</label>
+                        <input type="text" placeholder="telefone" class="form__input" id="name" />
+                    </div>
+                    
+                    <div class="contato-info">
+                        <label for="email" class="form__label">Email</label>
+                        <input type="email" placeholder="Email" class="form__input" id="email" />
+                    </div>
+
+                </form>
+                <input class="lexend" id="inpute" type="submit" value="Enviar">
+                <span class="retorno">Contato solicitado! Aguarde o chamado de Deus!</span>    
+            </div>
         </section>
         <div class="waves">
             <div class="wave"></div>

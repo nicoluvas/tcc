@@ -229,7 +229,86 @@ body#home .pagina3 p span {
 }
 
 /* pagina 4 */
+.pagina4 {
+  height: calc(100vh - 150px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.pagina4>.container {
+  width: 25%;
+}
+
+.pagina4>.container>.cta-form {
+  text-align: center;
+  background-color: var(--accent);
+  padding: 1rem;
+  border-top-right-radius: 1rem;
+
+}
+
+#inpute {
+  background-color: var(--accent);
+  padding: 1rem;
+  border: var(--shadow) 1px solid;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  width: 100%;
+
+
+}
+
+#inpute:hover {
+  border: none;
+  cursor: pointer;
+  filter: brightness(0.9);
+  transition: all 0.2s ease;
+  transform: translateY(-10px);
+}
+
+.form__label {
+  padding: 0.2rem;
+}
+
+.form__input {
+
+  transition: all 250ms;
+
+  &:focus {
+    outline: none;
+    border-top-color: rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 1.2rem;
+  }
+
+  &:active{
+    content: "aguarde contato";
+  }
+}
+
+.retorno{
+  display: none;
+  font-size: medium;
+}
+
+.pagina4>.container>.form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary);
+}
+
+.contato-info {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.contato-info>input {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--background);
+}
 
 /* rodapé */
 body#home footer {
@@ -404,4 +483,3 @@ body#login div#bola-em-baixo {
   left: 100%;
   transform: translate(-100%, -100%);
 }
-

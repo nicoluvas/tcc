@@ -18,14 +18,14 @@
 
 <body>
 
-    <div class="esquerda shadow" id="width-appear">
+    <div class="esquerda shadow" id="">
         <!-- <a class="logo" href="/"><img class="logo" src="\assets\images\index\logobhas.png"></a> -->
         <a class="logo t-shadow" href="/">Bhaskara</a>
-        <a class="hrefs shadow" id="btn1" href="/docente/home?tab=gerenciamento"><i
+        <a class="hrefs" id="btn1" href="/docente/home?tab=gerenciamento"><i
                 class="bi-gear-wide-connected"></i><span>Gerenciar</span></a>
-        <a class="hrefs shadow" id="btn2" href="/docente/home?tab=dicentes"><i
+        <a class="hrefs" id="btn2" href="/docente/home?tab=dicentes"><i
                 class="bi bi-backpack2-fill"></i><span>Dicentes</span></a>
-        <a class="hrefs shadow" id="btn3" href="/docente/home?tab=docentes"><i
+        <a class="hrefs" id="btn3" href="/docente/home?tab=docentes"><i
                 class="bi bi-briefcase-fill"></i><span>Docentes</span></a>
         <footer>
             <a href="/logout">
@@ -83,7 +83,14 @@ body {
 }
 
 .logo {
-    width: 15rem;
+    color: var(--background);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+a>span {
+    font-weight: 300;
+    color: var(--background);
 }
 
 .meshbg {
@@ -96,16 +103,15 @@ body {
 }
 
 .hrefs {
-    border: var(--shadow) 1px solid;
-    border-radius: 1rem;
     display: flex;
     justify-content: space-evenly;
-    padding: 0.5rem;
-    background-color: var(--secondary);
+    padding: 0.2rem;
+    background-color: var(--primary-d);
 }
 
 .hrefs>i {
     width: 1rem;
+    color: var(--background);
 }
 
 main {
@@ -143,7 +149,7 @@ footer {
     grid-area: aside;
     font-size: 24px;
     height: 100%;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     row-gap: 1rem;
     padding: 1rem;
 }
