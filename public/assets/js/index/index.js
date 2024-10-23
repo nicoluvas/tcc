@@ -19,12 +19,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
       ease: "power1.inOut",
     });
 
-    // GSAP animation for .wave#wave
-    const t = gsap.timeline({ repeat: -1 });
-    t.fromTo(".wave",
-      { x: -50 },
-      { x: 1400, duration: 20, ease: "ease" }
-    );
+    // const t = gsap.timeline({ repeat: -1 });
+    // t.fromTo(".wave",
+    //   { x: -50 },
+    //   { x: 1400, duration: 20, ease: "ease" }
+    // );
+
+    
   }, 100);
 });
 

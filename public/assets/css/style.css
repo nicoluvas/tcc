@@ -245,7 +245,7 @@ body#home .pessoa3 {
   align-items: center;
   justify-content: center;
   background-attachment: fixed;
-  background-position: center; 
+  background-position: center;
   background-size: 30vw;
   background-image: url('/assets/images/index/fundin.png');
 }
@@ -326,6 +326,7 @@ body#home .pessoa3 {
 
 /* rodapé */
 body#home footer {
+  color: var(--text-inv);
   position: relative;
   background-color: var(--primary-d);
   min-height: 100px;
@@ -353,7 +354,7 @@ body#home .menu__item {
 
 body#home .menu__link {
   text-decoration: none;
-  color: var(--text);
+  color: var(--text-inv);
 
 }
 
@@ -366,16 +367,16 @@ body#home .menu__item:hover {
 
 body#home .waves {
   display: flex;
+  justify-content: center;
 }
 
 body#home .wave {
-  margin-left: -10px;
+  margin-top: -2rem;
   position: absolute;
-  margin-top: -25px;
   border-radius: 500px;
   height: 100px;
   width: 500px;
-  background-color: var(--accent);
+  background-color: var(--primary-d);
 }
 
 /* Página Login */

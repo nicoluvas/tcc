@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" style="scroll-behavior: smooth;">
 
 <head>
     <meta charset="UTF-8" />
@@ -28,7 +28,7 @@
 
     <main class="">
         <!-- SEÇÃO 1 -->
-        <section class="pagina1">
+        <section class="pagina1" id="pagina1">
             <div class="esquerdo">
                 <img src="assets\images\index\moda.png" alt="aa">
             </div>
@@ -38,7 +38,7 @@
             </div>
         </section>
         <!-- SEÇÃO 2 -->
-        <section class="pagina2">
+        <section class="pagina2" id="pagina2">
             <div id="esquerda">
                 <div id="pessoa2">
                     <img src="assets\images\index\taylor.svg" alt="wein">
@@ -58,7 +58,7 @@
             </div>
         </section>
         <!-- SEÇÃO 3 -->
-        <section class="pagina3" style="">
+        <section class="pagina3" id="pagina3" style="">
             <img src="assets\images\index\pessoa3.svg" class="pessoa3" alt="">
 
             <div class="direita3">
@@ -73,10 +73,11 @@
                         com Cursinhos e Universidades.</span></p>
             </div>
         </section>
-        <section class="pagina4">
+        <section class="pagina4" id="pagina4">
             <div class="container">
                 <div class="cta-form">
-                    <h2>• Entre em contato!</h2>
+                    <h2>• Solicite contato.</h2>
+                    <p style="opacity: 0.8;">Assim podendo receber novidades recentes!</p>
                 </div>
                 <form action="" class="form">
                     <div class="contato-info">
@@ -105,10 +106,9 @@
         <footer>
             <ul class="menu">
                 <li class="menu__item"><a class="menu__link" href="#pagina1">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="#pagina2">About</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+                <li class="menu__item"><a class="menu__link" href="#pagina2">Introdução</a></li>
+                <li class="menu__item"><a class="menu__link" href="#pagina3">Método</a></li>
+                <li class="menu__item"><a class="menu__link" href="#pagina4">Contato</a></li>
             </ul>
             <p>&copy;2024 Bhaskara Inc. | Todos Direitos Reservados.</p>
         </footer>
