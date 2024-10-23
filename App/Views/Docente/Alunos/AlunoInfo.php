@@ -147,23 +147,23 @@ section {
         <section>
             <div>
                 <label for="nome">Nome</label>
-                <input type="text" name="nome" placeholder="Nome" value="<?= $this->aluno->nome_responsavel ?>" disabled
+                <input type="text" name="nome_responsavel" placeholder="Nome" value="<?= $this->aluno->nome_responsavel ?>" disabled
                     required />
             </div>
 
             <div>
                 <label for="telefone">Telefone</label>
-                <input type="tel" name="telefone" placeholder="Telefone"
+                <input type="tel" name="telefone_responsavel" placeholder="Telefone"
                     value="<?= $this->aluno->telefone_responsavel ?>" disabled required />
             </div>
             <div>
                 <label for="cpf">CPF</label>
-                <input type="text" name="cpf" placeholder="CPF" value="<?= $this->aluno->cpf_responsavel ?>" disabled
+                <input type="text" name="cpf_responsavel" placeholder="CPF" value="<?= $this->aluno->cpf_responsavel ?>" disabled
                     required />
             </div>
             <div>
                 <label for="email">Email</label>
-                <input type="text" name="email" placeholder="email" value="<?= $this->aluno->email_responsavel ?>"
+                <input type="text" name="email_responsavel" placeholder="email" value="<?= $this->aluno->email_responsavel ?>"
                     disabled required />
             </div>
         </section>
@@ -171,7 +171,7 @@ section {
 
     <button type="button" id="editar">Editar</button>
     <button type="button" id="cancelar" style="display: none">Cancelar</button>
-    <input type="submit" value="Atualizar" style="display: none" disabled />
+    <button type="submit" style="display: none" id="salvar">Atualizar</button>
     <p id="formretorno"></p>
 
     <script>
@@ -287,7 +287,7 @@ section {
         $('form select#turma').prop('disabled', false)
         $(this).css('display', 'none')
         $('form button#cancelar').css('display', 'block')
-        $('form input[type="submit"]').css('display', 'block')
+        $('form button#salvar').css('display', 'block')
     })
 
     $('form button#cancelar').click(function() {
@@ -308,7 +308,7 @@ section {
                     $('form input').each(function() {
                         $(this).prop('disabled', true)
                     })
-                    $('form input[type="submit"]').css('display', 'none')
+                    $('form button#salvar').css('display', 'none')
                     $('form button#cancelar').css('display', 'none')
                     $('form button#editar').css('display', 'block')
                     $("form select#uf").prop("disabled", true);

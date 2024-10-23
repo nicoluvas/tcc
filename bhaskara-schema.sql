@@ -320,7 +320,7 @@ DROP TABLE IF EXISTS `db_bhaskara`.`tb_turma_materia` ;
 CREATE TABLE IF NOT EXISTS `db_bhaskara`.`tb_turma_materia` (
   `id_turma` INT NOT NULL,
   `id_materia` INT NOT NULL,
-  `id_docente` INT NOT NULL,
+  `id_docente` INT NULL,
   PRIMARY KEY (`id_turma`, `id_materia`),
   INDEX `fk_tb_turma_has_tb_materia_tb_materia2_idx` (`id_materia` ASC) ,
   INDEX `fk_tb_turma_has_tb_materia_tb_turma2_idx` (`id_turma` ASC) ,

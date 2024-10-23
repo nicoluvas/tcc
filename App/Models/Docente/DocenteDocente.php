@@ -142,7 +142,7 @@ class DocenteDocente extends Model {
             $this->executeStatement($sql, $params);
 
             $materiasAlteradas = 0;
-            if ($id_cargo == 2) {
+            if ($id_cargo == 2 && $_POST['cargo'] != $id_cargo) {
                 $sql = "UPDATE
                             tb_turma_materia
                         SET
@@ -159,7 +159,7 @@ class DocenteDocente extends Model {
             echo json_encode(['ok' => true, 'msg' => $materiasAlteradas>0?'Atenção! Esse docente era professor, verifique as matérias que ele lecionava':null, 'linhas' => $materiasAlteradas]);
         } catch (\Throwable $th) {
             $this->db->rollBack();
-            echo json_encode(['ok' => false, 'msg' => 'Verifique as informações inseridas']);
+            echo json_encode(['ok' => false, 'msg' => 'Verifique as informações inseridas'.$th->getMessage()]);
         }
     }
 

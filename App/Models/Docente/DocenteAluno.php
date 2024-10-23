@@ -111,7 +111,7 @@ class DocenteAluno extends Model {
                     cd_aluno = :id AND
                     tb_matricula.id_periodo_letivo = :periodo AND
                     st_matricula = 'A'";
-        $aluno = $this->executeStatement($sql, [':id' => $idaluno, 'periodo' => ID_PERIODO_LETIVO]);
+        $aluno = $this->executeStatement($sql, ['id' => $idaluno, 'periodo' => ID_PERIODO_LETIVO]);
         return $aluno->fetch();
     }
     
