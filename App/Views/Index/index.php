@@ -17,9 +17,9 @@
     <header class="cabecalho">
         <img class="logo" src="assets\images\index\logobhas.png">
         <nav>
-            <a href="/info" class="quem point" style="color: var(--text)">Quem somos</a>
-            <a href="/metodo" class="metodo point" style="color: var(--text)">Método de Ensino</a>
-            <a href="/contato" class="contato point" style="color: var(--text)">Fale Conosco</a>
+            <a href="/info" class="quem hover" style="color: var(--text)">Quem somos</a>
+            <a href="/metodo" class="metodo hover" style="color: var(--text)">Método de Ensino</a>
+            <a href="/contato" class="contato hover" style="color: var(--text)">Fale Conosco</a>
         </nav>
         <a href="/login" class="point restrita lexend" style="">
             Área Restrita
@@ -59,7 +59,7 @@
         </section>
         <!-- SEÇÃO 3 -->
         <section class="pagina3" style="">
-            <img src="assets\images\index\pessoa3.svg" class="pessoa3" alt="" style="width: 450px;">
+            <img src="assets\images\index\pessoa3.svg" class="pessoa3" alt="">
 
             <div class="direita3">
                 <div class="twelve">
@@ -88,7 +88,7 @@
                         <label for="name" class="form__label">Telefone</label>
                         <input type="text" placeholder="telefone" class="form__input" id="name" />
                     </div>
-                    
+
                     <div class="contato-info">
                         <label for="email" class="form__label">Email</label>
                         <input type="email" placeholder="Email" class="form__input" id="email" />
@@ -96,7 +96,7 @@
 
                 </form>
                 <input class="lexend" id="inpute" type="submit" value="Enviar">
-                <span class="retorno">Contato solicitado! Aguarde o chamado de Deus!</span>    
+                <span class="retorno">Contato solicitado! Aguarde o chamado de Deus!</span>
             </div>
         </section>
         <div class="waves">
@@ -104,8 +104,8 @@
         </div>
         <footer>
             <ul class="menu">
-                <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+                <li class="menu__item"><a class="menu__link" href="#pagina1">Home</a></li>
+                <li class="menu__item"><a class="menu__link" href="#pagina2">About</a></li>
                 <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
                 <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
                 <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
