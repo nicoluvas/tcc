@@ -4,47 +4,16 @@
         die();
     }
 ?>
-<style>
-@import url('global.css');
-
-form>fieldset>section>div {
-    display: flex;
-    flex-direction: column;
-}
-
-input,
-fieldset,
-select {
-    border-radius: 1rem;
-    padding: 1rem;
-    margin: 0.5rem;
-    background-color: var(--background);
-    border: none;
-}
-
-input {
-    background-color: var(--background);
-    border: none;
-}
-
-fieldset {
-    background-color: var(--background-alt);
-    border: 1px solid var(--shadow);
-
-}
-
-legend {
-    color: var(--text);
-    font-size: 3rem;
-}
-
-section {
-    display: flex;
-}
-</style>
+<link rel="stylesheet" href="/assets/css/docente-aux.css">
 <form>
     <!-- cabecalho -->
-    <h2>Informações de: <?= $this->aluno->nome_aluno ?></h2>
+    <h2><?= $this->aluno->nome_aluno ?></h2>
+    <div>
+        <button type="button" id="editar">Editar</button>
+        <button type="button" id="cancelar" style="display: none">Cancelar</button>
+        <input class="botoes" type="submit" value="Atualizar" style="display: none" disabled />
+        <p id="formretorno"></p>
+    </div>
 
     <!-- geral -->
     <fieldset>
@@ -169,11 +138,6 @@ section {
         </section>
     </fieldset>
 
-    <button type="button" id="editar">Editar</button>
-    <button type="button" id="cancelar" style="display: none">Cancelar</button>
-    <button type="submit" style="display: none" id="salvar">Atualizar</button>
-    <p id="formretorno"></p>
-
     <script>
     var searchCities = async (callback) => {
         $("form select#localidade").prop("disabled", false);
@@ -287,7 +251,7 @@ section {
         $('form select#turma').prop('disabled', false)
         $(this).css('display', 'none')
         $('form button#cancelar').css('display', 'block')
-        $('form button#salvar').css('display', 'block')
+        $('form input[type="submit"]').css('display', 'block')
     })
 
     $('form button#cancelar').click(function() {
@@ -308,7 +272,7 @@ section {
                     $('form input').each(function() {
                         $(this).prop('disabled', true)
                     })
-                    $('form button#salvar').css('display', 'none')
+                    $('form input[type="submit"]').css('display', 'none')
                     $('form button#cancelar').css('display', 'none')
                     $('form button#editar').css('display', 'block')
                     $("form select#uf").prop("disabled", true);

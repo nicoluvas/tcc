@@ -1,0 +1,47 @@
+@import url('global.css');
+.botoes {
+    padding: 1rem;
+    background-color: var(--accent);
+    &:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+}
+
+@import url('global.css');
+@import url('docente-aux.css');
+
+form>fieldset>section>div {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+fieldset,
+select {
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: var(--background);
+    border: none;
+}
+
+input {
+    background-color: var(--background);
+    border: none;
+}
+
+fieldset {
+    background-color: var(--background-alt);
+    border: 1px solid var(--shadow);
+
+}
+
+legend {
+    color: var(--text);
+    font-size: 3rem;
+}
+
+section {
+    display: flex;
+}

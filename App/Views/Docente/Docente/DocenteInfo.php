@@ -1,47 +1,6 @@
+<link rel="stylesheet" href="/assets/css/docente-aux.css">
 <form>
-    <h2>Docente <?= $this->docente->nome_docente ?></h2>
-    <input type="text" name="nome" placeholder="Nome" required value="<?= $this->docente->nome_docente ?>" disabled/>
-    <input type="tel" name="telefone" placeholder="Telefone" required value="<?= $this->docente->telefone_docente ?>" disabled/>
-    <input type="text" name="cpf" placeholder="CPF" required value="<?= $this->docente->cpf_docente ?>" disabled/>
-    <input type="text" name="rg" placeholder="RG" required value="<?= $this->docente->rg_docente ?>" disabled/>
-    <input type="email" name="email" placeholder="Email" required value="<?= $this->docente->email_docente ?>" disabled/>
-    <!-- Endereço -->
-    <fieldset style="width: 100%;">
-        <legend>Endereço</legend>
-        <section>
-            <div>
-                <label for="cep">CEP</label>
-                <input type="number" name="cep" id="cep" placeholder="CEP" required value="<?= $this->docente->cep ?>" disabled/>
-                <p id="ceperro" style="color: #f00;"></p>
-            </div>
-            <div>
-                <label for="uf">UF</label>
-                <select name="uf" id="uf" required disabled>
-                    <option value="">Selecione um Estado</option>
-                </select>
-            </div>
-            <div>
-                <label for="localidade">Cidade</label>
-                <select name="localidade" id="localidade" required>
-                    <option value="">Selecione um Cidade</option>
-                </select>
-            </div>
-        </section>
-        <label for="bairro">Bairro</label>
-        <input type="text" name="bairro" id="bairro" placeholder="Bairro" required value="<?= $this->docente->bairro ?>" disabled/>
-        <section>
-            <fieldset style="flex: 14;">
-                <label for="logradouro">Rua</label>
-                <input type="text" name="logradouro" id="logradouro" placeholder="Rua" required value="<?= $this->docente->logradouro ?>" disabled/>
-            </fieldset>
-            <fieldset style="flex: 1;">
-                <label for="numero">Número</label>
-                <input type="number" name="numero" id="numero" placeholder="Número" min="1" required value="<?= $this->docente->numero ?>" disabled/>
-            </fieldset>
-        </section>
-        <label for="complemento">Complemeto</label>
-        <input type="text" name="complemento" id="complemento" placeholder="Complemento" value="<?= $this->docente->complemento ?>" disabled/>
-    </fieldset>
+    <h2><?= $this->docente->nome_docente ?></h2>
     <select name="cargo" id="cargo" required disabled>
         <option value="">Selecione um cargo</option>
         <?php
@@ -57,6 +16,65 @@
     <button type="button" id="cancelar" style="display: none">Cancelar</button>
     <input type="submit" value="Atualizar" style="display: none" disabled/>
     <p id="formretorno"></p>
+
+    <!-- geral -->
+     <fieldset>
+        <legend>Docente</legend>
+        <input type="text" name="nome" placeholder="Nome" required value="<?= $this->docente->nome_docente ?>" disabled/>
+        <input type="tel" name="telefone" placeholder="Telefone" required value="<?= $this->docente->telefone_docente ?>" disabled/>
+        <input type="text" name="cpf" placeholder="CPF" required value="<?= $this->docente->cpf_docente ?>" disabled/>
+        <input type="text" name="rg" placeholder="RG" required value="<?= $this->docente->rg_docente ?>" disabled/>
+        <input type="email" name="email" placeholder="Email" required value="<?= $this->docente->email_docente ?>" disabled/>
+    </fieldset>
+    <!-- Endereço -->
+    <fieldset>
+        <legend>Endereço</legend>
+        <section>
+            <div>
+                <label for="cep">CEP</label>
+                <input type="number" name="cep" id="cep" placeholder="CEP" required value="<?= $this->docente->cep ?>"
+                    disabled />
+                <p id="ceperro" style="color: #f00;"></p>
+            </div>
+            <div>
+                <label for="uf">UF</label>
+                <select name="uf" id="uf" required disabled>
+                    <option value="">Selecione um Estado</option>
+                </select>
+            </div>
+            <div>
+                <label for="localidade">Cidade</label>
+                <select name="localidade" id="localidade" required disabled>
+                    <option value="">Selecione um Cidade</option>
+                </select>
+            </div>
+        </section>
+        <section>
+            <div>
+                <label for="bairro">Bairro</label>
+                <input type="text" name="bairro" id="bairro" placeholder="Bairro" required
+                    value="<?= $this->docente->bairro ?>" disabled />
+            </div>
+
+            <div>
+                <label for="logradouro">Rua</label>
+                <input type="text" name="logradouro" id="logradouro" placeholder="Rua" required
+                    value="<?= $this->docente->logradouro ?>" disabled />
+            </div>
+            <div>
+                <label for="numero">Número</label>
+                <input type="number" name="numero" id="numero" placeholder="Número" min="1" required
+                    value="<?= $this->docente->numero ?>" disabled />
+            </div>
+            <div>
+                <label for="complemento">Complemeto</label>
+                <input type="text" name="complemento" id="complemento" placeholder="Complemento"
+                    value="<?= $this->docente->complemento ?>" disabled />
+            </div>
+
+        </section>
+    </fieldset>
+
     <script>
         var searchCities = async (callback) => {
             $("form select#localidade").prop("disabled", false);
