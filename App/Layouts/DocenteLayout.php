@@ -28,12 +28,10 @@
         <a class="hrefs" id="btn3" href="/docente/home?tab=docentes"><i
                 class="bi bi-briefcase-fill"></i><span>Docentes</span></a>
 
-        <footer>
-            <a href="/logout">
-                <i class="bi bi-box-arrow-left"></i>
-                Sair
-            </a>
-        </footer>
+        <a href="/logout">
+            <i class="bi bi-box-arrow-left"></i>
+            Sair
+        </a>
     </div>
 
     <header class="" id="oppacity-appear">
@@ -153,7 +151,7 @@ header {
     padding: 1rem;
 }
 
-.esquerda>footer {
+.esquerda>a[href="/logout"] {
     border-radius: 0.3rem;
     bottom: 0;
     display: flex;
@@ -164,15 +162,15 @@ header {
     padding: .2rem 0 .2rem 0;
 }
 
-footer:hover {
+a[href="/logout"]:hover {
     cursor: pointer;
     transform: translateY(2px);
     transition: ease all 0.2s;
     opacity: 0.8;
 }
 
-.esquerda>footer>a,
-.esquerda>footer>a>i {
+.esquerda>a[href="/logout"],
+.esquerda>a[href="/logout"]>i {
     color: var(--primary-d);
 }
 
