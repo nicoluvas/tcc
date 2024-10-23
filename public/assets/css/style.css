@@ -367,16 +367,16 @@ body#home .menu__item:hover {
 
 body#home .waves {
   display: flex;
+  justify-content: center;
 }
 
 body#home .wave {
-  margin-left: -10px;
+  margin-top: -2rem;
   position: absolute;
-  margin-top: -25px;
   border-radius: 500px;
   height: 100px;
   width: 500px;
-  background-color: var(--accent);
+  background-color: var(--primary-d);
 }
 
 /* Página Login */

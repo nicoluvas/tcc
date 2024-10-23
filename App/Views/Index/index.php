@@ -76,7 +76,8 @@
         <section class="pagina4" id="pagina4">
             <div class="container">
                 <div class="cta-form">
-                    <h2>• Entre em contato!</h2>
+                    <h2>• Solicite contato.</h2>
+                    <p style="opacity: 0.8;">Assim podendo receber novidades recentes!</p>
                 </div>
                 <form action="" class="form">
                     <div class="contato-info">

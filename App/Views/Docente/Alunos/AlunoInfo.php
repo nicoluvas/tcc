@@ -4,6 +4,44 @@
         die();
     }
 ?>
+<style>
+@import url('global.css');
+
+form>fieldset>section>div {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+fieldset,
+select {
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: var(--background);
+    border: none;
+}
+
+input {
+    background-color: var(--background);
+    border: none;
+}
+
+fieldset {
+    background-color: var(--background-alt);
+    border: 1px solid var(--shadow);
+
+}
+
+legend {
+    color: var(--text);
+    font-size: 3rem;
+}
+
+section {
+    display: flex;
+}
+</style>
 <form>
     <!-- cabecalho -->
     <h2>Informações de: <?= $this->aluno->nome_aluno ?></h2>
@@ -11,40 +49,47 @@
     <!-- geral -->
     <fieldset>
         <legend>Aluno</legend>
-        <div>
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" placeholder="Nome" value="<?= $this->aluno->nome_aluno ?>" disabled
-                required />
-        </div>
+        <section>
 
-        <div>
-            <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" placeholder="Telefone" value="<?= $this->aluno->telefone_aluno ?>"
-                disabled required />
-        </div>
-        <div>
-            <label for="cpf">CPF</label>
-            <input type="text" name="cpf" placeholder="CPF" value="<?= $this->aluno->cpf_aluno ?>" disabled required />
-        </div>
-        <div><label for="rg">RG</label>
-            <input type="text" name="rg" placeholder="RG" value="<?= $this->aluno->rg_aluno ?>" disabled required />
+            <div>
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" placeholder="Nome" value="<?= $this->aluno->nome_aluno ?>" disabled
+                    required />
+            </div>
 
-        </div>
-        <div>
-            <label for="nascimento">Nascimento</label>
-            <input type="date" name="nascimento" placeholder="Nascimento" value="<?= $this->aluno->nascimento_aluno ?>"
-                disabled required />
-        </div>
-        <h3>Engressou em <?= date_format(date_create($this->aluno->dt_cadastro), 'd/m/Y') ?></h3>
-        <div>
-            <label for="turma">Turma</label>
-            <select name="turma" id="turma">
-                <option value="<?= $this->aluno->cd_turma%2==0?$this->aluno->cd_turma-1:$this->aluno->cd_turma ?>">
-                    <?= $this->aluno->nm_turma[0] . 'º A' ?></option>
-                <option value="<?= $this->aluno->cd_turma%2!=0?$this->aluno->cd_turma+1:$this->aluno->cd_turma ?>">
-                    <?= $this->aluno->nm_turma[0] . 'º B' ?></option>
-            </select>
-        </div>
+            <div>
+                <label for="telefone">Telefone</label>
+                <input type="tel" name="telefone" placeholder="Telefone" value="<?= $this->aluno->telefone_aluno ?>"
+                    disabled required />
+            </div>
+            <div>
+                <label for="cpf">CPF</label>
+                <input type="text" name="cpf" placeholder="CPF" value="<?= $this->aluno->cpf_aluno ?>" disabled
+                    required />
+            </div>
+            <div><label for="rg">RG</label>
+                <input type="text" name="rg" placeholder="RG" value="<?= $this->aluno->rg_aluno ?>" disabled required />
+
+            </div>
+            <div>
+                <label for="nascimento">Nascimento</label>
+                <input type="date" name="nascimento" placeholder="Nascimento"
+                    value="<?= $this->aluno->nascimento_aluno ?>" disabled required />
+            </div>
+        </section>
+        <section>
+            <div>
+                <label for="turma">Turma</label>
+                <select name="turma" id="turma">
+                    <option value="<?= $this->aluno->cd_turma%2==0?$this->aluno->cd_turma-1:$this->aluno->cd_turma ?>">
+                        <?= $this->aluno->nm_turma[0] . 'º A' ?></option>
+                    <option value="<?= $this->aluno->cd_turma%2!=0?$this->aluno->cd_turma+1:$this->aluno->cd_turma ?>">
+                        <?= $this->aluno->nm_turma[0] . 'º B' ?></option>
+                </select>
+            </div>
+
+        </section>
+        <h3>ⓘ Engressou em <?= date_format(date_create($this->aluno->dt_cadastro), 'd/m/Y') ?></h3>
     </fieldset>
 
     <!-- endereco -->
@@ -52,7 +97,7 @@
         <legend>Endereço</legend>
         <section>
             <div>
-
+                <label for="cep">CEP</label>
                 <input type="number" name="cep" id="cep" placeholder="CEP" required value="<?= $this->aluno->cep ?>"
                     disabled />
                 <p id="ceperro" style="color: #f00;"></p>
@@ -70,51 +115,58 @@
                 </select>
             </div>
         </section>
-        <label for="bairro">Bairro</label>
-        <input type="text" name="bairro" id="bairro" placeholder="Bairro" required value="<?= $this->aluno->bairro ?>"
-            disabled />
+        <section>
+            <div>
+                <label for="bairro">Bairro</label>
+                <input type="text" name="bairro" id="bairro" placeholder="Bairro" required
+                    value="<?= $this->aluno->bairro ?>" disabled />
+            </div>
 
-        <div>
-            <label for="logradouro">Rua</label>
-            <input type="text" name="logradouro" id="logradouro" placeholder="Rua" required
-                value="<?= $this->aluno->logradouro ?>" disabled />
-        </div>
-        <div>
-            <label for="numero">Número</label>
-            <input type="number" name="numero" id="numero" placeholder="Número" min="1" required
-                value="<?= $this->aluno->numero ?>" disabled />
-        </div>
+            <div>
+                <label for="logradouro">Rua</label>
+                <input type="text" name="logradouro" id="logradouro" placeholder="Rua" required
+                    value="<?= $this->aluno->logradouro ?>" disabled />
+            </div>
+            <div>
+                <label for="numero">Número</label>
+                <input type="number" name="numero" id="numero" placeholder="Número" min="1" required
+                    value="<?= $this->aluno->numero ?>" disabled />
+            </div>
+            <div>
+                <label for="complemento">Complemeto</label>
+                <input type="text" name="complemento" id="complemento" placeholder="Complemento"
+                    value="<?= $this->aluno->complemento ?>" disabled />
+            </div>
 
-        <label for="complemento">Complemeto</label>
-        <input type="text" name="complemento" id="complemento" placeholder="Complemento"
-            value="<?= $this->aluno->complemento ?>" disabled />
-        </div>
+        </section>
     </fieldset>
 
     <!-- responsavel -->
     <fieldset>
-        <legend>Responsavel</legend>
-        <div>
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" placeholder="Nome" value="<?= $this->aluno->nome_responsavel ?>" disabled
-                required />
-        </div>
+        <legend>Responsável</legend>
+        <section>
+            <div>
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" placeholder="Nome" value="<?= $this->aluno->nome_responsavel ?>" disabled
+                    required />
+            </div>
 
-        <div>
-            <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" placeholder="Telefone" value="<?= $this->aluno->telefone_responsavel ?>"
-                disabled required />
-        </div>
-        <div>
-            <label for="cpf">CPF</label>
-            <input type="text" name="cpf" placeholder="CPF" value="<?= $this->aluno->cpf_responsavel ?>" disabled
-                required />
-        </div>
-        <div>
-            <label for="email">Email</label>
-            <input type="text" name="email" placeholder="email" value="<?= $this->aluno->email_responsavel ?>" disabled
-                required />
-        </div>
+            <div>
+                <label for="telefone">Telefone</label>
+                <input type="tel" name="telefone" placeholder="Telefone"
+                    value="<?= $this->aluno->telefone_responsavel ?>" disabled required />
+            </div>
+            <div>
+                <label for="cpf">CPF</label>
+                <input type="text" name="cpf" placeholder="CPF" value="<?= $this->aluno->cpf_responsavel ?>" disabled
+                    required />
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="text" name="email" placeholder="email" value="<?= $this->aluno->email_responsavel ?>"
+                    disabled required />
+            </div>
+        </section>
     </fieldset>
 
     <button type="button" id="editar">Editar</button>
