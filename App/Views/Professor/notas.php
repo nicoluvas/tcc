@@ -56,8 +56,8 @@
     <p>Unidade <?= UNIDADE ?></p>
     <p id="aluno">Aluno: </p>
     <p id="materia">Materia: </p>
-    <span>Prova</span><input type="number" name="prova" id="prova" readonly="readonly" value="0" step="0.01"> <br>
-    <span>Trabalho</span><input type="number" name="trabalho" id="trabalho" readonly="readonly" value="0" step="0.01"> <br>
+    <span>Prova</span><input type="number" name="prova" id="prova" readonly="readonly" value="0" step="0.01" min="0" max="10"> <br>
+    <span>Trabalho</span><input type="number" name="trabalho" id="trabalho" readonly="readonly" value="0" step="0.01" min="0" max="10"> <br>
     <button type="button" id="editar">Editar</button>
     <button type="button" id="cancelar" style="display: none;">Cancelar</button>
     <button type="submit" id="salvar" style="display: none;">Salvar</button>
@@ -76,8 +76,15 @@
                 'data': $(this).serialize()
             })
             .done(function (data) {
-                $('p.retorno').text(data.msg)
-                $('form').trigger("reset")
+                $('p#retorno').text(data.msg)
+                $('select#turma').removeAttr('readonly', 'readonly')
+                $('select#materia').removeAttr('readonly', 'readonly')
+                $('select#aluno').removeAttr('readonly', 'readonly')
+                $('input#prova').attr('readonly', 'readonly')
+                $('input#trabalho').attr('readonly', 'readonly')
+                $('button#editar').css('display', 'block')
+                $('button#cancelar').css('display', 'none')
+                $('button#salvar').css('display', 'none')
             })
             .catch(function (a) {
                 console.log(a)
