@@ -27,6 +27,7 @@
                 class="bi bi-backpack2-fill"></i><span>Dicentes</span></a>
         <a class="hrefs" id="btn3" href="/docente/home?tab=docentes"><i
                 class="bi bi-briefcase-fill"></i><span>Docentes</span></a>
+
         <footer>
             <a href="/logout">
                 <i class="bi bi-box-arrow-left"></i>
@@ -65,6 +66,10 @@ h1 {
 
 hr {
     width: 80%
+}
+
+header {
+    box-shadow: 1px 1px 2px var(--shadow);
 }
 
 body {
@@ -107,7 +112,7 @@ a>span {
     justify-content: space-evenly;
     padding: 0.2rem;
     background-color: var(--primary-d);
-    border-radius: 0.1rem;
+    border-radius: 0.3rem;
 }
 
 .hrefs>i {
@@ -135,7 +140,6 @@ header {
     grid-area: header;
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid var(--shadow);
 }
 
 .esquerda {
@@ -150,13 +154,14 @@ header {
 }
 
 .esquerda>footer {
-    border-radius: 0.1rem;
+    border-radius: 0.3rem;
     bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     background-color: var(--accent);
+    padding: .2rem 0 .2rem 0;
 }
 
 footer:hover {
@@ -168,7 +173,7 @@ footer:hover {
 
 .esquerda>footer>a,
 .esquerda>footer>a>i {
-    color: var(--background);
+    color: var(--primary-d);
 }
 
 .shadow {

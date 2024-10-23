@@ -240,13 +240,14 @@ body#home .pessoa3 {
 
 /* pagina 4 */
 .pagina4 {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 50px);
   display: flex;
   align-items: center;
   justify-content: center;
   background-attachment: fixed;
   background-position: center; 
-  background-image: url('/assets/images/index/biblico.jpeg');
+  background-size: 30vw;
+  background-image: url('/assets/images/index/fundin.png');
 }
 
 .pagina4>.container {
@@ -326,7 +327,7 @@ body#home .pessoa3 {
 /* rodapé */
 body#home footer {
   position: relative;
-  background: var(--accent);
+  background-color: var(--primary-d);
   min-height: 100px;
   padding: 20px 50px;
   display: flex;
