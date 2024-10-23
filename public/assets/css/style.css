@@ -39,6 +39,12 @@ body#home header {
   border-bottom: 1px solid var(--shadow);
 }
 
+body#home .hover:hover {
+  margin-top: -5px;
+  opacity: 0.6;
+  transition: all 0.1s ease-in-out;
+}
+
 body#home header .logo {
   max-height: 100px;
 }
@@ -207,6 +213,10 @@ body#home .pagina3 p span {
   color: var(--primary);
 }
 
+body#home .pessoa3 {
+  max-width: 50vh;
+}
+
 /* cabecalho pagina 3 */
 .twelve h1 {
   font-size: 3rem;
@@ -234,6 +244,9 @@ body#home .pagina3 p span {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-attachment: fixed;
+  background-position: center; 
+  background-image: url('/assets/images/index/biblico.jpeg');
 }
 
 .pagina4>.container {
@@ -282,12 +295,12 @@ body#home .pagina3 p span {
     padding: 1.2rem;
   }
 
-  &:active{
+  &:active {
     content: "aguarde contato";
   }
 }
 
-.retorno{
+.retorno {
   display: none;
   font-size: medium;
 }
@@ -313,7 +326,6 @@ body#home .pagina3 p span {
 /* rodapé */
 body#home footer {
   position: relative;
-  width: 100%;
   background: var(--accent);
   min-height: 100px;
   padding: 20px 50px;
@@ -338,10 +350,17 @@ body#home .menu__item {
   padding: 0.5rem;
 }
 
+body#home .menu__link {
+  text-decoration: none;
+  color: var(--text);
+
+}
+
 body#home .menu__item:hover {
   margin-top: -5px;
   opacity: 0.6;
   transition: all 0.1s ease-in-out;
+  border-bottom: 1px var(--shadow) solid;
 }
 
 body#home .waves {
@@ -372,10 +391,12 @@ body#home .wave {
 .girar {
   position: absolute;
   z-index: 100;
-  animation: gira 100s linear infinite;
-  top: 20%;
-  max-width: 37rem;
+  animation: gira 200s linear infinite;
+  max-width: 40vw;
   margin-left: 10vw;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 body#login {
@@ -474,10 +495,11 @@ body#login .form-container form p {
 }
 
 body#login div#bola-em-baixo {
-  width: 200px;
-  height: 200px;
+  width: 20vh;
+  height: 20vh;
   border-top-left-radius: 100%;
-  background-color: rgba(88, 174, 202, 0.3333333333);
+  background-color: var(--secondary);
+  opacity: 0.5;
   position: absolute;
   top: 100%;
   left: 100%;

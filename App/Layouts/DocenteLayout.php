@@ -77,8 +77,8 @@ body {
     overflow: hidden;
 
     display: grid;
-    grid-template-rows: 50px 1fr;
-    grid-template-columns: 250px 1fr;
+    grid-template-rows: 10vh 1fr;
+    grid-template-columns: 15vw 1fr;
     grid-template-areas: 'aside header''aside main';
 }
 
@@ -107,6 +107,7 @@ a>span {
     justify-content: space-evenly;
     padding: 0.2rem;
     background-color: var(--primary-d);
+    border-radius: 0.1rem;
 }
 
 .hrefs>i {
@@ -137,12 +138,6 @@ header {
     border-bottom: 1px solid var(--shadow);
 }
 
-footer {
-    margin: 1rem;
-    position: absolute;
-    bottom: 0;
-}
-
 .esquerda {
     display: flex;
     flex-direction: column;
@@ -152,6 +147,28 @@ footer {
     background-color: var(--primary);
     row-gap: 1rem;
     padding: 1rem;
+}
+
+.esquerda>footer {
+    border-radius: 0.1rem;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--accent);
+}
+
+footer:hover {
+    cursor: pointer;
+    transform: translateY(2px);
+    transition: ease all 0.2s;
+    opacity: 0.8;
+}
+
+.esquerda>footer>a,
+.esquerda>footer>a>i {
+    color: var(--background);
 }
 
 .shadow {
