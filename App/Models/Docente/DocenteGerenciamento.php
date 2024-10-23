@@ -99,4 +99,65 @@ class DocenteGerenciamento extends Model {
         ];
         $this->executeStatement($sql, $params);
     }
+
+    public function IniciarPeriodoLetivo() {
+        $inicio_periodo = $_POST['inicio'];
+        [$fim_periodo, $inicio_ferias] = $this->CalcularDatasPeriodo($inicio_periodo);
+        $sql = "UPDATE
+                    tb_periodo_letivo
+                SET
+                    inicio = :inicio,
+                    fim = :fim,
+                    inicio_ferias = :inicio_ferias";
+        $params = [
+            'inicio' => $inicio_ferias,
+            'fim' => $fim_periodo,
+            'inicio_ferias' => $inicio_ferias
+        ];
+        $this->executeStatement($sql, $params);
+        $this->CadastrarNotas();
+        echo json_encode(['ok' => true, 'msg' => "Período Iniciado!"]);
+        die();
+    }
+
+    private function CalcularDatasPeriodo($inicio_periodo) {
+        $previa_fim = date('w', strtotime($inicio_periodo. ' + 300 days'));
+        $fim_periodo = ($previa_fim == 0 || $previa_fim == 6)?date('Y-m-d', strtotime($inicio_periodo. ' + 302 days')):date('Y-m-d', strtotime($inicio_periodo. ' + 300 days'));
+        $inicio_ferias = date('Y-m-d', strtotime($inicio_periodo. ' + 150 days'));
+        return [$fim_periodo, $inicio_ferias];
+    }
+
+    private function CadastrarNotas() {
+        $sql = "SELECT
+                    *
+                FROM
+                    tb_aluno
+                WHERE
+                    st_aluno like 'A'";
+        $alunos = $this->executeStatement($sql)->fetchAll();
+        $sql = "SELECT
+                    *
+                FROM
+                    tb_materia";
+        $materias = $this->executeStatement($sql)->fetchAll();
+        foreach ($alunos as $aluno) {
+            foreach ($materias as $materia) {
+                $sql = "INSERT INTO
+                            tb_nota
+                        VALUES
+                            (null, 0, 1, default, :periodo, :matricula, :materia, 1),
+                            (null, 0, 2, default, :periodo, :matricula, :materia, 1),
+                            (null, 0, 1, default, :periodo, :matricula, :materia, 2),
+                            (null, 0, 2, default, :periodo, :matricula, :materia, 2),
+                            (null, 0, 1, default, :periodo, :matricula, :materia, 3),
+                            (null, 0, 2, default, :periodo, :matricula, :materia, 3)";
+                $params = [
+                    'periodo' => ID_PERIODO_LETIVO,
+                    'matricula' => $aluno->cd_aluno,
+                    'materia' => $materia->cd_materia
+                ];
+                $this->executeStatement($sql, $params);
+            }
+        }
+    }
 }
