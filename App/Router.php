@@ -194,6 +194,21 @@ abstract class Router {
             'method' => ['GET'],
             'params' => ['turma', 'qt_aulas']
         ];
+
+        $routes['Professor notas'] = [
+            'router' => '/professor/notas/alunos',
+            'controller' => 'Professor\\ProfessorController',
+            'action' => 'Notas',
+            'method' => ['GET']
+        ];
+
+        $routes['Professor pegar nota do aluno'] = [
+            'router' => '/professor/notas/aluno/[0-9]+/materia/[0-9]+',
+            'controller' => 'Professor\\ProfessorController',
+            'action' => 'NotasAluno',
+            'method' => ['GET'],
+            'params' => ['aluno', 'materia']
+        ];
         
         $this->routes = array_merge($this->routes, $routes);
     }
