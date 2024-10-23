@@ -1,3 +1,11 @@
+<?php
+    if (!EM_PERIODO_LETIVO) {
+        ?>
+            <p>Fora de periodo letivo</p>
+        <?php
+        die();
+    }
+?>
 <style>
     select[readonly='readonly'] {
         background: #eee; /*Simular campo inativo - Sugestão @GabrielRodrigues*/
@@ -45,6 +53,7 @@
             endforeach;
         ?>
     </select>
+    <p>Unidade <?= UNIDADE ?></p>
     <p id="aluno">Aluno: </p>
     <p id="materia">Materia: </p>
     <span>Prova</span><input type="number" name="prova" id="prova" readonly="readonly" value="0" step="0.01"> <br>
@@ -52,6 +61,7 @@
     <button type="button" id="editar">Editar</button>
     <button type="button" id="cancelar" style="display: none;">Cancelar</button>
     <button type="submit" id="salvar" style="display: none;">Salvar</button>
+    <p id="retorno"></p>
     <script>
         let professor_materia = <?= json_encode($this->professor_materias_turmas) ?>;
         let alunos_turma = <?= json_encode($this->alunos_turma) ?>;
@@ -60,7 +70,7 @@
             e.preventDefault()
 
             $.ajax({
-                'url': '/professor/chamada',
+                'url': '/professor/notas/aluno/salvar',
                 'type': 'POST',
                 'dataType': 'json',
                 'data': $(this).serialize()
@@ -68,7 +78,6 @@
             .done(function (data) {
                 $('p.retorno').text(data.msg)
                 $('form').trigger("reset")
-                $('input[type="submit"]').prop('disabled', true)
             })
             .catch(function (a) {
                 console.log(a)
@@ -98,8 +107,8 @@
 
             $('form select#materia').val('')
             $('form select#aluno').val('')
-            $('p#aluno').text('Aluno')
-            $('p#materia').text('Materia')
+            $('p#aluno').text('Aluno: ')
+            $('p#materia').text('Materia: ')
             $('input#prova').val(0)
             $('input#trabalho').val(0)
         })

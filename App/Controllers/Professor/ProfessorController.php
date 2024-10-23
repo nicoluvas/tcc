@@ -101,4 +101,9 @@ class ProfessorController extends Controller {
     public function NotasAluno($aluno, $materia) {
         echo json_encode(['ok' => true, 'notas' => (new ProfessorNota)->NotasAluno($aluno, $materia)]);
     }
+
+    public function SalvarNotas() {
+        $ProfessorNota = new ProfessorNota();
+        $ProfessorNota->SalvarNotas();
+    }
 }

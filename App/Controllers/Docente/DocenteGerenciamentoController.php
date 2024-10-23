@@ -28,6 +28,11 @@ class DocenteGerenciamentoController extends Controller {
     public function PeriodoLetivo() {
         $this->render('periodoLetivo', 'DocenteLayout', 'Docente/Gerenciamento');
     }
+
+    public function IniciarPeriodoLetivo() {
+        $DocenteGerenciamento = new DocenteGerenciamento();
+        $DocenteGerenciamento->IniciarPeriodoLetivo();
+    }
     
     public function Materias() {
         $DocenteDocente = new DocenteDocente();

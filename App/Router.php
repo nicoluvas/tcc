@@ -201,13 +201,20 @@ abstract class Router {
             'action' => 'Notas',
             'method' => ['GET']
         ];
-
+        
         $routes['Professor pegar nota do aluno'] = [
             'router' => '/professor/notas/aluno/[0-9]+/materia/[0-9]+',
             'controller' => 'Professor\\ProfessorController',
             'action' => 'NotasAluno',
             'method' => ['GET'],
             'params' => ['aluno', 'materia']
+        ];
+
+        $routes['Professor salvar nota'] = [
+            'router' => '/professor/notas/aluno/salvar',
+            'controller' => 'Professor\\ProfessorController',
+            'action' => 'SalvarNotas',
+            'method' => ['POST']
         ];
         
         $this->routes = array_merge($this->routes, $routes);
