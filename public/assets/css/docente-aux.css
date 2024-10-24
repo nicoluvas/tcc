@@ -8,9 +8,6 @@
     }
 }
 
-@import url('global.css');
-@import url('docente-aux.css');
-
 form>fieldset>section>div {
     display: flex;
     flex-direction: column;
