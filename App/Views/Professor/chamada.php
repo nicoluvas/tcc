@@ -7,46 +7,52 @@
     }
 ?>
 <form>
-    <select name="turma" id="turma" required>
-        <option value="" id="init">Selecione uma turma</option>
-        <?php
-            foreach($this->turmas as $turma):
-                if (!array_key_exists($turma->cd_turma, $this->professor_materias_turmas)) continue;
-                ?>
-                    <option value="<?= $turma->cd_turma ?>"><?= $turma->nm_turma ?></option>
-                    <?php
-            endforeach;
-            ?>
-    </select>
-    <select name="materia" id="materia" required disabled>
-        <option value="">Selecione uma matéria</option>
-        <?php
-            $aux = [];
-            foreach($this->professor_materias_turmas as $turma):
-                foreach ($turma as $id_materia => $materia):
-                    if (array_key_exists($id_materia, $aux)) continue;
-                    $aux[$id_materia] = $materia;
-                    ksort($aux, SORT_NUMERIC);
+    <div class="selects">
+        <select name="turma" id="turma" required>
+            <option value="" id="init">Selecione uma turma</option>
+            <?php
+                foreach($this->turmas as $turma):
+                    if (!array_key_exists($turma->cd_turma, $this->professor_materias_turmas)) continue;
+                    ?>
+                        <option value="<?= $turma->cd_turma ?>"><?= $turma->nm_turma ?></option>
+                        <?php
                 endforeach;
-            endforeach;
-            foreach($aux as $id_materia => $materia):
                 ?>
-                    <option value="<?= $id_materia ?>"><?= $materia ?></option>
-                <?php
-            endforeach;
-        ?>
-    </select>
-    <select name="qt_aulas" id="qt_aulas" disabled>
-        <option value="1">1 aula</option>
-        <option value="2">2 aulas</option>
-        <option value="3">3 aulas</option>
-    </select>
-    <div class="alunos">
-
+        </select>
+        <select name="materia" id="materia" required disabled>
+            <option value="">Selecione uma matéria</option>
+            <?php
+                $aux = [];
+                foreach($this->professor_materias_turmas as $turma):
+                    foreach ($turma as $id_materia => $materia):
+                        if (array_key_exists($id_materia, $aux)) continue;
+                        $aux[$id_materia] = $materia;
+                        ksort($aux, SORT_NUMERIC);
+                    endforeach;
+                endforeach;
+                foreach($aux as $id_materia => $materia):
+                    ?>
+                        <option value="<?= $id_materia ?>"><?= $materia ?></option>
+                    <?php
+                endforeach;
+            ?>
+        </select>
+        <select name="qt_aulas" id="qt_aulas" disabled>
+            <option value="1">1 aula</option>
+            <option value="2">2 aulas</option>
+            <option value="3">3 aulas</option>
+        </select>
     </div>
-    <textarea name="ds_aula" id="ds_aula" disabled required></textarea>
-    <p class="retorno"></p>
-    <input type="submit" value="Enviar" disabled>
+
+    <div class="chmda">
+        <div class="alunos">Selecione uma sala.</div>
+        <div class="chmda-dir">
+            <h3>Conteúdo de aula e anotações</h3>
+            <textarea name="ds_aula" id="ds_aula" disabled required></textarea>
+            <input type="submit" value="Enviar" disabled>
+            <p class="retorno"></p>
+        </div>
+    </div>
     <script>
         let professor_materia = <?= json_encode($this->professor_materias_turmas) ?>;
 
@@ -107,3 +113,38 @@
         })
     </script>
 </form>
+<style>
+    @import url('/assets/css/global.css');
+
+.chmda{
+    width: 75vw;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .selects{
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            column-gap: 1rem;
+        }
+        .selects>select{
+            padding: 1rem;
+        }
+
+    .chmda{
+        display: flex;
+        justify-content: space-evenly;
+        border: 1px solid var(--shadow);
+        border-radius: .5rem;
+    }
+
+    .chmda-dir{
+        display:flex;
+        flex-direction:column;
+    }
+</style>

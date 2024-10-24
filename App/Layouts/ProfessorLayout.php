@@ -11,23 +11,87 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
-<body>
+<body class="lexend">
     <nav>
-        <a href="/professor/chamada">Chamada</a>
-        <a href="/professor/situacao/aluno">Situação Aluno</a>
-        <a href="/professor/notas/alunos">Notas</a>
+        <div class="nav-esq">
+            <a href="/professor/chamada">Chamada</a>
+            <a href="/professor/situacao/aluno">Situação Aluno</a>
+            <a href="/professor/notas/alunos">Notas</a>
+        </div>
+        <div class="nav-dir">
+            <a id="sair" href="/logout">
+                <i class="bi bi-box-arrow-left"></i>
+                Sair
+            </a>
+        </div>
     </nav>
     <main>
         <?php
             $this->renderView($this->page->view, $this->page->viewDirectory);
         ?>
     </main>
-    <footer>
-        <a href="/logout">
-            <i class="bi bi-box-arrow-left"></i>
-            Sair
-        </a>
-    </footer>
 </body>
+
+
+<style>
+@import url('/assets/css/global.css');
+
+* {
+    text-decoration: none;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--background);
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+
+    padding: 1rem 0 1rem 0;
+    background-color: var(--primary);
+    
+}
+
+nav>.nav-esq{
+    display:flex;
+    justify-content: space-evenly;
+    width: 45%;
+}
+
+nav>.nav-esq>a{
+    color: var(--text-inv);
+    background-color: var(--primary-d);
+    border-radius: .5rem;
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+nav>.nav-dir {
+    display:flex;
+    align-items:center;
+}
+
+main {
+    flex: 1;
+}
+
+#sair {
+    background-color: var(--accent);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+#sair, #sair>i {
+    color: var(--text);
+    font-weight: 600;
+}
+</style>
 
 </html>

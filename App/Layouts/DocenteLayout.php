@@ -24,7 +24,7 @@
         <a class="hrefs" id="btn1" href="/docente/home?tab=gerenciamento"><i
                 class="bi-gear-wide-connected"></i><span>Gerenciar</span></a>
         <a class="hrefs" id="btn2" href="/docente/home?tab=dicentes"><i
-                class="bi bi-backpack2-fill"></i><span>Dicentes</span></a>
+                class="bi bi-backpack2-fill"></i><span>Discentes</span></a>
         <a class="hrefs" id="btn3" href="/docente/home?tab=docentes"><i
                 class="bi bi-briefcase-fill"></i><span>Docentes</span></a>
 
