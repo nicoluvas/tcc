@@ -306,7 +306,7 @@ body#home .pessoa3 {
 .pagina4>.container>.form {
   display: flex;
   flex-direction: column;
-  background-color: var(--secondary);
+  background-color: var(--background-alt);
 }
 
 .contato-info {
