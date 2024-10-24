@@ -23,6 +23,8 @@
     session_start();
 
     require '../vendor/autoload.php';
-
+    
+    ob_start();
     new \App\Bootstrap;
+    ob_end_flush();
 ?>

@@ -1,9 +1,42 @@
+<style>
+    .chmda{
+        width: 75vw;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .selects{
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            column-gap: 1rem;
+        }
+        .selects>select{
+            padding: 1rem;
+        }
+
+    .chmda{
+        display: flex;
+        justify-content: space-evenly;
+        border: 1px solid var(--shadow);
+        border-radius: .5rem;
+    }
+
+    .chmda-dir{
+        display:flex;
+        flex-direction:column;
+    }
+</style>
 <?php
     if (!EM_PERIODO_LETIVO) {
         ?>
             <p>fora de periodo letivo</p>
         <?php
-        die();
+        exit();
     }
 ?>
 <form>
@@ -113,38 +146,3 @@
         })
     </script>
 </form>
-<style>
-    @import url('/assets/css/global.css');
-
-.chmda{
-    width: 75vw;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-    .selects{
-            display: flex;
-            justify-content: center;
-            padding: 1rem;
-            column-gap: 1rem;
-        }
-        .selects>select{
-            padding: 1rem;
-        }
-
-    .chmda{
-        display: flex;
-        justify-content: space-evenly;
-        border: 1px solid var(--shadow);
-        border-radius: .5rem;
-    }
-
-    .chmda-dir{
-        display:flex;
-        flex-direction:column;
-    }
-</style>
