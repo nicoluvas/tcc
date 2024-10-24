@@ -128,7 +128,13 @@ class ProfessorController extends Controller {
         $this->render('situacaoAlunos', 'ProfessorLayout', 'Professor');
     }
 
+    protected $turma;
+    protected $materia;
+    protected $unidade;
     public function SituacaoAlunosTurmaMateria($turma, $materia, $unidade) {
-        echo $turma . ' ' .$materia.' '.$unidade;
+        $this->turma = $turma;
+        $this->materia = $materia;
+        $this->unidade = $unidade;
+        $this->renderView('tabelaSituacaoAlunos', 'Professor');
     }
 }
