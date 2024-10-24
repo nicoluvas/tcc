@@ -8,7 +8,7 @@
 ?>
 <style>
     select[readonly='readonly'] {
-        background: #eee; /*Simular campo inativo - Sugestão @GabrielRodrigues*/
+        background: #eee; 
         pointer-events: none;
         touch-action: none;
     }
