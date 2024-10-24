@@ -223,6 +223,13 @@ abstract class Router {
             'action' => 'SalvarNotas',
             'method' => ['POST']
         ];
+
+        $routes['Professor situação dos alunos'] = [
+            'router' => '/professor/situacao/alunos',
+            'controller' => 'Professor\\ProfessorController',
+            'action' => 'SituacaoAlunos',
+            'method' => ['GET']
+        ];
         
         $this->routes = array_merge($this->routes, $routes);
     }

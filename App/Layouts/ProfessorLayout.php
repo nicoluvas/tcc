@@ -74,7 +74,7 @@
     <nav>
         <div class="nav-esq">
             <a href="/professor/chamada">Chamada</a>
-            <a href="/professor/situacao/aluno">Situação Aluno</a>
+            <a href="/professor/situacao/alunos">Situação Alunos</a>
             <a href="/professor/notas/alunos">Notas</a>
         </div>
         <div class="nav-dir">

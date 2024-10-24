@@ -7,7 +7,7 @@
 </style>
 <form>
     <select name="turma" id="turma">
-        <option value="" selected id='init'>Selecione uma turma</option>
+        <option value="" selected style="display: none;">Selecione uma turma</option>
         <?php
             foreach ($this->turmas as $turma):
                 ?>
@@ -18,7 +18,7 @@
     </select>
     
     <select name="materia" id="materia" disabled required>
-        <option value="" id='init'>Selecione uma matéria</option>
+        <option value="" selected style="display: none;">Selecione uma matéria</option>
         <?php
             foreach ($this->materias as $materia):
                 ?>
@@ -28,7 +28,7 @@
         ?>
     </select>
     <select name="professor" id="professor" disabled required>
-        <option value="" selected></option>
+        <option value="" selected style="display: none;"></option>
         <?php
             foreach ($this->professores as $professor):
                 ?>
@@ -98,7 +98,6 @@
     })
 
     $('form select#turma').on('change', function () {
-        $('form select#turma option#init').remove()
         $('form select#materia').prop('disabled', false)
 
         var turma = $(this).val()
@@ -118,7 +117,6 @@
     })
 
     $('form select#materia').on('change', function () {
-        $('form select#materia option#init').remove()
         $('form button#editar').prop('disabled', false)
 
         var idTurma = $('form select#turma').val()
