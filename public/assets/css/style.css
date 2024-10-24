@@ -265,7 +265,7 @@ body#home .pessoa3 {
 #inpute {
   background-color: var(--accent);
   padding: 1rem;
-  border: var(--shadow) 1px solid;
+  border: none;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   width: 100%;
@@ -274,11 +274,9 @@ body#home .pessoa3 {
 }
 
 #inpute:hover {
-  border: none;
   cursor: pointer;
   filter: brightness(0.9);
   transition: all 0.2s ease;
-  transform: translateY(-10px);
 }
 
 .form__label {
@@ -287,13 +285,12 @@ body#home .pessoa3 {
 
 .form__input {
 
-  transition: all 250ms;
+  transition: all 650ms;
 
   &:focus {
     outline: none;
     border-top-color: rgba(0, 0, 0, 0.1);
     background-color: white;
-    padding: 1.2rem;
   }
 
   &:active {
