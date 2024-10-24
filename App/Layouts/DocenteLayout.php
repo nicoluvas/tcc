@@ -13,6 +13,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="/assets/js/docente/docente.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/docente-aux.css">
 </head>
 
 

@@ -29,7 +29,8 @@
     padding: 0;
 }
 
-.boxes, p {
+.boxes,
+p {
     margin: 1px var(--shadow) solid;
 }
 
@@ -46,5 +47,20 @@ p {
 /* div do nome do aluno */
 .aluno {
     display: flex;
+    border-bottom: 1px var(--shadow) solid;
+}
+
+.aluno>p {
+    margin: 10px;
+}
+
+.aluno>.boxes>input {
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+}
+
+.alunos {
+    border: 1px var(--shadow) solid;
+    border-radius: 0.5rem;
 }
 </style>
