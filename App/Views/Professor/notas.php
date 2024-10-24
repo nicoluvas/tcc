@@ -131,8 +131,9 @@
                 'dataType': 'json'
             })
             .done(data => {
-                $('input#prova').val(data.notas.prova??0)
-                $('input#trabalho').val(data.notas.trabalho??0)
+                console.log(data)
+                $('input#prova').val(data.notas.prova)
+                $('input#trabalho').val(data.notas.trabalho)
                 $('p#aluno').text('Aluno: ' + data.notas.aluno)
                 $('p#materia').text('Materia: ' + data.notas.materia)
             })
@@ -149,11 +150,13 @@
                 'dataType': 'json'
             })
             .done(data => {
-                $('input#prova').val(data.notas.prova??0)
-                $('input#trabalho').val(data.notas.trabalho??0)
+                console.log(data)
+                $('input#prova').val(data.notas.prova)
+                $('input#trabalho').val(data.notas.trabalho)
                 $('p#aluno').text('Aluno: ' + data.notas.aluno)
                 $('p#materia').text('Materia: ' + data.notas.materia)
             })
+            .catch(data => console.log(data))
         })
 
         $('button#editar').on('click', function () {

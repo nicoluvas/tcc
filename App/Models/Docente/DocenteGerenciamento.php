@@ -132,16 +132,25 @@ class DocenteGerenciamento extends Model {
                     *
                 FROM
                     tb_aluno
+                INNER JOIN
+                    tb_matricula_turma
+                    ON
+                        id_matricula = cd_aluno
                 WHERE
                     st_aluno like 'A'";
         $alunos = $this->executeStatement($sql)->fetchAll();
         $sql = "SELECT
                     *
                 FROM
-                    tb_materia";
+                    tb_materia
+                INNER JOIN
+                    tb_turma_materia
+                    ON
+                        cd_materia = id_materia";
         $materias = $this->executeStatement($sql)->fetchAll();
         foreach ($alunos as $aluno) {
             foreach ($materias as $materia) {
+                if ($materia->id_turma != $aluno->id_turma) continue;
                 $sql = "INSERT INTO
                             tb_nota
                         VALUES

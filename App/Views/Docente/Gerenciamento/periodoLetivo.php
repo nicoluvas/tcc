@@ -42,7 +42,8 @@
 
                         $('form').on('submit', function (e) {
                             e.preventDefault()
-
+                            $('form input[type="submit"]').prop('disabled', true)
+                            
                             $.ajax({
                                 'url': '/docente/gerenciamento/periodo-letivo/iniciar',
                                 'dataType': 'json',
@@ -56,7 +57,9 @@
                             })
                             .catch(function (a) {
                                 console.log(a)
+                                $('p#retorno').text('Algo deu errado')
                             })
+                            $('form input[type="submit"]').prop('disabled', false)
                         })
                     </script>
                     <?php
