@@ -1,12 +1,38 @@
 <style>
+    @import url('global.css');
+    textarea {
+        background-color: var(--background);
+        border: 1px var(--shadow) solid;
+        border-radius: .5rem;
+        min-width: 30vw;
+        min-height: 30vh;
+        padding: 1vh;
+    }
+
     .chmda{
         width: 75vw;
+        padding: 1vw;
+        background-color: var(--background-alt)
     }
 
     form {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    input {
+        padding: 1rem;
+    background-color: var(--accent);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    border: none;
+    font-weight: 600;
+    &:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
     }
 
     .selects{
