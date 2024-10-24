@@ -1,3 +1,11 @@
+<?php
+    if (!EM_PERIODO_LETIVO) {
+        ?>
+            <p>Fora de periodo letivo</p>
+        <?php
+        die();
+    }
+?>
 <select name="turma" id="turma" required>
     <option value="" id="init" selected style="display: none;">Selecione uma turma</option>
     <?php
@@ -24,6 +32,18 @@
         endforeach;
     ?>
 </select>
+<select name="unidade" id="unidade">
+    <?php
+        for ($i=1; $i<=UNIDADE; $i++):
+            ?>
+                <option value="<?= $i ?>">Unidade <?= $i ?></option>
+            <?php
+        endfor;
+    ?>
+</select>
+<div class="situacao">
+    Selecione as opções
+</div>
 
 <script>
     let professor_materia = <?= json_encode($this->professor_materias_turmas) ?>;
@@ -41,9 +61,20 @@
         })
 
         $('select#materia').val('')
+        $('div.situacao').text('Selecione as opções')
     })
 
-    $('select#materia').on('change', function () {
-        
+    $('select#materia, select#unidade').on('change', function () {
+        if ($('select#materia').val() == '') {
+            return
+        }
+        $.ajax({
+            'url': `/professor/situcacao/turma/${$('select#turma').val()}/materia/${$('select#materia').val()}/unidade/${$('select#unidade').val()}`,
+            'type': 'GET',
+            'dataType': 'html'
+        })
+        .done(function(data) {
+            $('div.situacao').html(data)
+        })
     })
 </script>

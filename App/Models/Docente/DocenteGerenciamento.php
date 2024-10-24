@@ -55,7 +55,12 @@ class DocenteGerenciamento extends Model {
 
     public function GetFaltas() {
         $sql =  "SELECT
-                    *
+                    nome_aluno,
+                    cd_aluno,
+                    nm_materia,
+                    dt_aula,
+                    id_periodo_letivo,
+                    id_aula
                 FROM
                     tb_aluno
                 INNER JOIN
