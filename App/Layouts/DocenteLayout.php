@@ -119,6 +119,13 @@ a>span {
     color: var(--background);
 }
 
+.selects {
+    display:flex;
+    justify-content:center;
+    background-color: var(--background-alt);
+    border-radius: 1rem;
+}
+
 main {
     grid-area: main;
     overflow-x: hidden;
@@ -158,6 +165,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    column-gap: .7rem;
     width: 100%;
     background-color: var(--accent);
     padding: .2rem 0 .2rem 0;

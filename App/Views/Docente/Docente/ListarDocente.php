@@ -2,12 +2,13 @@
 <style>
 @import url('/assets/css/global.css');
 
-main div>a {
-    padding: 2px 5px 2px 5px;
-    border: 1px solid var(--shadow);
-    border-radius: 10px;
-    background-color: var(--shadow);
-}
+main  div > a {
+    padding: .5rem;
+      border: 1px solid var(--shadow);
+      border-radius: 10px;
+      background-color: var(--shadow);
+    }
+
 
 main .docentes {
     display: flex;

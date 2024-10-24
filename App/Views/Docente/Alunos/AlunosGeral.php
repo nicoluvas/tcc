@@ -8,8 +8,20 @@ main .alunos {
     row-gap: 8px;
 }
 
+main  div > a {
+    padding: .5rem;
+      border: 1px solid var(--shadow);
+      border-radius: 10px;
+      background-color: var(--shadow);
+    }
+
 .turmas {
     margin: 1rem;
+}
+
+select {
+    background-color: var(--text-inv);
+    border: 1px solid var(--shadow);
 }
 </style>
 <div class="turmas">

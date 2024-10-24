@@ -1,12 +1,13 @@
 <h2>Alunos Turma <?= $this->turma ?></h2>
 <style>
       @import url('/assets/css/global.css');
-    main  div > a {
-    padding: 2px 5px 2px 5px;
+      main  div > a {
+    padding: .5rem;
       border: 1px solid var(--shadow);
       border-radius: 10px;
       background-color: var(--shadow);
     }
+
     main .alunos {
         display: flex;
         flex-direction: column;
