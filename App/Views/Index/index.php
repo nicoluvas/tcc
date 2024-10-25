@@ -30,10 +30,10 @@
         <!-- SEÇÃO 1 -->
         <section class="pagina1" id="pagina1">
             <div class="esquerdo">
-                <img src="assets\images\index\moda.png" alt="aa">
+                <img class="left-appear" src="assets\images\index\moda.png" alt="aa">
             </div>
             <div class="imgs">
-                <img class="wein" src="assets\images\index\vetor.svg" class="pessoa" style="height:500px" id="a"
+                <img class="wein oppacity-appear" src="assets\images\index\vetor.svg" class="pessoa " style="height:500px" id="a"
                     alt="wein">
             </div>
         </section>

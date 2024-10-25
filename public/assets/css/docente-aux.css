@@ -8,12 +8,22 @@
     }
 }
 
-@import url('global.css');
-@import url('docente-aux.css');
-
 form>fieldset>section>div {
     display: flex;
     flex-direction: column;
+}
+
+button {
+    padding: 1rem;
+    background-color: var(--accent);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    border: none;
+    &:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
 }
 
 input,

@@ -106,4 +106,35 @@ class ProfessorController extends Controller {
         $ProfessorNota = new ProfessorNota();
         $ProfessorNota->SalvarNotas();
     }
+
+    public function SituacaoAlunos() {
+        $ProfessorChamada = new ProfessorChamada();
+
+        $aux = $ProfessorChamada->MateriasTurmas($_SESSION['logged']['id']);
+
+        foreach ($aux as $aux2){
+            $professor_materia[$aux2->cd_turma] = [];
+        }
+        foreach ($professor_materia as $t => $m) {
+            foreach ($aux as $pm) {
+                if ($pm->id_turma != $t) continue;
+                $professor_materia[$t][$pm->id_materia] = $pm->nm_materia;
+            }
+        }
+
+        $this->professor_materias_turmas = $professor_materia;
+        $this->turmas = (new DocenteGerenciamento)->GetTurmas();
+
+        $this->render('situacaoAlunos', 'ProfessorLayout', 'Professor');
+    }
+
+    protected $turma;
+    protected $materia;
+    protected $unidade;
+    public function SituacaoAlunosTurmaMateria($turma, $materia, $unidade) {
+        $this->turma = $turma;
+        $this->materia = $materia;
+        $this->unidade = $unidade;
+        $this->renderView('tabelaSituacaoAlunos', 'Professor');
+    }
 }

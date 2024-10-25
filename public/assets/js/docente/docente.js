@@ -13,7 +13,7 @@ gsap.from("#oppacity-appear", {
     ease: "power1.inOut",
 });
 gsap.from(".meshbg", {
-    opacity: 1,
+    opacity: 0,
     y: 50,
     duration: 1.5,
     ease: "power1.inOut",

@@ -7,12 +7,15 @@
 <link rel="stylesheet" href="/assets/css/docente-aux.css">
 <form>
     <!-- cabecalho -->
-    <h2><?= $this->aluno->nome_aluno ?></h2>
-    <div>
-        <button type="button" id="editar">Editar</button>
-        <button type="button" id="cancelar" style="display: none">Cancelar</button>
-        <input class="botoes" type="submit" value="Atualizar" style="display: none" disabled />
-        <p id="formretorno"></p>
+    <div style="display: flex; align-items: center; column-gap: .5vw;">
+        <h2 style="font-size: 3vw; margin: 0; padding: 0"><?= $this->aluno->nome_aluno ?></h2>
+        <div style="display: flex; align-items: center;">
+            <button class="botoes" type="button" id="editar">Editar</button>
+            <button class="botoes" type="button" id="cancelar" style="display: none">Cancelar</button>
+            <input class="botoes" type="submit" value="Atualizar" style="display: none" disabled />
+            <p id="formretorno"></p>
+        </div>
+
     </div>
 
     <!-- geral -->
@@ -58,7 +61,7 @@
             </div>
 
         </section>
-        <h3>ⓘ Engressou em <?= date_format(date_create($this->aluno->dt_cadastro), 'd/m/Y') ?></h3>
+        <h3>ⓘ Ingressou em <?= date_format(date_create($this->aluno->dt_cadastro), 'd/m/Y') ?></h3>
     </fieldset>
 
     <!-- endereco -->
@@ -116,8 +119,8 @@
         <section>
             <div>
                 <label for="nome">Nome</label>
-                <input type="text" name="nome_responsavel" placeholder="Nome" value="<?= $this->aluno->nome_responsavel ?>" disabled
-                    required />
+                <input type="text" name="nome_responsavel" placeholder="Nome"
+                    value="<?= $this->aluno->nome_responsavel ?>" disabled required />
             </div>
 
             <div>
@@ -127,13 +130,13 @@
             </div>
             <div>
                 <label for="cpf">CPF</label>
-                <input type="text" name="cpf_responsavel" placeholder="CPF" value="<?= $this->aluno->cpf_responsavel ?>" disabled
-                    required />
+                <input type="text" name="cpf_responsavel" placeholder="CPF" value="<?= $this->aluno->cpf_responsavel ?>"
+                    disabled required />
             </div>
             <div>
                 <label for="email">Email</label>
-                <input type="text" name="email_responsavel" placeholder="email" value="<?= $this->aluno->email_responsavel ?>"
-                    disabled required />
+                <input type="text" name="email_responsavel" placeholder="email"
+                    value="<?= $this->aluno->email_responsavel ?>" disabled required />
             </div>
         </section>
     </fieldset>

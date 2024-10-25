@@ -9,64 +9,70 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/js/index/index.js" defer></script>
     <link rel="stylesheet" href="/assets/css/global.css">
     <style>
-        * {
-            text-decoration: none;
-        }
+    * {
+        text-decoration: none;
+    }
 
-        body {
-            padding: 0;
-            margin: 0;
-            background-color: var(--background);
-            height: 100vh;
-        }
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: var(--background);
+        height: 100vh;
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-around;
+    nav {
+        display: flex;
+        justify-content: space-around;
 
-            padding: 1rem 0 1rem 0;
-            background-color: var(--primary);
-            
-        }
+        padding: 1rem 0 1rem 0;
+        background-color: var(--primary);
 
-        nav>.nav-esq{
-            display:flex;
-            justify-content: space-evenly;
-            width: 45%;
-        }
+    }
 
-        nav>.nav-esq>a{
-            color: var(--text-inv);
-            background-color: var(--primary-d);
-            border-radius: .5rem;
-            padding: 1rem 2rem 1rem 2rem;
-            font-size: 1rem;
-            font-weight: 500;
-        }
+    nav>.nav-esq {
+        display: flex;
+        justify-content: space-evenly;
+        width: 45%;
+    }
 
-        nav>.nav-dir {
-            display:flex;
-            align-items:center;
-        }
+    nav>.nav-esq>a {
+        color: var(--text-inv);
+        background-color: var(--primary-d);
+        border-radius: .5rem;
+        padding: 1rem 2rem 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 500;
+    }
 
-        main {
-            flex: 1;
-        }
+    nav>.nav-dir {
+        display: flex;
+        align-items: center;
+    }
 
-        #sair {
-            background-color: var(--accent);
-            font-weight: 500;
-            font-size: 1rem;
-            padding: 1rem;
-            border-radius: .5rem;
-        }
+    main {
+        flex: 1;
+    }
 
-        #sair, #sair>i {
-            color: var(--text);
-            font-weight: 600;
-        }
+    #sair {
+        background-color: var(--accent);
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 1rem;
+        border-radius: .5rem;
+    }
+
+    #sair,
+    #sair>i {
+        color: var(--text);
+        font-weight: 600;
+    }
     </style>
 </head>
 
@@ -74,7 +80,7 @@
     <nav>
         <div class="nav-esq">
             <a href="/professor/chamada">Chamada</a>
-            <a href="/professor/situacao/aluno">Situação Aluno</a>
+            <a href="/professor/situacao/alunos">Situação Alunos</a>
             <a href="/professor/notas/alunos">Notas</a>
         </div>
         <div class="nav-dir">
@@ -84,10 +90,11 @@
             </a>
         </div>
     </nav>
-    <main>
+    <main class="oppacity-appear">
         <?php
             $this->renderView($this->page->view, $this->page->viewDirectory);
         ?>
     </main>
 </body>
+
 </html>
