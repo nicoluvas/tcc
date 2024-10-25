@@ -114,9 +114,9 @@ $('form select#turma').on('change', function() {
             $(this).css('display', 'none')
         }
     })
+    $('form select#materia').val('')
     $('form select#professor').val(professor_materia[turma][$('form select#materia').val()])
     if (!($('form select#materia').val() in professor_materia[turma])) {
-        $('form select#materia').val('')
         $('form select#professor').val('')
         $('form button#editar').prop('disabled', true)
     }
@@ -127,8 +127,6 @@ $('form select#materia').on('change', function() {
 
     var idTurma = $('form select#turma').val()
     var idMateria = $(this).val()
-    if (professor_materia[idTurma][idMateria]) {
-        $('form select#professor').val(professor_materia[idTurma][idMateria])
-    }
+    $('form select#professor').val(professor_materia[idTurma][idMateria])
 })
 </script>
