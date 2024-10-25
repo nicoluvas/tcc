@@ -6,6 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Método - Bhaskara</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/js/index/index.js" defer></script>
 </head>
 <style>
             .fixed-icon {
@@ -27,10 +33,10 @@
 <table class="main" style="width: 600px">
                 <td>
                     <tr>
-                        <h1 class="lexend">Método de Ensino:</h1>
+                        <h1 class="lexend width-appear" style="white-space:nowrap;">Método de Ensino:</h1>
                     </tr>
                 </td>
-                <div class="lexend" style="text-align: justify;">
+                <div class="lexend oppacity-appear" style="text-align: justify;">
                     A Escola Bhaskara é uma de ensino médio que se destaca pela sua abordagem inovadora e
                     eficaz, voltada para a preparação de alunos para os principais vestibulares do Brasil. O método
                     adotado pela

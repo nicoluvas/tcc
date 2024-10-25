@@ -6,6 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Método - Bhaskara</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="/assets/js/docente/docente.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/docente-aux.css">
 </head>
 <style>
 .fixed-icon {
@@ -28,13 +37,13 @@
         <i class="bi bi-house-fill fixed-icon"></i>
     </a>
 
-    <table class="main" style="width: 600px">
+    <table class="main"style="width: 600px">
         <td>
             <tr>
-                <h1 class="lexend">Quem Somos?</h1>
+                <h1 id="width-appear" class="lexend" style="display:inline; white-space: nowrap;">Quem Somos?</h1>
             </tr>
         </td>
-        <div class="lexend" style="text-align: justify;">
+        <div id="oppacity-appear" class="lexend" style="text-align: justify;">
             <p>
                 A <span>Escola Bhaskara</span> é uma instituição educacional inovadora que abraça o <span>método de
                     ensino dinamarquês</span>,
@@ -69,7 +78,7 @@
         </div>
     </table>
 
-    <div class="lexend">
+    <div class="lexend meshbg">
         <h3>Projeto idealizado por:</h3>
         <div class="perfil">
             <div>

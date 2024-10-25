@@ -25,7 +25,7 @@
     </a>
     <td>
         <tr>
-            <h1 class="lexend">Entre em Contato:</h1>
+            <h1 id="width-appear" class="lexend" style="display:inline; white-space: nowrap;">Entre em Contato:</h1>
         </tr>
     </td>
     <div class="lexend" style="text-align: justify; display:flex; justify-content:space-around;column-gap:5vw;">
@@ -44,6 +44,13 @@
 
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="/assets/js/docente/docente.js" defer></script>
+
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 
@@ -60,16 +67,16 @@
 }
 
 .lexend>div {
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .lexend>div>i {
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--accent);
     font-size: 2rem;
     height: 5rem;
@@ -151,7 +158,7 @@ h1 {
 span {
     color: var(--primary);
     font-weight: bold;
-    font-size:24px;
+    font-size: 24px;
 }
 
 i {
