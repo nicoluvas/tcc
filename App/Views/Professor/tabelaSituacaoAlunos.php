@@ -5,5 +5,4 @@
     <p>Turma</p>
     <p>Matéria</p>
     <p>Nota</p>
-    <p>Reespectivamente</p>
 </div>

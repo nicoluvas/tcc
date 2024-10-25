@@ -127,85 +127,119 @@ INSERT INTO `db_bhaskara`.`tb_endereco` (`uf`, `cidade`, `bairro`, `logradouro`,
   ('SP', 'São José dos Campos', 'Parque da Cidade', 'Avenida José Longo', 800, 'Apto 204', '12227000'),
   ('SP', 'Jacareí', 'Jardim Paraíso', 'Rua das Orquídeas', 600, 'Casa 7', '12347000'),
   ('SP', 'Santa Branca', 'Vila Santa Branca', 'Rua José Gomes', 250, 'Apto 102', '12351000'),
-  ('SP', 'São José dos Campos', 'Jardim Esplanada', 'Rua dos Lírios', 900, 'Casa 5', '12223000');
+  ('SP', 'São José dos Campos', 'Jardim Esplanada', 'Rua dos Lírios', 900, 'Casa 5', '12223000'),
+  ('SP', 'São José dos Campos', 'Jardim Aquarius', 'Rua Pedro de Oliveira', 200, 'Apto 203', '12243-000'),
+  ('SP', 'São José dos Campos', 'Jardim Satélite', 'Rua das Rosas', 300, 'Casa 1', '12230-000'),
+  ('SP', 'São José dos Campos', 'Vila Adyana', 'Av. Getúlio Vargas', 150, 'Ponto Comercial', '12225-000'),
+  ('SP', 'São José dos Campos', 'Parque Residencial Aquárius', 'Rua das Margaridas', 50, 'Apto 501', '12244-000'),
+  ('SP', 'São José dos Campos', 'Jardim das Indústrias', 'Rua Ipiranga', 75, 'Casa 2', '12244-001'),
+  ('SP', 'Jacareí', 'Centro', 'Praça dos Três Poderes', 10, 'Loja 2', '12300-000'),
+  ('SP', 'Jacareí', 'Jardim Paraíso', 'Av. São Vicente', 120, 'Apto 203', '12305-000'),
+  ('SP', 'Jacareí', 'Jardim do Mar', 'Rua Marisol', 33, 'Casa 3', '12303-000'),
+  ('SP', 'Jacareí', 'Vila Garcia', 'Rua da Liberdade', 40, 'Casa 4', '12302-000'),
+  ('SP', 'Santa Branca', 'Centro', 'Rua Santo Antônio', 50, 'Casa 1', '12360-000'),
+  ('SP', 'Santa Branca', 'Jardim Santa Branca', 'Av. Brasil', 30, 'Apto 2', '12360-001'),
+  ('SP', 'Santa Branca', 'Jardim São Francisco', 'Rua São Francisco', 90, 'Casa 5', '12360-002'),
+  ('SP', 'São José dos Campos', 'Jardim das Colinas', 'Rua das Orquídeas', 80, 'Apto 104', '12245-000'),
+  ('SP', 'São José dos Campos', 'Urbanova', 'Av. do Contorno', 25, 'Casa 1', '12246-000'),
+  ('SP', 'Jacareí', 'Jardim Ana Gilda', 'Rua Ana Paula', 15, 'Apto 101', '12307-000'),
+  ('SP', 'Jacareí', 'Parque Meia-Lua', 'Rua do Lago', 22, 'Casa 3', '12308-000'),
+  ('SP', 'Santa Branca', 'Vila Duzentos', 'Rua Duzentos', 18, 'Casa 2', '12361-000'),
+  ('SP', 'São José dos Campos', 'Vila São Bento', 'Av. Nova', 120, 'Casa 8', '12226-000'),
+  ('SP', 'São José dos Campos', 'Bosque dos Eucaliptos', 'Rua das Aves', 14, 'Apto 203', '12232-000'),
+  ('SP', 'Jacareí', 'Parque Imperial', 'Rua da Independência', 75, 'Casa 5', '12304-000'),
+  ('SP', 'Jacareí', 'Jardim Santa Maria', 'Rua dos Lírios', 60, 'Casa 4', '12301-000'),
+  ('SP', 'Santa Branca', 'Vila Nova', 'Rua das Flores', 45, 'Casa 1', '12362-000'),
+  ('SP', 'São José dos Campos', 'Jardim São José', 'Rua Rio Claro', 55, 'Casa 6', '12227-000'),
+  ('SP', 'São José dos Campos', 'Vila Progresso', 'Av. das Palmeiras', 11, 'Casa 2', '12224-000'),
+  ('SP', 'Jacareí', 'Jardim São João', 'Rua João de Barro', 99, 'Apto 3', '12306-000'),
+  ('SP', 'Jacareí', 'Centro', 'Rua Barão do Rio Branco', 85, 'Loja 1', '12300-001'),
+  ('SP', 'Santa Branca', 'Jardim Santo Antônio', 'Rua dos Lírios', 20, 'Casa 4', '12360-003'),
+  ('SP', 'São José dos Campos', 'Vila Industrial', 'Rua da Indústria', 45, 'Casa 5', '12229-000'),
+  ('SP', 'São José dos Campos', 'Jardim Nova Esperança', 'Rua da Esperança', 33, 'Casa 10', '12230-001'),
+  ('SP', 'Jacareí', 'Vila Branca', 'Av. Dona Maria', 200, 'Casa 1', '12309-000'),
+  ('SP', 'Jacareí', 'Jardim dos Trabalhadores', 'Rua da Vitória', 120, 'Apto 201', '12310-000'),
+  ('SP', 'Santa Branca', 'Jardim Panorama', 'Rua das Palmeiras', 80, 'Casa 7', '12363-000'),
+  ('SP', 'São José dos Campos', 'Parque Jardim das Flores', 'Rua das Flores', 44, 'Casa 9', '12248-000'),
+  ('SP', 'São José dos Campos', 'Jardim do Vale', 'Av. do Vale', 67, 'Apto 12', '12249-000');
 
 INSERT INTO `db_bhaskara`.`tb_responsavel` (`nome_responsavel`, `telefone_responsavel`, `cpf_responsavel`, `email_responsavel`) VALUES
-  ('Ana Oliveira', '31912345678', '12345678901', 'ana.oliveira@example.com'),
-  ('Bruno Silva', '31923456789', '23456789012', 'bruno.silva@example.com'),
-  ('Carlos Santos', '31934567890', '34567890123', 'carlos.santos@example.com'),
-  ('Daniela Costa', '31945678901', '45678901234', 'daniela.costa@example.com'),
-  ('Eduardo Lima', '31956789012', '56789012345', 'eduardo.lima@example.com'),
-  ('Fernanda Almeida', '31967890123', '67890123456', 'fernanda.almeida@example.com'),
-  ('Gustavo Rocha', '31978901234', '78901234567', 'gustavo.rocha@example.com'),
-  ('Helena Martins', '31989012345', '89012345678', 'helena.martins@example.com'),
-  ('Igor Ferreira', '31990123456', '90123456789', 'igor.ferreira@example.com'),
-  ('Jéssica Nascimento', '31901234567', '01234567890', 'jessica.nascimento@example.com'),
-  ('Lucas Mendes', '31912345679', '12345678902', 'lucas.mendes@example.com'),
-  ('Mariana Pinto', '31923456780', '23456789013', 'mariana.pinto@example.com'),
-  ('Natália Souza', '31934567891', '34567890124', 'natalia.souza@example.com'),
-  ('Otávio Martins', '31945678902', '45678901235', 'otavio.martins@example.com'),
-  ('Paula Dias', '31956789013', '56789012346', 'paula.dias@example.com'),
-  ('Quintino Almeida', '31967890124', '67890123457', 'quintino.almeida@example.com'),
-  ('Rafaela Teixeira', '31978901235', '78901234568', 'rafaela.teixeira@example.com'),
-  ('Samuel Santos', '31989012346', '89012345679', 'samuel.santos@example.com'),
-  ('Tatiane Lima', '31990123457', '90123456780', 'tatiane.lima@example.com'),
-  ('Ulysses Rocha', '31901234578', '01234567891', 'ulysses.rocha@example.com'),
-  ('Vânia Ferreira', '31912345680', '12345678903', 'vania.ferreira@example.com'),
-  ('Wagner Nascimento', '31923456781', '23456789014', 'wagner.nascimento@example.com'),
-  ('Xuxa Almeida', '31934567892', '34567890125', 'xuxa.almeida@example.com'),
-  ('Yasmin Costa', '31945678903', '45678901236', 'yasmin.costa@example.com'),
-  ('Zé Lima', '31956789014', '56789012347', 'ze.lima@example.com'),
-  ('André Martins', '31967890125', '67890123458', 'andre.martins@example.com'),
-  ('Beatriz Silva', '31978901236', '78901234569', 'beatriz.silva@example.com'),
-  ('Caio Oliveira', '31989012347', '89012345680', 'caio.oliveira@example.com'),
-  ('Débora Souza', '31990123458', '90123456781', 'debora.souza@example.com'),
-  ('Eduarda Rocha', '31901234579', '01234567892', 'eduarda.rocha@example.com'),
-  ('Fábio Almeida', '31912345681', '12345678904', 'fabio.almeida@example.com'),
-  ('Gabriela Mendes', '31923456782', '23456789015', 'gabriela.mendes@example.com'),
-  ('Henrique Ferreira', '31934567893', '34567890126', 'henrique.ferreira@example.com'),
-  ('Isabela Lima', '31945678904', '45678901237', 'isabela.lima@example.com'),
-  ('João Martins', '31956789015', '56789012348', 'joao.martins@example.com'),
-  ('Karina Nascimento', '31967890126', '67890123459', 'karina.nascimento@example.com'),
-  ('Luan Santos', '31978901237', '78901234570', 'luan.santos@example.com'),
-  ('Marcos Costa', '31989012348', '89012345681', 'marcos.costa@example.com'),
-  ('Nadia Silva', '31990123459', '90123456782', 'nadia.silva@example.com'),
-  ('Olívia Almeida', '31901234580', '01234567893', 'olivia.almeida@example.com'),
-  ('Pedro Rocha', '31912345682', '12345678905', 'pedro.rocha@example.com'),
-  ('Querenza Lima', '31923456783', '23456789016', 'querenza.lima@example.com'),
-  ('Ricardo Ferreira', '31934567894', '34567890127', 'ricardo.ferreira@example.com'),
-  ('Sofia Santos', '31945678905', '45678901238', 'sofia.santos@example.com'),
-  ('Thiago Mendes', '31956789016', '56789012349', 'thiago.mendes@example.com'),
-  ('Úrsula Oliveira', '31967890127', '67890123460', 'ursula.oliveira@example.com'),
-  ('Vinícius Almeida', '31978901238', '78901234571', 'vinicius.almeida@example.com'),
-  ('Wesley Martins', '31989012349', '89012345682', 'wesley.martins@example.com'),
-  ('Yasmin Ferreira', '31990123460', '90123456783', 'yasmin.ferreira@example.com'),
-  ('Zelda Costa', '31901234581', '01234567894', 'zelda.costa@example.com'),
-  ('Adriana Silva', '31912345683', '12345678906', 'adriana.silva@example.com'),
-  ('Benedito Rocha', '31923456784', '23456789017', 'benedito.rocha@example.com'),
-  ('Cláudia Lima', '31934567895', '34567890128', 'claudia.lima@example.com'),
-  ('Davi Almeida', '31945678906', '45678901239', 'davi.almeida@example.com'),
-  ('Elisa Santos', '31956789017', '56789012350', 'elisa.santos@example.com'),
-  ('Fabiana Nascimento', '31967890128', '67890123461', 'fabiana.nascimento@example.com'),
-  ('Geraldo Ferreira', '31978901239', '78901234572', 'geraldo.ferreira@example.com'),
-  ('Helena Almeida', '31989012350', '89012345683', 'helena.almeida@example.com'),
-  ('Igor Silva', '31990123461', '90123456784', 'igor.silva@example.com'),
-  ('Juliana Costa', '31901234582', '01234567895', 'juliana.costa@example.com'),
-  ('Karla Martins', '31912345684', '12345678907', 'karla.martins@example.com'),
-  ('Leonardo Rocha', '31923456785', '23456789018', 'leonardo.rocha@example.com'),
-  ('Marcia Almeida', '31934567896', '34567890129', 'marcia.almeida@example.com'),
-  ('Nelson Lima', '31945678907', '45678901240', 'nelson.lima@example.com'),
-  ('Otávio Ferreira', '31956789018', '56789012351', 'otavio.ferreira@example.com'),
-  ('Patricia Santos', '31967890129', '67890123462', 'patricia.santos@example.com'),
-  ('Quintino Silva', '31978901240', '78901234573', 'quintino.silva@example.com'),
-  ('Roberta Almeida', '31989012351', '89012345684', 'roberta.almeida@example.com'),
-  ('Sérgio Nascimento', '31990123462', '90123456785', 'sergio.nascimento@example.com'),
-  ('Tânia Rocha', '31901234583', '01234567896', 'tania.rocha@example.com'),
-  ('Ursula Ferreira', '31912345685', '12345678908', 'ursula.ferreira@example.com'),
-  ('Vinícius Lima', '31923456786', '23456789019', 'vinicius.lima@example.com'),
-  ('Wesley Santos', '31934567897', '34567890130', 'wesley.santos@example.com'),
-  ('Xuxa Almeida', '31945678908', '45678901241', 'xuxa.almeida@example.com'),
-  ('Yara Rocha', '31956789019', '56789012352', 'yara.rocha@example.com'),
-  ('Zé Ferreira', '31967890130', '67890123463', 'ze.ferreira@example.com'),
+  ('Ana Oliveira', '31912345678', '12345678901', 'ana.oliveira@email.com'),
+  ('Bruno Silva', '31923456789', '23456789012', 'bruno.silva@email.com'),
+  ('Carlos Santos', '31934567890', '34567890123', 'carlos.santos@email.com'),
+  ('Daniela Costa', '31945678901', '45678901234', 'daniela.costa@email.com'),
+  ('Eduardo Lima', '31956789012', '56789012345', 'eduardo.lima@email.com'),
+  ('Fernanda Almeida', '31967890123', '67890123456', 'fernanda.almeida@email.com'),
+  ('Gustavo Rocha', '31978901234', '78901234567', 'gustavo.rocha@email.com'),
+  ('Helena Martins', '31989012345', '89012345678', 'helena.martins@email.com'),
+  ('Igor Ferreira', '31990123456', '90123456789', 'igor.ferreira@email.com'),
+  ('Jéssica Nascimento', '31901234567', '01234567890', 'jessica.nascimento@email.com'),
+  ('Lucas Mendes', '31912345679', '12345678902', 'lucas.mendes@email.com'),
+  ('Mariana Pinto', '31923456780', '23456789013', 'mariana.pinto@email.com'),
+  ('Natália Souza', '31934567891', '34567890124', 'natalia.souza@email.com'),
+  ('Otávio Martins', '31945678902', '45678901235', 'otavio.martins@email.com'),
+  ('Paula Dias', '31956789013', '56789012346', 'paula.dias@email.com'),
+  ('Quintino Almeida', '31967890124', '67890123457', 'quintino.almeida@email.com'),
+  ('Rafaela Teixeira', '31978901235', '78901234568', 'rafaela.teixeira@email.com'),
+  ('Samuel Santos', '31989012346', '89012345679', 'samuel.santos@email.com'),
+  ('Tatiane Lima', '31990123457', '90123456780', 'tatiane.lima@email.com'),
+  ('Ulysses Rocha', '31901234578', '01234567891', 'ulysses.rocha@email.com'),
+  ('Vânia Ferreira', '31912345680', '12345678903', 'vania.ferreira@email.com'),
+  ('Wagner Nascimento', '31923456781', '23456789014', 'wagner.nascimento@email.com'),
+  ('Xuxa Almeida', '31934567892', '34567890125', 'xuxa.almeida@email.com'),
+  ('Yasmin Costa', '31945678903', '45678901236', 'yasmin.costa@email.com'),
+  ('Zé Lima', '31956789014', '56789012347', 'ze.lima@email.com'),
+  ('André Martins', '31967890125', '67890123458', 'andre.martins@email.com'),
+  ('Beatriz Silva', '31978901236', '78901234569', 'beatriz.silva@email.com'),
+  ('Caio Oliveira', '31989012347', '89012345680', 'caio.oliveira@email.com'),
+  ('Débora Souza', '31990123458', '90123456781', 'debora.souza@email.com'),
+  ('Eduarda Rocha', '31901234579', '01234567892', 'eduarda.rocha@email.com'),
+  ('Fábio Almeida', '31912345681', '12345678904', 'fabio.almeida@email.com'),
+  ('Gabriela Mendes', '31923456782', '23456789015', 'gabriela.mendes@email.com'),
+  ('Henrique Ferreira', '31934567893', '34567890126', 'henrique.ferreira@email.com'),
+  ('Isabela Lima', '31945678904', '45678901237', 'isabela.lima@email.com'),
+  ('João Martins', '31956789015', '56789012348', 'joao.martins@email.com'),
+  ('Karina Nascimento', '31967890126', '67890123459', 'karina.nascimento@email.com'),
+  ('Luan Santos', '31978901237', '78901234570', 'luan.santos@email.com'),
+  ('Marcos Costa', '31989012348', '89012345681', 'marcos.costa@email.com'),
+  ('Nadia Silva', '31990123459', '90123456782', 'nadia.silva@email.com'),
+  ('Olívia Almeida', '31901234580', '01234567893', 'olivia.almeida@email.com'),
+  ('Pedro Rocha', '31912345682', '12345678905', 'pedro.rocha@email.com'),
+  ('Querenza Lima', '31923456783', '23456789016', 'querenza.lima@email.com'),
+  ('Ricardo Ferreira', '31934567894', '34567890127', 'ricardo.ferreira@email.com'),
+  ('Sofia Santos', '31945678905', '45678901238', 'sofia.santos@email.com'),
+  ('Thiago Mendes', '31956789016', '56789012349', 'thiago.mendes@email.com'),
+  ('Úrsula Oliveira', '31967890127', '67890123460', 'ursula.oliveira@email.com'),
+  ('Vinícius Almeida', '31978901238', '78901234571', 'vinicius.almeida@email.com'),
+  ('Wesley Martins', '31989012349', '89012345682', 'wesley.martins@email.com'),
+  ('Yasmin Ferreira', '31990123460', '90123456783', 'yasmin.ferreira@email.com'),
+  ('Zelda Costa', '31901234581', '01234567894', 'zelda.costa@email.com'),
+  ('Adriana Silva', '31912345683', '12345678906', 'adriana.silva@email.com'),
+  ('Benedito Rocha', '31923456784', '23456789017', 'benedito.rocha@email.com'),
+  ('Cláudia Lima', '31934567895', '34567890128', 'claudia.lima@email.com'),
+  ('Davi Almeida', '31945678906', '45678901239', 'davi.almeida@email.com'),
+  ('Elisa Santos', '31956789017', '56789012350', 'elisa.santos@email.com'),
+  ('Fabiana Nascimento', '31967890128', '67890123461', 'fabiana.nascimento@email.com'),
+  ('Geraldo Ferreira', '31978901239', '78901234572', 'geraldo.ferreira@email.com'),
+  ('Helena Almeida', '31989012350', '89012345683', 'helena.almeida@email.com'),
+  ('Igor Silva', '31990123461', '90123456784', 'igor.silva@email.com'),
+  ('Juliana Costa', '31901234582', '01234567895', 'juliana.costa@email.com'),
+  ('Karla Martins', '31912345684', '12345678907', 'karla.martins@email.com'),
+  ('Leonardo Rocha', '31923456785', '23456789018', 'leonardo.rocha@email.com'),
+  ('Marcia Almeida', '31934567896', '34567890129', 'marcia.almeida@email.com'),
+  ('Nelson Lima', '31945678907', '45678901240', 'nelson.lima@email.com'),
+  ('Otávio Ferreira', '31956789018', '56789012351', 'otavio.ferreira@email.com'),
+  ('Patricia Santos', '31967890129', '67890123462', 'patricia.santos@email.com'),
+  ('Quintino Silva', '31978901240', '78901234573', 'quintino.silva@email.com'),
+  ('Roberta Almeida', '31989012351', '89012345684', 'roberta.almeida@email.com'),
+  ('Sérgio Nascimento', '31990123462', '90123456785', 'sergio.nascimento@email.com'),
+  ('Tânia Rocha', '31901234583', '01234567896', 'tania.rocha@email.com'),
+  ('Ursula Ferreira', '31912345685', '12345678908', 'ursula.ferreira@email.com'),
+  ('Vinícius Lima', '31923456786', '23456789019', 'vinicius.lima@email.com'),
+  ('Wesley Santos', '31934567897', '34567890130', 'wesley.santos@email.com'),
+  ('Xuxa Almeida', '31945678908', '45678901241', 'xuxa.almeida@email.com'),
+  ('Yara Rocha', '31956789019', '56789012352', 'yara.rocha@email.com'),
+  ('Zé Ferreira', '31967890130', '67890123463', 'ze.ferreira@email.com'),
   ('Adriana Souza', '11987654410', '12345678995', 'adriana.souza@email.com'),
   ('Bruno Lima', '11987654411', '12345678996', 'bruno.lima@email.com'),
   ('Carla Pereira', '11987654412', '12345678997', 'carla.pereira@email.com'),
@@ -227,24 +261,24 @@ INSERT INTO `db_bhaskara`.`tb_responsavel` (`nome_responsavel`, `telefone_respon
   ('Sofia Rocha', '11987654428', '12345678013', 'sofia.rocha@email.com'),
   ('Thiago Costa', '11987654429', '12345678014', 'thiago.costa@email.com'),
   ('Vinícius Alves', '11987654430', '12345678015', 'vinicius.alves@email.com'),
-  ('Carlos Silva', '31998765432', '98765432100', 'carlos.silva@example.com'),
-  ('Mariana Costa', '31976543210', '12345678902', 'mariana.costa@example.com'),
-  ('Lucas Pereira', '31912345679', '23456789012', 'lucas.pereira@example.com'),
-  ('Fernanda Santos', '31987654321', '34567890123', 'fernanda.santos@example.com'),
-  ('Roberto Lima', '31923456789', '45678901234', 'roberto.lima@example.com'),
-  ('Juliana Rocha', '31934567890', '56789012345', 'juliana.rocha@example.com'),
-  ('Thiago Almeida', '31945678901', '67890123456', 'thiago.almeida@example.com'),
-  ('Priscila Martins', '31956789012', '78901234567', 'priscila.martins@example.com'),
-  ('João Silva', '31987654321', '23456789012', 'joao.silva@example.com'),
-  ('Maria Santos', '31923456789', '34567890123', 'maria.santos@example.com'),
-  ('Carlos Lima', '31934567890', '45678901234', 'carlos.lima@example.com'),
-  ('Fernanda Costa', '31945678901', '56789012345', 'fernanda.costa@example.com'),
-  ('Ricardo Almeida', '31956789012', '67890123456', 'ricardo.almeida@example.com'),
-  ('Juliana Rocha', '31967890123', '78901234567', 'juliana.rocha@example.com'),
-  ('Tatiane Ferreira', '31978901234', '89012345678', 'tatiane.ferreira@example.com'),
-  ('Lucas Martins', '31989012345', '90123456789', 'lucas.martins@example.com'),
-  ('Ana Paula', '31990123456', '01234567890', 'ana.paula@example.com'),
-  ('Pedro Santos', '31901234567', '12345678901', 'pedro.santos@example.com');
+  ('Carlos Silva', '31998765432', '98765432100', 'carlos.silva@email.com'),
+  ('Mariana Costa', '31976543210', '12345678902', 'mariana.costa@email.com'),
+  ('Lucas Pereira', '31912345679', '23456789012', 'lucas.pereira@email.com'),
+  ('Fernanda Santos', '31987654321', '34567890123', 'fernanda.santos@email.com'),
+  ('Roberto Lima', '31923456789', '45678901234', 'roberto.lima@email.com'),
+  ('Juliana Rocha', '31934567890', '56789012345', 'juliana.rocha@email.com'),
+  ('Thiago Almeida', '31945678901', '67890123456', 'thiago.almeida@email.com'),
+  ('Priscila Martins', '31956789012', '78901234567', 'priscila.martins@email.com'),
+  ('João Silva', '31987654321', '23456789012', 'joao.silva@email.com'),
+  ('Maria Santos', '31923456789', '34567890123', 'maria.santos@email.com'),
+  ('Carlos Lima', '31934567890', '45678901234', 'carlos.lima@email.com'),
+  ('Fernanda Costa', '31945678901', '56789012345', 'fernanda.costa@email.com'),
+  ('Ricardo Almeida', '31956789012', '67890123456', 'ricardo.almeida@email.com'),
+  ('Juliana Rocha', '31967890123', '78901234567', 'juliana.rocha@email.com'),
+  ('Tatiane Ferreira', '31978901234', '89012345678', 'tatiane.ferreira@email.com'),
+  ('Lucas Martins', '31989012345', '90123456789', 'lucas.martins@email.com'),
+  ('Ana Paula', '31990123456', '01234567890', 'ana.paula@email.com'),
+  ('Pedro Santos', '31901234567', '12345678901', 'pedro.santos@email.com');
 
 INSERT INTO `db_bhaskara`.`tb_aluno` (`nome_aluno`, `telefone_aluno`, `cpf_aluno`, `rg_aluno`, `nascimento_aluno`, `senha_aluno`, `id_endereco`, `id_cargo`, `id_responsavel`) VALUES
   ('Alice Silva', '11987654321', '12345678901', '123456789', '2000-05-10', '$2y$10$Wz2GzZXD8p6GfQ9gJ0vl4.tLCOrY9OG.MA0NdjLzQclA26Ed35pSu', 1, 1, 1),
@@ -268,7 +302,7 @@ INSERT INTO `db_bhaskara`.`tb_aluno` (`nome_aluno`, `telefone_aluno`, `cpf_aluno
   ('Sofia Lima', '11987654334', '12345678919', '901234568', '1982-11-12', '$2y$10$PbYQci/4lKiZivS7AwbPoOtQDO2tH3sh5x2rCGG1T4eMDIB9cPBUi', 19, 1, 19),
   ('Thiago Martins', '11987654335', '12345678920', '012345679', '1981-12-05', '$2y$10$2v2U4B05P43WcF8hfZp.kOEPYkFrsAFh8C5DMyB24GL4F4B2Z5jB.', 20, 1, 20),
   ('Ursula Sousa', '11987654336', '12345678921', '123456780', '1980-01-22', '$2y$10$3P1z2ZsHQBlrM9eq4h1OMu8mMsyLphA3U8y8TI5.fyE0MaZ6R0tNW', 21, 1, 21),
-  ('Vinicius Lima', '11987654337', '12345678922', '234567891', '1979-02-28', '$2y$10$g/2Q7mX5O67Lzgu2nXKmC.fz5HZ94kKcDQ9NeN2IMuHfZuoIS5Ghu', 22, 1, 22),
+  ('Vinicius Lima', '11987654337', '12345678922', '234567892', '1979-02-28', '$2y$10$g/2Q7mX5O67Lzgu2nXKmC.fz5HZ94kKcDQ9NeN2IMuHfZuoIS5Ghu', 22, 1, 22),
   ('Wendy Gonçalves', '11987654338', '12345678923', '345678902', '1978-03-15', '$2y$10$QG49KpFpeYg7PaWw5/.pMefh4AuMx9OlLB4Pl1fyOWBcpN8XaVg3C', 23, 1, 23),
   ('Xuxa Pereira', '11987654339', '12345678924', '456789013', '1977-04-18', '$2y$10$AtU6Wxw8ROm7RBNwXptG.OaYJ6c1.g.pB9yxMUK9Wn98k8u1YHDlC', 24, 1, 24),
   ('Yasmin Santos', '11987654340', '12345678925', '567890124', '1976-05-30', '$2y$10$Dp4N2d/DXrQFrEm7nIN8yOHo3NfJ1N1i26D.O4D7MtcTwnCQg8MiO', 25, 1, 25),
@@ -474,13 +508,42 @@ insert into `tb_matricula` values
   (111, 2, DEFAULT),
   (112, 2, DEFAULT);
 
-insert into `tb_docente` values
-  (null, 'Ana Paula Silva', '11987654321', '12345678901', '123456789', 'ana.silva@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 1, 2),
-  (null, 'Bruno Alves Costa', '11976543210', '23456789012', '234567890', 'bruno.costa@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 2, 2),
-  (null, 'Carla Fernanda Lima', '11965432109', '34567890123', '345678901', 'carla.lima@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 3, 2),
-  (null, 'Diego Pereira Santos', '11954321098', '45678901234', '456789012', 'diego.santos@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 4, 3),
-  (null, 'Eliana Rodrigues Martins', '11943210987', '56789012345', '567890123', 'eliana.martins@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 5, 4),
-  (null, 'Fabio Henrique Oliveira', '11932109876', '67890123456', '678901234', 'fabio.oliveira@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', NOW(), NULL, 'A', 6, 5);
+insert into `tb_docente` (`nome_docente`, `telefone_docente`, `cpf_docente`, `rg_docente`, `email_docente`, `senha_docente`, `id_endereco`, `id_cargo`) values
+  ('Ana Silva', '1191234-5678', '12345678900', '123456789', 'ana.silva@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 113, 2),
+  ('Bruno Costa', '1192345-6789', '23456789001', '234567890', 'bruno.costa@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 114, 2),
+  ('Carla Oliveira', '1193456-7890', '34567890102', '345678901', 'carla.oliveira@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 115, 2),
+  ('Diego Almeida', '1194567-8901', '45678901203', '456789022', 'diego.almeida@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 116, 2),
+  ('Eva Martins', '1195678-9012', '56789012304', '567890123', 'eva.martins@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 117, 2),
+  ('Felipe Rocha', '1196789-0123', '67890123405', '678901234', 'felipe.rocha@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 118, 2),
+  ('Gabriela Sousa', '1197890-1234', '78901234506', '789012345', 'gabriela.sousa@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 119, 2),
+  ('Hugo Lima', '1198901-2345', '89012345607', '890123456', 'hugo.lima@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 120, 2),
+  ('Isabelly Mendes', '1199123-4567', '90123456708', '901234567', 'isabelly.mendes@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 121, 2),
+  ('Joaquim Dias', '1191234-5679', '01234567809', '012345678', 'joaquim.dias@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 122, 2),
+  ('Karina Pires', '1192345-6780', '12345678000', '123456780', 'karina.pires@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 123, 2),
+  ('Lucas Fernandes', '1193456-7891', '23456789011', '234567891', 'lucas.fernandes@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 124, 2),
+  ('Mariana Costa', '1194567-8902', '34567890112', '345678912', 'mariana.costa@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 125, 2),
+  ('Nicolas Ramos', '1195678-9013', '45678901213', '456789012', 'nicolas.ramos@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 126, 2),
+  ('Olga Ferreira', '1196789-0124', '56789012314', '567890124', 'olga.ferreira@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 127, 2),
+  ('Paulo Oliveira', '1197890-1235', '67890123415', '678901233', 'paulo.oliveira@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 128, 2),
+  ('Quésia Santos', '1198901-2346', '78901234516', '789012347', 'quesia.santos@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 129, 2),
+  ('Ricardo Gomes', '1199123-4568', '89012345617', '890123458', 'ricardo.gomes@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 130, 2),
+  ('Sofia Almeida', '1191234-5670', '90123456718', '901234569', 'sofia.almeida@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 131, 2),
+  ('Thiago Lima', '1192345-6781', '01234567819', '012345679', 'thiago.lima@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 132, 2),
+  ('Ursula Costa', '1193456-7892', '12345678920', '123456782', 'ursula.costa@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 133, 2),
+  ('Vinícius Mendes', '1194567-8903', '23456789021', '234567892', 'vinicius.mendes@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 134, 2),
+  ('Wendy Santos', '1195678-9014', '34567890122', '345678902', 'wendy.santos@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 135, 2),
+  ('Xuxa Lima', '1196789-0125', '45678901223', '456789011', 'xuxa.lima@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 136, 2),
+  ('Yara Ferreira', '1197890-1236', '56789012324', '567890121', 'yara.ferreira@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 137, 2),
+  ('Zeca Gonçalves', '1198901-2347', '67890123425', '678901232', 'zeca.goncalves@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 138, 2),
+  ('Aline Castro', '1191234-6780', '78901234526', '789012346', 'aline.castro@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 139, 2),
+  ('Bruno Mendes', '1192345-6782', '89012345627', '890123457', 'bruno.mendes@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 140, 2),
+  ('Cláudia Teixeira', '1193456-7893', '90123456728', '901234568', 'claudia.teixeira@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 141, 2),
+  ('Davi Ferreira', '1194567-8904', '01234567829', '012345670', 'davi.ferreira@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 142, 2),
+  ('Elaine Ramos', '1195678-9015', '12345678930', '123456781', 'elaine.ramos@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 143, 2),
+  ('Fernando Alves', '1196789-0126', '23456789031', '234567893', 'fernando.alves@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 144, 2),
+  ('Diego Pereira Santos', '11954321098', '45678901235', '456789013', 'diego.santos@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 4, 3),
+  ('Eliana Rodrigues Martins', '11943210987', '56789012346', '567890125', 'eliana.martins@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 5, 4),
+  ('Fabio Henrique Oliveira', '11932109876', '67890123457', '678901235', 'fabio.oliveira@email.com', '$2y$12$s4JRRT8DVJGDgcjjhkI.yeUUPN8na7NSvl8ZERJ7SKw/jyQSdY4zO', 6, 5);
 
 insert into `tb_turma` value
   (null, '6º A'),
@@ -613,218 +676,236 @@ insert into `tb_matricula_turma` values
   (112, 2, 14);
 
 insert into `tb_materia` values
-  (null, 'Ciências'),
-  (null, 'História'),
-  (null, 'Geografia'),
-  (null, 'Artes'),
-  (null, 'Inglês'),
-  (null, 'ED Física'),
-  (null, 'Álgebra'),
-  (null, 'Geometria'),
-  (null, 'Literatura'),
-  (null, 'Gramática'),
-  (null, 'Produção de Textos'),
-  (null, 'Física'),
-  (null, 'Química'),
-  (null, 'Filosofia'),
-  (null, 'Sociologia');
+  (null, 'Ciências'), -- 1 ok
+  (null, 'História'), -- 3 ok  |
+  (null, 'Geografia'), -- 3 ok |
+  (null, 'Artes'), -- 2 ok
+  (null, 'Inglês'), -- 2 ok
+  (null, 'ED Física'), -- 2 ok
+  (null, 'Álgebra'), -- 3 ok
+  (null, 'Geometria'), -- 3 ok
+  (null, 'Literatura'), -- 3 ok         |
+  (null, 'Gramática'), -- 3 ok
+  (null, 'Produção de Textos'), -- 3 ok |
+  (null, 'Física'), -- 3 ok 
+  (null, 'Química'), -- 3 ok
+  (null, 'Filosofia'), -- 2 ok
+  (null, 'Sociologia'); -- 2 ok
+
+/* IDs
+ 1  ciencias - 1
+ 2  historia - 2, 3, 4
+ 3  geografia - 2, 3, 4
+ 4  artes - 5, 6
+ 5  ingles - 7, 8
+ 6  ed fisica - 9, 10
+ 7  algebra - 11, 12, 13
+ 8  geometria - 14, 15, 16
+ 9  literatura - 17, 18, 19
+ 10 gramatica - 20, 21, 22
+ 11 producao - 17, 18, 19
+ 12 fisica - 23, 24, 25
+ 13 quimica - 26, 27, 28
+ 14 filosofia - 29, 30
+ 15 sociologia - 31, 32
+*/
 
 insert into `tb_turma_materia` values
-  (1, 1, 2), -- 6º A
-  (1, 2, 3), -- 6º A
+  (1, 1, 1), -- 6º A
+  (1, 2, 2), -- 6º A
   (1, 3, 2), -- 6º A
-  (1, 4, 2), -- 6º A
-  (1, 5, 1), -- 6º A
-  (1, 6, 1), -- 6º A
-  (1, 7, 3), -- 6º A
-  (1, 8, 2), -- 6º A
-  (1, 9, 1), -- 6º A
-  (1, 10, 1), -- 6º A
-  (1, 11, 3), -- 6º A
+  (1, 4, 5), -- 6º A
+  (1, 5, 7), -- 6º A
+  (1, 6, 9), -- 6º A
+  (1, 7, 11), -- 6º A
+  (1, 8, 14), -- 6º A
+  (1, 9, 17), -- 6º A
+  (1, 10, 20), -- 6º A
+  (1, 11, 17), -- 6º A
 
-  (2, 1, 2), -- 6º B
-  (2, 2, 3), -- 6º B
-  (2, 3, 1), -- 6º B
-  (2, 4, 2), -- 6º B
-  (2, 5, 3), -- 6º B
-  (2, 6, 1), -- 6º B
-  (2, 7, 1), -- 6º B
-  (2, 8, 2), -- 6º B
-  (2, 9, 3), -- 6º B
-  (2, 10, 3), -- 6º B
-  (2, 11, 1), -- 6º B
+  (2, 1, 1), -- 6º B
+  (2, 2, 2), -- 6º B
+  (2, 3, 2), -- 6º B
+  (2, 4, 5), -- 6º B
+  (2, 5, 7), -- 6º B
+  (2, 6, 9), -- 6º B
+  (2, 7, 11), -- 6º B
+  (2, 8, 14), -- 6º B
+  (2, 9, 17), -- 6º B
+  (2, 10, 20), -- 6º B
+  (2, 11, 17), -- 6º B
 
-  (3, 1, 2), -- 7º A
-  (3, 2, 3), -- 7º A
-  (3, 3, 1), -- 7º A
-  (3, 4, 2), -- 7º A
-  (3, 5, 3), -- 7º A
-  (3, 6, 3), -- 7º A
-  (3, 7, 1), -- 7º A
-  (3, 8, 2), -- 7º A
-  (3, 9, 2), -- 7º A
-  (3, 10, 1), -- 7º A
-  (3, 11, 1), -- 7º A
+  (3, 1, 1), -- 7º A
+  (3, 2, 2), -- 7º A
+  (3, 3, 2), -- 7º A
+  (3, 4, 5), -- 7º A
+  (3, 5, 7), -- 7º A
+  (3, 6, 9), -- 7º A
+  (3, 7, 11), -- 7º A
+  (3, 8, 14), -- 7º A
+  (3, 9, 17), -- 7º A
+  (3, 10, 20), -- 7º A
+  (3, 11, 17), -- 7º A
 
-  (4, 1, 2), -- 7º B
-  (4, 2, 3), -- 7º B
-  (4, 3, 1), -- 7º B
-  (4, 4, 2), -- 7º B
-  (4, 5, 3), -- 7º B
-  (4, 6, 2), -- 7º B
-  (4, 7, 2), -- 7º B
-  (4, 8, 3), -- 7º B
-  (4, 9, 3), -- 7º B
-  (4, 10, 1), -- 7º B
-  (4, 11, 1), -- 7º B
+  (4, 1, 1), -- 7º B
+  (4, 2, 2), -- 7º B
+  (4, 3, 2), -- 7º B
+  (4, 4, 5), -- 7º B
+  (4, 5, 7), -- 7º B
+  (4, 6, 9), -- 7º B
+  (4, 7, 11), -- 7º B
+  (4, 8, 14), -- 7º B
+  (4, 9, 17), -- 7º B
+  (4, 10, 20), -- 7º B
+  (4, 11, 17), -- 7º B
 
-  (5, 2, 2), -- 8º A
-  (5, 3, 2), -- 8º A
-  (5, 4, 1), -- 8º A
-  (5, 5, 3), -- 8º A
-  (5, 6, 3), -- 8º A
-  (5, 7, 1), -- 8º A
-  (5, 8, 1), -- 8º A
-  (5, 9, 3), -- 8º A
-  (5, 10, 2), -- 8º A
-  (5, 11, 2), -- 8º A
-  (5, 12, 3), -- 8º A
-  (5, 13, 1), -- 8º A
-  (5, 14, 3), -- 8º A
+  (5, 2, 3), -- 8º A
+  (5, 3, 3), -- 8º A
+  (5, 4, 5), -- 8º A
+  (5, 5, 7), -- 8º A
+  (5, 6, 9), -- 8º A
+  (5, 7, 12), -- 8º A
+  (5, 8, 15), -- 8º A
+  (5, 9, 18), -- 8º A
+  (5, 10, 21), -- 8º A
+  (5, 11, 18), -- 8º A
+  (5, 12, 23), -- 8º A
+  (5, 13, 26), -- 8º A
+  (5, 14, 29), -- 8º A
 
-  (6, 2, 1), -- 8º B
-  (6, 3, 2), -- 8º B
-  (6, 4, 3), -- 8º B
-  (6, 5, 3), -- 8º B
-  (6, 6, 3), -- 8º B
-  (6, 7, 3), -- 8º B
-  (6, 8, 1), -- 8º B
-  (6, 9, 2), -- 8º B
-  (6, 10, 3), -- 8º B
-  (6, 11, 1), -- 8º B
-  (6, 12, 2), -- 8º B
-  (6, 13, 1), -- 8º B
-  (6, 14, 1), -- 8º B
+  (6, 2, 3), -- 8º B
+  (6, 3, 3), -- 8º B
+  (6, 4, 5), -- 8º B
+  (6, 5, 7), -- 8º B
+  (6, 6, 9), -- 8º B
+  (6, 7, 12), -- 8º B
+  (6, 8, 15), -- 8º B
+  (6, 9, 18), -- 8º B
+  (6, 10, 21), -- 8º B
+  (6, 11, 18), -- 8º B
+  (6, 12, 23), -- 8º B
+  (6, 13, 26), -- 8º B
+  (6, 14, 29), -- 8º B
 
-  (7, 2, 1), -- 9º A
-  (7, 3, 2), -- 9º A
-  (7, 4, 3), -- 9º A
-  (7, 5, 1), -- 9º A
-  (7, 6, 2), -- 9º A
-  (7, 7, 3), -- 9º A
-  (7, 8, 1), -- 9º A
-  (7, 9, 2), -- 9º A
-  (7, 10, 1), -- 9º A
-  (7, 11, 2), -- 9º A
-  (7, 12, 3), -- 9º A
-  (7, 13, 1), -- 9º A
-  (7, 14, 3), -- 9º A
-  (7, 15, 2), -- 9º A
+  (7, 2, 3), -- 9º A
+  (7, 3, 3), -- 9º A
+  (7, 4, 5), -- 9º A
+  (7, 5, 7), -- 9º A
+  (7, 6, 9), -- 9º A
+  (7, 7, 12), -- 9º A
+  (7, 8, 15), -- 9º A
+  (7, 9, 18), -- 9º A
+  (7, 10, 21), -- 9º A
+  (7, 11, 18), -- 9º A
+  (7, 12, 23), -- 9º A
+  (7, 13, 26), -- 9º A
+  (7, 14, 29), -- 9º A
+  (7, 15, 31), -- 9º A
 
-  (8, 2, 1), -- 9º B
-  (8, 3, 2), -- 9º B
-  (8, 4, 3), -- 9º B
-  (8, 5, 1), -- 9º B
-  (8, 6, 2), -- 9º B
-  (8, 7, 3), -- 9º B
-  (8, 8, 1), -- 9º B
-  (8, 9, 1), -- 9º B
-  (8, 10, 1), -- 9º B
-  (8, 11, 3), -- 9º B
-  (8, 12, 2), -- 9º B
-  (8, 13, 2), -- 9º B
-  (8, 14, 3), -- 9º B
-  (8, 15, 1), -- 9º B
+  (8, 2, 3), -- 9º B
+  (8, 3, 3), -- 9º B
+  (8, 4, 5), -- 9º B
+  (8, 5, 7), -- 9º B
+  (8, 6, 9), -- 9º B
+  (8, 7, 12), -- 9º B
+  (8, 8, 15), -- 9º B
+  (8, 9, 18), -- 9º B
+  (8, 10, 21), -- 9º B
+  (8, 11, 18), -- 9º B
+  (8, 12, 23), -- 9º B
+  (8, 13, 26), -- 9º B
+  (8, 14, 29), -- 9º B
+  (8, 15, 31), -- 9º B
 
-  (9, 2, 1), -- 1º A
-  (9, 3, 2), -- 1º A
-  (9, 4, 3), -- 1º A
-  (9, 5, 1), -- 1º A
-  (9, 6, 2), -- 1º A
-  (9, 7, 3), -- 1º A
-  (9, 8, 1), -- 1º A
-  (9, 9, 1), -- 1º A
-  (9, 10, 1), -- 1º A
-  (9, 11, 3), -- 1º A
-  (9, 12, 2), -- 1º A
-  (9, 13, 2), -- 1º A
-  (9, 14, 3), -- 1º A
-  (9, 15, 1), -- 1º A
+  (9, 2, 4), -- 1º A
+  (9, 3, 4), -- 1º A
+  (9, 4, 6), -- 1º A
+  (9, 5, 8), -- 1º A
+  (9, 6, 10), -- 1º A
+  (9, 7, 13), -- 1º A
+  (9, 8, 16), -- 1º A
+  (9, 9, 19), -- 1º A
+  (9, 10, 22), -- 1º A
+  (9, 11, 19), -- 1º A
+  (9, 12, 24), -- 1º A
+  (9, 13, 27), -- 1º A
+  (9, 14, 30), -- 1º A
+  (9, 15, 32), -- 1º A
 
-  (10, 2, 1), -- 1º B
-  (10, 3, 2), -- 1º B
-  (10, 4, 3), -- 1º B
-  (10, 5, 1), -- 1º B
-  (10, 6, 2), -- 1º B
-  (10, 7, 3), -- 1º B
-  (10, 8, 1), -- 1º B
-  (10, 9, 1), -- 1º B
-  (10, 10, 1), -- 1º B
-  (10, 11, 3), -- 1º B
-  (10, 12, 2), -- 1º B
-  (10, 13, 2), -- 1º B
-  (10, 14, 3), -- 1º B
-  (10, 15, 1), -- 1º B
+  (10, 2, 4), -- 1º B
+  (10, 3, 4), -- 1º B
+  (10, 4, 6), -- 1º B
+  (10, 5, 8), -- 1º B
+  (10, 6, 10), -- 1º B
+  (10, 7, 13), -- 1º B
+  (10, 8, 16), -- 1º B
+  (10, 9, 19), -- 1º B
+  (10, 10, 22), -- 1º B
+  (10, 11, 19), -- 1º B
+  (10, 12, 24), -- 1º B
+  (10, 13, 27), -- 1º B
+  (10, 14, 30), -- 1º B
+  (10, 15, 32), -- 1º B
 
-  (11, 2, 1), -- 2º A
-  (11, 3, 2), -- 2º A
-  (11, 4, 3), -- 2º A
-  (11, 5, 1), -- 2º A
-  (11, 6, 2), -- 2º A
-  (11, 7, 3), -- 2º A
-  (11, 8, 1), -- 2º A
-  (11, 9, 1), -- 2º A
-  (11, 10, 1), -- 2º A
-  (11, 11, 3), -- 2º A
-  (11, 12, 2), -- 2º A
-  (11, 13, 2), -- 2º A
-  (11, 14, 3), -- 2º A
-  (11, 15, 1), -- 2º A
+  (11, 2, 4), -- 2º A
+  (11, 3, 4), -- 2º A
+  (11, 4, 6), -- 2º A
+  (11, 5, 8), -- 2º A
+  (11, 6, 10), -- 2º A
+  (11, 7, 13), -- 2º A
+  (11, 8, 16), -- 2º A
+  (11, 9, 19), -- 2º A
+  (11, 10, 22), -- 2º A
+  (11, 11, 19), -- 2º A
+  (11, 12, 24), -- 2º A
+  (11, 13, 27), -- 2º A
+  (11, 14, 30), -- 2º A
+  (11, 15, 32), -- 2º A
 
-  (12, 2, 1), -- 2º B
-  (12, 3, 2), -- 2º B
-  (12, 4, 3), -- 2º B
-  (12, 5, 1), -- 2º B
-  (12, 6, 2), -- 2º B
-  (12, 7, 3), -- 2º B
-  (12, 8, 1), -- 2º B
-  (12, 9, 1), -- 2º B
-  (12, 10, 1), -- 2º B
-  (12, 11, 3), -- 2º B
-  (12, 12, 2), -- 2º B
-  (12, 13, 2), -- 2º B
-  (12, 14, 3), -- 2º B
-  (12, 15, 1), -- 2º B
+  (12, 2, 4), -- 2º B
+  (12, 3, 4), -- 2º B
+  (12, 4, 6), -- 2º B
+  (12, 5, 8), -- 2º B
+  (12, 6, 10), -- 2º B
+  (12, 7, 13), -- 2º B
+  (12, 8, 16), -- 2º B
+  (12, 9, 19), -- 2º B
+  (12, 10, 22), -- 2º B
+  (12, 11, 19), -- 2º B
+  (12, 12, 24), -- 2º B
+  (12, 13, 27), -- 2º B
+  (12, 14, 30), -- 2º B
+  (12, 15, 32), -- 2º B
 
-  (13, 2, 1), -- 3º A
-  (13, 3, 2), -- 3º A
-  (13, 4, 3), -- 3º A
-  (13, 5, 1), -- 3º A
-  (13, 6, 2), -- 3º A
-  (13, 7, 3), -- 3º A
-  (13, 8, 1), -- 3º A
-  (13, 9, 1), -- 3º A
-  (13, 10, 1), -- 3º A
-  (13, 11, 3), -- 3º A
-  (13, 12, 2), -- 3º A
-  (13, 13, 2), -- 3º A
-  (13, 14, 3), -- 3º A
-  (13, 15, 1), -- 3º A
+  (13, 2, 4), -- 3º A
+  (13, 3, 4), -- 3º A
+  (13, 4, 6), -- 3º A
+  (13, 5, 8), -- 3º A
+  (13, 6, 10), -- 3º A
+  (13, 7, 13), -- 3º A
+  (13, 8, 16), -- 3º A
+  (13, 9, 19), -- 3º A
+  (13, 10, 22), -- 3º A
+  (13, 11, 19), -- 3º A
+  (13, 12, 25), -- 3º A
+  (13, 13, 28), -- 3º A
+  (13, 14, 30), -- 3º A
+  (13, 15, 32), -- 3º A
 
-  (14, 2, 1), -- 3º B
-  (14, 3, 2), -- 3º B
-  (14, 4, 3), -- 3º B
-  (14, 5, 1), -- 3º B
-  (14, 6, 2), -- 3º B
-  (14, 7, 3), -- 3º B
-  (14, 8, 1), -- 3º B
-  (14, 9, 1), -- 3º B
-  (14, 10, 1), -- 3º B
-  (14, 11, 3), -- 3º B
-  (14, 12, 2), -- 3º B
-  (14, 13, 2), -- 3º B
-  (14, 14, 3), -- 3º B
-  (14, 15, 1); -- 3º B
+  (14, 2, 4), -- 3º B
+  (14, 3, 4), -- 3º B
+  (14, 4, 6), -- 3º B
+  (14, 5, 8), -- 3º B
+  (14, 6, 10), -- 3º B
+  (14, 7, 13), -- 3º B
+  (14, 8, 16), -- 3º B
+  (14, 9, 19), -- 3º B
+  (14, 10, 22), -- 3º B
+  (14, 11, 19), -- 3º B
+  (14, 12, 25), -- 3º B
+  (14, 13, 28), -- 3º B
+  (14, 14, 30), -- 3º B
+  (14, 15, 32); -- 3º B
 
 
 INSERT INTO `tb_nota` (`cd_nota`, `valor_nota`, `peso_nota`, `dt_nota`, `id_periodo_letivo`, `id_matricula`, `id_materia`, `unidade`) VALUES
