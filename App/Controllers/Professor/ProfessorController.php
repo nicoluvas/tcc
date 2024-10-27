@@ -135,7 +135,7 @@ class ProfessorController extends Controller {
         $alunos = (new DocenteAluno)->GetAlunosTurma($turma);
         $ProfessorAlunos = new ProfessorAlunos();
         foreach ($alunos as $aluno) {
-            $this->situacoes[] = $ProfessorAlunos->NotasFrequenciaAluno($aluno->cd_aluno, $materia, $unidade);
+            $this->situacoes[] = $ProfessorAlunos->NotasFrequenciaAluno($turma, $aluno->cd_aluno, $materia, $unidade);
         }
         $this->renderView('tabelaSituacaoAlunos', 'Professor');
     }
