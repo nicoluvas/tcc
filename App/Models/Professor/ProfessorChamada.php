@@ -37,26 +37,31 @@ class ProfessorChamada extends Model {
     }
 
     public function CadastrarAula() {
-        $sql = "INSERT INTO
-                    tb_aula
-                SET
-                    ds_aula = :ds,
-                    id_materia = :materia,
-                    id_turma = :turma";
-        $params = [
-            'ds' => $_POST['ds_aula'],
-            'materia' => $_POST['materia'],
-            'turma' => $_POST['turma']
-        ];
-        $this->executeStatement($sql, $params);
-        return $this->db->lastInsertId();
+        for ($i=1;$i<=$_POST['qt_aulas'];$i++) {
+            $sql = "INSERT INTO
+                        tb_aula
+                    SET
+                        ds_aula = :ds,
+                        id_materia = :materia,
+                        id_turma = :turma,
+                        unidade = :unidade,
+                        id_periodo_letivo = :periodo";
+            $params = [
+                'ds' => $_POST['ds_aula'],
+                'materia' => $_POST['materia'],
+                'turma' => $_POST['turma'],
+                'unidade' => UNIDADE,
+                'periodo' => ID_PERIODO_LETIVO
+            ];
+            $this->executeStatement($sql, $params);
+            $this->Chamada($this->db->lastInsertId(), $i);
+        }
     }
 
-    public function Chamada($idaula) {
-        // var_dump($_GET);
+    public function Chamada($idaula, $num_aula) {
         $faltas = [];
         foreach ($_POST as $name => $input) {
-            if (preg_match('/falta-[0-9]+-[1-3]/', $name)) {
+            if (preg_match("/falta-[0-9]+-[$num_aula]/", $name)) {
                 $aux = explode('-', $name);
                 $faltas[] = $aux[1];
             }
@@ -67,11 +72,13 @@ class ProfessorChamada extends Model {
                     SET
                         id_aula = :aula,
                         id_periodo_letivo = :periodo,
-                        id_matricula = :matricula";
+                        id_matricula = :matricula,
+                        unidade = :unidade";
             $params = [
                 'aula' => $idaula,
                 'periodo' => ID_PERIODO_LETIVO,
-                'matricula' => $matricula
+                'matricula' => $matricula,
+                'unidade' => UNIDADE
             ];
             $this->executeStatement($sql, $params);
         }

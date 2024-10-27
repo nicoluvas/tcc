@@ -4,6 +4,7 @@ namespace App\Controllers\Professor;
 use Core\Controller\Controller;
 use App\Models\Docente\DocenteGerenciamento;
 use App\Models\Docente\DocenteAluno;
+use App\Models\Professor\ProfessorAlunos;
 use App\Models\Professor\ProfessorChamada;
 use App\Models\Professor\ProfessorNota;
 
@@ -54,8 +55,7 @@ class ProfessorController extends Controller {
             die();
         }
 
-        $idaula = $ProfessorChamada->CadastrarAula();
-        $ProfessorChamada->Chamada($idaula);
+        $ProfessorChamada->CadastrarAula();
         echo json_encode(['msg' => 'Chamada Feita!']);
     }
 
@@ -128,13 +128,15 @@ class ProfessorController extends Controller {
         $this->render('situacaoAlunos', 'ProfessorLayout', 'Professor');
     }
 
-    protected $turma;
-    protected $materia;
-    protected $unidade;
+    protected $situacoes;
     public function SituacaoAlunosTurmaMateria($turma, $materia, $unidade) {
-        $this->turma = $turma;
-        $this->materia = $materia;
-        $this->unidade = $unidade;
+        $this->situacoes = [];
+
+        $alunos = (new DocenteAluno)->GetAlunosTurma($turma);
+        $ProfessorAlunos = new ProfessorAlunos();
+        foreach ($alunos as $aluno) {
+            $this->situacoes[] = $ProfessorAlunos->NotasFrequenciaAluno($aluno->cd_aluno, $materia, $unidade);
+        }
         $this->renderView('tabelaSituacaoAlunos', 'Professor');
     }
 }
