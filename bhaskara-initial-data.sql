@@ -2,8 +2,9 @@ use db_bhaskara;
 
 insert into `tb_periodo_letivo` values
   (null, '2023-01-29', '2023-12-06', '2023-07-01'),
---  (null, null, null, null);
-  (null, '2024-02-03', '2024-11-28', '2024-07-01');
+--  (null, null, null, null); -- fora de periodo
+--  (null, '2024-02-03', '2024-11-28', '2024-07-01'); -- periodo padrao
+ (null, '2024-01-02', '2024-10-28', '2024-05-29'); -- fim de periodo
 
 insert into `tb_cargo` values 
   (null, 'Aluno'),

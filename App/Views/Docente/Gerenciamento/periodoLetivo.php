@@ -3,10 +3,17 @@
         ?>
             <h2>Em período Letivo</h2>
             <p>
-                Início: <?= INICIO_PERIODO_LETIVO ?> <br>
-                Fim: <?= FIM_PERIODO_LETIVO ?>
+                Início: <?= date('d/m/Y', strtotime(INICIO_PERIODO_LETIVO)) ?> <br>
+                Fim: <?= date('d/m/Y', strtotime(FIM_PERIODO_LETIVO)) ?>
             </p>
         <?php
+
+        if ($_SESSION['logged']['cargo'] == 5 && new DateTime(FIM_PERIODO_LETIVO) < new DateTime()) {
+            ?>
+                <a href="/docente/gerenciamento/periodo-letivo/finalizar">Finalizar Ano Letivo</a>
+            <?php
+        }
+
     } else {
         ?>
             <h2>Fora do ano letivo</h2>

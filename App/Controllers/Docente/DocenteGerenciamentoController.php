@@ -34,6 +34,14 @@ class DocenteGerenciamentoController extends Controller {
         $DocenteGerenciamento->IniciarPeriodoLetivo();
     }
     
+    public function FinalizarPeriodoLetivo() {
+        $DocenteGerenciamento = new DocenteGerenciamento();
+        $DocenteGerenciamento->FinalizarPeriodoLetivo();
+        $_SESSION['msg'] = "Período Letivo Finalizado!";
+        header('Location: /docente/gerenciamento/periodo-letivo');
+        die();
+    }
+
     public function Materias() {
         $DocenteDocente = new DocenteDocente();
         $DocenteGerenciamento = new DocenteGerenciamento();

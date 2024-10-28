@@ -2,6 +2,7 @@
 
 namespace App\Models\Docente;
 use Core\Model\Model;
+use App\Models\Docente\DocenteAluno;
 
 class DocenteGerenciamento extends Model {
     public function GetTurmas() {
@@ -173,5 +174,10 @@ class DocenteGerenciamento extends Model {
                 $this->executeStatement($sql, $params);
             }
         }
+    }
+
+    public function FinalizarPeriodoLetivo() {
+        $DocenteAluno = new DocenteAluno();
+        $alunos = $DocenteAluno->GetAlunosGeral();
     }
 }

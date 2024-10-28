@@ -155,6 +155,13 @@ abstract class Router {
             'method' => ['POST']
         ];
 
+        $routes['Gerenciar finalizar periodo letivo'] = [
+            'router' => '/docente/gerenciamento/periodo-letivo/finalizar',
+            'controller' => 'Docente\\DocenteGerenciamentoController',
+            'action' => 'FinalizarPeriodoLetivo',
+            'method' => ['POST']
+        ];
+
         $routes['Gerenciar relacao materia professor'] = [
             'router' => '/docente/gerenciamento/materias',
             'controller' => 'Docente\\DocenteGerenciamentoController',

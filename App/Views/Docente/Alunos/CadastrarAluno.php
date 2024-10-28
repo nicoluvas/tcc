@@ -1,3 +1,16 @@
+<?php
+    if (UNIDADE > 1) {
+        ?>
+            <h2>Não é permitido Cadatrar Alunos Após a Primeira Unidade</h2>
+            <style>
+                form {
+                    pointer-events: none;
+                    filter: blur(4px);
+                }
+            </style>
+        <?php
+    }
+?>
 <form>
     <h2>Cadastrar Aluno</h2>
     <fieldset>
