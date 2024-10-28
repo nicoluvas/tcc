@@ -22,3 +22,32 @@
         endforeach;
     ?>
 </table>
+<style>
+    @import url('global.css');
+    table{
+        text-align:center;
+        border: 1px var(--shadow) solid;
+        border-radius: 1rem;
+        border-style: hidden;
+        box-shadow: 0 0 0 1px var(--shadow);
+        padding: 2.5rem;
+        border-collapse: collapse;
+        background-color: var(--background-alt);
+    }
+    thead {
+        font-weight:600;
+        border-style: hidden;
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+        box-shadow: 0 0 0 1px var(--shadow);
+    }
+    thead > tr > td {
+        background-color: var(--accent);
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    tbody > tr {
+        border: 1px var(--shadow) solid;
+    }
+
+</style>
