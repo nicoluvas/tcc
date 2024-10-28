@@ -160,7 +160,7 @@ button {
                 $('button#editar').css('display', 'block')
                 $('button#cancelar').css('display', 'none')
                 $('button#salvar').css('display', 'none')
-                $('p#media').text((($('input#trabalho').val() + $('input#prova').val()*2)/3).toFixed())
+                $('p#media').text(((parseFloat($('input#trabalho').val()) + parseFloat($('input#prova').val())*2)/3).toFixed(2))
             })
             .catch(function(a) {
                 console.log(a)
@@ -210,7 +210,7 @@ button {
                 $('input#trabalho').val(data.notas.trabalho)
                 $('p#aluno').text('Aluno: ' + data.notas.aluno)
                 $('p#materia').text('Materia: ' + data.notas.materia)
-                $('p#media').text(((parseFloat(data.notas.trabalho) + parseFloat(data.notas.prova)*2)/3).toFixed())
+                $('p#media').text(((parseFloat(data.notas.trabalho) + parseFloat(data.notas.prova)*2)/3).toFixed(2))
             })
     })
 
@@ -230,7 +230,7 @@ button {
                 $('input#trabalho').val(data.notas.trabalho)
                 $('p#aluno').text('Aluno: ' + data.notas.aluno)
                 $('p#materia').text('Materia: ' + data.notas.materia)
-                $('p#media').text(((parseFloat(data.notas.trabalho) + parseFloat(data.notas.prova)*2)/3).toFixed())
+                $('p#media').text(((parseFloat(data.notas.trabalho) + parseFloat(data.notas.prova)*2)/3).toFixed(2))
             })
             .catch(data => console.log(data))
     })
