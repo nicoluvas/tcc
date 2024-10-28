@@ -5,16 +5,59 @@ use Core\Model\Model;
 
 class Aluno extends Model {
     public function GetMaterias() {
-        $turma = $this->executeStatement('SELECT cd_turma FROM tb_matricula_turma WHERE id_matricula = :aluno AND id_periodo_letivo = :periodo', ['aluno' => $_SESSION['logged']['id'], 'periodo' => ID_PERIODO_LETIVO])->fetch()->cd_turma;
+        $turma = $this->executeStatement('SELECT id_turma FROM tb_matricula_turma WHERE id_matricula = :id_aluno AND id_periodo_letivo = :id_periodo', ['id_aluno' => $_SESSION['logged']['id'], 'id_periodo' => ID_PERIODO_LETIVO])->fetch()->id_turma;
 
         $sql = "SELECT
                     *
                 FROM
-                    ";
+                    tb_turma
+                INNER JOIN
+                    tb_turma_materia
+                    ON
+                        id_turma = cd_turma
+                INNER JOIN
+                    tb_materia
+                    ON
+                        cd_materia = id_materia
+                WHERE
+                    cd_turma = :cd_turma";
+        return $this->executeStatement($sql, ['cd_turma' => $turma])->fetchAll();
     }
 
-    public function GetFrequenciaMateria($materia) {
-        $turma = $this->executeStatement('SELECT cd_turma FROM tb_matricula_turma WHERE id_matricula = :aluno AND id_periodo_letivo = :periodo', ['aluno' => $_SESSION['logged']['id'], 'periodo' => ID_PERIODO_LETIVO])->fetch()->cd_turma;
+    public function GetFrequenciaMateria($materia, $unidade) {
+        $turma = $this->executeStatement('SELECT id_turma FROM tb_matricula_turma WHERE id_matricula = :id_aluno AND id_periodo_letivo = :id_periodo', ['id_aluno' => $_SESSION['logged']['id'], 'id_periodo' => ID_PERIODO_LETIVO])->fetch()->id_turma;
+        $frequencia = new \stdClass;
+        $frequencia->nm_materia = $this->executeStatement('SELECT nm_materia FROM tb_materia WHERE cd_materia = :cd_materia', ['cd_materia' => $materia])->fetch()->nm_materia;
+        
+        $sql = "SELECT 
+                    1- (SELECT 
+                            count(*) 
+                        FROM 
+                            tb_falta
+                        INNER JOIN
+                            tb_aula
+                            ON
+                                cd_aula = id_aula
+                        WHERE 
+                            id_matricula = :id_aluno AND 
+                            tb_aula.id_periodo_letivo = :id_periodo AND
+                            tb_aula.unidade = :unidade AND
+                            id_materia = :id_materia AND
+                            tb_falta.id_turma = :id_turma AND
+                            st_falta like 'A') 
+                        /
+                        (SELECT 
+                            count(*) 
+                        FROM
+                            tb_aula 
+                        WHERE 
+                            id_periodo_letivo = :id_periodo AND
+                            unidade = :unidade AND
+                            id_materia = :id_materia AND
+                            id_turma = :id_turma)
+                    AS frequencia";
+        $frequencia->frequencia = $this->executeStatement($sql, ['id_aluno' => $_SESSION['logged']['id'], 'id_periodo' => ID_PERIODO_LETIVO, 'unidade' => $unidade, 'id_materia' => $materia, 'id_turma' => $turma])->fetch()->frequencia;
+
         $sql = "SELECT 
                     1- (SELECT 
                             count(*)
@@ -26,9 +69,9 @@ class Aluno extends Model {
                                 cd_aula = id_aula
                         WHERE 
                             id_matricula = :id_aluno AND 
-                            tb_aula.id_periodo_letivo = :periodo AND
-                            id_materia = :materia AND
-                            tb_falta.id_turma = :turma AND
+                            tb_aula.id_periodo_letivo = :id_periodo AND
+                            id_materia = :id_materia AND
+                            tb_falta.id_turma = :id_turma AND
                             st_falta like 'A') 
                         /
                         (SELECT 
@@ -36,10 +79,12 @@ class Aluno extends Model {
                         FROM
                             tb_aula 
                         WHERE 
-                            id_periodo_letivo = :periodo AND
-                            id_turma = :turma AND
-                            id_materia = :materia)
+                            id_periodo_letivo = :id_periodo AND
+                            id_turma = :id_turma AND
+                            id_materia = :id_materia)
                     AS frequencia";
-        return $this->executeStatement($sql, ['id_aluno' => $_SESSION['logged']['id'], 'periodo' => ID_PERIODO_LETIVO, 'turma' => $turma, 'materia' => $materia])->fetch()->frequencia;
+        $frequencia->frequencia_total = $this->executeStatement($sql, ['id_aluno' => $_SESSION['logged']['id'], 'id_periodo' => ID_PERIODO_LETIVO, 'id_turma' => $turma, 'id_materia' => $materia])->fetch()->frequencia;
+
+        return $frequencia;
     }
 }
