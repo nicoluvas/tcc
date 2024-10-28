@@ -57,18 +57,3 @@ a {
   }
 }
 
-/* For WebKit browsers */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: #333;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-::-webkit-scrollbar.some-selector {
-  scrollbar-color: #888 #333;
-}
