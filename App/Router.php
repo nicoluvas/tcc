@@ -59,6 +59,7 @@ abstract class Router {
 
         $this->DocenteRoutes();
         $this->ProfessorRoutes();
+        $this->AlunosRoutes();
         
         $this->routes = array_merge($this->routes, $routes);
     }
@@ -247,6 +248,24 @@ abstract class Router {
             'params' => ['turma', 'materia', 'unidade']
         ];
         
+        $this->routes = array_merge($this->routes, $routes);
+    }
+
+    private function AlunosRoutes() {
+        $routes['Aluno index'] = [
+            'router' => '/aluno/home',
+            'controller' => 'Aluno\\AlunoController',
+            'action' => 'Home',
+            'method' => ['GET']
+        ];
+        
+        $routes['Aluno aulas'] = [
+            'router' => '/aluno/frequencia',
+            'controller' => 'Aluno\\AlunoController',
+            'action' => 'Aulas',
+            'method' => ['GET']
+        ];
+
         $this->routes = array_merge($this->routes, $routes);
     }
 }

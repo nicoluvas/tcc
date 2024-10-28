@@ -54,11 +54,11 @@ class ProfessorChamada extends Model {
                 'periodo' => ID_PERIODO_LETIVO
             ];
             $this->executeStatement($sql, $params);
-            $this->Chamada($this->db->lastInsertId(), $i);
+            $this->Chamada($this->db->lastInsertId(), $i, $_POST['turma']);
         }
     }
 
-    public function Chamada($idaula, $num_aula) {
+    public function Chamada($idaula, $num_aula, $turma) {
         $faltas = [];
         foreach ($_POST as $name => $input) {
             if (preg_match("/falta-[0-9]+-[$num_aula]/", $name)) {
@@ -73,12 +73,14 @@ class ProfessorChamada extends Model {
                         id_aula = :aula,
                         id_periodo_letivo = :periodo,
                         id_matricula = :matricula,
-                        unidade = :unidade";
+                        unidade = :unidade,
+                        id_turma = :turma";
             $params = [
                 'aula' => $idaula,
                 'periodo' => ID_PERIODO_LETIVO,
                 'matricula' => $matricula,
-                'unidade' => UNIDADE
+                'unidade' => UNIDADE,
+                'turma' => $turma
             ];
             $this->executeStatement($sql, $params);
         }

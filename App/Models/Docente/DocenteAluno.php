@@ -248,13 +248,24 @@ class DocenteAluno extends Model {
                     SET
                         id_turma = :turma
                     WHERE
-                        id_matricula = :aluno";
+                        id_matricula = :aluno AND
+                        id_periodo_letivo = :periodo";
             $params = [
                 'turma' => $_POST['turma'],
-                'aluno' => $idaluno
+                'aluno' => $idaluno,
+                'periodo' => ID_PERIODO_LETIVO
             ];
 
-            $this->executeStatement($sql, $params);
+            if ($this->executeStatement($sql, $params)->rowCount() > 0) {
+                $sql = "UPDATE
+                            tb_falta
+                        SET
+                            id_turma = :turma
+                        WHERE
+                            id_matricula = :matricula AND
+                            id_periodo_letivo = :periodo";
+                $this->executeStatement($sql, ['turma' => $_POST['turma'], 'matricula' => $idaluno, 'periodo' => ID_PERIODO_LETIVO]);
+            }
             $this->db->commit();
             echo json_encode(['ok' => true]);
         } catch (\Throwable $th) {

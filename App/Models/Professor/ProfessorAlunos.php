@@ -23,7 +23,7 @@ class ProfessorAlunos extends Model {
                             tb_aula.id_periodo_letivo = :periodo AND
                             tb_aula.unidade = :unidade AND
                             id_materia = :materia AND
-                            id_turma = :turma AND
+                            tb_falta.id_turma = :turma AND
                             st_falta like 'A') 
                         /
                         (SELECT 
@@ -51,7 +51,7 @@ class ProfessorAlunos extends Model {
                             id_matricula = :id_aluno AND 
                             tb_aula.id_periodo_letivo = :periodo AND
                             id_materia = :materia AND
-                            id_turma = :turma AND
+                            tb_falta.id_turma = :turma AND
                             st_falta like 'A') 
                         /
                         (SELECT 

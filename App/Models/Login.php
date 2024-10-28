@@ -39,10 +39,10 @@ class Login extends Model {
                     rg_aluno = :rg
                 ";
 
-        $query = $this->executeStatement($sql, [':rg' => $rg]);
+        $query = $this->executeStatement($sql, ['rg' => $rg]);
         if  ($query->rowCount() != 1) return False;
 
-        $result = $query->fetchAll()[0];
+        $result = $query->fetch();
         if (!password_verify($senha, $result->senha_aluno)) return False;
 
         return [$result, 'aluno'];
@@ -61,13 +61,14 @@ class Login extends Model {
                 FROM
                     tb_docente
                 WHERE
-                    email_docente = :email_docente
+                    email_docente = :email_docente AND
+                    st_docente LIKE 'A'
                 ";
 
         $query = $this->executeStatement($sql, ['email_docente' => $email_docente]);
         if  ($query->rowCount() != 1) return False;
 
-        $result = $query->fetchAll()[0];
+        $result = $query->fetch();
         if (!password_verify($senha, $result->senha_docente)) return False;
 
         return [$result, $result->id_cargo==2?'professor':'docente'];
