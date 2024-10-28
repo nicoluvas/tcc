@@ -20,6 +20,10 @@ class AlunoController extends Controller {
     }
 
     public function Aulas() {
+        $Aluno = new Aluno();
+        
+        
+
         $this->render('Frequencia', 'AlunoLayout', 'Aluno');
     }
 }
