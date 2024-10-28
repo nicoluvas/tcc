@@ -59,6 +59,7 @@ input {
 
 .chmda {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     border: 1px solid var(--shadow);
     border-radius: .5rem;
@@ -115,8 +116,6 @@ input {
     <div class="chmda">
         <div class="alunos">Selecione uma sala.</div>
         <div class="chmda-dir">
-            <h3>Conteúdo de aula e anotações</h3>
-            <textarea name="ds_aula" id="ds_aula" disabled required></textarea>
             <input type="submit" value="Enviar" disabled>
             <p class="retorno"></p>
         </div>

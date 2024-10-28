@@ -41,13 +41,11 @@ class ProfessorChamada extends Model {
             $sql = "INSERT INTO
                         tb_aula
                     SET
-                        ds_aula = :ds,
                         id_materia = :materia,
                         id_turma = :turma,
                         unidade = :unidade,
                         id_periodo_letivo = :periodo";
             $params = [
-                'ds' => $_POST['ds_aula'],
                 'materia' => $_POST['materia'],
                 'turma' => $_POST['turma'],
                 'unidade' => UNIDADE,

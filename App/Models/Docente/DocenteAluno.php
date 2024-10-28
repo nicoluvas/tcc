@@ -283,9 +283,9 @@ class DocenteAluno extends Model {
                     SET
                         st_matricula = 'C'
                     WHERE
-                        id_aluno = :aluno";
+                        id_aluno = :cd_aluno";
             $pamas = [
-                'aluno' => $aluno
+                'cd_aluno' => $aluno
             ];
             $this->executeStatement($sql, $pamas);
             
@@ -294,9 +294,9 @@ class DocenteAluno extends Model {
                     SET
                         st_aluno = 'C'
                     WHERE
-                        cd_aluno = :aluno";
+                        cd_aluno = :cd_aluno";
             $pamas = [
-                'aluno' => $aluno
+                'cd_aluno' => $aluno
             ];
             $this->executeStatement($sql, $pamas);
 

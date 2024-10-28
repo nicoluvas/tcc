@@ -265,6 +265,13 @@ abstract class Router {
             'action' => 'Aulas',
             'method' => ['GET']
         ];
+        
+        $routes['Aluno notas'] = [
+            'router' => '/aluno/boletim',
+            'controller' => 'Aluno\\AlunoController',
+            'action' => 'Notas',
+            'method' => ['GET']
+        ];
 
         $this->routes = array_merge($this->routes, $routes);
     }
