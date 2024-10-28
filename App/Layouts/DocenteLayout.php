@@ -48,8 +48,8 @@
         <?php
       $this->renderView($this->page->view, $this->page->viewDirectory)
     ?>
-        <img class="meshbg" src="/assets/images/index/mesh-gradient.png" alt="">
     </main>
+    <img class="meshbg" src="/assets/images/index/mesh-gradient.png" alt="">
 
 </body>
 <style>
@@ -102,7 +102,8 @@ a>span {
     position: absolute;
     z-index: -1;
     right: 0;
-    height: 100vh;
+    bottom:0;
+    height: 60vh;
     filter: blur(5px);
 }
 
@@ -112,6 +113,11 @@ a>span {
     padding: 0.2rem;
     background-color: var(--primary-d);
     border-radius: 0.3rem;
+}
+
+.desligarDocente {
+    background-color: var(--shadow);
+    font-weight: 400;
 }
 
 .hrefs>i {

@@ -3,10 +3,11 @@
 @import url('/assets/css/global.css');
 
 main  div > a {
-    padding: .5rem;
+    padding: 1rem;
       border: 1px solid var(--shadow);
-      border-radius: 10px;
-      background-color: var(--shadow);
+      border-radius: .5rem;
+      background-color: var(--secondary);
+      font-size: 2rem;
     }
 
 
@@ -18,8 +19,25 @@ main .docentes {
 
 .docente {
     border: 1px solid var(--shadow);
+    background-color: var(--background-alt);
     border-radius: 1rem;
     padding: 1rem;
+    align-items:center;
+}
+
+.nomedocente {
+    padding: 1rem;
+    background-color: var(--primary);
+    max-width: 50%;
+    color: var(--background);
+    border-radius: .5rem
+}
+
+.ifde {
+    display:flex;
+    justify-content:center;
+    flex-direction:row;
+    align-items:center;
 }
 </style>
 
@@ -29,12 +47,15 @@ main .docentes {
         foreach ($this->docentes as $docente):
             ?>
     <div class="docente" id="<?= $docente->cd_docente ?>">
-        <p><?= $docente->nome_docente ?></p>
+        <p class="nomedocente"><?= $docente->nome_docente ?></p>
         <p>Cargo: <?= $cargos[$docente->id_cargo] ?></p>
-        <a href="/docente/docente/<?= $docente->cd_docente ?>/info" >Informações</a>
-        <button class="desligarDocente" docente="<?= $docente->nome_docente ?>" id="<?= $docente->cd_docente ?>"
-            <?= $docente->id_cargo>$_SESSION['logged']['cargo']||($docente->id_cargo==$_SESSION['logged']['cargo']&&$docente->cd_docente!=$_SESSION['logged']['id'])?'disabled':'' ?>>Desligar Docente</button>
-    </div>
+        <div class="ifde">
+
+            <a href="/docente/docente/<?= $docente->cd_docente ?>/info" >Informações</a>
+            <button class="desligarDocente" docente="<?= $docente->nome_docente ?>" id="<?= $docente->cd_docente ?>"
+                <?= $docente->id_cargo>$_SESSION['logged']['cargo']||($docente->id_cargo==$_SESSION['logged']['cargo']&&$docente->cd_docente!=$_SESSION['logged']['id'])?'disabled':'' ?>>Desligar Docente</button>
+        </div>
+        </div>
     <?php
         endforeach;
     ?>

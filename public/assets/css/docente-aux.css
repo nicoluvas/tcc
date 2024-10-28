@@ -55,3 +55,27 @@ legend {
 section {
     display: flex;
 }
+
+p {
+    text-align:center;
+    font-size: 2rem;
+}
+
+/* BOTOES GIGANTES */
+h2{
+    text-align:center;
+    font-size: 3rem;
+
+}
+a{
+    
+}
+button {
+    font-size: 2rem;
+    font-weight: 500;
+    width: 100%;
+}
+div {
+    display:flex;
+    flex-direction:column;
+}

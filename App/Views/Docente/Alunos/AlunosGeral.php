@@ -2,17 +2,41 @@
 <style>
 @import url('/assets/css/global.css');
 
-main .alunos {
+main .docentes {
     display: flex;
     flex-direction: column;
     row-gap: 8px;
 }
 
+.docente {
+    border: 1px solid var(--shadow);
+    background-color: var(--background-alt);
+    border-radius: 1rem;
+    padding: 1rem;
+    align-items:center;
+}
+
+.nomedocente {
+    padding: 1rem;
+    background-color: var(--primary);
+    max-width: 50%;
+    color: var(--background);
+    border-radius: .5rem
+}
+
+.ifde {
+    display:flex;
+    justify-content:center;
+    flex-direction:row;
+    align-items:center;
+}
+
 main  div > a {
-    padding: .5rem;
+    padding: 1rem;
       border: 1px solid var(--shadow);
-      border-radius: 10px;
-      background-color: var(--shadow);
+      border-radius: .5rem;
+      background-color: var(--secondary);
+      font-size: 2rem;
     }
 
 .turmas {
@@ -34,16 +58,18 @@ select {
 </div>
 
 
-<div class="alunos">
+<div class="docentes">
     <?php
     foreach($this->alunos as $aluno):
         ?>
-    <div class="aluno" id="<?= $aluno->cd_aluno ?>">
-        <p><?= $aluno->nome_aluno ?></p>
+    <div class="docente" id="<?= $aluno->cd_aluno ?>">
+        <p class="nomedocente"><?= $aluno->nome_aluno ?></p>
         <p>Turma <?= $aluno->nm_turma ?></p>
-        <a href="/docente/aluno/<?= $aluno->cd_aluno ?>/info">Informações</a>
-        <button class="cancelarMatricula" aluno="<?= $aluno->nome_aluno ?>" id="<?= $aluno->cd_aluno ?>">Cancelar
-            Matrícula</button>
+        <div class="ifde">
+            <a href="/docente/aluno/<?= $aluno->cd_aluno ?>/info">Informações</a>
+            <button class="desligarDocente" aluno="<?= $aluno->nome_aluno ?>" id="<?= $aluno->cd_aluno ?>">Cancelar
+                Matrícula</button>
+        </div>
     </div>
     <?php
     endforeach;

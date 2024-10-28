@@ -1,18 +1,8 @@
 <link rel="stylesheet" href="/assets/css/docente-aux.css">
 <form>
     <h2><?= $this->docente->nome_docente ?></h2>
-    <select name="cargo" id="cargo" required disabled>
-        <option value="">Selecione um cargo</option>
-        <?php
-            $cargos = ['2' => 'Professor', '3' => 'Secretário', '4' => 'Coordenador', '5' => 'Diretor'];
-            for ($i = 2; $i <= $_SESSION['logged']['cargo']; $i++):
-                ?>
-                    <option value="<?= $i ?>"><?= $cargos[$i] ?></option>
-                <?php
-            endfor;
-        ?>
-    </select>
     <button type="button" id="editar">Editar</button>
+
     <?php
         if ($_SESSION['logged']['cargo'] == 5) {
             ?>
@@ -36,6 +26,8 @@
             <?php
         }
     ?>
+
+
     <button type="button" id="cancelar" style="display: none">Cancelar</button>
     <input type="submit" value="Atualizar" style="display: none" disabled/>
     <p id="formretorno"></p>
@@ -48,6 +40,17 @@
         <input type="text" name="cpf" placeholder="CPF" required value="<?= $this->docente->cpf_docente ?>" disabled/>
         <input type="text" name="rg" placeholder="RG" required value="<?= $this->docente->rg_docente ?>" disabled/>
         <input type="email" name="email" placeholder="Email" required value="<?= $this->docente->email_docente ?>" disabled/>
+        <select name="cargo" id="cargo" required disabled>
+        <option value="">Selecione um cargo</option>
+        <?php
+            $cargos = ['2' => 'Professor', '3' => 'Secretário', '4' => 'Coordenador', '5' => 'Diretor'];
+            for ($i = 2; $i <= $_SESSION['logged']['cargo']; $i++):
+                ?>
+                    <option value="<?= $i ?>"><?= $cargos[$i] ?></option>
+                <?php
+            endfor;
+        ?>
+    </select>
     </fieldset>
     <!-- Endereço -->
     <fieldset>
