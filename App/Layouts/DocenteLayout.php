@@ -103,7 +103,7 @@ a>span {
     z-index: -1;
     right: 0;
     bottom:0;
-    height: 60vh;
+    height: 80vh;
     filter: blur(5px);
 }
 
