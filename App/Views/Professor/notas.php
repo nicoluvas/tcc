@@ -124,7 +124,10 @@ button {
                 <span>Trabalho</span>
                 <input type="number" name="trabalho" id="trabalho" readonly="readonly" value="0" step="0.01" min="0"
                     max="10">
-
+            </div>
+            <div style="display:flex;flex-direction:column;">
+                <span>Média</span>
+                <p id='media'></p>
             </div>
 
             <button type="button" id="editar">Editar</button>
@@ -157,6 +160,7 @@ button {
                 $('button#editar').css('display', 'block')
                 $('button#cancelar').css('display', 'none')
                 $('button#salvar').css('display', 'none')
+                $('p#media').text((($('input#trabalho').val() + $('input#prova').val()*2)/3).toFixed())
             })
             .catch(function(a) {
                 console.log(a)
@@ -202,11 +206,11 @@ button {
                 'dataType': 'json'
             })
             .done(data => {
-                console.log(data)
                 $('input#prova').val(data.notas.prova)
                 $('input#trabalho').val(data.notas.trabalho)
                 $('p#aluno').text('Aluno: ' + data.notas.aluno)
                 $('p#materia').text('Materia: ' + data.notas.materia)
+                $('p#media').text(((parseFloat(data.notas.trabalho) + parseFloat(data.notas.prova)*2)/3).toFixed())
             })
     })
 
@@ -226,6 +230,7 @@ button {
                 $('input#trabalho').val(data.notas.trabalho)
                 $('p#aluno').text('Aluno: ' + data.notas.aluno)
                 $('p#materia').text('Materia: ' + data.notas.materia)
+                $('p#media').text(((parseFloat(data.notas.trabalho) + parseFloat(data.notas.prova)*2)/3).toFixed())
             })
             .catch(data => console.log(data))
     })
