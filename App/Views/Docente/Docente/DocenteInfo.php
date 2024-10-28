@@ -13,6 +13,29 @@
         ?>
     </select>
     <button type="button" id="editar">Editar</button>
+    <?php
+        if ($_SESSION['logged']['cargo'] == 5) {
+            ?>
+                <button id="alterar">Alterar Código de Acesso</button>
+                <script>
+                    $('#alterar').click(function() {
+                        if (!confirm('Deseja Alterar o Código de Acesso?')) {
+                            return
+                        }
+                        $.ajax({
+                            'url': `/docente/alterar/senha/d/<?= $this->docente->cd_docente ?>`,
+                            'type': 'POST',
+                            'dataType': 'json'
+                        })
+                        .done(data => {
+                            $('#formretorno').text('Código atualizada: ' + data.senha)
+                        })
+                        .catch(data => console.log(data))
+                    })
+                </script>
+            <?php
+        }
+    ?>
     <button type="button" id="cancelar" style="display: none">Cancelar</button>
     <input type="submit" value="Atualizar" style="display: none" disabled/>
     <p id="formretorno"></p>

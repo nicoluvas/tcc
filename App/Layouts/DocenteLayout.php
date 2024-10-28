@@ -102,7 +102,6 @@ a>span {
     position: absolute;
     z-index: -1;
     right: 0;
-    oppacity: 0;
     height: 100vh;
     filter: blur(5px);
 }

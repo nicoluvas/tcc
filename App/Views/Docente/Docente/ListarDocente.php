@@ -31,9 +31,9 @@ main .docentes {
     <div class="docente" id="<?= $docente->cd_docente ?>">
         <p><?= $docente->nome_docente ?></p>
         <p>Cargo: <?= $cargos[$docente->id_cargo] ?></p>
-        <a href="/docente/docente/<?= $docente->cd_docente ?>/info">Informações</a>
+        <a href="/docente/docente/<?= $docente->cd_docente ?>/info" >Informações</a>
         <button class="desligarDocente" docente="<?= $docente->nome_docente ?>" id="<?= $docente->cd_docente ?>"
-            <?= $docente->id_cargo>=$_SESSION['logged']['cargo']?'disabled':'' ?>>Desligar Docente</button>
+            <?= $docente->id_cargo>$_SESSION['logged']['cargo']||($docente->id_cargo==$_SESSION['logged']['cargo']&&$docente->cd_docente!=$_SESSION['logged']['id'])?'disabled':'' ?>>Desligar Docente</button>
     </div>
     <?php
         endforeach;

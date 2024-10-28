@@ -198,4 +198,16 @@ class DocenteDocente extends Model {
                     id_cargo = 2";
         return $this->executeStatement($sql)->fetchAll();
     }
+
+    public function AlterarSenha($cd) {
+        $sql = "UPDATE
+                    tb_docente
+                SET
+                    senha_docente = :senha
+                WHERE
+                    cd_docente = :cd";
+        $senha = Tools::random_strings(8);
+        $this->executeStatement($sql, ['senha' => password_hash($senha, PASSWORD_BCRYPT), 'cd' => $cd]);
+        return $senha;
+    }
 }

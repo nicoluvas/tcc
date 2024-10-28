@@ -44,7 +44,7 @@ select[readonly='readonly'] {
         </select>
     </div>
     <p class="formretorno"></p>
-    <button type="button" id="editar" disabled>Editar</button>
+    <button type="button" id="editar" disabled <?= $_SESSION['logged']['cargo']<4?'style="display: none"':'' ?>>Editar</button>
     <button type="button" id="cancelar" style="display:none">Cancelar</button>
     <button type="submit" id="salvar" style="display:none">Salvar</button>
 </form>

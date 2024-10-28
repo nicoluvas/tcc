@@ -2,6 +2,8 @@
 
 namespace App\Controllers\Docente;
 use Core\Controller\Controller;
+use App\Models\Docente\DocenteAluno;
+use App\Models\Docente\DocenteDocente;
 
 class DocenteController extends Controller {
     protected $cargo;
@@ -26,5 +28,13 @@ class DocenteController extends Controller {
 
         $this->render($_GET['tab'], 'DocenteLayout', 'Docente');
     }
+
+    public function AlterarSenha($tipo, $cd)  {
+        if ($tipo == 'd') {
+            $senha = (new DocenteDocente)->AlterarSenha($cd);
+        } else if ($tipo == 'a') {
+            $senha = (new DocenteAluno)->AlterarSenha($cd);
+        }
+        echo json_encode(['senha' => $senha]);
+    }
 }
-?>

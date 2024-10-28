@@ -295,4 +295,16 @@ class DocenteAluno extends Model {
             echo json_encode(['ok' => false]);
         }
     }
+
+    public function AlterarSenha($cd) {
+        $sql = "UPDATE
+                    tb_aluno
+                SET
+                    senha_aluno = :senha
+                WHERE
+                    cd_aluno = :cd";
+        $senha = Tools::random_strings(8);
+        $this->executeStatement($sql, ['senha' => password_hash($senha, PASSWORD_BCRYPT), 'cd' => $cd]);
+        return $senha;
+    }
 }

@@ -58,4 +58,8 @@ class DocenteDocenteController extends Controller {
         $DocenteDocente = new DocenteDocente();
         $DocenteDocente->DesligarDocente($iddocente);
     }
+
+    public function Perfil() {
+        $this->render('DocenteInfo', 'DocenteLayout', 'Docente/Docente');
+    }
 }

@@ -175,6 +175,14 @@ abstract class Router {
             'method' => ['POST']
         ];
 
+        $routes['Alterar Senha'] = [
+            'router' => '/docente/alterar/senha/[da]/[0-9]+',
+            'controller' => 'Docente\\DocenteController',
+            'action' => 'AlterarSenha',
+            'method' => ['POST'],
+            'params' => ['tipo', 'cd']
+        ];
+
         $this->routes = array_merge($this->routes, $routes);
     }
 

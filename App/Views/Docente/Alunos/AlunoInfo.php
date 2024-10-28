@@ -11,6 +11,29 @@
         <h2 style="font-size: 3vw; margin: 0; padding: 0"><?= $this->aluno->nome_aluno ?></h2>
         <div style="display: flex; align-items: center;">
             <button class="botoes" type="button" id="editar">Editar</button>
+            <?php
+                if ($_SESSION['logged']['cargo'] == 5) {
+                    ?>
+                        <button id="alterar">Alterar Código de Acesso</button>
+                        <script>
+                            $('#alterar').click(function() {
+                                if (!confirm('Deseja Alterar o Código de Acesso?')) {
+                                    return
+                                }
+                                $.ajax({
+                                    'url': `/docente/alterar/senha/d/<?= $this->docente->cd_docente ?>`,
+                                    'type': 'POST',
+                                    'dataType': 'json'
+                                })
+                                .done(data => {
+                                    $('#formretorno').text('Código atualizada: ' + data.senha)
+                                })
+                                .catch(data => console.log(data))
+                            })
+                        </script>
+                    <?php
+                }
+            ?>
             <button class="botoes" type="button" id="cancelar" style="display: none">Cancelar</button>
             <input class="botoes" type="submit" value="Atualizar" style="display: none" disabled />
             <p id="formretorno"></p>
