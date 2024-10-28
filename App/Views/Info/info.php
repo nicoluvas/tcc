@@ -84,18 +84,18 @@
             <div>
                 <img src="/assets/images/info/theo.png" alt="theo">
                 <h4>Lara Galeano</h4>
-                <h5>Design</h5>
+                <!-- <h5>Design</h5> -->
             </div>
             <div>
                 <img src="/assets/images/info/nico.png" alt="nico">
                 <h4>Nícolas Penhalver</h4>
-                <h5>Front-end</h5>
+                <!-- <h5>Front-end</h5> -->
             </div>
 
             <div>
                 <img src="/assets/images/info/leme.png" alt="leme">
                 <h4>Lucas Leme</h4>
-                <h5>Back-end</h5>
+                <!-- <h5>Back-end</h5> -->
             </div>
         </div>
 
@@ -170,16 +170,18 @@ header {
     max-height: 10vw;
 }
 
-.perfil>div>h4 {
+.perfil>div>h5 {
     color: var(--primary-d);
     font-size: 1.5rem;
 }
 
-.perfil>div>h5 {
+.perfil>div>h4 {
     color: var(--background);
     background-color: var(--primary);
     border-radius: .5rem;
-    font-size: 1rem;
+    font-size: 2rem;
+    padding: .2rem;
+    white-space: nowrap;
 }
 
 h1 {
