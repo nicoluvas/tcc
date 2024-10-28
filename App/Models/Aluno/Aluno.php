@@ -85,6 +85,55 @@ class Aluno extends Model {
                     AS frequencia";
         $frequencia->frequencia_total = $this->executeStatement($sql, ['id_aluno' => $_SESSION['logged']['id'], 'id_periodo' => ID_PERIODO_LETIVO, 'id_turma' => $turma, 'id_materia' => $materia])->fetch()->frequencia;
 
+        $sql = 'SELECT 
+                    count(*) as faltas
+                FROM 
+                    tb_falta
+                INNER JOIN
+                    tb_aula
+                    ON
+                        id_aula = cd_aula
+                WHERE 
+                    id_matricula = :id_aluno AND
+                    id_materia = :id_materia AND 
+                    tb_aula.unidade = :unidade AND 
+                    tb_aula.id_periodo_letivo = :id_periodo';
+        $frequencia->faltas_unidade = $this->executeStatement($sql, ['id_aluno' => $_SESSION['logged']['id'], 'id_periodo' => ID_PERIODO_LETIVO, 'id_materia' => $materia, 'unidade' => $unidade])->fetch()->faltas;
+
+        $sql = 'SELECT 
+                    count(*) as faltas
+                FROM 
+                    tb_falta
+                INNER JOIN
+                    tb_aula
+                    ON
+                        id_aula = cd_aula
+                WHERE 
+                    id_matricula = :id_aluno AND
+                    id_materia = :id_materia AND
+                    tb_aula.id_periodo_letivo = :id_periodo';
+        $frequencia->faltas_total = $this->executeStatement($sql, ['id_aluno' => $_SESSION['logged']['id'], 'id_periodo' => ID_PERIODO_LETIVO, 'id_materia' => $materia])->fetch()->faltas;
+
         return $frequencia;
+    }
+
+    public function GetFaltas($unidade) {
+        $sql = "SELECT
+                    *
+                FROM
+                    tb_falta
+                INNER JOIN
+                    tb_aula
+                    ON
+                        id_aula = cd_aula
+                INNER JOIN
+                    tb_materia
+                    ON
+                        id_materia = cd_materia
+                WHERE
+                    id_matricula = :id_matricula AND
+                    tb_aula.id_periodo_letivo = :id_periodo AND
+                    tb_aula.unidade = :unidade";
+        return $this->executeStatement($sql, ['id_matricula' => $_SESSION['logged']['id'], 'id_periodo' => ID_PERIODO_LETIVO, 'unidade' => $unidade])->fetchAll();
     }
 }

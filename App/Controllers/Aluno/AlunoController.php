@@ -8,6 +8,9 @@ use App\Tools\Tools;
 class AlunoController extends Controller {
     protected $frequeciaMaterias;
     protected $materias;
+    protected $faltas;
+    protected $faltas_unidade;
+    protected $faltas_total;
     
     public function __construct() {
         if(!isset($_SESSION['logged']) || $_SESSION['logged']['tipo'] != 'aluno'){
@@ -24,6 +27,12 @@ class AlunoController extends Controller {
         $Aluno = new Aluno();
 
         $this->materias = $Aluno->GetMaterias();
+        $aux = $Aluno->GetFaltas($_GET['unidade']??UNIDADE);
+
+        foreach ($aux as $falta) {
+            $this->faltas[$falta->dt_aula][] = $falta;
+        }
+
         foreach ($this->materias as $materia) {
             $this->frequeciaMaterias[$materia->cd_materia] = $Aluno->GetFrequenciaMateria($materia->cd_materia, $_GET['unidade']??UNIDADE);
             $this->frequeciaMaterias[$materia->cd_materia]->cd_materia = $materia->cd_materia;
