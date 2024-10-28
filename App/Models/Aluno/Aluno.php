@@ -136,4 +136,34 @@ class Aluno extends Model {
                     tb_aula.unidade = :unidade";
         return $this->executeStatement($sql, ['id_matricula' => $_SESSION['logged']['id'], 'id_periodo' => ID_PERIODO_LETIVO, 'unidade' => $unidade])->fetchAll();
     }
+
+    public function GetNotas($materia, $unidade) {
+        $sql = "SELECT
+                    *
+                FROM
+                    tb_nota
+                INNER JOIN
+                    tb_materia
+                    ON
+                        cd_materia = id_materia
+                WHERE
+                    id_periodo_letivo = :id_periodo AND
+                    id_matricula = :id_matricula AND
+                    id_materia = :id_materia AND
+                    unidade = :unidade
+                ORDER BY
+                    peso_nota, unidade";
+        $nota = $this->executeStatement($sql, ['unidade' => $unidade, 'id_periodo' => ID_PERIODO_LETIVO, 'id_matricula' => $_SESSION['logged']['id'], 'id_materia' => $materia])->fetchAll();
+        
+        $sql = "SELECT
+                    SUM(valor_nota * peso_nota) / SUM(peso_nota) as media_final
+                FROM
+                    tb_nota
+                WHERE
+                    id_periodo_letivo = :id_periodo AND
+                    id_matricula = :id_matricula AND
+                    id_materia = :id_materia";
+        $media_final = $this->executeStatement($sql, ['id_periodo' => ID_PERIODO_LETIVO, 'id_matricula' => $_SESSION['logged']['id'], 'id_materia' => $materia])->fetch()->media_final;
+        return (object) ['cd_materia' => $nota[0]->id_materia, 'nm_materia' => $nota[0]->nm_materia, 'trabalho' => $nota[0]->valor_nota, 'prova' => $nota[1]->valor_nota, 'unidade' => $unidade, 'media_final' => $media_final];
+    }
 }

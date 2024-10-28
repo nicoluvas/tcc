@@ -11,6 +11,7 @@ class AlunoController extends Controller {
     protected $faltas;
     protected $faltas_unidade;
     protected $faltas_total;
+    protected $notas;
     
     public function __construct() {
         if(!isset($_SESSION['logged']) || $_SESSION['logged']['tipo'] != 'aluno'){
@@ -49,5 +50,23 @@ class AlunoController extends Controller {
         $this->renderView('faltas', 'Aluno');
         $faltas = ob_get_clean();
         echo json_encode(['frequencia' => $frequencia, 'faltas' => $faltas]);
+    }
+
+    public function Notas() {
+        $Aluno = new Aluno();
+
+        $this->materias = $Aluno->GetMaterias();
+        
+        foreach ($this->materias as $materia) {
+            $this->notas[] = $Aluno->GetNotas($materia->cd_materia, $_GET['unidade']??UNIDADE);
+        }
+        if (!Tools::isAjax()){
+            $this->render('Notas', 'AlunoLayout', 'Aluno');
+            die();
+        }
+        
+        ob_start();
+        $this->renderView('tabelaNotas', 'Aluno');
+        echo json_encode(['notas' => ob_get_clean()]);
     }
 }
