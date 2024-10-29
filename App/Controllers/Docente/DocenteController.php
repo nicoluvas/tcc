@@ -4,6 +4,7 @@ namespace App\Controllers\Docente;
 use Core\Controller\Controller;
 use App\Models\Docente\DocenteAluno;
 use App\Models\Docente\DocenteDocente;
+use App\Models\Docente\DocenteGerenciamento;
 
 class DocenteController extends Controller {
     protected $cargo;
@@ -20,8 +21,13 @@ class DocenteController extends Controller {
         }
     }
     
+    protected $media_notas;
+    protected $media_frequencia;
     public function Dashboard(){
         if (empty($_GET)) {
+            $DocenteGerenciamento = new DocenteGerenciamento();
+            $this->media_notas = $DocenteGerenciamento->MediaNotas();
+            $this->media_frequencia = $DocenteGerenciamento->MediaFrequencia();
             $this->render('Index', 'DocenteLayout', 'Docente');
             die();
         }
