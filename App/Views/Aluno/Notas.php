@@ -1,22 +1,24 @@
-<select name="materia" id="materia">
-    <option value="">Selecionar Matéria</option>
-    <?php
-        foreach ($this->materias as $materia):
-            ?>
-                <option value="<?= $materia->cd_materia ?>"><?= $materia->nm_materia ?></option>
-            <?php
-        endforeach;
-    ?>
-</select>
-<select name="unidade" id="unidade">
-    <?php
-        for ($i=1;$i<=UNIDADE;$i++):
-            ?>
-                <option value="<?= $i ?>" <?= $i==UNIDADE?'selected':'' ?>>Unidade <?= $i ?></option>
-            <?php
-        endfor;
-    ?>
-</select>
+<div style="display:flex;">
+    <select name="materia" id="materia">
+        <option value="">Selecionar Matéria</option>
+        <?php
+            foreach ($this->materias as $materia):
+                ?>
+                    <option value="<?= $materia->cd_materia ?>"><?= $materia->nm_materia ?></option>
+                <?php
+            endforeach;
+        ?>
+    </select>
+    <select name="unidade" id="unidade">
+        <?php
+            for ($i=1;$i<=UNIDADE;$i++):
+                ?>
+                    <option value="<?= $i ?>" <?= $i==UNIDADE?'selected':'' ?>>Unidade <?= $i ?></option>
+                <?php
+            endfor;
+        ?>
+    </select>
+</div>
 
 <div class="notas">
     <?php $this->renderView('tabelaNotas', 'Aluno'); ?>
