@@ -60,7 +60,7 @@ class DocenteGerenciamento extends Model {
                     cd_aluno,
                     nm_materia,
                     dt_aula,
-                    id_periodo_letivo,
+                    tb_aula.id_periodo_letivo,
                     id_aula
                 FROM
                     tb_aluno
@@ -77,7 +77,7 @@ class DocenteGerenciamento extends Model {
                     ON
                         cd_materia = id_materia
                 WHERE
-                    id_periodo_letivo = :periodo AND
+                    tb_aula.id_periodo_letivo = :periodo AND
                     st_falta = 'A'
                 GROUP BY
                     id_matricula, id_aula
