@@ -37,8 +37,7 @@ class DocenteGerenciamentoController extends Controller {
     public function FinalizarPeriodoLetivo() {
         $DocenteGerenciamento = new DocenteGerenciamento();
         $DocenteGerenciamento->FinalizarPeriodoLetivo();
-        $_SESSION['msg'] = "Período Letivo Finalizado!";
-        header('Location: /docente/gerenciamento/periodo-letivo');
+        echo json_encode(['msg' => 'Período Letivo Encerrado!']);
         die();
     }
 

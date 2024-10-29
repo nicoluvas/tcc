@@ -10,7 +10,22 @@
 
         if ($_SESSION['logged']['cargo'] == 5 && new DateTime(FIM_PERIODO_LETIVO) < new DateTime()) {
             ?>
-                <a href="/docente/gerenciamento/periodo-letivo/finalizar">Finalizar Ano Letivo</a>
+                <button id="finalizar">Finalizar Ano Letivo</button>
+                <script>
+                    $('button#finalizar').on('click', function () {
+                        $(this).prop('disabled', true)
+                        $.ajax({
+                            'url': '/docente/gerenciamento/periodo-letivo/finalizar',
+                            'type': 'post',
+                            'dataType': 'json'
+                        })
+                        .done(function (data) {
+                            alert(data.msg)
+                            window.location.reload()
+                        })
+                        $(this).prop('disabled', false)
+                    })
+                </script>
             <?php
         }
 

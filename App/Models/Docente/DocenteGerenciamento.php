@@ -179,5 +179,105 @@ class DocenteGerenciamento extends Model {
     public function FinalizarPeriodoLetivo() {
         $DocenteAluno = new DocenteAluno();
         $alunos = $DocenteAluno->GetAlunosGeral();
+
+        $aprovados = [];
+        foreach ($alunos as $aluno) {
+            if ($this->PassouFrequencia($aluno) && $this->PassouNotas($aluno)) {
+                $aprovados[] = $aluno->cd_aluno;
+            }
+        }
+
+        $this->AtualizarSituacao($alunos, $aprovados);
+        $this->executeStatement('INSERT INTO tb_periodo_letivo VALUES (null, null, null, null)');
+        $novo_periodo = $this->db->lastInsertId();
+        $this->Rematriculas($alunos, $aprovados, $novo_periodo);
+    }
+
+    private function PassouFrequencia($aluno) {
+        $sql = "SELECT
+                    1 - (SELECT
+                            count(*)
+                        FROM
+                            tb_falta
+                        WHERE
+                            id_matricula = :id_aluno AND
+                            id_periodo_letivo = :id_periodo)
+                        /
+                        (SELECT
+                            count(*)
+                        FROM
+                            tb_aula
+                        WHERE
+                            id_turma = :id_turma AND
+                            id_periodo_letivo = :id_periodo)
+                AS frequencia";
+        $frequencia = $this->executeStatement($sql, ['id_turma' => $aluno->id_turma, 'id_aluno' => $aluno->cd_aluno, 'id_periodo' => ID_PERIODO_LETIVO])->fetch()->frequencia;
+    
+        if ($frequencia >= 0.75) return true;
+        return false;
+    }
+
+    private function PassouNotas($aluno) {
+        $materias = $this->executeStatement('SELECT * FROM tb_turma_materia WHERE id_turma = :turma', ['turma' => $aluno->id_turma])->fetchAll();
+
+        foreach ($materias as $materia) {
+            for ($i=1;$i<=3;$i++) {
+                $sql = "SELECT
+                            SUM(valor_nota * peso_nota) / SUM(peso_nota) as media_unidade
+                        FROM
+                            tb_nota
+                        WHERE
+                            id_matricula = :matricula AND
+                            id_periodo_letivo = :periodo AND
+                            id_materia = :materia AND
+                            unidade = '$i'";
+                $aux = 'media'.$i;
+                $$aux = $this->executeStatement($sql, ['matricula' => $aluno->cd_aluno, 'periodo' => ID_PERIODO_LETIVO, 'materia' => $materia->cd_materia])->fetch()->media_unidade;
+            }
+            if (($media1 + $media2 + $media3)/3 < 6) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private function AtualizarSituacao($alunos, $aprovados) {
+        foreach ($alunos as $aluno) {
+            $situacao = in_array($aluno->cd_aluno, $aprovados)?'F':'R';
+            $sql = "UPDATE
+                        tb_matricula
+                    SET
+                        st_matricula = '$situacao'
+                    WHERE
+                        id_aluno = :aluno AND
+                        id_periodo_letivo = :periodo";
+            $this->executeStatement($sql, ['aluno' => $aluno->cd_aluno, 'periodo' => ID_PERIODO_LETIVO]);
+        }
+    }
+
+    private function Rematriculas($alunos, $aprovados, $novo_periodo) {
+        foreach ($alunos as $aluno) {
+            if (in_array($aluno->cd_aluno, $aprovados) && in_array($aluno->id_turma, [13, 14])) {
+                $sql = "UPDATE 
+                            tb_aluno
+                        SET
+                            st_aluno = 'F'
+                        WHERE
+                            cd_aluno = :aluno";
+                $this->executeStatement($sql, ['aluno' => $aluno->cd_aluno]);
+                continue;
+            }
+            $sql = "INSERT INTO
+                        tb_matricula
+                    VALUES
+                        (:aluno, :periodo, default)";
+            $this->executeStatement($sql, ['aluno' => $aluno->cd_aluno, 'periodo' => $novo_periodo]);
+            
+            $sql = "INSERT INTO
+                        tb_matricula_turma
+                    VALUES
+                        (:aluno, :periodo, :turma)";
+            $this->executeStatement($sql, ['aluno' => $aluno->cd_aluno, 'periodo' => $novo_periodo, 'turma' => in_array($aluno->cd_aluno, $aprovados)?$aluno->id_turma+2:$aluno->id_turma]);
+        }
     }
 }
