@@ -8,13 +8,6 @@ main .docentes {
     row-gap: 8px;
 }
 
-.docente {
-    border: 1px solid var(--shadow);
-    background-color: var(--background-alt);
-    border-radius: 1rem;
-    padding: 1rem;
-    align-items:center;
-}
 
 .nomedocente {
     padding: 1rem;

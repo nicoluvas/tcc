@@ -80,7 +80,6 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-
     display: grid;
     grid-template-rows: 10vh 1fr;
     grid-template-columns: 15vw 1fr;
@@ -113,11 +112,6 @@ a>span {
     padding: 0.2rem;
     background-color: var(--primary-d);
     border-radius: 0.3rem;
-}
-
-.desligarDocente {
-    background-color: var(--shadow);
-    font-weight: 400;
 }
 
 .hrefs>i {
