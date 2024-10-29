@@ -5,6 +5,106 @@ use Core\Model\Model;
 use App\Models\Docente\DocenteAluno;
 
 class DocenteGerenciamento extends Model {
+    public function MediaNotas() {
+        $sql = "SELECT
+                    SUM(valor_nota * peso_nota)/SUM(peso_nota) as media_total
+                FROM
+                    tb_nota
+                INNER JOIN
+                    tb_matricula
+                    ON
+                        id_aluno = id_matricula
+                WHERE
+                    tb_nota.id_periodo_letivo = :periodo AND
+                    st_matricula like 'A'";
+        $media_total = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO])->fetch()->media_total;
+        
+        for ($i=1;$i<=3;$i++) {
+            $sql = "SELECT
+                        SUM(valor_nota * peso_nota)/SUM(peso_nota) as media
+                    FROM
+                        tb_nota
+                    INNER JOIN
+                        tb_matricula
+                        ON
+                            id_aluno = id_matricula
+                    WHERE
+                        tb_nota.id_periodo_letivo = :periodo AND
+                        st_matricula like 'A' AND
+                        unidade like '$i'";
+            $aux = 'media'.$i;
+            $$aux = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO])->fetch()->media;
+        }
+
+        return (object) ['media' => $media_total, 'unidade1' => $media1, 'unidade2' => $media2, 'unidade3' => $media3];
+    }
+
+    public function MediaFrequencia() {
+        $sql = "SELECT 
+                    1- (SELECT 
+                            count(*) 
+                        FROM 
+                            tb_falta 
+                        INNER JOIN
+                            tb_aula
+                            ON
+                                cd_aula = id_aula
+                        WHERE 
+                            tb_aula.id_periodo_letivo = :periodo AND
+                            st_falta like 'A') 
+                        /
+                        ((SELECT
+                            count(*)
+                        FROM
+                            tb_aluno
+                        WHERE
+                            st_aluno like 'A')*(SELECT 
+                            count(*) 
+                        FROM
+                            tb_aula 
+                        WHERE 
+                            id_periodo_letivo = :periodo))
+                    AS 
+                        frequencia";
+        $media_total = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO])->fetch()->frequencia;
+        
+        for ($i=1;$i<=3;$i++) {
+            $sql = "SELECT 
+                    1- (SELECT 
+                            count(*) 
+                        FROM 
+                            tb_falta 
+                        INNER JOIN
+                            tb_aula
+                            ON
+                                cd_aula = id_aula
+                        WHERE 
+                            tb_aula.id_periodo_letivo = :periodo AND
+                            st_falta like 'A' AND
+                            tb_aula.unidade like '$i' AND 
+                            tb_falta.unidade like '$i') 
+                        /
+                        ((SELECT
+                            count(*)
+                        FROM
+                            tb_aluno
+                        WHERE
+                            st_aluno like 'A')*(SELECT 
+                            count(*) 
+                        FROM
+                            tb_aula 
+                        WHERE 
+                            id_periodo_letivo = :periodo AND
+                            tb_aula.unidade like '$i'))
+                    AS 
+                        frequencia";
+            $aux = 'media'.$i;
+            $$aux = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO])->fetch()->frequencia;
+        }
+
+        return (object) ['media' => $media_total, 'unidade1' => $media1, 'unidade2' => $media2, 'unidade3' => $media3];
+    }
+
     public function GetTurmas() {
         $sql = "SELECT 
                     *
