@@ -1,5 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<style>
+@import url('/assets/css/global.css');
+@import url('/assets/css/docente-aux.css');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--primary);
+    padding: .5rem;
+}
+
+nav > p {
+    color: var(--text-inv);
+}
+
+body {
+    background-color: var(--background);
+    height: 100vh;
+}
+
+#sair, #voltar {
+    color: var(--text-inv);
+    background-color: var(--primary-d);
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+main {
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    max-height:80vh;
+}
+
+.aluno-dir>div {
+    row-gap: 1rem;
+}
+
+select {
+    background-color: var(--accent);
+}
+</style>
+<html class="lexend" lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,30 +65,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <link rel="stylesheet" href="/assets/css/docente-aux.css">
 </head>
+
 <body>
     <header>
-        Bem vindo <?= $_SESSION['logged']['nome'] ?>!
-        <div class="nav-dir">
+        <nav>
+        <?php
+        if ($_SERVER['REQUEST_URI'] != '/aluno/home') {
+            ?>
+
+    <a style="" id="voltar" href="/aluno/home">« Voltar</a>
+    <?php
+        }
+    ?>
+            <p>
+                Bem vindo(a) <?= $_SESSION['logged']['nome'] ?>! 👋
+            </p>
+
             <a id="sair" href="/logout">
                 <i class="bi bi-box-arrow-left"></i>
                 Sair
             </a>
-        </div>
+        </nav>
     </header>
-    <?php
-        if ($_SERVER['REQUEST_URI'] != '/aluno/home') {
-            ?>
-                <a href="/aluno/home">«</a>
-            <?php
-        }
-    ?>
+
+
+    
     <main>
+        <div class="aluno-esq">
+            <img src="/assets/images/admin/B.png" alt="">
+        </div>
+        <div class="aluno-dir">
         <?php
             $this->renderView($this->page->view, $this->page->viewDirectory);
         ?>
+        </div>
     </main>
 </body>
+
 </html>
