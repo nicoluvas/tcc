@@ -134,6 +134,7 @@ class DocenteAluno extends Model {
                         id_turma = cd_turma
                 WHERE
                     tb_matricula.id_periodo_letivo = :periodo AND
+                    tb_matricula_turma.id_periodo_letivo = :periodo AND
                     st_matricula = 'A'
                 ORDER BY
                     id_turma, nome_aluno";
@@ -160,6 +161,7 @@ class DocenteAluno extends Model {
                         id_turma = cd_turma
                 WHERE
                     tb_matricula.id_periodo_letivo = :periodo AND
+                    tb_matricula_turma.id_periodo_letivo = :periodo AND
                     cd_turma = :turma AND
                     st_matricula = 'A'
                 ORDER BY

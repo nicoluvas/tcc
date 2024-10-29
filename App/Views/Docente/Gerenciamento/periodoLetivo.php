@@ -20,7 +20,7 @@
                             'dataType': 'json'
                         })
                         .done(function (data) {
-                            alert(data.msg)
+                            alert(data.msg + '\nAprovados: ' + data.aprovados + '\nReprovados: ' + data.reprovados)
                             window.location.reload()
                         })
                         $(this).prop('disabled', false)

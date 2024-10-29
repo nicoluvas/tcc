@@ -181,9 +181,12 @@ class DocenteGerenciamento extends Model {
         $alunos = $DocenteAluno->GetAlunosGeral();
 
         $aprovados = [];
+        $reprovados = [];
         foreach ($alunos as $aluno) {
             if ($this->PassouFrequencia($aluno) && $this->PassouNotas($aluno)) {
                 $aprovados[] = $aluno->cd_aluno;
+            } else {
+                $reprovados[] = $aluno->cd_aluno;
             }
         }
 
@@ -191,6 +194,7 @@ class DocenteGerenciamento extends Model {
         $this->executeStatement('INSERT INTO tb_periodo_letivo VALUES (null, null, null, null)');
         $novo_periodo = $this->db->lastInsertId();
         $this->Rematriculas($alunos, $aprovados, $novo_periodo);
+        return [sizeof($aprovados), sizeof($reprovados)];
     }
 
     private function PassouFrequencia($aluno) {
@@ -232,7 +236,7 @@ class DocenteGerenciamento extends Model {
                             id_materia = :materia AND
                             unidade = '$i'";
                 $aux = 'media'.$i;
-                $$aux = $this->executeStatement($sql, ['matricula' => $aluno->cd_aluno, 'periodo' => ID_PERIODO_LETIVO, 'materia' => $materia->cd_materia])->fetch()->media_unidade;
+                $$aux = $this->executeStatement($sql, ['matricula' => $aluno->cd_aluno, 'periodo' => ID_PERIODO_LETIVO, 'materia' => $materia->id_materia])->fetch()->media_unidade;
             }
             if (($media1 + $media2 + $media3)/3 < 6) {
                 return false;
