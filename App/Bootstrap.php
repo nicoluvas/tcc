@@ -9,9 +9,13 @@ class Bootstrap extends Router{
         $this->loadEnvironmentVariables();
 
         $this->declareRoutes();
+        define('ERRO404', dirname(__FILE__, 1).'/Erro404.php');
+        define('ERRO405', dirname(__FILE__, 1).'/Erro405.php');
 
-        Tools::emPeriodoLetivo();
         $uri = $this->getUri();
+        if (!str_contains($uri, '/p/')) {
+            Tools::emPeriodoLetivo();
+        }
         $this->run($uri);
     }
     
@@ -20,7 +24,7 @@ class Bootstrap extends Router{
             if ($uri == $router['router']){
                 if (!in_array($_SERVER['REQUEST_METHOD'], $router['method'])) {
                     // http_response_code(405);
-                    require 'Erro405.php';
+                    require ERRO405;
                     die();
                 }
                 $controllerClass = 'App\\Controllers\\' . $router['controller'];
@@ -35,7 +39,7 @@ class Bootstrap extends Router{
             if (preg_match("/^$regex$/", ltrim($uri, "/"))) {
                 if (!in_array($_SERVER['REQUEST_METHOD'], $router['method'])) {
                     // http_response_code(405);
-                    require 'Erro405.php';
+                    require ERRO405;
                     die();
                 }
                 $controllerClass = 'App\\Controllers\\' . $router['controller'];
@@ -49,12 +53,15 @@ class Bootstrap extends Router{
                 }
 
                 $controllerInstance = new $controllerClass();
+                if (array_key_exists('periodo', $newData)) {
+                    Tools::emPeriodoLetivo($newData['periodo']);
+                }
                 call_user_func_array([$controllerInstance, $action], $newData);
                 die();
             }
         }
         // http_response_code(404);
-        require 'Erro404.php';
+        require ERRO404;
         die();
     }
     

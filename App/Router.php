@@ -267,17 +267,19 @@ abstract class Router {
         ];
         
         $routes['Aluno aulas'] = [
-            'router' => '/aluno/frequencia',
+            'router' => '/aluno/frequencia/p/[0-9]+',
             'controller' => 'Aluno\\AlunoController',
             'action' => 'Aulas',
-            'method' => ['GET']
+            'method' => ['GET'],
+            'params' => ['periodo']
         ];
         
         $routes['Aluno notas'] = [
-            'router' => '/aluno/boletim',
+            'router' => '/aluno/boletim/p/[0-9]+',
             'controller' => 'Aluno\\AlunoController',
             'action' => 'Notas',
-            'method' => ['GET']
+            'method' => ['GET'],
+            'params' => ['periodo']
         ];
 
         $this->routes = array_merge($this->routes, $routes);
