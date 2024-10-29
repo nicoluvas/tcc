@@ -114,11 +114,14 @@ class DocenteGerenciamento extends Model {
                 SET
                     inicio = :inicio,
                     fim = :fim,
-                    inicio_ferias = :inicio_ferias";
+                    inicio_ferias = :inicioferias
+                WHERE
+                    cd_periodo_letivo = :periodo";
         $params = [
-            'inicio' => $inicio_ferias,
+            'inicio' => $inicio_periodo,
             'fim' => $fim_periodo,
-            'inicio_ferias' => $inicio_ferias
+            'inicioferias' => $inicio_ferias,
+            'periodo' => ID_PERIODO_LETIVO
         ];
         $this->executeStatement($sql, $params);
         $this->CadastrarNotas();

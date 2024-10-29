@@ -166,4 +166,8 @@ class Aluno extends Model {
         $media_final = $this->executeStatement($sql, ['id_periodo' => ID_PERIODO_LETIVO, 'id_matricula' => $_SESSION['logged']['id'], 'id_materia' => $materia])->fetch()->media_final;
         return (object) ['cd_materia' => $nota[0]->id_materia, 'nm_materia' => $nota[0]->nm_materia, 'trabalho' => $nota[0]->valor_nota, 'prova' => $nota[1]->valor_nota, 'unidade' => $unidade, 'media_final' => $media_final];
     }
+
+    public function AnosEstudados() {
+        return $this->executeStatement('SELECT id_periodo_letivo, inicio FROM tb_periodo_letivo INNER JOIN tb_matricula ON cd_periodo_letivo = id_periodo_letivo WHERE id_aluno = :aluno AND inicio is not null', ['aluno' => $_SESSION['logged']['id']])->fetchAll();
+    }
 }

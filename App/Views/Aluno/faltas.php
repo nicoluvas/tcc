@@ -5,10 +5,6 @@
 <div class="container">
     <?php
         foreach ($this->faltas as $data => $faltas):
-            $a = new \stdClass;
-            $a->nm_materia = 'teste';
-            $a->cd_materia = 3;
-            $faltas[] = $a;
             if (Tools::isAjax()) {
                 if ($_GET['materia'] != '' && 0==sizeof(array_filter($faltas, function ($falta) {
                     if ($falta->cd_materia != $_GET['materia']) return false;

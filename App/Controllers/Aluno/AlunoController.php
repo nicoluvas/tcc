@@ -20,7 +20,11 @@ class AlunoController extends Controller {
         }
     }
     
+    protected $anos;
     public function Home() {
+        $Aluno = new Aluno();
+        $this->anos = $Aluno->AnosEstudados();
+
         $this->render('Home', 'AlunoLayout', 'Aluno');
     }
 
