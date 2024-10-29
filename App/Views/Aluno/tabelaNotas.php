@@ -49,7 +49,8 @@ thead {
 td {
     text-align: center;
     padding: 0.5rem; 
-    font-size: 1rem; 
+    font-size: 1vw; 
+
 }
 
 tbody>tr:hover {
