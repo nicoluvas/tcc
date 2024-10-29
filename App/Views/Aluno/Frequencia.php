@@ -21,9 +21,9 @@
 <div class="frequencia">
     <?php $this->renderView('tabelaFrequencia', 'Aluno'); ?>
 </div>
-<div class="faltas">
+<!-- <div class="faltas">
     <?php $this->renderView('faltas', 'Aluno'); ?>
-</div>
+</div> -->
 <script>
     $('select#materia, select#unidade').on('change', function () {
         console.log($(this).val())

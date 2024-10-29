@@ -37,25 +37,22 @@
 table {
     border: 1px solid var(--shadow);
     border-radius: .5rem;
-    padding: .5rem;
+    width: 100%; 
 }
 
 thead {
-    font-size: 2rem;
-    font-weight: 600;
-    padding: .5rem;
-}
-
-thead>tr>td {
-    text-align: center;
     white-space: nowrap;
     background-color: var(--secondary);
-    padding: 1rem;
+    font-weight: 600;
 }
 
-tbody>tr>td {
+td {
     text-align: center;
-    border-bottom: 1px var(--shadow) solid;
-    font-size: 1.5rem;
+    padding: 0.5rem; 
+    font-size: 1rem; 
+}
+
+tbody>tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 </style>
