@@ -51,6 +51,18 @@ img {
 select {
     background-color: var(--accent);
 }
+
+.aluno-dir {
+    max-width: 40vw;
+}
+
+#liao {
+
+}
+.girado {
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
 </style>
 <html class="lexend" lang="pt-br">
 
@@ -82,7 +94,7 @@ select {
                 Bem vindo(a) <?= $_SESSION['logged']['nome'] ?>! 👋
             </p>
 
-            <a id="sair" href="/logout">
+            <a id="sair" href="/logout" onClick="">
                 <i class="bi bi-box-arrow-left"></i>
                 Sair
             </a>
@@ -93,7 +105,7 @@ select {
     
     <main>
         <div class="aluno-esq">
-            <img src="/assets/images/admin/B.png" alt="">
+            <img id="liao" class="" src="/assets/images/admin/B.png" alt="">
         </div>
         <div class="aluno-dir">
         <?php
@@ -102,5 +114,4 @@ select {
         </div>
     </main>
 </body>
-
 </html>
