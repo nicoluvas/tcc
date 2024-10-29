@@ -28,18 +28,25 @@ class AlunoController extends Controller {
         $this->render('Home', 'AlunoLayout', 'Aluno');
     }
 
-    public function Aulas() {
+    public function Aulas($periodo) {
         $Aluno = new Aluno();
+        $this->anos = $Aluno->AnosEstudados();
+        if (empty(array_filter($this->anos, function($ano) use ($periodo) {
+            return $ano->id_periodo_letivo == $periodo;
+        }))) {
+            require_once ERRO404;
+            die();
+        }
 
-        $this->materias = $Aluno->GetMaterias();
-        $aux = $Aluno->GetFaltas($_GET['unidade']??UNIDADE);
+        $this->materias = $Aluno->GetMaterias($periodo);
+        $aux = $Aluno->GetFaltas($_GET['unidade']??UNIDADE, $periodo);
 
         foreach ($aux as $falta) {
             $this->faltas[$falta->dt_aula][] = $falta;
         }
 
         foreach ($this->materias as $materia) {
-            $this->frequeciaMaterias[$materia->cd_materia] = $Aluno->GetFrequenciaMateria($materia->cd_materia, $_GET['unidade']??UNIDADE);
+            $this->frequeciaMaterias[$materia->cd_materia] = $Aluno->GetFrequenciaMateria($materia->cd_materia, $_GET['unidade']??UNIDADE, $periodo);
             $this->frequeciaMaterias[$materia->cd_materia]->cd_materia = $materia->cd_materia;
         }
         if (!Tools::isAjax()){
@@ -56,13 +63,13 @@ class AlunoController extends Controller {
         echo json_encode(['frequencia' => $frequencia, 'faltas' => $faltas]);
     }
 
-    public function Notas() {
+    public function Notas($periodo) {
         $Aluno = new Aluno();
 
-        $this->materias = $Aluno->GetMaterias();
+        $this->materias = $Aluno->GetMaterias($periodo);
         
         foreach ($this->materias as $materia) {
-            $this->notas[] = $Aluno->GetNotas($materia->cd_materia, $_GET['unidade']??UNIDADE);
+            $this->notas[] = $Aluno->GetNotas($materia->cd_materia, $_GET['unidade']??UNIDADE, $periodo);
         }
         if (!Tools::isAjax()){
             $this->render('Notas', 'AlunoLayout', 'Aluno');

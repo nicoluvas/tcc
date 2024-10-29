@@ -26,7 +26,7 @@
         console.log($(this).val())
 
         $.ajax({
-            'url': '/aluno/boletim',
+            'url': '/aluno/boletim/p/<?= ID_PERIODO_LETIVO ?>',
             'type': 'GET',
             'dataType': 'json',
             'data': {'materia': $('select#materia').val(), 'unidade': $('select#unidade').val()}

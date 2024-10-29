@@ -10,9 +10,9 @@
 </select>
 <select name="unidade" id="unidade">
     <?php
-        for ($i=1;$i<=UNIDADE;$i++):
+        for ($i=1;$i<=(defined('UNIDADE')?UNIDADE:3);$i++):
             ?>
-                <option value="<?= $i ?>" <?= $i==UNIDADE?'selected':'' ?>>Unidade <?= $i ?></option>
+                <option value="<?= $i ?>" <?= defined('UNIDADE')?($i==UNIDADE?'selected':''):'' ?>>Unidade <?= $i ?></option>
             <?php
         endfor;
     ?>
@@ -29,7 +29,7 @@
         console.log($(this).val())
 
         $.ajax({
-            'url': '/aluno/frequencia',
+            'url': '/aluno/frequencia/p/<?= ID_PERIODO_LETIVO ?>',
             'type': 'GET',
             'dataType': 'json',
             'data': {'materia': $('select#materia').val(), 'unidade': $('select#unidade').val()}
