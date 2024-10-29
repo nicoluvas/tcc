@@ -7,9 +7,13 @@ use App\Tools\Tools;
 class DocenteAluno extends Model {
     public function CadastrarAluno() {
         try {
-            if ($this->executeStatement('SELECT cpf_aluno from tb_aluno where cpf_aluno = :cpf', ['cpf' => $_POST['cpf']])->fetch()) {
-                echo json_encode(['ok' => false, 'msg' => 'CPF já cadastrado']);
-                die();
+            $results = $this->executeStatement('SELECT cpf_aluno from tb_aluno')->fetchAll();
+            Tools::decryptRecursive($results);
+            foreach ($results as $result) {
+                if ($result->cpf_aluno == $_POST['cpf']) {
+                    echo json_encode(['ok' => false, 'msg' => 'CPF já cadastrado']);
+                    die();
+                }
             }
             $this->db->beginTransaction();
             $sql = "INSERT INTO
@@ -111,8 +115,9 @@ class DocenteAluno extends Model {
                     cd_aluno = :id AND
                     tb_matricula.id_periodo_letivo = :periodo AND
                     st_matricula = 'A'";
-        $aluno = $this->executeStatement($sql, ['id' => $idaluno, 'periodo' => ID_PERIODO_LETIVO]);
-        return $aluno->fetch();
+        $aluno = $this->executeStatement($sql, ['id' => $idaluno, 'periodo' => ID_PERIODO_LETIVO])->fetch();
+        Tools::decryptRecursive($aluno);
+        return $aluno;
     }
     
     public function GetAlunosGeral() {
@@ -138,8 +143,9 @@ class DocenteAluno extends Model {
                     st_matricula = 'A'
                 ORDER BY
                     id_turma, nome_aluno";
-        $aluno = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO]);
-        return $aluno->fetchAll();
+        $aluno = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO])->fetchAll();
+        Tools::decryptRecursive($aluno);
+        return $aluno;
     }
 
     public function GetAlunosTurma($turma) {
@@ -166,16 +172,21 @@ class DocenteAluno extends Model {
                     st_matricula = 'A'
                 ORDER BY
                     nome_aluno";
-        $aluno = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO, 'turma' => $turma]);
-        return $aluno->fetchAll();
+        $aluno = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO, 'turma' => $turma])->fetchAll();
+        Tools::decryptRecursive($aluno);
+        return $aluno;
     }
 
     public function AtualizarAluno($idaluno) {
         try {
             if ($this->executeStatement('SELECT cpf_aluno from tb_aluno where cd_aluno = :aluno', ['aluno' => $idaluno])->fetch()->cpf_aluno != $_POST['cpf']) {
-                if ($this->executeStatement('SELECT cpf_aluno from tb_aluno where cpf_aluno = :cpf', ['cpf' => $_POST['cpf']])) {
-                    echo json_encode(['ok' => false, 'msg' => 'CPF já cadastrado']);
-                    die();
+                $results = $this->executeStatement('SELECT cpf_aluno from tb_aluno WHERE cd_aluno = :aluno', ['aluno' => $idaluno])->fetchAll();
+                Tools::decryptRecursive($results);
+                foreach ($results as $result) {
+                    if ($result->cpf_aluno == $_POST['cpf']) {
+                        echo json_encode(['ok' => false, 'msg' => 'CPF já cadastrado']);
+                        die();
+                    }
                 }
             }
             $this->db->beginTransaction();

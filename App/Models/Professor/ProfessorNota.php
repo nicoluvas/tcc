@@ -2,11 +2,14 @@
 
 namespace App\Models\Professor;
 use Core\Model\Model;
+use App\Tools\Tools;
 
 class ProfessorNota extends Model {
     public function NotasAluno($aluno, $materia) {
         $aluno_info = $this->executeStatement('SELECT * FROM tb_aluno WHERE cd_aluno = ?', [$aluno])->fetch();
+        Tools::decryptRecursive($aluno_info);
         $materia_info = $this->executeStatement('SELECT * FROM tb_materia WHERE cd_materia = ?', [$materia])->fetch();
+        Tools::decryptRecursive($materia_info);
         
         $sql = "SELECT
                     *

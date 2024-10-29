@@ -3,11 +3,13 @@
 namespace App\Models\Professor;
 use Core\Model\Model;
 use stdClass;
+use App\Tools\Tools;
 
 class ProfessorAlunos extends Model {
     public function NotasFrequenciaAluno($turma, $idaluno, $materia, $unidade) {
         $aluno = new stdClass;
         $aluno->nome_aluno = $this->executeStatement('SELECT nome_aluno FROM tb_aluno WHERE cd_aluno = :cd_aluno', ['cd_aluno' => $idaluno])->fetch()->nome_aluno;
+        Tools::decryptRecursive($aluno);
         
         $sql = "SELECT 
                     1- (SELECT 

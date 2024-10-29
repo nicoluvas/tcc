@@ -7,9 +7,13 @@ use App\Tools\Tools;
 class DocenteDocente extends Model {
     public function CadastrarDocente() {
         try {
-            if ($this->executeStatement('SELECT nome_docente from tb_docente where cpf_docente = :cpf or email_docente = :email', ['cpf' => $_POST['cpf'], 'email' => $_POST['email']])->fetch()) {
-                echo json_encode(['ok' => false, 'msg' => 'CPF ou email já cadastrado']);
-                die();
+            $results = $this->executeStatement('SELECT cpf_docente from tb_docente')->fetchAll();
+            Tools::decryptRecursive($results);
+            foreach ($results as $result) {
+                if ($result->cpf_docente == $_POST['cpf']) {
+                    echo json_encode(['ok' => false, 'msg' => 'CPF já cadastrado']);
+                    die();
+                }
             }
             $this->db->beginTransaction();
             $sql = "INSERT INTO
@@ -62,7 +66,9 @@ class DocenteDocente extends Model {
                     st_docente like 'A'
                 ORDER BY
                     id_cargo, nome_docente";
-        return $this->executeStatement($sql)->fetchAll();
+        $result = $this->executeStatement($sql)->fetchAll();
+        Tools::decryptRecursive($result);
+        return $result;
     }
 
     public function GetDocente($iddocente) {
@@ -76,18 +82,25 @@ class DocenteDocente extends Model {
                         cd_endereco = id_endereco
                 WHERE
                     cd_docente = :docente";
-        return $this->executeStatement($sql, ['docente' => $iddocente])->fetch();
+        $result = $this->executeStatement($sql, ['docente' => $iddocente])->fetch();
+        Tools::decryptRecursive($result);
+        return $result;
     }
 
     public function AtualizarDocente($iddocente) {
         try {
             $smt = $this->executeStatement('SELECT * FROM tb_docente WHERE cd_docente = :docente', ['docente' => $iddocente])->fetch();
+            Tools::decryptRecursive($smt);
             $email = $smt->email_docente;
             $cpf = $smt->cpf_docente;
             if ($email != $_POST['email'] || $cpf != $_POST['cpf']) {
-                if ($this->executeStatement('SELECT * FROM tb_docente WHERE cpf_docente = :cpf OR email_docente = :email', ['cpf' => $_POST['cpf'], 'email' => $_POST['email']])) {
-                    echo json_encode(['ok' => false, 'msg' => 'CPF ou EMAIL já cadastrado']);
-                    die();
+                $results = $this->executeStatement('SELECT cpf_docente from tb_docente WHERE cd_docente = :docente', ['docente' => $iddocente])->fetchAll();
+                Tools::decryptRecursive($results);
+                foreach ($results as $result) {
+                    if ($result->cpf_docente == $_POST['cpf'] || $result->email_docente == $_POST['email']) {
+                        echo json_encode(['ok' => false, 'msg' => 'CPF ou EMAIL já cadastrado']);
+                        die();
+                    }
                 }
             }
             $this->db->beginTransaction();
@@ -196,7 +209,9 @@ class DocenteDocente extends Model {
                     tb_docente
                 WHERE
                     id_cargo = 2";
-        return $this->executeStatement($sql)->fetchAll();
+        $result = $this->executeStatement($sql)->fetchAll();
+        Tools::decryptRecursive($result);
+        return $result;
     }
 
     public function AlterarSenha($cd) {

@@ -14,10 +14,12 @@ abstract class Model {
     protected function executeStatement($sql, $params=[]){
         $query = $this->db->prepare($sql);
 
-        foreach ($params as $key => $value) {
-            $v = ['nome', 'telefone', 'cpf', 'rg', 'email', 'nascimento', 'uf', 'cidade', 'bairro', 'logradouro', 'numero', 'complemento', 'cep'];
-            if (!Tools::startsWithAny($key, $v)) continue;
-            $params[$key] = Tools::encrypt($value);
+        if (!empty($params) && (str_starts_with($sql, 'INSERT') || str_starts_with($sql, 'UPDATE'))) {
+            foreach ($params as $key => $value) {
+                $v = ['nome', 'telefone', 'cpf', 'rg', 'email', 'nascimento', 'uf', 'cidade', 'bairro', 'logradouro', 'numero', 'complemento', 'cep'];
+                if (!Tools::startsWithAny($key, $v)) continue;
+                $params[$key] = Tools::encrypt($value);
+            }
         }
 
         $query->execute($params);

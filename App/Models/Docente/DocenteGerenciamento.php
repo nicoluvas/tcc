@@ -3,6 +3,7 @@
 namespace App\Models\Docente;
 use Core\Model\Model;
 use App\Models\Docente\DocenteAluno;
+use App\Tools\Tools;
 
 class DocenteGerenciamento extends Model {
     public function MediaNotas() {
@@ -186,7 +187,9 @@ class DocenteGerenciamento extends Model {
         $params = [
             'periodo' => ID_PERIODO_LETIVO
         ];
-        return $this->executeStatement($sql, $params)->fetchAll();
+        $result = $this->executeStatement($sql, $params)->fetchAll();
+        Tools::decryptRecursive($result);
+        return $result;
     }
 
     public function JustificarFalta($aluno, $periodo, $aula) {
