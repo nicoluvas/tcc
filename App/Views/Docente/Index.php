@@ -76,8 +76,8 @@
 ?>
 
 <div class="solicitacoes">
-    <hr style="color:var(--shadow); margin:0;padding:0;">
-    <h2>Solicitações de contato</h2>
+    <hr style="color:var(--shadow); margin:5rem 0 2rem 0;padding:0;background-color:var(--shadow);">
+    <h2>Solicitações de contato:</h2>
     <?php
         foreach ($this->solicitacoes as $solicitacao):
             ?>

@@ -24,7 +24,7 @@
         <!-- <a class="logo" href="/"><img class="logo" src="\assets\images\index\logobhas.png"></a> -->
         <a class="logo t-shadow" href="/">Bhaskara</a>
         <a class="hrefs" id="btn0" href="/docente/home"><i
-                class="bi bi-grid-1x2-fill"></i><span>Resenha</span></a>
+                class="bi bi-grid-1x2-fill"></i><span>Estatística</span></a>
         <a class="hrefs" id="btn1" href="/docente/home?tab=gerenciamento"><i
                 class="bi-gear-wide-connected"></i><span>Gerenciar</span></a>
         <a class="hrefs" id="btn2" href="/docente/home?tab=dicentes"><i
