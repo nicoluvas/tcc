@@ -23,6 +23,8 @@
     <div class="esquerda shadow" id="">
         <!-- <a class="logo" href="/"><img class="logo" src="\assets\images\index\logobhas.png"></a> -->
         <a class="logo t-shadow" href="/">Bhaskara</a>
+        <a class="hrefs" id="btn0" href="/docente/home"><i
+                class="bi bi-grid-1x2-fill"></i><span>Resenha</span></a>
         <a class="hrefs" id="btn1" href="/docente/home?tab=gerenciamento"><i
                 class="bi-gear-wide-connected"></i><span>Gerenciar</span></a>
         <a class="hrefs" id="btn2" href="/docente/home?tab=dicentes"><i
@@ -101,7 +103,7 @@ a>span {
     position: absolute;
     z-index: -1;
     right: 0;
-    bottom:0;
+    bottom: 0;
     height: 80vh;
     filter: blur(5px);
 }
@@ -120,8 +122,8 @@ a>span {
 }
 
 .selects {
-    display:flex;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
     background-color: var(--background-alt);
     border-radius: 1rem;
 }

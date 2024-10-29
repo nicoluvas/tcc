@@ -16,7 +16,7 @@ nav {
     padding: .5rem;
 }
 
-nav > p {
+nav>p {
     color: var(--text-inv);
 }
 
@@ -25,7 +25,8 @@ body {
     height: 100vh;
 }
 
-#sair, #voltar {
+#sair,
+#voltar {
     color: var(--text-inv);
     background-color: var(--primary-d);
     padding: 1rem;
@@ -33,15 +34,15 @@ body {
 }
 
 main {
-    display:flex;
-    align-items:center;
-    justify-content:space-around;
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 90%;
     width: 100%;
 }
 
 img {
-    max-height:80vh;
+    max-height: 80vh;
 }
 
 .aluno-dir>div {
@@ -56,9 +57,12 @@ select {
     max-width: 40vw;
 }
 
-#liao {
-
+@media screen and (max-width: 1024px) {
+    .aluno-esq {
+        display: none;
+    }
 }
+
 .girado {
     transform-style: preserve-3d;
     transform: rotateY(180deg);
@@ -82,12 +86,12 @@ select {
 <body>
     <header>
         <nav>
-        <?php
+            <?php
         if ($_SERVER['REQUEST_URI'] != '/aluno/home') {
             ?>
 
-    <a style="" id="voltar" href="/aluno/home">« Voltar</a>
-    <?php
+            <a style="" id="voltar" href="/aluno/home">« Voltar</a>
+            <?php
         }
     ?>
             <p>
@@ -102,16 +106,17 @@ select {
     </header>
 
 
-    
+
     <main>
         <div class="aluno-esq">
             <img id="liao" class="" src="/assets/images/admin/B.png" alt="">
         </div>
         <div class="aluno-dir">
-        <?php
+            <?php
             $this->renderView($this->page->view, $this->page->viewDirectory);
         ?>
         </div>
     </main>
 </body>
+
 </html>
