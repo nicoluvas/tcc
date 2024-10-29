@@ -17,6 +17,12 @@
 <body>
     <header>
         Bem vindo <?= $_SESSION['logged']['nome'] ?>!
+        <div class="nav-dir">
+            <a id="sair" href="/logout">
+                <i class="bi bi-box-arrow-left"></i>
+                Sair
+            </a>
+        </div>
     </header>
     <?php
         if ($_SERVER['REQUEST_URI'] != '/aluno/home') {
