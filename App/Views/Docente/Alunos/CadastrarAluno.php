@@ -1,5 +1,5 @@
 <?php
-    if (UNIDADE > 1) {
+    if (defined('UNIDADE') && UNIDADE > 1) {
         ?>
             <h2>Não é permitido Cadatrar Alunos Após a Primeira Unidade</h2>
             <style>
