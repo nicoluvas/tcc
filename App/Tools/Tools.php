@@ -11,6 +11,49 @@ abstract class Tools {
                            0, $length_of_string);
     }
 
+    public static function encrypt($data) {
+        $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc'));
+        $encrypted = openssl_encrypt($data, 'aes-256-cbc', $_ENV['CRYPT_KEY'], 0, $iv);
+        return base64_encode($encrypted . '::' . $iv);
+    }
+
+    public static function decrypt($data) {
+        list($encryptedData, $iv) = explode('::', base64_decode($data), 2);
+	    return openssl_decrypt($encryptedData, 'aes-256-cbc', $_ENV['CRYPT_KEY'], 0, $iv);
+    }
+
+    public static function decryptRecursive(&$input) {
+        $keysToDecrypt = ['nome', 'telefone', 'cpf', 'rg', 'email', 'nascimento', 'uf', 'cidade', 'bairro', 'logradouro', 'numero', 'complemento', 'cep'];
+        if (is_object($input)) {
+            foreach ($input as $key => $value) {
+                if (!Tools::startsWithAny($key, $keysToDecrypt)) continue;
+                $input->$key = Tools::decrypt($value);
+            }
+            // Verifica recursão em propriedades que são arrays
+            foreach ($input as $key => $value) {
+                if (is_array($value)) {
+                    Tools::decryptRecursive($input->$key);
+                }
+            }
+        }
+        
+        if (is_array($input)) {
+            foreach ($input as &$value) {
+                Tools::decryptRecursive($value);
+            }
+        }
+    }
+
+    public static function startsWithAny($string, $words) {
+        foreach ($words as $word) {
+            // Verifica se a string começa com a palavra
+            if (strpos($string, $word) === 0) {
+                return true; // Retorna verdadeiro se a string começar com uma das palavras
+            }
+        }
+        return false; // Retorna falso se não começar com nenhuma das palavras
+    }
+
     public static function emPeriodoLetivo($periodo=null) {
         if (null !== $periodo) {
             $sql = "SELECT * FROM tb_periodo_letivo WHERE cd_periodo_letivo = :periodo ORDER BY cd_periodo_letivo DESC LIMIT 1";

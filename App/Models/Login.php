@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use Core\Model\Model;
+use App\Tools\Tools;
 
 class Login extends Model {
     public function LoginAuth($codigo_acesso, $senha){
@@ -34,18 +35,18 @@ class Login extends Model {
                     senha_aluno,
                     id_cargo
                 FROM
-                    tb_aluno
-                WHERE
-                    rg_aluno = :rg
-                ";
+                    tb_aluno";
 
-        $query = $this->executeStatement($sql, ['rg' => $rg]);
-        if  ($query->rowCount() != 1) return False;
+        $query = $this->executeStatement($sql);
+        if  ($query->rowCount() == 0) return False;
 
-        $result = $query->fetch();
-        if (!password_verify($senha, $result->senha_aluno)) return False;
+        $results = $query->fetchAll();
+        Tools::decryptRecursive($result);
+        foreach ($results as $result) {
+            if (password_verify($senha, $result->senha_aluno) && $result->rg == $rg) return [$result, 'aluno'];
+        }
 
-        return [$result, 'aluno'];
+        return False;
     }
 
     private function LoginAuthDocente($email_docente, $senha) {
@@ -61,17 +62,19 @@ class Login extends Model {
                 FROM
                     tb_docente
                 WHERE
-                    email_docente = :email_docente AND
                     st_docente LIKE 'A'
                 ";
 
-        $query = $this->executeStatement($sql, ['email_docente' => $email_docente]);
-        if  ($query->rowCount() != 1) return False;
+        $query = $this->executeStatement($sql);
+        if  ($query->rowCount() == 0) return False;
 
-        $result = $query->fetch();
-        if (!password_verify($senha, $result->senha_docente)) return False;
+        $results = $query->fetchAll();
+        Tools::decryptRecursive($result);
+        foreach ($results as $result) {
+            if (password_verify($senha, $result->senha_docente) && $result->email == $email_docente) return [$result, $result->id_cargo==2?'professor':'docente'];
+        }
 
-        return [$result, $result->id_cargo==2?'professor':'docente'];
+        return False;
     }
 
     private function SaveUserInfo($user, $type) {

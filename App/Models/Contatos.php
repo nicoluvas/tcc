@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use Core\Model\Model;
+use App\Tools\Tools;
 
 class Contatos extends Model {
     public function SolicitarContato($nome, $telefone, $email) {
@@ -21,7 +22,9 @@ class Contatos extends Model {
                     tb_contato
                 WHERE
                     st_contato LIKE 'A'";
-        return $this->executeStatement($sql)->fetchAll();
+        $result = $this->executeStatement($sql)->fetchAll();
+        Tools::decryptRecursive($result);
+        return $result;
     }
 
     public function FecharContato($cd) {
