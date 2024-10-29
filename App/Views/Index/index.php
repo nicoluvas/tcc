@@ -9,6 +9,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="/assets/js/index/index.js" type="module" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 
@@ -80,25 +83,42 @@
                     <h2>• Solicite contato.</h2>
                     <p style="opacity: 0.8;">Assim podendo receber novidades recentes!</p>
                 </div>
-                <form action="" class="form">
+                <form action="" class="form" style="border-bottom-left-radius: 1rem;border-bottom-right-radius: 1rem;">
                     <div class="contato-info">
                         <label for="name" class="form__label">Nome</label>
-                        <input type="text" placeholder="nome" class="form__input" id="name" />
+                        <input type="text" placeholder="nome" class="form__input" id="name" required name="nome"/>
                     </div>
 
                     <div class="contato-info">
                         <label for="name" class="form__label">Telefone</label>
-                        <input type="text" placeholder="telefone" class="form__input" id="name" />
+                        <input type="text" placeholder="telefone" class="form__input" id="name" required name="telefone"/>
                     </div>
 
                     <div class="contato-info">
                         <label for="email" class="form__label">Email</label>
-                        <input type="email" placeholder="Email" class="form__input" id="email" />
+                        <input type="email" placeholder="Email" class="form__input" id="email" required name="email"/>
                     </div>
 
+                    <span id="retorno" style="height: 1.5rem;"></span>
+                    <input class="lexend" id="inpute" type="submit" value="Enviar">
                 </form>
-                <input class="lexend" id="inpute" type="submit" value="Enviar">
-                <span class="retorno">Contato solicitado! Aguarde o chamado de Deus!</span>
+                <script>
+                    $('form').on('submit', function (e) {
+                        e.preventDefault()
+
+                        $.ajax({
+                            'url': '/solicitar-contato',
+                            'type': 'post',
+                            'data': $(this).serialize(),
+                            'dataType': 'json'
+                        })
+                        .done(data => {
+                            $('form span').text(data.msg)
+                            $(this).trigger('reset')
+                        })
+                        .catch(a => console.log(a))
+                    })
+                </script>
             </div>
         </section>
         <div class="waves">

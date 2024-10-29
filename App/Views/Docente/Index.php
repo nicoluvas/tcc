@@ -37,3 +37,33 @@
         <?php
     }
 ?>
+
+<div class="solicitacoes">
+    <h2>Solicitações de contato</h2>
+    <?php
+        foreach ($this->solicitacoes as $solicitacao):
+            ?>
+                <div class="solicitacao" id="<?= $solicitacao->cd_contato ?>">
+                    <p><?= $solicitacao->nome_contato ?></p>
+                    <p><?= $solicitacao->telefone_contato ?></p>
+                    <p><?= $solicitacao->email_contato ?></p>
+                    <button class="fechar-contato" id="<?= $solicitacao->cd_contato ?>">Fechar Contato</button>
+                </div>
+            <?php
+        endforeach;
+    ?>
+    <script>
+        $('button.fechar-contato').on('click', function () {
+            var id = $(this).attr('id')
+            $.ajax({
+                'url': '/fechar-contato',
+                'type': 'POST',
+                'data': {contato: id},
+                'dataType': 'json'
+            })
+            .done((data) => {
+                $(`.solicitacao#${$(this).attr('id')}`).remove()
+            })
+        })
+    </script>
+</div>

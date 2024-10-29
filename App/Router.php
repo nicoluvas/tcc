@@ -56,6 +56,18 @@ abstract class Router {
             'action' => 'Metodo',
             'method' => ['GET']
         ];
+        $routes['solicitar contato'] = [
+            'router' => '/solicitar-contato',
+            'controller' => 'Index\\IndexController',
+            'action' => 'SolicitarContato',
+            'method' => ['POST']
+        ];
+        $routes['fechar contato'] = [
+            'router' => '/fechar-contato',
+            'controller' => 'Docente\\DocenteController',
+            'action' => 'FecharContato',
+            'method' => ['POST']
+        ];
 
         $this->DocenteRoutes();
         $this->ProfessorRoutes();

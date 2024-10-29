@@ -2,9 +2,9 @@
 
 namespace App\Controllers\Index;
 
-use App\Models\Login as ModelsLogin;
 use Core\Controller\Controller;
 use App\Models\Login;
+use App\Models\Contatos;
 
 class IndexController extends Controller {
     public function index(){
@@ -26,7 +26,11 @@ class IndexController extends Controller {
         $this->renderView('metodo', 'Metodo');
     }
 
-    /////
+    public function SolicitarContato() {
+        $Contatos = new Contatos();
+        $Contatos->SolicitarContato($_POST['nome'], $_POST['telefone'], $_POST['email']);
+        echo json_encode(['msg' => 'Contato Solicitado!']);
+    }
 
     public function LoginAuth() {
         if (empty($_POST) || !(isset($_POST['codigo']) && isset($_POST['senha']))) {
