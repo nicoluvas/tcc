@@ -4,6 +4,7 @@ namespace App\Controllers\Docente;
 use Core\Controller\Controller;
 use App\Models\Docente\DocenteGerenciamento;
 use App\Models\Docente\DocenteDocente;
+use App\Tools\Tools;
 
 class DocenteGerenciamentoController extends Controller {
     protected $professores;
@@ -72,11 +73,13 @@ class DocenteGerenciamentoController extends Controller {
     public function Faltas() {
         $DocenteGerenciamento = new DocenteGerenciamento();
 
-        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            $this->faltas = $DocenteGerenciamento->GetFaltas();
-            $this->render('faltas', 'DocenteLayout', 'Docente/Gerenciamento');
+        $this->faltas = $DocenteGerenciamento->GetFaltas($_GET['dia']??date('Y-m-d', strtotime('-3 days')));
+        if (Tools::isAjax()) {
+            $this->renderView('faltasFiltradas', 'Docente/Gerenciamento');
             die();
         }
+        $this->render('faltas', 'DocenteLayout', 'Docente/Gerenciamento');
+        die();
     }
 
     public function JustificarFalta() {

@@ -155,14 +155,17 @@ class DocenteGerenciamento extends Model {
         }
     }
 
-    public function GetFaltas() {
+    public function GetFaltas($dia) {
         $sql =  "SELECT
+                    cd_aluno,
                     nome_aluno,
                     cd_aluno,
                     nm_materia,
                     dt_aula,
                     tb_aula.id_periodo_letivo,
-                    id_aula
+                    id_aula,
+                    tb_aula.id_turma,
+                    id_cargo
                 FROM
                     tb_aluno
                 INNER JOIN
@@ -179,13 +182,15 @@ class DocenteGerenciamento extends Model {
                         cd_materia = id_materia
                 WHERE
                     tb_aula.id_periodo_letivo = :periodo AND
-                    st_falta = 'A'
+                    st_falta = 'A' AND
+                    dt_aula = :dia
                 GROUP BY
                     id_matricula, id_aula
                 ORDER BY
                     dt_aula DESC";
         $params = [
-            'periodo' => ID_PERIODO_LETIVO
+            'periodo' => ID_PERIODO_LETIVO,
+            'dia' => $dia
         ];
         $result = $this->executeStatement($sql, $params)->fetchAll();
         Tools::decryptRecursive($result);

@@ -46,16 +46,25 @@ abstract class Tools {
                 }
             }
             if ($ordenar) {
-                usort($input, function($a, $b) {
-                    // Verifica qual propriedade 'nome' usar com base na classe
-                    $nomeA = $a->nome_aluno ?? $a->nome_docente ?? $a->nome_responsavel;
-                    $nomeB = $b->nome_aluno ?? $b->nome_docente ?? $b->nome_responsavel;
-                
-                    return strcmp($nomeA, $nomeB);
-                });
-                usort($input, function($a, $b) {
-                    return strcmp($a->id_cargo!=1?$a->id_cargo:$a->id_turma, $b->id_cargo!=1?$b->id_cargo:$b->id_turma);
-                });
+                $grupos = [];
+                foreach ($input as $objeto) {
+                    $grupos[$objeto->id_cargo!=1?$objeto->id_cargo:$objeto->id_turma][] = $objeto;
+                }
+                // Ordenando os nomes dentro de cada grupo
+                foreach ($grupos as $cargo => $grupo) {
+                    usort($grupo, function($a, $b) {
+                        return strcmp($a->nome_aluno??$a->nome_docente, $b->nome_aluno??$b->nome_docente);
+                    });
+                    $grupos[$cargo] = $grupo;
+                }
+                // Mantendo a estrutura original do input
+                $resultado = [];
+                foreach ($grupos as $grupo) {
+                    foreach ($grupo as $objeto) {
+                        $resultado[] = $objeto; // Adiciona os objetos ordenados ao resultado
+                    }
+                }
+                $input = $resultado;
             }
         }
     }

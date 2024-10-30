@@ -1,30 +1,17 @@
-<?php
-
-    foreach ($this->faltas as $falta):
-        ?>
-            <div class="aluno" id="<?= $falta->cd_aluno ?>">
-                <p class="nome"><?= $falta->nome_aluno ?></p>
-                <p class="materia"><?= $falta->nm_materia ?></p>
-                <p class="data"><?= date_format(date_create($falta->dt_aula), 'd/m/Y') ?></p>
-                <button class="justificar" id="<?= $falta->cd_aluno ?>" periodo="<?= $falta->id_periodo_letivo ?>" aula="<?= $falta->id_aula ?>">Justificar</button>
-            </div>
-        <?php
-    endforeach;
-?>
+<input type="date" id="dia" max=<?= date('Y-m-d', strtotime('+1 day')) ?>>
+<div class="faltas">
+    <?php
+        $this->renderView('faltasFiltradas', 'Docente/Gerenciamento');
+    ?>
+</div>
 <script>
-    $('button.justificar').on('click', function () {
+    $('input#dia').on('change', function () {
         $.ajax({
-            'url': '/docente/gerenciamento/faltas/justificar',
-            'data': {'aluno': $(this).attr('id'), 'periodo': $(this).attr('periodo'), 'aula': $(this).attr('aula')},
-            'type': 'POST',
-            'dataType': 'json'
+            'url': '/docente/gerenciamento/faltas',
+            'type': 'GET',
+            'dataType': 'html',
+            'data': {'dia': $(this).val()}
         })
-        .done((data) => {
-            alert(data.msg)
-            $(`.aluno#${$(this).attr('id')}`).remove()
-        })
-        .catch(function (a) {
-            console.log(a)
-        })
+        .done(data => $('.faltas').html(data))
     })
 </script>
