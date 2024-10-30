@@ -6,6 +6,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: lexend;
 }
 
 nav {
@@ -23,6 +24,7 @@ nav>p {
 body {
     background-color: var(--background);
     height: 100vh;
+    background-color: #e5e5f7;
 }
 
 #sair,
@@ -37,8 +39,22 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 90%;
+    height: 100%;
     width: 100%;
+    overflow: hidden;
+
+    opacity: 1;
+    background-image: radial-gradient(var(--secondary) 1.7000000000000002px, transparent 1.7000000000000002px), radial-gradient(var(--shadow) 1.7000000000000002px, var(--background) 1.7000000000000002px);
+    background-size: 68px 68px;
+    background-position: 0 0, 34px 34px;
+    background-opacity: 0.1;
+}
+
+#ano {
+    font-size: 1.5rem;
+    font-weigth: 600;
+    background-color: var(--primary);
+    color: var(--text-inv);
 }
 
 img {
@@ -81,7 +97,7 @@ select {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="/assets/js/docente/docente.js" defer></script>
+    <script src="/assets/js/docente/docente.js" defer></script>
 </head>
 
 <body>
