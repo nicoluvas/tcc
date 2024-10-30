@@ -41,7 +41,7 @@ class Login extends Model {
         if  ($query->rowCount() == 0) return False;
 
         $results = $query->fetchAll();
-        Tools::decryptRecursive($result);
+        Tools::decryptRecursive($results);
         foreach ($results as $result) {
             if (password_verify($senha, $result->senha_aluno) && $result->rg == $rg) return [$result, 'aluno'];
         }
@@ -69,7 +69,7 @@ class Login extends Model {
         if  ($query->rowCount() == 0) return False;
 
         $results = $query->fetchAll();
-        Tools::decryptRecursive($result);
+        Tools::decryptRecursive($results);
         foreach ($results as $result) {
             if (password_verify($senha, $result->senha_docente) && $result->email == $email_docente) return [$result, $result->id_cargo==2?'professor':'docente'];
         }

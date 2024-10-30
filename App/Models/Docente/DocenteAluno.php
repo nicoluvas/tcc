@@ -35,10 +35,10 @@ class DocenteAluno extends Model {
             $sql = "INSERT INTO
                         tb_responsavel
                     VALUES
-                        (null, :nome, :tel, :cpf, :email)";
+                        (null, :nome, :telefone, :cpf, :email)";
             $params = [
                 'nome' => $_POST['nome_responsavel'],
-                'tel' => $_POST['telefone_responsavel'],
+                'telefone' => $_POST['telefone_responsavel'],
                 'cpf' => $_POST['cpf_responsavel'],
                 'email' => $_POST['email_responsavel']
             ];
@@ -49,13 +49,13 @@ class DocenteAluno extends Model {
             $sql = "INSERT INTO
                         tb_aluno
                     VALUES
-                        (null, :nome, :tel, :cpf, :rg, :nasc, :senha, default, :ende, 1, :resp, default)";
+                        (null, :nome, :telefone, :cpf, :rg, :nascimento, :senha, default, :ende, 1, :resp, default)";
             $params = [
                 'nome' => $_POST['nome'],
-                'tel' => $_POST['telefone'],
+                'telefone' => $_POST['telefone'],
                 'cpf' => $_POST['cpf'],
                 'rg' => $_POST['rg'],
-                'nasc' => $_POST['nascimento'],
+                'nascimento' => $_POST['nascimento'],
                 'senha' => password_hash($senha_inicial, PASSWORD_BCRYPT),
                 'ende' => $id_endereco,
                 'resp' => $id_responsavel
@@ -179,7 +179,7 @@ class DocenteAluno extends Model {
 
     public function AtualizarAluno($idaluno) {
         try {
-            if ($this->executeStatement('SELECT cpf_aluno from tb_aluno where cd_aluno = :aluno', ['aluno' => $idaluno])->fetch()->cpf_aluno != $_POST['cpf']) {
+            if (Tools::decrypt($this->executeStatement('SELECT cpf_aluno from tb_aluno where cd_aluno = :aluno', ['aluno' => $idaluno])->fetch()->cpf_aluno) != $_POST['cpf']) {
                 $results = $this->executeStatement('SELECT cpf_aluno from tb_aluno WHERE cd_aluno = :aluno', ['aluno' => $idaluno])->fetchAll();
                 Tools::decryptRecursive($results);
                 foreach ($results as $result) {
@@ -222,14 +222,14 @@ class DocenteAluno extends Model {
                         tb_responsavel
                     SET
                         nome_responsavel = :nome,
-                        telefone_responsavel = :tel,
+                        telefone_responsavel = :telefone,
                         cpf_responsavel = :cpf,
                         email_responsavel = :email
                     WHERE
                         cd_responsavel = :resp";
             $params = [
                 'nome' => $_POST['nome_responsavel'],
-                'tel' => $_POST['telefone_responsavel'],
+                'telefone' => $_POST['telefone_responsavel'],
                 'cpf' => $_POST['cpf_responsavel'],
                 'email' => $_POST['email_responsavel'],
                 'resp' => $id_responsavel
@@ -240,18 +240,18 @@ class DocenteAluno extends Model {
                         tb_aluno
                     SET
                         nome_aluno = :nome,
-                        telefone_aluno = :tel,
+                        telefone_aluno = :telefone,
                         cpf_aluno = :cpf,
                         rg_aluno = :rg,
-                        nascimento_aluno = :nasc
+                        nascimento_aluno = :nascimento
                     WHERE
                         cd_aluno = :aluno";
             $params = [
                 'nome' => $_POST['nome'],
-                'tel' => $_POST['telefone'],
+                'telefone' => $_POST['telefone'],
                 'cpf' => $_POST['cpf'],
                 'rg' => $_POST['rg'],
-                'nasc' => $_POST['nascimento'],
+                'nascimento' => $_POST['nascimento'],
                 'aluno' => $idaluno
             ];
             $this->executeStatement($sql, $params);

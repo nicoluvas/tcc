@@ -36,10 +36,10 @@ class DocenteDocente extends Model {
             $sql = "INSERT INTO
                         tb_docente
                     VALUES
-                        (null, :nome, :tel, :cpf, :rg, :email, :senha, default, null, default, :ende, :cargo)";
+                        (null, :nome, :telefone, :cpf, :rg, :email, :senha, default, null, default, :ende, :cargo)";
             $params = [
                 'nome' => $_POST['nome'],
-                'tel' => $_POST['telefone'],
+                'telefone' => $_POST['telefone'],
                 'cpf' => $_POST['cpf'],
                 'rg' => $_POST['rg'],
                 'email' => $_POST['email'],

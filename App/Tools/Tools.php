@@ -38,8 +38,24 @@ abstract class Tools {
         }
         
         if (is_array($input)) {
+            $ordenar = false;
             foreach ($input as &$value) {
                 Tools::decryptRecursive($value);
+                if (property_exists($value, 'cd_aluno') || property_exists($value, 'cd_docente')) {
+                    $ordenar = true;
+                }
+            }
+            if ($ordenar) {
+                usort($input, function($a, $b) {
+                    // Verifica qual propriedade 'nome' usar com base na classe
+                    $nomeA = $a->nome_aluno ?? $a->nome_docente ?? $a->nome_responsavel;
+                    $nomeB = $b->nome_aluno ?? $b->nome_docente ?? $b->nome_responsavel;
+                
+                    return strcmp($nomeA, $nomeB);
+                });
+                usort($input, function($a, $b) {
+                    return strcmp($a->id_cargo!=1?$a->id_cargo:$a->id_turma, $b->id_cargo!=1?$b->id_cargo:$b->id_turma);
+                });
             }
         }
     }

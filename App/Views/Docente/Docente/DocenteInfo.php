@@ -29,7 +29,7 @@
 
 
     <button type="button" id="cancelar" style="display: none">Cancelar</button>
-    <input type="submit" value="Atualizar" style="display: none" disabled/>
+    <input class="botoes" type="submit" value="Atualizar" style="display: none" disabled/>
     <p id="formretorno"></p>
 
     <!-- geral -->
