@@ -6,6 +6,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: lexend;
 }
 
 nav {
@@ -16,16 +17,18 @@ nav {
     padding: .5rem;
 }
 
-nav > p {
+nav>p {
     color: var(--text-inv);
 }
 
 body {
     background-color: var(--background);
     height: 100vh;
+    background-color: #e5e5f7;
 }
 
-#sair, #voltar {
+#sair,
+#voltar {
     color: var(--text-inv);
     background-color: var(--primary-d);
     padding: 1rem;
@@ -33,15 +36,29 @@ body {
 }
 
 main {
-    display:flex;
-    align-items:center;
-    justify-content:space-around;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     height: 100%;
     width: 100%;
+    overflow: hidden;
+
+    opacity: 1;
+    background-image: radial-gradient(var(--secondary) 1.7000000000000002px, transparent 1.7000000000000002px), radial-gradient(var(--shadow) 1.7000000000000002px, var(--background) 1.7000000000000002px);
+    background-size: 68px 68px;
+    background-position: 0 0, 34px 34px;
+    background-opacity: 0.1;
+}
+
+#ano {
+    font-size: 1.5rem;
+    font-weigth: 600;
+    background-color: var(--primary);
+    color: var(--text-inv);
 }
 
 img {
-    max-height:80vh;
+    max-height: 80vh;
 }
 
 .aluno-dir>div {
@@ -56,9 +73,12 @@ select {
     max-width: 40vw;
 }
 
-#liao {
-
+@media screen and (max-width: 1024px) {
+    .aluno-esq {
+        display: none;
+    }
 }
+
 .girado {
     transform-style: preserve-3d;
     transform: rotateY(180deg);
@@ -77,17 +97,18 @@ select {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/js/docente/docente.js" defer></script>
 </head>
 
 <body>
     <header>
         <nav>
-        <?php
+            <?php
         if ($_SERVER['REQUEST_URI'] != '/aluno/home') {
             ?>
 
-    <a style="" id="voltar" href="/aluno/home">« Voltar</a>
-    <?php
+            <a style="" id="voltar" href="/aluno/home">« Voltar</a>
+            <?php
         }
     ?>
             <p>
@@ -102,16 +123,17 @@ select {
     </header>
 
 
-    
-    <main>
+
+    <main id="oppacity-appear">
         <div class="aluno-esq">
             <img id="liao" class="" src="/assets/images/admin/B.png" alt="">
         </div>
-        <div class="aluno-dir">
-        <?php
+        <div class="aluno-dir" id="oppacity-appear">
+            <?php
             $this->renderView($this->page->view, $this->page->viewDirectory);
         ?>
         </div>
     </main>
 </body>
+
 </html>

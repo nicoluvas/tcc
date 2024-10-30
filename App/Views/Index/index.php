@@ -86,12 +86,12 @@
                 <form action="" class="form" style="border-bottom-left-radius: 1rem;border-bottom-right-radius: 1rem;">
                     <div class="contato-info">
                         <label for="name" class="form__label">Nome</label>
-                        <input type="text" placeholder="nome" class="form__input" id="name" required name="nome"/>
+                        <input type="text" placeholder="Nome" class="form__input" id="name" required name="nome"/>
                     </div>
 
                     <div class="contato-info">
                         <label for="name" class="form__label">Telefone</label>
-                        <input type="text" placeholder="telefone" class="form__input" id="name" required name="telefone"/>
+                        <input type="text" placeholder="Telefone" class="form__input" id="name" required name="telefone"/>
                     </div>
 
                     <div class="contato-info">
@@ -99,7 +99,7 @@
                         <input type="email" placeholder="Email" class="form__input" id="email" required name="email"/>
                     </div>
 
-                    <span id="retorno" style="height: 1.5rem;"></span>
+                    <span id="retorno" style="height: 1.5rem; text-align: center;"></span>
                     <input class="lexend" id="inpute" type="submit" value="Enviar">
                 </form>
                 <script>

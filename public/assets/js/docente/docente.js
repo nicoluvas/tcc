@@ -26,6 +26,9 @@ let anim2 = gsap.timeline({ paused: true });
 anim2.to("#btn2", { opacity: 0.1, scale: 0.8, x: 5, duration: 0.1, ease: Power2.easeInOut });
 let anim3 = gsap.timeline({ paused: true });
 anim3.to("#btn3", { opacity: 0.1, scale: 0.8, x: 5, duration: 0.1, ease: Power2.easeInOut });
+let anim0 = gsap.timeline({ paused: true });
+anim0.to("#btn0", { opacity: 0.1, scale: 0.8, x: 5, duration: 0.1, ease: Power2.easeInOut });
+
 
 const btn1 = document.querySelector("#btn1");
 btn1.addEventListener("click", () => {
@@ -38,5 +41,9 @@ btn2.addEventListener("click", () => {
 const btn3 = document.querySelector("#btn3");
 btn3.addEventListener("click", () => {
     anim3.play().timeScale(1);
+});
+const btn0 = document.querySelector("#btn0");
+btn0.addEventListener("click", () => {
+    anim0.play().timeScale(1);
 });
 
