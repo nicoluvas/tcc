@@ -20,6 +20,7 @@
     <style>
     * {
         text-decoration: none;
+        font-family:lexend;
     }
 
     body {
@@ -32,10 +33,11 @@
     nav {
         display: flex;
         justify-content: space-around;
-
+        position: absolute;
+        width: 100vw;
+        z-index: 100;
         padding: 1rem 0 1rem 0;
         background-color: var(--primary);
-
     }
 
     nav>.nav-esq {
@@ -59,7 +61,14 @@
     }
 
     main {
+        padding-top: 100px;
         flex: 1;
+
+        opacity: 1;
+    background-image: radial-gradient(var(--secondary) 1.7000000000000002px, transparent 1.7000000000000002px), radial-gradient(var(--shadow) 1.7000000000000002px, var(--background) 1.7000000000000002px);
+    background-size: 68px 68px;
+    background-position: 0 0, 34px 34px;
+    background-opacity: 0.1;
     }
 
     #sair {

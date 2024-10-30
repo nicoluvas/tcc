@@ -10,10 +10,12 @@ gsap.from("#oppacity-appear", {
     delay: 0.1,
     opacity: 0,
     duration: 0.5,
+    zIndex: -1,
     ease: "power1.inOut",
 });
 gsap.from(".meshbg", {
     opacity: 0,
+    zIndex: -1,
     y: 50,
     duration: 1.5,
     ease: "power1.inOut",

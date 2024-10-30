@@ -21,7 +21,7 @@
 </head>
 
 <body class="lexend" id="login">
-    <img class="logo" src="assets\images\index\logo-dark.png">
+    <img class="logo" src="assets\images\index\logobhasd.png">
     <div class="login-esquerda">
         <img src="assets/images/login/mesa.svg" class="girar" alt="mesa">
     </div>
