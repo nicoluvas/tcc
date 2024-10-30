@@ -1,7 +1,9 @@
 @import url('global.css');
+
 .botoes {
     padding: 1rem;
     background-color: var(--accent);
+
     &:hover {
         opacity: 0.5;
         cursor: pointer;
@@ -20,6 +22,7 @@ button {
     padding: 1rem;
     margin: 0.5rem;
     border: none;
+
     &:hover {
         opacity: 0.5;
         cursor: pointer;
@@ -57,62 +60,69 @@ section {
 }
 
 p {
-    text-align:center;
+    text-align: center;
     font-size: 2rem;
 }
 
 /* BOTOES GIGANTES */
 h2 {
-    text-align:center;
+    text-align: center;
     font-size: 3rem;
 }
+
 button {
     font-size: 2rem;
     font-weight: 500;
     width: 30vw;
 }
+
 main>div {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 main>.centraldiv {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
 .nomedocente {
     width: 100%;
 }
-.docente {
-    display:flex;
-    flex-direction: column;
-    max-width:40%;
-        border-radius: 1rem;
-        padding: 1rem;
-        align-items:center;
 
-background: rgba(167, 154, 98, 0.2);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid var(--shadow);
+.docente {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    padding: 1rem;
+    align-items: center;
+
+    background: rgba(167, 154, 98, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid var(--shadow);
 }
-.ifde>a{
+
+.ifde>a {
     background-color: var(--accent) !important;
 }
-.docente>p{
-    margin:1rem;
+
+.docente>p {
+    margin: 1rem;
 }
+
 .desligarDocente {
     max-width: 20vw;
     font-weight: 300;
     border: 1px solid var(--shadow);
     background: none !important;
 }
-.docentes{
+
+.docentes {
     row-gap: 1rem !important;
 }
