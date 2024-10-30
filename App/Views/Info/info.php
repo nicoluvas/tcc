@@ -44,7 +44,7 @@
             </tr>
         </td>
         <div id="oppacity-appear" class="lexend" style="text-align: justify;">
-            <p>
+            <div>
                 A <span>Escola Bhaskara</span> é uma instituição educacional inovadora que abraça o <span>método de
                     ensino dinamarquês</span>,
                 reconhecido mundialmente por seu foco no <span>desenvolvimento holístico</span> dos estudantes e na
@@ -73,7 +73,7 @@
                 seus alunos a
                 se tornarem <span>pensadores críticos</span> e <span>criativos</span>, prontos para enfrentar os
                 <span>desafios do mundo contemporâneo</span>.
-            </p>
+            </div>
 
         </div>
     </table>
