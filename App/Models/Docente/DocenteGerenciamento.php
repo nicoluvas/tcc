@@ -254,8 +254,9 @@ class DocenteGerenciamento extends Model {
                     ON
                         id_matricula = cd_aluno
                 WHERE
-                    st_aluno like 'A'";
-        $alunos = $this->executeStatement($sql)->fetchAll();
+                    st_aluno like 'A' AND
+                    id_periodo_letivo = :periodo";
+        $alunos = $this->executeStatement($sql, ['periodo' => ID_PERIODO_LETIVO])->fetchAll();
         $sql = "SELECT
                     *
                 FROM
@@ -271,12 +272,12 @@ class DocenteGerenciamento extends Model {
                 $sql = "INSERT INTO
                             tb_nota
                         VALUES
-                            (null, 0, 1, default, :periodo, :matricula, :materia, 1),
-                            (null, 0, 2, default, :periodo, :matricula, :materia, 1),
-                            (null, 0, 1, default, :periodo, :matricula, :materia, 2),
-                            (null, 0, 2, default, :periodo, :matricula, :materia, 2),
-                            (null, 0, 1, default, :periodo, :matricula, :materia, 3),
-                            (null, 0, 2, default, :periodo, :matricula, :materia, 3)";
+                            (null, 0, 1, default, :periodo, :matricula, :materia, '1'),
+                            (null, 0, 2, default, :periodo, :matricula, :materia, '1'),
+                            (null, 0, 1, default, :periodo, :matricula, :materia, '2'),
+                            (null, 0, 2, default, :periodo, :matricula, :materia, '2'),
+                            (null, 0, 1, default, :periodo, :matricula, :materia, '3'),
+                            (null, 0, 2, default, :periodo, :matricula, :materia, '3')";
                 $params = [
                     'periodo' => ID_PERIODO_LETIVO,
                     'matricula' => $aluno->cd_aluno,
@@ -316,7 +317,8 @@ class DocenteGerenciamento extends Model {
                             tb_falta
                         WHERE
                             id_matricula = :id_aluno AND
-                            id_periodo_letivo = :id_periodo)
+                            id_periodo_letivo = :id_periodo AND
+                            id_turma = :id_turma)
                         /
                         (SELECT
                             count(*)

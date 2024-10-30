@@ -21,7 +21,7 @@
                                     return
                                 }
                                 $.ajax({
-                                    'url': `/docente/alterar/senha/d/<?= $this->docente->cd_docente ?>`,
+                                    'url': `/docente/alterar/senha/a/<?= $this->aluno->cd_aluno ?>`,
                                     'type': 'POST',
                                     'dataType': 'json'
                                 })
@@ -277,6 +277,7 @@
         $('form select#turma').prop('disabled', false)
         $(this).css('display', 'none')
         $('form button#cancelar').css('display', 'block')
+        $('form button#alterar').css('display', 'none')
         $('form input[type="submit"]').css('display', 'block')
     })
 

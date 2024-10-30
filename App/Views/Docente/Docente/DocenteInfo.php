@@ -218,6 +218,7 @@
 
             $(this).css('display', 'none')
             $('form button#cancelar').css('display', 'block')
+            $('form button#alterar').css('display', 'none')
             $('form input[type="submit"]').css('display', 'block')
         })
 

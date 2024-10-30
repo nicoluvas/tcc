@@ -4,6 +4,7 @@
             <h2>Em período Letivo</h2>
             <p>
                 Início: <?= date('d/m/Y', strtotime(INICIO_PERIODO_LETIVO)) ?> <br>
+                Início das Férias: <?= date('d/m/Y', strtotime(INICIO_FERIAS)) ?> <br>
                 Fim: <?= date('d/m/Y', strtotime(FIM_PERIODO_LETIVO)) ?>
             </p>
         <?php
@@ -37,11 +38,11 @@
                     ?>
                     <form action="/docente/gerenciamento/periodo-letivo/iniciar" method="post">
                         <h3>Iniciar Ano Letivo</h3>
-                        <input type="date" name="inicio" id="inicio" min='<?= date('Y-m-d', time()+1296000) ?>'>
+                        <input style="background-color: #cfa93f" type="date" name="inicio" id="inicio" min='<?= date('Y-m-d', time()+1296000) ?>'>
                         <p>Data Final: <span id="dia-final">Selecione uma data</span> <span id="dia-semana"></span></p>
                         <p>Inicio das Férias: <span id="ferias">Selecione uma data</span>
                         </p>
-                        <input type="submit" value="Iniciar">
+                        <input class="botoes" type="submit" value="Iniciar">
                         <p id="retorno"></p>
                     </form>
                     <script>

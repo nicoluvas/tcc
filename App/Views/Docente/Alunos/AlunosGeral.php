@@ -55,12 +55,12 @@ select {
     <?php
     foreach($this->alunos as $aluno):
         ?>
-    <div class="docente" id="<?= $aluno->cd_aluno ?>">
-        <p class="nomedocente"><?= $aluno->nome_aluno ?></p>
+    <div class="aluno docente" id="<?= $aluno->cd_aluno ?>">
+        <p class="aluno nomedocente"><?= $aluno->nome_aluno ?></p>
         <p>Turma <?= $aluno->nm_turma ?></p>
         <div class="ifde">
             <a href="/docente/aluno/<?= $aluno->cd_aluno ?>/info">Informações</a>
-            <button class="desligarDocente" aluno="<?= $aluno->nome_aluno ?>" id="<?= $aluno->cd_aluno ?>">Cancelar
+            <button class="desligarDocente cancelarMatricula" aluno="<?= $aluno->nome_aluno ?>" id="<?= $aluno->cd_aluno ?>">Cancelar
                 Matrícula</button>
         </div>
     </div>
