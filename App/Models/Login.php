@@ -7,11 +7,12 @@ use App\Tools\Tools;
 class Login extends Model {
     public function LoginAuth($codigo_acesso, $senha){
         try {
-            if ([$user, $type] = $this->LoginAuthAluno($codigo_acesso, $senha)) {
+            if (filter_var($codigo_acesso, FILTER_VALIDATE_EMAIL)) {
+                [$user, $type] = $this->LoginAuthDocente($codigo_acesso, $senha);
                 $this->SaveUserInfo($user, $type);
                 return True;
             }
-            if ([$user, $type] = $this->LoginAuthDocente($codigo_acesso, $senha)) {
+            if ([$user, $type] = $this->LoginAuthAluno($codigo_acesso, $senha)) {
                 $this->SaveUserInfo($user, $type);
                 return True;
             }
@@ -41,9 +42,12 @@ class Login extends Model {
         if  ($query->rowCount() == 0) return False;
 
         $results = $query->fetchAll();
-        Tools::decryptRecursive($results);
         foreach ($results as $result) {
-            if (password_verify($senha, $result->senha_aluno) && $result->rg == $rg) return [$result, 'aluno'];
+            $rg_banco = Tools::decrypt($result->rg);
+            if (password_verify($senha, $result->senha_aluno) && $rg_banco == $rg) {
+                Tools::decryptRecursive($result);
+                return [$result, 'aluno'];
+            }
         }
 
         return False;
@@ -69,9 +73,12 @@ class Login extends Model {
         if  ($query->rowCount() == 0) return False;
 
         $results = $query->fetchAll();
-        Tools::decryptRecursive($results);
         foreach ($results as $result) {
-            if (password_verify($senha, $result->senha_docente) && $result->email == $email_docente) return [$result, $result->id_cargo==2?'professor':'docente'];
+            $email_banco = Tools::decrypt($result->email);
+            if (password_verify($senha, $result->senha_docente) && $email_banco == $email_docente) {
+                Tools::decryptRecursive($result);
+                return [$result, $result->id_cargo==2?'professor':'docente'];
+            }
         }
 
         return False;
