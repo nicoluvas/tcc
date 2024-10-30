@@ -17,7 +17,9 @@ main .docentes {
     border-radius: .5rem
 }
 
-
+.alunos {
+    row-gap: 1rem;
+}
 
 .ifde {
     display: flex;
